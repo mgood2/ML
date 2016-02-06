@@ -17,7 +17,6 @@ public abstract class WekaClassifier {
         ZERO_R,
         ONE_R,
         J48,
-        REP_TREE,
         IBK,
         SMO,
         MULTILAYER_PERCEPTRON,
@@ -142,8 +141,6 @@ public abstract class WekaClassifier {
                 return new OneRWekaClassifier(options);
             case J48:
                 return new J48WekaClassifier(options);
-            case REP_TREE:
-                return new REPTreeWekaClassifier(options);
             case IBK:
                 return new IbkWekaClassifier(options);
             case SMO:

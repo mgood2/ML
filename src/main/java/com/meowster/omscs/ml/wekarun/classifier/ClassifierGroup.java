@@ -17,6 +17,7 @@ public class ClassifierGroup {
 
     private static final String _B = "-B";
 
+
     private final List<WekaClassifier> classifiers = new ArrayList<>();
 
 
@@ -29,6 +30,8 @@ public class ClassifierGroup {
         add(Type.ONE_R, option(_B, 12));
 
         // TODO : add more classifiers
+
+        print("Ready to run!%n-------------%n%n");
     }
 
     private void add(Type type, Option... options) {

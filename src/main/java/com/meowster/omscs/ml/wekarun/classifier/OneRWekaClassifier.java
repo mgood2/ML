@@ -4,7 +4,18 @@ import weka.classifiers.Classifier;
 import weka.classifiers.rules.OneR;
 
 /**
- * One R classifier
+ * One R classifier.
+ * Class for building and using a 1R classifier; in other words, uses the
+ * minimum-error attribute for prediction, discretizing numeric attributes.
+ *
+ * <pre>
+ * Options:
+ *
+ * -B {minimum bucket size}
+ *    The minimum number of objects in a bucket. (default: 6)
+ * </pre>
+ *
+ * @see OneR
  */
 public class OneRWekaClassifier extends WekaClassifier {
 

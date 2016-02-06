@@ -101,7 +101,7 @@ public class MainWekaRun {
             sw.start();
             classifierCrossValidate(dataId, instances, classifier, filter);
             sw.stop();
-            print("Experiment: %s: time: %s", classifier, sw);
+            print("Experiment: %s: time: %s%n-----------%n%n", classifier, sw);
             sw.reset();
         }
     }
@@ -170,7 +170,7 @@ public class MainWekaRun {
 
             eval.evaluateModel(trainedUp, data.testSet());
             results.saveResults(Results.TEST, extractPerformanceMetrics(eval));
-            print(">Test Run >>   %s", wekaClassifier.wekaToString());
+            print(">Test Run >>  %n%s", wekaClassifier.wekaToString());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -192,7 +192,7 @@ public class MainWekaRun {
     }
 
     private static void outputResults(String dataId, CvTestResults results) {
-        print("%nResults for data file: %s...", dataId);
+        print("%n** Results for data file: %s...%n", dataId);
         print("%s", results.toString());
     }
 

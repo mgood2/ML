@@ -5,6 +5,14 @@ import weka.classifiers.rules.ZeroR;
 
 /**
  * Zero R classifier.
+ * Class for building and using a 0-R classifier. Predicts the mean
+ * (for a numeric class) or the mode (for a nominal class).
+ *
+ * <pre>
+ * No options.
+ * </pre>
+ *
+ * @see ZeroR
  */
 public class ZeroRWekaClassifier extends WekaClassifier {
 
