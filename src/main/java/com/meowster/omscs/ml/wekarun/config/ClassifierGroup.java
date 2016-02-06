@@ -54,6 +54,7 @@ public abstract class ClassifierGroup {
      * Creates a group of pre-configured classifiers.
      */
     public ClassifierGroup() {
+        print("%nConfiguring ClassifierGroup: %s...", getClass().getName());
         configure();
     }
 
@@ -77,7 +78,7 @@ public abstract class ClassifierGroup {
             throw new IllegalStateException("No longer mutable!");
         }
         WekaClassifier wc = createClassifier(type, options);
-        print("adding %s", wc);
+        print(" ..adding classifier: %s", wc);
         classifiers.add(wc);
     }
 

@@ -58,32 +58,32 @@ public class CvTestResults {
     }
 
     /**
-     * Starts the stopwatch, tagging the run with the given tag and iteration.
+     * Starts the stopwatch, setting the label with the given tag and iteration.
      *
      * @param tag type of run
      * @param iteration iteration
      */
-    public void stopwatchStart(Results tag, int iteration) {
+    public void startTiming(Results tag, int iteration) {
         label = String.format("%s-%d", tag, iteration);
         stopWatch.reset();
         stopWatch.start();
     }
 
     /**
-     * Starts the stopwatch, tagging the run with the given tag.
+     * Starts the stopwatch, setting the label with the given tag.
      *
      * @param tag type of run
      */
-    public void stopwatchStart(Results tag) {
+    public void startTiming(Results tag) {
         label = String.format("%s", tag);
         stopWatch.reset();
         stopWatch.start();
     }
 
     /**
-     * Stops the stopwatch, and records the time elapsed for the current label.
+     * Stops the stopwatch, recording the elapsed time for the current label.
      */
-    public void stopwatchStop() {
+    public void stopTiming() {
         stopWatch.stop();
         stopwatchInfo.add(String.format("%-8s %s", label, stopWatch));
     }
@@ -109,14 +109,15 @@ public class CvTestResults {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("CvTestResults: num instances = ")
-                .append(numInstances).append(EOL)
+        formatStopwatchData(sb);
+
+        sb.append(EOL)
+                .append("Test Results: (number of instances = ")
+                .append(numInstances).append(")").append(EOL).append(EOL)
                 .append(COL_HEADERS).append(EOL);
 
         formatResults(sb, Results.CV);
         formatResults(sb, Results.TEST);
-        formatStopwatchData(sb);
-
         return sb.toString();
     }
 
@@ -140,7 +141,7 @@ public class CvTestResults {
 
 
     private void formatStopwatchData(StringBuilder sb) {
-        sb.append(EOL).append("Processing times:").append(EOL);
+        sb.append("Processing times:").append(EOL);
         for (String s: stopwatchInfo) {
             sb.append(" ").append(s).append(EOL);
         }

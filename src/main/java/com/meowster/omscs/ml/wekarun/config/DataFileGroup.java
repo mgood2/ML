@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.meowster.omscs.ml.fetcher.Utils.print;
+
 /**
  * Abstract base class that Encapsulates a list of data files to be used
  * in the experiment. This implementation assumes:
@@ -38,6 +40,7 @@ public abstract class DataFileGroup {
      */
     protected DataFileGroup(String dataDirPath) {
         this.dataDirPath = dataDirPath;
+        print("%nConfiguring DataFileGroup: %s...", getClass().getName());
         configure();
     }
 
@@ -76,8 +79,10 @@ public abstract class DataFileGroup {
             throw new IllegalStateException("No longer mutable!");
         }
         for (String id: ids) {
+            String path = mkFileName(id);
             fileIds.add(id);
-            filePaths.add(mkFileName(id));
+            filePaths.add(path);
+            print(" ..adding path: %s", path);
         }
     }
 

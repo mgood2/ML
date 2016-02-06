@@ -68,9 +68,9 @@ public class MainWekaRun {
      * @param args command line args
      */
     public static void main(String[] args) {
-        print("WEKA run");
+        print("%n%n-- Starting WEKA Experiment --");
         runExperiment(DATASETS, CLASSIFIERS, FILTERS);
-        print("All DONE");
+        print("%n%n-- End of Run --");
     }
 
     private static void runExperiment(DataFileGroup dataFiles,
@@ -168,7 +168,7 @@ public class MainWekaRun {
             // run the Cross Validation N times, and produce average results
             for (int i = 1; i <= runCount; i++) {
 
-                results.stopwatchStart(Results.CV, i);
+                results.startTiming(Results.CV, i);
 
                 // Cross validate - N fold
                 Evaluation eval = new Evaluation(data.trainSet());
@@ -179,7 +179,7 @@ public class MainWekaRun {
                         NUM_FOLDS,
                         new Random(i));
 
-                results.stopwatchStop();
+                results.stopTiming();
 
                 metrics.add(extractPerformanceMetrics(eval));
                 printNoEol("..%d", i);
@@ -189,7 +189,7 @@ public class MainWekaRun {
 
 
             // run the trained model against the test data
-            results.stopwatchStart(Results.TEST);
+            results.startTiming(Results.TEST);
 
             // have to use a new instance of the classifier and train it (?)
             Classifier trainedUp = wekaClassifier.newClassifier();
@@ -199,7 +199,7 @@ public class MainWekaRun {
             Evaluation eval = new Evaluation(data.testSet());
 
             eval.evaluateModel(trainedUp, data.testSet());
-            results.stopwatchStop();
+            results.stopTiming();
 
             results.saveResults(Results.TEST, extractPerformanceMetrics(eval));
             print("%n>Test Run >>  %n%n%s", wekaClassifier.wekaToString());
