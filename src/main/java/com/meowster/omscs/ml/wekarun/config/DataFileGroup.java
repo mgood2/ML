@@ -10,12 +10,12 @@ import static com.meowster.omscs.ml.fetcher.Utils.print;
  * Abstract base class that Encapsulates a list of data files to be used
  * in the experiment. This implementation assumes:
  * <ul>
- *     <li>
- *         all data files are in the same directory
- *     </li>
- *     <li>
- *         all data files have a ".arff" extension
- *     </li>
+ * <li>
+ * all data files are in the same directory
+ * </li>
+ * <li>
+ * all data files have a ".arff" extension
+ * </li>
  * </ul>
  */
 public abstract class DataFileGroup {
@@ -23,12 +23,11 @@ public abstract class DataFileGroup {
     private static final String DEFAULT_FORMAT = "%s";
     private static final String ARFF = ".arff";
 
-
     private final String dataDirPath;
     private final List<String> filePaths = new ArrayList<>();
     private final List<String> fileIds = new ArrayList<>();
     private String fileNameFormat = DEFAULT_FORMAT;
-    private boolean mutable = true;
+    private boolean configured = false;
 
 
     /**
@@ -40,8 +39,6 @@ public abstract class DataFileGroup {
      */
     protected DataFileGroup(String dataDirPath) {
         this.dataDirPath = dataDirPath;
-        print("%nConfiguring DataFileGroup: %s...", getClass().getName());
-        configure();
     }
 
     /**
@@ -49,12 +46,11 @@ public abstract class DataFileGroup {
      */
     protected abstract void configure();
 
-
     /**
      * Sets the format string for generating file names. It is expected that
      * a single '%s' argument will be defined in the string to indicate where
      * the variable part of the name is.
-     * <p>
+     * <p/>
      * For example,
      * <pre>setFilenameFormat("data-%s")</pre>
      *
@@ -75,10 +71,10 @@ public abstract class DataFileGroup {
      * @throws IllegalStateException if the group is no longer mutable
      */
     protected void addFiles(String... ids) {
-        if (!mutable) {
+        if (configured) {
             throw new IllegalStateException("No longer mutable!");
         }
-        for (String id: ids) {
+        for (String id : ids) {
             String path = mkFileName(id);
             fileIds.add(id);
             filePaths.add(path);
@@ -88,6 +84,46 @@ public abstract class DataFileGroup {
 
     private String mkFileName(String id) {
         return String.format("%s/" + fileNameFormat + ARFF, dataDirPath, id);
+    }
+
+
+    /**
+     * Returns an iterator over the data file paths in this group.
+     * Note that calling this method will mark the group as no longer
+     * mutable.
+     *
+     * @return iterator over our set of data file paths
+     */
+    public Iterator<DataFileInfo> iterator() {
+
+        // lazy invocation of configure
+        if (!configured) {
+            print("%nConfiguring DataFileGroup: %s...", getClass().getName());
+            configure();
+            configured = true;
+        }
+
+        return new DataFileIterator();
+    }
+
+    /**
+     * Iterator implementation.
+     */
+    private class DataFileIterator implements Iterator<DataFileInfo> {
+        int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return index < filePaths.size();
+        }
+
+        @Override
+        public DataFileInfo next() {
+            String id = fileIds.get(index);
+            String path = filePaths.get(index);
+            index++;
+            return new DataFileInfo(id, path);
+        }
     }
 
 
@@ -121,38 +157,6 @@ public abstract class DataFileGroup {
             return path;
         }
 
-    }
-
-    /**
-     * Returns an iterator over the data file paths in this group.
-     * Note that calling this method will mark the group as no longer
-     * mutable.
-     *
-     * @return iterator over our set of data file paths
-     */
-    public Iterator<DataFileInfo> iterator() {
-        mutable = false;
-        return new DataFileIterator();
-    }
-
-    /**
-     * Iterator implementation.
-     */
-    private class DataFileIterator implements Iterator<DataFileInfo> {
-        int index = 0;
-
-        @Override
-        public boolean hasNext() {
-            return index < filePaths.size();
-        }
-
-        @Override
-        public DataFileInfo next() {
-            String id = fileIds.get(index);
-            String path = filePaths.get(index);
-            index++;
-            return new DataFileInfo(id, path);
-        }
     }
 
 }

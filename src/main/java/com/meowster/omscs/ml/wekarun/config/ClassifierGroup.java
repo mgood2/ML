@@ -44,19 +44,8 @@ public abstract class ClassifierGroup {
             "\\\"weka.core.EuclideanDistance -R first-last\\\"";
 
 
-    // our set of classifiers
     private final List<WekaClassifier> classifiers = new ArrayList<>();
-
-    // only remains mutable until we invoke the first iterator
-    private boolean mutable = true;
-
-    /**
-     * Creates a group of pre-configured classifiers.
-     */
-    public ClassifierGroup() {
-        print("%nConfiguring ClassifierGroup: %s...", getClass().getName());
-        configure();
-    }
+    private boolean configured = false;
 
     /**
      * Subclasses should configure their list of classifiers by using the
@@ -74,7 +63,7 @@ public abstract class ClassifierGroup {
      * @throws IllegalStateException if the group is no longer mutable
      */
     protected void add(Type type, Option... options) {
-        if (!mutable) {
+        if (configured) {
             throw new IllegalStateException("No longer mutable!");
         }
         WekaClassifier wc = createClassifier(type, options);
@@ -157,7 +146,13 @@ public abstract class ClassifierGroup {
      * @return iterator over our set of classifiers
      */
     public Iterator<WekaClassifier> iterator() {
-        mutable = false;
+        // lazy invocation of configure
+        if (!configured) {
+            print("%nConfiguring ClassifierGroup: %s...", getClass().getName());
+            configure();
+            configured = true;
+        }
+
         return new ClassifierIterator();
     }
 

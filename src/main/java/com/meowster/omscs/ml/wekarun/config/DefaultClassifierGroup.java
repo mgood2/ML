@@ -6,7 +6,9 @@ import weka.classifiers.trees.J48;
 import weka.core.neighboursearch.LinearNNSearch;
 
 /**
- * A default selection of classifiers to test with.
+ * A default selection of classifiers to test with. Note that the classifiers
+ * are added with default values (so in actuality, the options don't need
+ * to be specified, but serve to show how one might change them.
  */
 public class DefaultClassifierGroup extends ClassifierGroup {
 
@@ -14,11 +16,9 @@ public class DefaultClassifierGroup extends ClassifierGroup {
     protected void configure() {
         add(WekaClassifier.Type.ZERO_R);
 
-        add(WekaClassifier.Type.ONE_R);
-
         add(WekaClassifier.Type.ONE_R,
-                opt(_B, 12)
-        );
+                opt(_B, 6))
+        ;
 
         add(WekaClassifier.Type.J48,
                 opt(_C, 0.25),
@@ -63,4 +63,34 @@ public class DefaultClassifierGroup extends ClassifierGroup {
                 )
         );
     }
+
+/*
+    The following should be equivalent to the above, since
+    default values are being used...
+
+    @Override
+    protected void configure() {
+        add(WekaClassifier.Type.ZERO_R);
+
+        add(WekaClassifier.Type.ONE_R);
+
+        add(WekaClassifier.Type.J48);
+
+        add(WekaClassifier.Type.MULTILAYER_PERCEPTRON);
+
+        add(WekaClassifier.Type.ADA_BOOST_M1,
+                opt(_W, classWithOptions(J48.class))
+        );
+
+        add(WekaClassifier.Type.SMO,
+                opt(_K, classWithOptions(PolyKernel.class))
+        );
+
+        add(WekaClassifier.Type.IBK,
+                opt(_A, classWithOptions(LinearNNSearch.class,
+                        opt(_A, EUCLIDEAN_DISTANCE))
+                )
+        );
+    }
+ */
 }

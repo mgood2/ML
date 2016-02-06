@@ -1,4 +1,6 @@
-package com.meowster.omscs.ml.wekarun.config;
+package com.meowster.omscs.ml.wekarun.config.bgg;
+
+import com.meowster.omscs.ml.wekarun.config.DataFileGroup;
 
 /**
  * Base class for Board Game Weight data files.
