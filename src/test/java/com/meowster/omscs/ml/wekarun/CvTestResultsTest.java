@@ -25,13 +25,13 @@ public class CvTestResultsTest {
 
     @Test
     public void basic() {
-        results = new CvTestResults(0);
+        results = new CvTestResults(0, null, null);
         print("%s", results.toString());
     }
 
     @Test
     public void something() {
-        results = new CvTestResults(100);
+        results = new CvTestResults(100, null, null);
         results.saveResults(Results.CV, SET_A);
         results.saveResults(Results.TEST, SET_B);
         print("%s", results.toString());

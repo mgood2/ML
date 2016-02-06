@@ -74,7 +74,7 @@ public abstract class ClassifierGroup {
      */
     protected void add(Type type, Option... options) {
         if (!mutable) {
-            throw new IllegalStateException("Group no longer mutable!");
+            throw new IllegalStateException("No longer mutable!");
         }
         WekaClassifier wc = createClassifier(type, options);
         print("adding %s", wc);

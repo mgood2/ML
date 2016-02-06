@@ -30,9 +30,14 @@ public class CvMetrics {
      */
     public List<Double> average() {
         final int rows = metrics.size();
+
+        // deal with the easy cases first...
         if (rows == 0) {
             return Collections.emptyList();
+        } else if (rows == 1) {
+            return metrics.get(0);
         }
+
         final int cols = metrics.get(0).size();
 
         List<Double> results = new ArrayList<>(cols);

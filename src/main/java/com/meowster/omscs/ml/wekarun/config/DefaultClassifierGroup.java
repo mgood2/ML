@@ -8,7 +8,7 @@ import weka.core.neighboursearch.LinearNNSearch;
 /**
  * A default selection of classifiers to test with.
  */
-public class DefaultGroup extends ClassifierGroup {
+public class DefaultClassifierGroup extends ClassifierGroup {
 
     @Override
     protected void configure() {

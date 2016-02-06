@@ -1,10 +1,13 @@
 package com.meowster.omscs.ml.wekarun;
 
+import com.google.common.collect.ImmutableList;
 import com.meowster.omscs.ml.wekarun.CvTestResults.Results;
-import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
 import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier;
-import com.meowster.omscs.ml.wekarun.config.DefaultGroup;
-import org.apache.commons.lang.time.StopWatch;
+import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
+import com.meowster.omscs.ml.wekarun.config.DataFileGroup;
+import com.meowster.omscs.ml.wekarun.config.DataFileGroup.DataFileInfo;
+import com.meowster.omscs.ml.wekarun.config.SingleBgWeightFile;
+import com.meowster.omscs.ml.wekarun.config.SingleJ48;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
@@ -17,6 +20,7 @@ import java.util.List;
 import java.util.Random;
 
 import static com.meowster.omscs.ml.fetcher.Utils.print;
+import static com.meowster.omscs.ml.fetcher.Utils.printNoEol;
 
 /**
  * Main launch point for running WEKA analysis over the BGG data files.
@@ -25,23 +29,37 @@ import static com.meowster.omscs.ml.fetcher.Utils.print;
  */
 public class MainWekaRun {
 
-    // how much data to use for training...
+    // =================================================
+    // === Parameters for configuring the Experiment ===
+    // =================================================
+
+    // the source data files (.arff) containing instance data
+    private static final DataFileGroup DATASETS = new SingleBgWeightFile();
+
+    // the group of classifiers to run against the data sets
+    private static final ClassifierGroup CLASSIFIERS = new SingleJ48();
+
+    // the filters to use for splitting train/test data subsets
+    private static final List<FilterType> FILTERS = ImmutableList.of(
+            FilterType.UNSUPERVISED_RESAMPLE,
+            FilterType.SUPERVISED_RESAMPLE
+    );
+
+    // how much data to use for training (vs. test)
     private static final double PERCENT_SPLIT = 66.6;
 
-    // number of runs (metrics are averaged over those runs)
-    //  (unless the classifier overrides this, for example ZERO_R)
+    // number of runs (CV metrics are averaged over those runs)
+    //  (unless the classifier overrides this, for example ZERO_R, ONE_R)
     private static final int NUM_RUNS = 10;
 
     // number of folds for cross validation
     private static final int NUM_FOLDS = 10;
 
-    // TODO: vary the data
-    // for now, just focusing on a single dataset of 500 boardgame records
-    private static final String DATA_ID = "000500";
-
     // default random seed used by WEKA
     private static final int WEKA_SEED = 42;
 
+
+    // =================================================
 
     /**
      * Main launch point for running the weka analysis of classifiers
@@ -51,25 +69,67 @@ public class MainWekaRun {
      */
     public static void main(String[] args) {
         print("WEKA run");
-
-        // TODO: iterate over a variety of data sets
-        Instances instances = loadInstances(DATA_ID);
-
-        if (instances != null) {
-            runExperiment(DATA_ID, instances, new DefaultGroup());
-        } else {
-            print("Woah!! No Instances!!");
-        }
+        runExperiment(DATASETS, CLASSIFIERS, FILTERS);
         print("All DONE");
     }
 
-    private static Instances loadInstances(String dataFileId) {
+    private static void runExperiment(DataFileGroup dataFiles,
+                                      ClassifierGroup classifiers,
+                                      List<FilterType> filters) {
+        // outer iteration over file sets
+        Iterator<DataFileInfo> dfIter = dataFiles.iterator();
+        while (dfIter.hasNext()) {
+            processDataFile(dfIter.next(), classifiers, filters);
+        }
+    }
+
+    private static void processDataFile(DataFileInfo info,
+                                        ClassifierGroup classifiers,
+                                        List<FilterType> filters) {
+        print("%nProcessing data file: %s ...", info.path());
+
+        Instances instances = loadInstances(info.path());
+
+        // middle iteration over classifiers
+        Iterator<WekaClassifier> cIter = classifiers.iterator();
+        while (cIter.hasNext()) {
+            processClassifier(info, instances, cIter.next(), filters);
+        }
+    }
+
+    private static void processClassifier(DataFileInfo info,
+                                          Instances instances,
+                                          WekaClassifier classifier,
+                                          List<FilterType> filters) {
+        print("%n  Processing with classifier: %s", classifier);
+
+        // inner iteration over filters
+        for (FilterType filter : filters) {
+            print("%n    Processing with filter: %s", filter);
+            classifierCrossValidate(info, instances, classifier, filter);
+        }
+    }
+
+    private static void classifierCrossValidate(DataFileInfo info,
+                                                Instances instances,
+                                                WekaClassifier classifier,
+                                                FilterType filter) {
+
+        // performs cross validation with given classifier
+        CvTestResults results =
+                trainCrossValidateAndTest(instances, classifier, filter);
+
+        outputResults(info, results);
+        persistResults(info, results, classifier, filter);
+    }
+
+    private static Instances loadInstances(String path) {
         Instances instances = null;
         try {
-            DataSource source = new DataSource(mkFileName(dataFileId));
+            DataSource source = new DataSource(path);
 
             instances = source.getDataSet();
-            // remove the game ID, which is not useful data
+            // remove the game ID, (first attribute), which is not useful data
             instances.deleteAttributeAt(0);
 
             // make sure the class index is set to the last column
@@ -83,56 +143,13 @@ public class MainWekaRun {
         return instances;
     }
 
-    private static String mkFileName(String name) {
-        return String.format("data/bgg-out/bgweights-%s.arff", name);
-    }
-
-    private static void runExperiment(String dataId, Instances instances,
-                                      ClassifierGroup group) {
-        StopWatch sw = new StopWatch();
-
-        Iterator<WekaClassifier> iter = group.iterator();
-        while (iter.hasNext()) {
-            WekaClassifier classifier = iter.next();
-            print("Processing with classifier %s", classifier);
-
-            // todo : each type of filter....
-            FilterType filter = FilterType.UNSUPERVISED_RESAMPLE;
-
-            sw.start();
-            classifierCrossValidate(dataId, instances, classifier, filter);
-            sw.stop();
-            print("Experiment: %s: time: %s%n-----------%n%n", classifier, sw);
-            sw.reset();
-        }
-    }
-
-    private static void classifierCrossValidate(String dataId,
-                                                Instances instances,
-                                                WekaClassifier classifier,
-                                                FilterType filter) {
-
-        // performs cross validation with given classifier
-        CvTestResults results =
-                trainCrossValidateAndTest(instances, classifier, filter);
-
-        outputResults(dataId, results);
-        persistResults(results, dataId, classifier, filter);
-
-    }
-
-    private static void persistResults(CvTestResults results,
-                                       String dataId,
-                                       WekaClassifier classifier,
-                                       FilterType filter) {
-        // TODO persist results to disk
-    }
-
-    private static CvTestResults trainCrossValidateAndTest(Instances dataSet,
-                           WekaClassifier wekaClassifier, FilterType filter) {
+    private static CvTestResults
+    trainCrossValidateAndTest(Instances dataSet, WekaClassifier wekaClassifier,
+                              FilterType filter) {
 
         // Results to be returned
-        CvTestResults results = new CvTestResults(dataSet.numInstances());
+        CvTestResults results = new CvTestResults(dataSet.numInstances(),
+                wekaClassifier, filter);
 
         // intermediate results - averaged later
         CvMetrics metrics = new CvMetrics();
@@ -146,8 +163,13 @@ public class MainWekaRun {
         final int runCount = wekaClassifier.adjustRunCount(NUM_RUNS);
 
         try {
+            printNoEol("%n>CV Run: ");
+
             // run the Cross Validation N times, and produce average results
             for (int i = 1; i <= runCount; i++) {
+
+                results.stopwatchStart(Results.CV, i);
+
                 // Cross validate - N fold
                 Evaluation eval = new Evaluation(data.trainSet());
 
@@ -157,12 +179,19 @@ public class MainWekaRun {
                         NUM_FOLDS,
                         new Random(i));
 
+                results.stopwatchStop();
+
                 metrics.add(extractPerformanceMetrics(eval));
-                print(">CV Run %d >>   %s", i, wekaClassifier.wekaToString());
+                printNoEol("..%d", i);
             }
+            print(".. DONE");
             results.saveResults(Results.CV, metrics.average());
 
-            // hmmm, have to use a new instance of the classifier and train it..
+
+            // run the trained model against the test data
+            results.stopwatchStart(Results.TEST);
+
+            // have to use a new instance of the classifier and train it (?)
             Classifier trainedUp = wekaClassifier.newClassifier();
             trainedUp.buildClassifier(data.trainSet());
 
@@ -170,14 +199,23 @@ public class MainWekaRun {
             Evaluation eval = new Evaluation(data.testSet());
 
             eval.evaluateModel(trainedUp, data.testSet());
+            results.stopwatchStop();
+
             results.saveResults(Results.TEST, extractPerformanceMetrics(eval));
-            print(">Test Run >>  %n%s", wekaClassifier.wekaToString());
+            print("%n>Test Run >>  %n%n%s", wekaClassifier.wekaToString());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return results;
+    }
+
+    private static void persistResults(DataFileInfo info,
+                                       CvTestResults results,
+                                       WekaClassifier classifier,
+                                       FilterType filter) {
+        // TODO persist results to disk
     }
 
     private static List<Double> extractPerformanceMetrics(Evaluation eval) {
@@ -192,8 +230,8 @@ public class MainWekaRun {
         );
     }
 
-    private static void outputResults(String dataId, CvTestResults results) {
-        print("%n** Results for data file: %s...%n", dataId);
+    private static void outputResults(DataFileInfo info, CvTestResults results) {
+        print("%n** Results for data file: %s...%n", info.path());
         print("%s", results.toString());
     }
 

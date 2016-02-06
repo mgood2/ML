@@ -6,7 +6,7 @@ package com.meowster.omscs.ml.fetcher;
 public class Utils {
 
     /**
-     * Print stuff.
+     * Print stuff ending with a new line.
      *
      * @param fmt format string
      * @param args arguments
@@ -15,4 +15,13 @@ public class Utils {
         System.out.println(String.format(fmt, args));
     }
 
+    /**
+     * Print stuff but not with a new line.
+     *
+     * @param fmt format string
+     * @param args arguments
+     */
+    public static void printNoEol(String fmt, Object... args) {
+        System.out.print(String.format(fmt, args));
+    }
 }
