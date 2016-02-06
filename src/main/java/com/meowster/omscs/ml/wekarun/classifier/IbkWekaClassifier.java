@@ -13,8 +13,7 @@ public class IbkWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new IBk();
+    public Classifier newClassifier() {
+        return setOptions(new IBk());
     }
 }

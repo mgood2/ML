@@ -13,7 +13,7 @@ public class J48WekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        return new J48();
+    public Classifier newClassifier() {
+        return setOptions(new J48());
     }
 }

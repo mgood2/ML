@@ -13,8 +13,7 @@ public class AdaBoostM1WekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new AdaBoostM1();
+    public Classifier newClassifier() {
+        return setOptions(new AdaBoostM1());
     }
 }

@@ -77,7 +77,7 @@ public class CvTestResults {
             sb.append(String.format(FMT_DOUBLE, d));
         }
         final int len = sb.length();
-        sb.replace(len-2, len, "");
+        sb.delete(len-2, len);
         return sb.toString();
     }
 

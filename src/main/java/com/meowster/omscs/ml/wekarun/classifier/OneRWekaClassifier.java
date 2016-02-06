@@ -13,8 +13,14 @@ public class OneRWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new OneR();
+    public Classifier newClassifier() {
+        return setOptions(new OneR());
+    }
+
+    @Override
+    public int adjustRunCount(int numRuns) {
+        // We'll always generate the same result, no matter how many runs
+        // So let's force just a single run.
+        return 1;
     }
 }

@@ -13,8 +13,7 @@ public class REPTreeWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new REPTree();
+    public Classifier newClassifier() {
+        return setOptions(new REPTree());
     }
 }

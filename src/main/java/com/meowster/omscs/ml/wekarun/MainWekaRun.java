@@ -19,11 +19,26 @@ import static com.meowster.omscs.ml.fetcher.Utils.print;
 
 /**
  * Main launch point for running WEKA analysis over the BGG data files.
+ * Configuration of which classifiers we want to run is defined in
+ * {@link ClassifierGroup}.
  */
 public class MainWekaRun {
 
+    // how much data to use for training...
+    private static final double PERCENT_SPLIT = 66.6;
+
+    // number of runs (metrics are averaged over those runs)
+    //  (unless the classifier overrides this, for example ZERO_R)
+    private static final int NUM_RUNS = 10;
+
+    // number of folds for cross validation
+    private static final int NUM_FOLDS = 10;
+
+    // TODO: vary the data
+    // for now, just focusing on a single dataset of 500 boardgame records
     private static final String DATA_ID = "000500";
 
+    // default random seed used by WEKA
     private static final int WEKA_SEED = 42;
 
 
@@ -35,7 +50,8 @@ public class MainWekaRun {
      */
     public static void main(String[] args) {
         print("WEKA run");
-        // TODO: possibly vary the input data
+
+        // TODO: iterate over a variety of data sets
         Instances instances = loadInstances(DATA_ID);
 
         if (instances != null) {
@@ -85,7 +101,8 @@ public class MainWekaRun {
             sw.start();
             classifierCrossValidate(dataId, instances, classifier, filter);
             sw.stop();
-            print("Exp: %s: time: %s", classifier, sw);
+            print("Experiment: %s: time: %s", classifier, sw);
+            sw.reset();
         }
     }
 
@@ -110,9 +127,8 @@ public class MainWekaRun {
         // TODO persist results to disk
     }
 
-    private static CvTestResults trainCrossValidateAndTest(
-            Instances dataSet, WekaClassifier wekaClassifier, FilterType filter) {
-
+    private static CvTestResults trainCrossValidateAndTest(Instances dataSet,
+                           WekaClassifier wekaClassifier, FilterType filter) {
 
         // Results to be returned
         CvTestResults results = new CvTestResults(dataSet.numInstances());
@@ -135,17 +151,18 @@ public class MainWekaRun {
                 Evaluation eval = new Evaluation(data.trainSet());
 
                 eval.crossValidateModel(
-                        wekaClassifier.classifier(),
+                        wekaClassifier.newClassifier(),
                         new Instances(data.trainSet()),
                         NUM_FOLDS,
                         new Random(i));
 
                 metrics.add(extractPerformanceMetrics(eval));
+                print(">CV Run %d >>   %s", i, wekaClassifier.wekaToString());
             }
             results.saveResults(Results.CV, metrics.average());
 
             // hmmm, have to use a new instance of the classifier and train it..
-            Classifier trainedUp = wekaClassifier.classifier();
+            Classifier trainedUp = wekaClassifier.newClassifier();
             trainedUp.buildClassifier(data.trainSet());
 
             // now run against the test data
@@ -153,6 +170,7 @@ public class MainWekaRun {
 
             eval.evaluateModel(trainedUp, data.testSet());
             results.saveResults(Results.TEST, extractPerformanceMetrics(eval));
+            print(">Test Run >>   %s", wekaClassifier.wekaToString());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -178,12 +196,4 @@ public class MainWekaRun {
         print("%s", results.toString());
     }
 
-    /* configuration parameters */
-
-    // how much data to use for training...
-    private static final double PERCENT_SPLIT = 66.6;
-
-    private static final int NUM_FOLDS = 10;
-
-    private static final int NUM_RUNS = 10;  // changes random seed for every run
 }

@@ -13,8 +13,7 @@ public class MultiLayerPerceptronWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new MultilayerPerceptron();
+    public Classifier newClassifier() {
+        return setOptions(new MultilayerPerceptron());
     }
 }

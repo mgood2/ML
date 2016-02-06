@@ -1,11 +1,13 @@
 package com.meowster.omscs.ml.wekarun.classifier;
 
+import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier.Option;
 import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier.Type;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.meowster.omscs.ml.fetcher.Utils.print;
 import static com.meowster.omscs.ml.wekarun.classifier.WekaClassifier.createClassifier;
 
 /**
@@ -13,18 +15,31 @@ import static com.meowster.omscs.ml.wekarun.classifier.WekaClassifier.createClas
  */
 public class ClassifierGroup {
 
+    private static final String _B = "-B";
+
     private final List<WekaClassifier> classifiers = new ArrayList<>();
 
 
     /**
-     * Creates a new classifier group.
+     * Creates a classifier group with preconfigured classifiers.
      */
     public ClassifierGroup() {
-        // specify the classifiers (and their options) we want to run...
-        classifiers.add(createClassifier(Type.ZERO_R));
+        add(Type.ZERO_R);
+        add(Type.ONE_R);
+        add(Type.ONE_R, option(_B, 12));
+
         // TODO : add more classifiers
     }
 
+    private void add(Type type, Option... options) {
+        WekaClassifier wc = createClassifier(type, options);
+        print("adding %s", wc);
+        classifiers.add(wc);
+    }
+
+    private Option option(String key, int value) {
+        return new Option(key, String.valueOf(value));
+    }
 
     /**
      * Returns an iterator for the classifiers we want to run in this group.

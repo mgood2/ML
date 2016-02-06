@@ -13,9 +13,8 @@ public class ZeroRWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new ZeroR();
+    public Classifier newClassifier() {
+        return setOptions(new ZeroR());
     }
 
     @Override

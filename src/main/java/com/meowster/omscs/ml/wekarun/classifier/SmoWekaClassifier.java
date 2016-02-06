@@ -13,8 +13,7 @@ public class SmoWekaClassifier extends WekaClassifier {
     }
 
     @Override
-    public Classifier classifier() {
-        // TODO: apply options to classifier instance
-        return new SMO();
+    public Classifier newClassifier() {
+        return setOptions(new SMO());
     }
 }
