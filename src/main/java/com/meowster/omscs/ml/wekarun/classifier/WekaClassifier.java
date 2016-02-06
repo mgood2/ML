@@ -1,5 +1,6 @@
 package com.meowster.omscs.ml.wekarun.classifier;
 
+import com.google.common.base.MoreObjects;
 import weka.classifiers.Classifier;
 
 /**
@@ -40,6 +41,13 @@ public abstract class WekaClassifier {
         return numRuns;
     }
 
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("type", type)
+                .add("options", options)
+                .toString();
+    }
 
     /**
      * Creates a classifier instance of the given type with the specified options.

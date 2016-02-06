@@ -4,6 +4,7 @@ import com.meowster.omscs.ml.wekarun.CvTestResults.Results;
 import com.meowster.omscs.ml.wekarun.classifier.ClassifierGroup;
 import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier;
 import org.apache.commons.lang.time.StopWatch;
+import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
@@ -143,10 +144,14 @@ public class MainWekaRun {
             }
             results.saveResults(Results.CV, metrics.average());
 
+            // hmmm, have to use a new instance of the classifier and train it..
+            Classifier trainedUp = wekaClassifier.classifier();
+            trainedUp.buildClassifier(data.trainSet());
+
             // now run against the test data
             Evaluation eval = new Evaluation(data.testSet());
 
-            eval.evaluateModel(wekaClassifier.classifier(), data.testSet());
+            eval.evaluateModel(trainedUp, data.testSet());
             results.saveResults(Results.TEST, extractPerformanceMetrics(eval));
 
         } catch (Exception e) {
