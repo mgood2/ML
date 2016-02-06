@@ -1,0 +1,400 @@
+{
+  "timestamp" : {
+    "date" : "02/01/2016",
+    "time" : "15:39:46",
+    "epoch" : 1454369986189
+  },
+  "games" : [ {
+    "id" : 1,
+    "name" : "Die Macher",
+    "description" : "Die Macher is a game about seven sequential political races in different regions of Germany.",
+    "yearPublished" : 1986,
+    "minPlayers" : 3,
+    "maxPlayers" : 5,
+    "time" : 240,
+    "minTime" : 240,
+    "maxTime" : 240,
+    "mechanics" : [ "Area Control / Area Influence", "Auction/Bidding", "Dice Rolling", "Hand Management", "Simultaneous Action Selection" ],
+    "categories" : [ "Economic", "Negotiation", "Political" ],
+    "subdomains" : [ "Strategy Games" ],
+    "families" : [ "Country: Germany", "Valley Games Classic Line" ],
+    "designers" : [ "Karl-Heinz Schmiel" ],
+    "ratings" : {
+      "usersRated" : 4271,
+      "average" : 7.67433,
+      "bayesAverage" : 7.34825,
+      "stdDev" : 1.59086,
+      "owned" : 5022,
+      "trading" : 159,
+      "wanting" : 482,
+      "wishing" : 1490,
+      "numComments" : 1716,
+      "numWeights" : 720,
+      "averageWeight" : 4.3458,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 115,
+        "bayesAverage" : 7.34825
+      }, {
+        "type" : "family",
+        "name" : "strategygames",
+        "friendly" : "Strategy Game Rank",
+        "value" : 69,
+        "bayesAverage" : 7.4377
+      } ]
+    }
+  }, {
+    "id" : 2,
+    "name" : "Dragonmaster",
+    "description" : "Dragonmaster is a trick-taking card game based on an older game called Coup d'etat.",
+    "yearPublished" : 1981,
+    "minPlayers" : 3,
+    "maxPlayers" : 4,
+    "time" : 30,
+    "minTime" : 30,
+    "maxTime" : 30,
+    "mechanics" : [ "Trick-taking" ],
+    "categories" : [ "Card Game", "Fantasy" ],
+    "subdomains" : [ "Strategy Games" ],
+    "families" : [ "Animals: Dragons" ],
+    "designers" : [ "G. W. \"Jerry\" D'Arcey" ],
+    "ratings" : {
+      "usersRated" : 440,
+      "average" : 6.60692,
+      "bayesAverage" : 5.91255,
+      "stdDev" : 1.46676,
+      "owned" : 944,
+      "trading" : 74,
+      "wanting" : 64,
+      "wishing" : 145,
+      "numComments" : 250,
+      "numWeights" : 51,
+      "averageWeight" : 1.9412,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 2188,
+        "bayesAverage" : 5.91255
+      }, {
+        "type" : "family",
+        "name" : "strategygames",
+        "friendly" : "Strategy Game Rank",
+        "value" : 959,
+        "bayesAverage" : 5.94174
+      } ]
+    }
+  }, {
+    "id" : 3,
+    "name" : "Samurai",
+    "description" : "Part of the Knizia tile-laying trilogy, Samurai is set in medieval Japan.",
+    "yearPublished" : 1998,
+    "minPlayers" : 2,
+    "maxPlayers" : 4,
+    "time" : 60,
+    "minTime" : 30,
+    "maxTime" : 60,
+    "mechanics" : [ "Area Control / Area Influence", "Hand Management", "Set Collection", "Tile Placement" ],
+    "categories" : [ "Medieval" ],
+    "subdomains" : [ "Strategy Games" ],
+    "families" : [ "Asian Theme", "Country: Japan", "Knizia tile-laying trilogy", "Samurai" ],
+    "designers" : [ "Reiner Knizia" ],
+    "ratings" : {
+      "usersRated" : 10970,
+      "average" : 7.43951,
+      "bayesAverage" : 7.29787,
+      "stdDev" : 1.19157,
+      "owned" : 10583,
+      "trading" : 231,
+      "wanting" : 623,
+      "wishing" : 2277,
+      "numComments" : 3095,
+      "numWeights" : 1328,
+      "averageWeight" : 2.5098,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 133,
+        "bayesAverage" : 7.29787
+      }, {
+        "type" : "family",
+        "name" : "strategygames",
+        "friendly" : "Strategy Game Rank",
+        "value" : 94,
+        "bayesAverage" : 7.31412
+      } ]
+    }
+  }, {
+    "id" : 4,
+    "name" : "Tal der Könige",
+    "description" : "When you see the triangular box and the luxurious, large blocks, you can tell this game was designed to be beautiful as well as functional.",
+    "yearPublished" : 1992,
+    "minPlayers" : 2,
+    "maxPlayers" : 4,
+    "time" : 60,
+    "minTime" : 60,
+    "maxTime" : 60,
+    "mechanics" : [ "Action Point Allowance System", "Area Control / Area Influence", "Auction/Bidding", "Set Collection" ],
+    "categories" : [ "Ancient" ],
+    "subdomains" : [ ],
+    "families" : [ "Country: Egypt", "Promotional Board Games" ],
+    "designers" : [ "Christian Beierer" ],
+    "ratings" : {
+      "usersRated" : 299,
+      "average" : 6.59606,
+      "bayesAverage" : 5.80525,
+      "stdDev" : 1.21035,
+      "owned" : 486,
+      "trading" : 28,
+      "wanting" : 68,
+      "wishing" : 108,
+      "numComments" : 106,
+      "numWeights" : 30,
+      "averageWeight" : 2.6667,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 2755,
+        "bayesAverage" : 5.80525
+      } ]
+    }
+  }, {
+    "id" : 5,
+    "name" : "Acquire",
+    "description" : "This Sid Sackson classic has taken many different forms over the years depending on the publisher.",
+    "yearPublished" : 1964,
+    "minPlayers" : 3,
+    "maxPlayers" : 6,
+    "time" : 90,
+    "minTime" : 90,
+    "maxTime" : 90,
+    "mechanics" : [ "Hand Management", "Stock Holding", "Tile Placement" ],
+    "categories" : [ "Economic" ],
+    "subdomains" : [ "Strategy Games" ],
+    "families" : [ "3M Bookshelf Series" ],
+    "designers" : [ "Sid Sackson" ],
+    "ratings" : {
+      "usersRated" : 13857,
+      "average" : 7.36453,
+      "bayesAverage" : 7.24155,
+      "stdDev" : 1.32923,
+      "owned" : 16635,
+      "trading" : 759,
+      "wanting" : 472,
+      "wishing" : 1972,
+      "numComments" : 4667,
+      "numWeights" : 1522,
+      "averageWeight" : 2.5131,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 157,
+        "bayesAverage" : 7.24155
+      }, {
+        "type" : "family",
+        "name" : "strategygames",
+        "friendly" : "Strategy Game Rank",
+        "value" : 121,
+        "bayesAverage" : 7.23875
+      } ]
+    }
+  }, {
+    "id" : 6,
+    "name" : "Mare Mediterraneum",
+    "description" : "In the ancient lands along the Mediterranean, players attempt to satisfy their unique victory conditions via trade, war and construction.",
+    "yearPublished" : 1989,
+    "minPlayers" : 2,
+    "maxPlayers" : 6,
+    "time" : 240,
+    "minTime" : 240,
+    "maxTime" : 240,
+    "mechanics" : [ "Dice Rolling" ],
+    "categories" : [ "Civilization", "Nautical" ],
+    "subdomains" : [ ],
+    "families" : [ "Cities: Marseille" ],
+    "designers" : [ "Jean du Poël" ],
+    "ratings" : {
+      "usersRated" : 68,
+      "average" : 6.50294,
+      "bayesAverage" : 5.58194,
+      "stdDev" : 1.64647,
+      "owned" : 95,
+      "trading" : 2,
+      "wanting" : 39,
+      "wishing" : 53,
+      "numComments" : 23,
+      "numWeights" : 6,
+      "averageWeight" : 3.0,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 5827,
+        "bayesAverage" : 5.58194
+      } ]
+    }
+  }, {
+    "id" : 7,
+    "name" : "Cathedral",
+    "description" : "In Cathedral, each player has a set of pieces of a different color.",
+    "yearPublished" : 1978,
+    "minPlayers" : 2,
+    "maxPlayers" : 2,
+    "time" : 20,
+    "minTime" : 20,
+    "maxTime" : 20,
+    "mechanics" : [ "Area Enclosure", "Pattern Building", "Pattern Recognition", "Tile Placement" ],
+    "categories" : [ "Abstract Strategy" ],
+    "subdomains" : [ "Abstract Games" ],
+    "families" : [ "Combinatorial", "Polyominoes" ],
+    "designers" : [ "Robert P. Moore" ],
+    "ratings" : {
+      "usersRated" : 2524,
+      "average" : 6.52867,
+      "bayesAverage" : 6.26524,
+      "stdDev" : 1.28803,
+      "owned" : 4073,
+      "trading" : 243,
+      "wanting" : 90,
+      "wishing" : 374,
+      "numComments" : 1033,
+      "numWeights" : 255,
+      "averageWeight" : 1.8235,
+      "ranks" : [ {
+        "type" : "family",
+        "name" : "abstracts",
+        "friendly" : "Abstract Game Rank",
+        "value" : 104,
+        "bayesAverage" : 6.35431
+      }, {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 1164,
+        "bayesAverage" : 6.26524
+      } ]
+    }
+  }, {
+    "id" : 8,
+    "name" : "Lords of Creation",
+    "description" : "In this interesting offering from Warfrog, players become Gods seeking to dominate a world with their followers.",
+    "yearPublished" : 1993,
+    "minPlayers" : 2,
+    "maxPlayers" : 5,
+    "time" : 120,
+    "minTime" : 120,
+    "maxTime" : 120,
+    "mechanics" : [ "Modular Board" ],
+    "categories" : [ "Civilization", "Fantasy" ],
+    "subdomains" : [ ],
+    "families" : [ ],
+    "designers" : [ "Martin Wallace" ],
+    "ratings" : {
+      "usersRated" : 176,
+      "average" : 6.13318,
+      "bayesAverage" : 5.62204,
+      "stdDev" : 1.25739,
+      "owned" : 428,
+      "trading" : 23,
+      "wanting" : 29,
+      "wishing" : 47,
+      "numComments" : 79,
+      "numWeights" : 15,
+      "averageWeight" : 2.4,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 4776,
+        "bayesAverage" : 5.62204
+      } ]
+    }
+  }, {
+    "id" : 9,
+    "name" : "El Caballero",
+    "description" : "Although referred to as a sequel to El Grande, El Caballero shares few aspects with its namesake, being a fun but intense brain-burner in which players explore and attempt to control the lands and waterways of the New World.<br/><br/>The players are following Columbus by exploring the islands he discovered.",
+    "yearPublished" : 1998,
+    "minPlayers" : 2,
+    "maxPlayers" : 4,
+    "time" : 90,
+    "minTime" : 90,
+    "maxTime" : 90,
+    "mechanics" : [ "Area Control / Area Influence", "Tile Placement" ],
+    "categories" : [ "Exploration" ],
+    "subdomains" : [ "Strategy Games" ],
+    "families" : [ "El Grande" ],
+    "designers" : [ "Richard Ulrich", "Wolfgang Kramer" ],
+    "ratings" : {
+      "usersRated" : 1207,
+      "average" : 6.54078,
+      "bayesAverage" : 6.13736,
+      "stdDev" : 1.41905,
+      "owned" : 2066,
+      "trading" : 125,
+      "wanting" : 118,
+      "wishing" : 306,
+      "numComments" : 503,
+      "numWeights" : 143,
+      "averageWeight" : 3.2028,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 1467,
+        "bayesAverage" : 6.13736
+      }, {
+        "type" : "family",
+        "name" : "strategygames",
+        "friendly" : "Strategy Game Rank",
+        "value" : 725,
+        "bayesAverage" : 6.22057
+      } ]
+    }
+  }, {
+    "id" : 10,
+    "name" : "Elfenland",
+    "description" : "Elfenland is a redesign of the original White Wind game Elfenroads.",
+    "yearPublished" : 1998,
+    "minPlayers" : 2,
+    "maxPlayers" : 6,
+    "time" : 60,
+    "minTime" : 60,
+    "maxTime" : 60,
+    "mechanics" : [ "Card Drafting", "Hand Management", "Point to Point Movement", "Route/Network Building" ],
+    "categories" : [ "Fantasy", "Travel" ],
+    "subdomains" : [ "Family Games" ],
+    "families" : [ "Fairies, Elves and Pixies" ],
+    "designers" : [ "Alan R. Moon" ],
+    "ratings" : {
+      "usersRated" : 6244,
+      "average" : 6.76636,
+      "bayesAverage" : 6.62063,
+      "stdDev" : 1.25014,
+      "owned" : 7134,
+      "trading" : 231,
+      "wanting" : 194,
+      "wishing" : 679,
+      "numComments" : 1766,
+      "numWeights" : 650,
+      "averageWeight" : 2.1738,
+      "ranks" : [ {
+        "type" : "subtype",
+        "name" : "boardgame",
+        "friendly" : "Board Game Rank",
+        "value" : 624,
+        "bayesAverage" : 6.62063
+      }, {
+        "type" : "family",
+        "name" : "familygames",
+        "friendly" : "Family Game Rank",
+        "value" : 138,
+        "bayesAverage" : 6.65643
+      } ]
+    }
+  } ]
+}
