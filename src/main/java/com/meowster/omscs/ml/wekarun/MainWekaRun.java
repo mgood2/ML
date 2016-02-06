@@ -1,8 +1,9 @@
 package com.meowster.omscs.ml.wekarun;
 
 import com.meowster.omscs.ml.wekarun.CvTestResults.Results;
-import com.meowster.omscs.ml.wekarun.classifier.ClassifierGroup;
+import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
 import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier;
+import com.meowster.omscs.ml.wekarun.config.DefaultGroup;
 import org.apache.commons.lang.time.StopWatch;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
@@ -55,7 +56,7 @@ public class MainWekaRun {
         Instances instances = loadInstances(DATA_ID);
 
         if (instances != null) {
-            runExperiment(instances, DATA_ID);
+            runExperiment(DATA_ID, instances, new DefaultGroup());
         } else {
             print("Woah!! No Instances!!");
         }
@@ -86,10 +87,10 @@ public class MainWekaRun {
         return String.format("data/bgg-out/bgweights-%s.arff", name);
     }
 
-    private static void runExperiment(Instances instances, String dataId) {
+    private static void runExperiment(String dataId, Instances instances,
+                                      ClassifierGroup group) {
         StopWatch sw = new StopWatch();
 
-        ClassifierGroup group = new ClassifierGroup();
         Iterator<WekaClassifier> iter = group.iterator();
         while (iter.hasNext()) {
             WekaClassifier classifier = iter.next();

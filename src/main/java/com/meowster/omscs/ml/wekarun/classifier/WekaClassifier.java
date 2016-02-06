@@ -173,9 +173,14 @@ public abstract class WekaClassifier {
             this.value = value;
         }
 
+        public Option(String key) {
+            this.key = key;
+            this.value = null;
+        }
+
         @Override
         public String toString() {
-            return key + SPACE + value;
+            return value == null ? key : key + SPACE + value;
         }
     }
 
