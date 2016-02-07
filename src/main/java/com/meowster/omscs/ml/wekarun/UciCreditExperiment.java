@@ -2,6 +2,8 @@ package com.meowster.omscs.ml.wekarun;
 
 import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
 import com.meowster.omscs.ml.wekarun.config.DataFileGroup;
+import com.meowster.omscs.ml.wekarun.config.FilterGroup;
+import com.meowster.omscs.ml.wekarun.config.VaryingRemovePercentFilterGroup;
 import weka.core.Instances;
 
 import java.util.List;
@@ -62,6 +64,16 @@ public class UciCreditExperiment extends WekaExperiment {
     @Override
     protected String resultsDirectory() {
         return "data/results/genUci";
+    }
+
+    @Override
+    protected CsvGenerator createCsvGenerator() {
+        return new ClassifierLearningCsvGenerator();
+    }
+
+    @Override
+    protected FilterGroup iterateAcrossFilters() {
+        return new VaryingRemovePercentFilterGroup(90, 10, 10);
     }
 }
 

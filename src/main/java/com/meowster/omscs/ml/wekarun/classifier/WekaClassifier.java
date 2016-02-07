@@ -123,6 +123,15 @@ public abstract class WekaClassifier {
     }
 
     /**
+     * Returns the type of classifier.
+     *
+     * @return the classifier type
+     */
+    public Type type() {
+        return type;
+    }
+
+    /**
      * Returns the tag associated with this instance.
      *
      * @return the classifier tag

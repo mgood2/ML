@@ -7,8 +7,10 @@ import com.meowster.omscs.ml.wekarun.classifier.ZeroRWekaClassifier;
 import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
 import com.meowster.omscs.ml.wekarun.config.DataFileGroup;
 import com.meowster.omscs.ml.wekarun.config.DataFileGroup.DataFileInfo;
+import com.meowster.omscs.ml.wekarun.config.FilterGroup;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
+import weka.filters.Filter;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
@@ -58,7 +60,7 @@ public class WekaExperiment {
     private final ClassifierGroup classifiers;
     private final List<FilterType> filters;
 
-    private final CsvGenerator csv = new CsvGenerator();
+    private final CsvGenerator csv = createCsvGenerator();
 
     private double percentSplit = DEFAULT_PERCENT_SPLIT;
     private int randomSeed = DEFAULT_RANDOM_SEED;
@@ -163,6 +165,16 @@ public class WekaExperiment {
 
 
     /**
+     * Returns the CSV generator class to use to capture the results and
+     * output the CSV data.
+     *
+     * @return a new instance of a CSV generator
+     */
+    protected CsvGenerator createCsvGenerator() {
+        return new DefaultCsvGenerator();
+    }
+
+    /**
      * Runs the experiment.
      */
     public void run() {
@@ -188,6 +200,35 @@ public class WekaExperiment {
         }
     }
 
+    /**
+     * Subclasses can return a filter group to iterate over, changing the
+     * behavior of {@link #processDataFile} from this:
+     * <pre>
+     *     load instances...
+     *
+     *     for each classifier...
+     *        process classifier(info, instances, classifier, resample-filters)
+     * </pre>
+     *
+     * to
+     * <pre>
+     *     load instances...
+     *
+     *     for each filter...
+     *         copy instances; apply filter
+     *         for each classifier...
+     *             process classifier(info, copy, classifier, resample-filters)
+     * </pre>
+     *
+     * @return filter group or null for no iterated filtering
+     */
+    protected FilterGroup iterateAcrossFilters() {
+        return null;
+    }
+
+    // TODO: this really needs some refactoring for better handling of filters
+
+
     private void processDataFile(DataFileInfo info, ClassifierGroup classifiers,
                                  List<FilterType> filters) {
         print("%nProcessing data file: %s ...", info.path());
@@ -195,10 +236,35 @@ public class WekaExperiment {
         Instances instances = loadInstances(info.path());
         print("%nInstances Info: %s", getInfo(instances));
 
-        // middle iteration over classifiers
-        Iterator<WekaClassifier> cIter = classifiers.iterator();
-        while (cIter.hasNext()) {
-            processClassifier(info, instances, cIter.next(), filters);
+        FilterGroup fg = iterateAcrossFilters();
+        if (fg != null) {
+            Iterator<Filter> fgIter = fg.iterator();
+            while (fgIter.hasNext()) {
+                Instances copy = new Instances(instances);
+
+                Filter f = fgIter.next();
+                try {
+                    f.setInputFormat(copy);
+                    copy = Filter.useFilter(copy, f);
+
+                    // middle iteration over classifiers
+                    Iterator<WekaClassifier> cIter = classifiers.iterator();
+                    while (cIter.hasNext()) {
+                        processClassifier(info, copy, cIter.next(), filters);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+        } else {
+
+            // middle iteration over classifiers - no filter iterations
+            Iterator<WekaClassifier> cIter = classifiers.iterator();
+            while (cIter.hasNext()) {
+                processClassifier(info, instances, cIter.next(), filters);
+            }
         }
     }
 

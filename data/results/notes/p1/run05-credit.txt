@@ -1,0 +1,5494 @@
+
+-- Starting WEKA Experiment --
+[Start time: Sun Feb 07 12:52:14 PST 2016]
+[Experiment class: com.meowster.omscs.ml.wekarun.UciCreditExperiment]
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.CreditApprovalGroup...
+ ..adding path: data/uci/credit-a.arff
+
+Processing data file: data/uci/credit-a.arff ...
+
+Instances Info: #instances=690, #attributes=16
+
+Configuring FilterGroup: com.meowster.omscs.ml.wekarun.config.VaryingRemovePercentFilterGroup...
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+  ..adding filter: weka.filters.unsupervised.instance.RemovePercentage
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.Project1ClassifierGroup...
+ ..adding classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+ ..adding classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+ ..adding classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+ ..adding classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+: - (45.0/1.0)
+
+Number of Leaves  : 	1
+
+Size of the tree : 	1
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.042
+ CV-2     0:00:00.011
+ CV-3     0:00:00.009
+ CV-4     0:00:00.006
+ CV-5     0:00:00.008
+ CV-6     0:00:00.008
+ CV-7     0:00:00.009
+ CV-8     0:00:00.007
+ CV-9     0:00:00.007
+ CV-10    0:00:00.006
+ TEST     0:00:00.000
+
+Test Results: (number of instances = 69)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 97.78   2.22   0.96   0.98   0.97
+ TEST: 95.83   4.17   0.92   0.96   0.94
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: No boosting possible, one classifier used!
+J48 pruned tree
+------------------
+: - (45.0/1.0)
+
+Number of Leaves  : 	1
+
+Size of the tree : 	1
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.034
+ CV-2     0:00:00.021
+ CV-3     0:00:00.017
+ CV-4     0:00:00.019
+ CV-5     0:00:00.012
+ CV-6     0:00:00.010
+ CV-7     0:00:00.013
+ CV-8     0:00:00.012
+ CV-9     0:00:00.011
+ CV-10    0:00:00.010
+ TEST     0:00:00.000
+
+Test Results: (number of instances = 69)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 97.78   2.22   0.96   0.98   0.97
+ TEST: 95.83   4.17   0.92   0.96   0.94
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1843 * (normalized) A1
+ +      -0.0982 * (normalized) A2
+ +       0.0896 * (normalized) A3
+ +       0      * (normalized) A4=u
+ +       0      * (normalized) A5=g
+ +      -0.1843 * (normalized) A6=c
+ +       0.0488 * (normalized) A6=d
+ +       0.1356 * (normalized) A6=m
+ +       0      * (normalized) A6=aa
+ +       0      * (normalized) A6=ff
+ +      -0.0488 * (normalized) A7=v
+ +       0.0488 * (normalized) A7=h
+ +       0      * (normalized) A7=ff
+ +       0.0964 * (normalized) A8
+ +       0      * (normalized) A9
+ +       0      * (normalized) A10
+ +       0      * (normalized) A11
+ +      -0.1843 * (normalized) A12
+ +       0.8157 * (normalized) A13=g
+ +      -1      * (normalized) A13=p
+ +       0.1843 * (normalized) A13=s
+ +      -0.0674 * (normalized) A14
+ +       0.0058 * (normalized) A15
+ +       0.79
+
+Number of kernel evaluations: 340 (72.222% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.092
+ CV-2     0:00:00.058
+ CV-3     0:00:00.042
+ CV-4     0:00:00.089
+ CV-5     0:00:00.045
+ CV-6     0:00:00.043
+ CV-7     0:00:00.041
+ CV-8     0:00:00.068
+ CV-9     0:00:00.088
+ CV-10    0:00:00.049
+ TEST     0:00:00.004
+
+Test Results: (number of instances = 69)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 97.78   2.22   0.96   0.98   0.97
+ TEST: 95.83   4.17   0.92   0.96   0.94
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.035
+ CV-2     0:00:00.005
+ CV-3     0:00:00.004
+ CV-4     0:00:00.007
+ CV-5     0:00:00.004
+ CV-6     0:00:00.005
+ CV-7     0:00:00.002
+ CV-8     0:00:00.002
+ CV-9     0:00:00.004
+ CV-10    0:00:00.003
+ TEST     0:00:00.000
+
+Test Results: (number of instances = 69)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 97.78   2.22   0.96   0.98   0.97
+ TEST: 95.83   4.17   0.92   0.96   0.94
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t: + (31.0/3.0)
+A9 = f
+|   A3 <= 0.165: + (6.0/2.0)
+|   A3 > 0.165: - (54.0/1.0)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.011
+ CV-2     0:00:00.009
+ CV-3     0:00:00.010
+ CV-4     0:00:00.008
+ CV-5     0:00:00.006
+ CV-6     0:00:00.007
+ CV-7     0:00:00.006
+ CV-8     0:00:00.006
+ CV-9     0:00:00.006
+ CV-10    0:00:00.007
+ TEST     0:00:00.001
+
+Test Results: (number of instances = 138)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 87.91  12.09   0.88   0.88   0.88
+ TEST: 97.87   2.13   0.98   0.98   0.98
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t: + (31.0/3.0)
+A9 = f
+|   A3 <= 0.165: + (6.0/2.0)
+|   A3 > 0.165: - (54.0/1.0)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+
+Weight: 2.65
+
+J48 pruned tree
+------------------
+
+A11 <= 2: - (82.44/16.68)
+A11 > 2: + (8.56/0.54)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+
+Weight: 1.46
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A7 = v: + (4.81/1.34)
+|   A7 = h
+|   |   A15 <= 154: - (5.85/0.15)
+|   |   A15 > 154: + (3.49)
+|   A7 = bb: + (1.44/0.01)
+|   A7 = j: + (1.44/0.01)
+|   A7 = n: - (0.34/0.01)
+|   A7 = z: + (0.0)
+|   A7 = dd: + (0.0)
+|   A7 = ff: + (0.0)
+|   A7 = o: + (0.0)
+A6 = d: - (6.11/0.1)
+A6 = cc: - (2.02/0.69)
+A6 = i: - (6.79/0.11)
+A6 = j: + (0.0)
+A6 = k: + (2.45/1.0)
+A6 = m: - (3.12/1.46)
+A6 = r: + (0.34/0.0)
+A6 = q
+|   A8 <= 0.79: - (5.5/0.13)
+|   A8 > 0.79: + (3.16/0.33)
+A6 = w: + (23.56/1.41)
+A6 = x: + (5.0/0.02)
+A6 = e: + (2.12/0.67)
+A6 = aa: - (9.24/1.89)
+A6 = ff: - (4.23/1.48)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	28
+
+
+Weight: 1.96
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A2 <= 23.5
+|   |   A1 = b: - (9.0/1.0)
+|   |   A1 = a: + (7.23)
+|   A2 > 23.5: + (23.24)
+A9 = f
+|   A8 <= 0.085
+|   |   A14 <= 280
+|   |   |   A3 <= 0.04: + (2.68)
+|   |   |   A3 > 0.04: - (4.79)
+|   |   A14 > 280: + (15.27)
+|   A8 > 0.085: - (28.78/1.61)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	13
+
+
+Weight: 3.52
+
+J48 pruned tree
+------------------
+
+A4 = u
+|   A13 = g
+|   |   A14 <= 232
+|   |   |   A9 = t: + (17.56/2.75)
+|   |   |   A9 = f: - (8.56/0.42)
+|   |   A14 > 232: + (38.31/1.56)
+|   A13 = p: + (2.63)
+|   A13 = s: + (14.27/0.19)
+A4 = y: - (9.68/1.75)
+A4 = l: + (0.0)
+A4 = t: + (0.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	12
+
+
+Weight: 2.59
+
+J48 pruned tree
+------------------
+
+A15 <= 750
+|   A6 = c
+|   |   A2 <= 23.33: + (19.26/1.16)
+|   |   A2 > 23.33: - (13.39/1.72)
+|   A6 = d: - (1.63/0.03)
+|   A6 = cc: + (0.59/0.21)
+|   A6 = i: - (11.69/0.25)
+|   A6 = j: - (0.0)
+|   A6 = k: - (1.36/0.25)
+|   A6 = m: - (3.85/1.66)
+|   A6 = r: + (0.05/0.0)
+|   A6 = q: - (1.47/0.25)
+|   A6 = w
+|   |   A12 = t: + (6.89/0.75)
+|   |   A12 = f: - (5.55/0.27)
+|   A6 = x: + (0.23/0.0)
+|   A6 = e: - (0.75/0.02)
+|   A6 = aa
+|   |   A8 <= 0.04: + (2.38/0.7)
+|   |   A8 > 0.04: - (2.39)
+|   A6 = ff: + (2.0/0.38)
+A15 > 750: + (17.52/0.05)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	23
+
+
+Weight: 2.36
+
+J48 pruned tree
+------------------
+
+A3 <= 0.165: + (21.61/0.81)
+A3 > 0.165
+|   A9 = t
+|   |   A2 <= 23.5
+|   |   |   A8 <= 0.665: - (12.03/0.86)
+|   |   |   A8 > 0.665: + (5.34)
+|   |   A2 > 23.5: + (22.97)
+|   A9 = f: - (29.05/1.73)
+
+Number of Leaves  : 	5
+
+Size of the tree : 	9
+
+
+Weight: 3.25
+
+J48 pruned tree
+------------------
+
+A8 <= 0.375
+|   A7 = v
+|   |   A2 <= 20.33: - (4.3/0.85)
+|   |   A2 > 20.33: + (47.76/1.38)
+|   A7 = h: - (3.98/0.4)
+|   A7 = bb: + (0.75/0.02)
+|   A7 = j: + (0.0)
+|   A7 = n: + (0.0)
+|   A7 = z: + (0.92/0.0)
+|   A7 = dd: + (0.0)
+|   A7 = ff: - (1.73/0.59)
+|   A7 = o: + (0.0)
+A8 > 0.375
+|   A7 = v
+|   |   A15 <= 458: - (20.46/0.16)
+|   |   A15 > 458: + (3.25)
+|   A7 = h: + (5.35/0.57)
+|   A7 = bb: - (0.03)
+|   A7 = j: + (2.15)
+|   A7 = n: - (0.17/0.01)
+|   A7 = z: - (0.0)
+|   A7 = dd: - (0.0)
+|   A7 = ff: - (0.16)
+|   A7 = o: - (0.0)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	25
+
+
+Weight: 3.22
+
+J48 pruned tree
+------------------
+
+A8 <= 0.125: + (47.18/5.79)
+A8 > 0.125
+|   A9 = t: + (8.37/1.45)
+|   A9 = f: - (35.45/2.24)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+
+Weight: 2.15
+
+J48 pruned tree
+------------------
+
+A3 <= 0.165: + (22.07/3.14)
+A3 > 0.165
+|   A3 <= 2.75: - (37.21/2.01)
+|   A3 > 2.75
+|   |   A15 <= 10
+|   |   |   A4 = u: + (16.65/0.6)
+|   |   |   A4 = y: - (2.35/0.25)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   |   A15 > 10: - (12.71/0.45)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	11
+
+
+Weight: 2.57
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.090
+ CV-2     0:00:00.063
+ CV-3     0:00:00.053
+ CV-4     0:00:00.057
+ CV-5     0:00:00.053
+ CV-6     0:00:00.052
+ CV-7     0:00:00.049
+ CV-8     0:00:00.049
+ CV-9     0:00:00.044
+ CV-10    0:00:00.048
+ TEST     0:00:00.006
+
+Test Results: (number of instances = 138)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 84.95  15.05   0.85   0.85   0.85
+ TEST: 91.49   8.51   0.91   0.91   0.91
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0045 * (normalized) A1
+ +      -0.1905 * (normalized) A2
+ +       0.1545 * (normalized) A3
+ +      -0.0391 * (normalized) A4=u
+ +       0.0391 * (normalized) A4=y
+ +      -0.0391 * (normalized) A5=g
+ +       0.0391 * (normalized) A5=p
+ +      -0.1438 * (normalized) A6=c
+ +      -0.1478 * (normalized) A6=cc
+ +       1      * (normalized) A6=i
+ +      -0.0819 * (normalized) A6=k
+ +      -0.0717 * (normalized) A6=m
+ +      -0.0686 * (normalized) A6=r
+ +      -0.1877 * (normalized) A6=q
+ +      -0.1945 * (normalized) A6=w
+ +      -0.1354 * (normalized) A6=x
+ +      -0.0912 * (normalized) A6=aa
+ +       0.1226 * (normalized) A6=ff
+ +       0.305  * (normalized) A7=v
+ +       0.2894 * (normalized) A7=h
+ +       0      * (normalized) A7=bb
+ +      -1      * (normalized) A7=j
+ +       0.283  * (normalized) A7=n
+ +       0.1226 * (normalized) A7=ff
+ +       0.0472 * (normalized) A8
+ +       2.0619 * (normalized) A9
+ +       0.026  * (normalized) A10
+ +      -0.1123 * (normalized) A11
+ +      -0.0054 * (normalized) A12
+ +       0.5584 * (normalized) A13=g
+ +      -1      * (normalized) A13=p
+ +       0.4416 * (normalized) A13=s
+ +       0.0693 * (normalized) A14
+ +      -0.1602 * (normalized) A15
+ -       1.6974
+
+Number of kernel evaluations: 2983 (97.53% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.057
+ CV-2     0:00:00.081
+ CV-3     0:00:00.073
+ CV-4     0:00:00.080
+ CV-5     0:00:00.100
+ CV-6     0:00:00.115
+ CV-7     0:00:00.112
+ CV-8     0:00:00.091
+ CV-9     0:00:00.074
+ CV-10    0:00:00.073
+ TEST     0:00:00.006
+
+Test Results: (number of instances = 138)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 90.77   9.23   0.91   0.91   0.91
+ TEST: 97.87   2.13   0.98   0.98   0.98
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.003
+ CV-2     0:00:00.003
+ CV-3     0:00:00.004
+ CV-4     0:00:00.003
+ CV-5     0:00:00.003
+ CV-6     0:00:00.002
+ CV-7     0:00:00.003
+ CV-8     0:00:00.003
+ CV-9     0:00:00.003
+ CV-10    0:00:00.003
+ TEST     0:00:00.001
+
+Test Results: (number of instances = 138)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 82.20  17.80   0.82   0.82   0.82
+ TEST: 89.36  10.64   0.89   0.89   0.89
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t: + (65.0/14.0)
+A9 = f
+|   A3 <= 0.21
+|   |   A4 = u: + (5.71/1.0)
+|   |   A4 = y: - (2.29/0.29)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A3 > 0.21: - (64.0/1.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	9
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.007
+ CV-2     0:00:00.007
+ CV-3     0:00:00.007
+ CV-4     0:00:00.007
+ CV-5     0:00:00.007
+ CV-6     0:00:00.008
+ CV-7     0:00:00.007
+ CV-8     0:00:00.006
+ CV-9     0:00:00.006
+ CV-10    0:00:00.007
+ TEST     0:00:00.000
+
+Test Results: (number of instances = 207)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 84.23  15.77   0.86   0.84   0.84
+ TEST: 80.00  20.00   0.86   0.80   0.79
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t: + (65.0/14.0)
+A9 = f
+|   A3 <= 0.21
+|   |   A4 = u: + (5.71/1.0)
+|   |   A4 = y: - (2.29/0.29)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A3 > 0.21: - (64.0/1.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	9
+
+
+Weight: 2.02
+
+J48 pruned tree
+------------------
+
+A10 = t
+|   A9 = t
+|   |   A2 <= 23.75
+|   |   |   A11 <= 5: + (3.65)
+|   |   |   A11 > 5: - (9.69/1.13)
+|   |   A2 > 23.75: + (16.16)
+|   A9 = f: - (10.76/1.13)
+A10 = f: - (96.74/13.91)
+
+Number of Leaves  : 	5
+
+Size of the tree : 	9
+
+
+Weight: 2.01
+
+J48 pruned tree
+------------------
+
+A15 <= 2197
+|   A4 = u
+|   |   A8 <= 0.085
+|   |   |   A7 = v: + (29.64/0.64)
+|   |   |   A7 = h: - (2.87/0.12)
+|   |   |   A7 = bb: + (0.34)
+|   |   |   A7 = j: + (2.51)
+|   |   |   A7 = n: + (0.0)
+|   |   |   A7 = z: + (0.0)
+|   |   |   A7 = dd: + (2.51)
+|   |   |   A7 = ff
+|   |   |   |   A12 = t: + (2.72)
+|   |   |   |   A12 = f: - (4.33/0.62)
+|   |   |   A7 = o: + (0.0)
+|   |   A8 > 0.085
+|   |   |   A13 = g
+|   |   |   |   A10 = t
+|   |   |   |   |   A9 = t: + (11.57/2.43)
+|   |   |   |   |   A9 = f
+|   |   |   |   |   |   A12 = t: - (3.21)
+|   |   |   |   |   |   A12 = f: + (2.72/0.32)
+|   |   |   |   A10 = f
+|   |   |   |   |   A8 <= 8.5
+|   |   |   |   |   |   A14 <= 340: - (23.09)
+|   |   |   |   |   |   A14 > 340
+|   |   |   |   |   |   |   A6 = c: + (2.4)
+|   |   |   |   |   |   |   A6 = d: - (0.0)
+|   |   |   |   |   |   |   A6 = cc: - (0.0)
+|   |   |   |   |   |   |   A6 = i: - (0.0)
+|   |   |   |   |   |   |   A6 = j: - (0.0)
+|   |   |   |   |   |   |   A6 = k: - (0.0)
+|   |   |   |   |   |   |   A6 = m: - (0.0)
+|   |   |   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   |   |   A6 = q: - (0.0)
+|   |   |   |   |   |   |   A6 = w: - (0.0)
+|   |   |   |   |   |   |   A6 = x: - (2.43)
+|   |   |   |   |   |   |   A6 = e: - (0.0)
+|   |   |   |   |   |   |   A6 = aa: - (0.0)
+|   |   |   |   |   |   |   A6 = ff: - (0.0)
+|   |   |   |   |   A8 > 8.5: + (2.4)
+|   |   |   A13 = p: - (0.0)
+|   |   |   A13 = s: + (5.44/0.64)
+|   A4 = y: - (24.61/6.56)
+|   A4 = l: + (0.0)
+|   A4 = t: + (0.0)
+A15 > 2197: + (14.24)
+
+Number of Leaves  : 	35
+
+Size of the tree : 	47
+
+
+Weight: 2.5
+
+J48 pruned tree
+------------------
+
+A11 <= 9
+|   A9 = t
+|   |   A2 <= 33.17
+|   |   |   A3 <= 0.665
+|   |   |   |   A14 <= 260: - (2.97/0.35)
+|   |   |   |   A14 > 260: + (2.45)
+|   |   |   A3 > 0.665: + (50.07/1.31)
+|   |   A2 > 33.17
+|   |   |   A10 = t: + (3.2)
+|   |   |   A10 = f: - (20.92/7.79)
+|   A9 = f
+|   |   A4 = u
+|   |   |   A12 = t: + (14.76/3.65)
+|   |   |   A12 = f
+|   |   |   |   A3 <= 0.165: + (6.35/1.31)
+|   |   |   |   A3 > 0.165: - (12.79)
+|   |   A4 = y: - (4.67/0.16)
+|   |   A4 = l: - (0.0)
+|   |   A4 = t: - (0.0)
+A11 > 9
+|   A2 <= 22.67: - (15.94)
+|   A2 > 22.67: + (2.86)
+
+Number of Leaves  : 	13
+
+Size of the tree : 	23
+
+
+Weight: 2.14
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A11 <= 9
+|   |   A2 <= 19.67: - (7.43/1.19)
+|   |   A2 > 19.67: + (76.7/8.81)
+|   A11 > 9: - (10.5/1.6)
+A9 = f
+|   A8 <= 0.085
+|   |   A14 <= 260: - (5.5/1.05)
+|   |   A14 > 260: + (6.61)
+|   A8 > 0.085: - (30.26/1.45)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+Weight: 2.19
+
+J48 pruned tree
+------------------
+
+A11 <= 10
+|   A8 <= 5.085
+|   |   A2 <= 16.17: + (9.48/0.0)
+|   |   A2 > 16.17
+|   |   |   A3 <= 0.21
+|   |   |   |   A2 <= 19.42: - (3.48)
+|   |   |   |   A2 > 19.42: + (15.69/0.09)
+|   |   |   A3 > 0.21
+|   |   |   |   A7 = v
+|   |   |   |   |   A8 <= 0.085: + (5.55/1.44)
+|   |   |   |   |   A8 > 0.085: - (33.11/2.7)
+|   |   |   |   A7 = h
+|   |   |   |   |   A14 <= 60: + (6.88/0.93)
+|   |   |   |   |   A14 > 60: - (14.38/1.02)
+|   |   |   |   A7 = bb: - (12.4/0.4)
+|   |   |   |   A7 = j: + (3.58/0.15)
+|   |   |   |   A7 = n: - (0.0)
+|   |   |   |   A7 = z: + (0.42/0.02)
+|   |   |   |   A7 = dd: + (0.48/0.02)
+|   |   |   |   A7 = ff
+|   |   |   |   |   A12 = t: + (3.54/0.12)
+|   |   |   |   |   A12 = f: - (8.28)
+|   |   |   |   A7 = o: - (0.0)
+|   A8 > 5.085: + (12.26/0.46)
+A11 > 10: + (7.48)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	26
+
+
+Weight: 3.03
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (48.58/4.51)
+|   A10 = f
+|   |   A15 <= 2384
+|   |   |   A8 <= 4.25: - (35.63/12.74)
+|   |   |   A8 > 4.25: + (6.16)
+|   |   A15 > 2384: + (6.58)
+A9 = f
+|   A3 <= 0.21: + (9.09/2.99)
+|   A3 > 0.21: - (30.96/1.6)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+Weight: 1.66
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A6 = c: + (29.72/2.61)
+|   A6 = d: - (1.15)
+|   A6 = cc: + (3.85/0.04)
+|   A6 = i: - (2.46/0.15)
+|   A6 = j: + (5.7/0.06)
+|   A6 = k: + (6.8/1.16)
+|   A6 = m: + (1.59/0.02)
+|   A6 = r: + (0.0)
+|   A6 = q
+|   |   A3 <= 5.25: + (7.47)
+|   |   A3 > 5.25: - (8.31)
+|   A6 = w
+|   |   A3 <= 3.79: - (8.94/0.65)
+|   |   A3 > 3.79: + (8.89/0.2)
+|   A6 = x: + (6.1/1.21)
+|   A6 = e: + (0.81/0.01)
+|   A6 = aa: + (1.37/0.02)
+|   A6 = ff
+|   |   A12 = t: + (5.79)
+|   |   A12 = f: - (2.58/0.2)
+A9 = f: - (35.48/8.64)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	23
+
+
+Weight: 2.07
+
+J48 pruned tree
+------------------
+
+A14 <= 216
+|   A14 <= 120
+|   |   A3 <= 5.29
+|   |   |   A9 = t: + (21.07/0.64)
+|   |   |   A9 = f
+|   |   |   |   A3 <= 0.335: + (10.32)
+|   |   |   |   A3 > 0.335: - (4.46)
+|   |   A3 > 5.29
+|   |   |   A8 <= 0: + (4.39/0.01)
+|   |   |   A8 > 0: - (14.52/1.2)
+|   A14 > 120
+|   |   A15 <= 2197: - (26.96/1.18)
+|   |   A15 > 2197: + (3.12)
+A14 > 216
+|   A14 <= 383: + (44.49/2.04)
+|   A14 > 383: - (7.68/1.11)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	17
+
+
+Weight: 3.08
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A10 = t: + (5.04/0.21)
+|   A10 = f
+|   |   A2 <= 30.33
+|   |   |   A8 <= 0.165
+|   |   |   |   A3 <= 0.29: + (2.69)
+|   |   |   |   A3 > 0.29: - (3.92)
+|   |   |   A8 > 0.165: + (9.14/0.1)
+|   |   A2 > 30.33: - (4.05)
+A6 = d: - (2.05/0.0)
+A6 = cc: + (3.33/0.08)
+A6 = i: - (16.37/0.39)
+A6 = j: + (1.7/0.03)
+A6 = k
+|   A8 <= 0.085: + (2.23/0.55)
+|   A8 > 0.085: - (5.77)
+A6 = m
+|   A9 = t: + (9.34/0.23)
+|   A9 = f: - (2.3/0.03)
+A6 = r: + (0.0)
+A6 = q
+|   A10 = t
+|   |   A11 <= 8: + (6.75/0.15)
+|   |   A11 > 8: - (2.44/0.04)
+|   A10 = f: - (2.29/0.34)
+A6 = w
+|   A3 <= 2.25: - (3.88/0.42)
+|   A3 > 2.25: + (25.69/0.91)
+A6 = x
+|   A15 <= 23: - (2.69/0.01)
+|   A15 > 23: + (4.06/0.13)
+A6 = e: + (7.01/0.36)
+A6 = aa: + (3.88/1.35)
+A6 = ff
+|   A4 = u: + (2.85/0.66)
+|   A4 = y: - (7.54/0.02)
+|   A4 = l: - (0.0)
+|   A4 = t: - (0.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	39
+
+
+Weight: 2.87
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.087
+ CV-2     0:00:00.085
+ CV-3     0:00:00.081
+ CV-4     0:00:00.085
+ CV-5     0:00:00.081
+ CV-6     0:00:00.080
+ CV-7     0:00:00.090
+ CV-8     0:00:00.084
+ CV-9     0:00:00.079
+ CV-10    0:00:00.081
+ TEST     0:00:00.013
+
+Test Results: (number of instances = 207)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 81.82  18.18   0.82   0.82   0.82
+ TEST: 84.29  15.71   0.85   0.84   0.84
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.1757 * (normalized) A1
+ +      -0.1121 * (normalized) A2
+ +      -0.0073 * (normalized) A3
+ +      -0.0724 * (normalized) A4=u
+ +       0.0724 * (normalized) A4=y
+ +      -0.0724 * (normalized) A5=g
+ +       0.0724 * (normalized) A5=p
+ +       0.0956 * (normalized) A6=c
+ +       1      * (normalized) A6=d
+ +      -0.0272 * (normalized) A6=cc
+ +       0.6272 * (normalized) A6=i
+ +       0      * (normalized) A6=k
+ +       0.2399 * (normalized) A6=m
+ +      -0.0193 * (normalized) A6=q
+ +       0      * (normalized) A6=w
+ +      -0.5543 * (normalized) A6=x
+ +      -0.9281 * (normalized) A6=e
+ +      -0.5826 * (normalized) A6=aa
+ +       0.1489 * (normalized) A6=ff
+ +       0.1048 * (normalized) A7=v
+ +       0.1191 * (normalized) A7=h
+ +       0.6272 * (normalized) A7=bb
+ +      -1      * (normalized) A7=j
+ +       0      * (normalized) A7=dd
+ +       0.1489 * (normalized) A7=ff
+ +      -0.5523 * (normalized) A8
+ +       1.8653 * (normalized) A9
+ +       0.8625 * (normalized) A10
+ +      -0.1921 * (normalized) A11
+ +      -0.0234 * (normalized) A12
+ +       0.8884 * (normalized) A13=g
+ +      -1      * (normalized) A13=p
+ +       0.1116 * (normalized) A13=s
+ +       0.3975 * (normalized) A14
+ +      -0.57   * (normalized) A15
+ -       1.9529
+
+Number of kernel evaluations: 5728 (92.677% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.067
+ CV-2     0:00:00.067
+ CV-3     0:00:00.082
+ CV-4     0:00:00.071
+ CV-5     0:00:00.059
+ CV-6     0:00:00.058
+ CV-7     0:00:00.062
+ CV-8     0:00:00.059
+ CV-9     0:00:00.110
+ CV-10    0:00:00.108
+ TEST     0:00:00.006
+
+Test Results: (number of instances = 207)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 81.68  18.32   0.82   0.82   0.82
+ TEST: 85.71  14.29   0.86   0.86   0.86
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.004
+ CV-2     0:00:00.004
+ CV-3     0:00:00.004
+ CV-4     0:00:00.004
+ CV-5     0:00:00.004
+ CV-6     0:00:00.004
+ CV-7     0:00:00.003
+ CV-8     0:00:00.004
+ CV-9     0:00:00.004
+ CV-10    0:00:00.003
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 207)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 78.98  21.02   0.79   0.79   0.78
+ TEST: 77.14  22.86   0.77   0.77   0.77
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (44.0/4.0)
+|   A10 = f
+|   |   A6 = c: + (4.15/1.15)
+|   |   A6 = d: - (1.04)
+|   |   A6 = cc: - (0.0)
+|   |   A6 = i: - (4.15)
+|   |   A6 = j: - (0.0)
+|   |   A6 = k: - (1.04)
+|   |   A6 = m: + (1.04/0.04)
+|   |   A6 = r: - (0.0)
+|   |   A6 = q: - (1.04)
+|   |   A6 = w
+|   |   |   A2 <= 33.17: + (2.0)
+|   |   |   A2 > 33.17: - (2.15)
+|   |   A6 = x: + (4.15/0.15)
+|   |   A6 = e: + (1.04/0.04)
+|   |   A6 = aa: - (3.11/1.0)
+|   |   A6 = ff: - (3.11)
+A9 = f: - (111.0/5.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	21
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.008
+ CV-2     0:00:00.007
+ CV-3     0:00:00.007
+ CV-4     0:00:00.007
+ CV-5     0:00:00.007
+ CV-6     0:00:00.007
+ CV-7     0:00:00.006
+ CV-8     0:00:00.007
+ CV-9     0:00:00.007
+ CV-10    0:00:00.006
+ TEST     0:00:00.000
+
+Test Results: (number of instances = 276)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 86.99  13.01   0.87   0.87   0.87
+ TEST: 88.17  11.83   0.88   0.88   0.88
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (44.0/4.0)
+|   A10 = f
+|   |   A6 = c: + (4.15/1.15)
+|   |   A6 = d: - (1.04)
+|   |   A6 = cc: - (0.0)
+|   |   A6 = i: - (4.15)
+|   |   A6 = j: - (0.0)
+|   |   A6 = k: - (1.04)
+|   |   A6 = m: + (1.04/0.04)
+|   |   A6 = r: - (0.0)
+|   |   A6 = q: - (1.04)
+|   |   A6 = w
+|   |   |   A2 <= 33.17: + (2.0)
+|   |   |   A2 > 33.17: - (2.15)
+|   |   A6 = x: + (4.15/0.15)
+|   |   A6 = e: + (1.04/0.04)
+|   |   A6 = aa: - (3.11/1.0)
+|   |   A6 = ff: - (3.11)
+A9 = f: - (111.0/5.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	21
+
+
+Weight: 2.75
+
+J48 pruned tree
+------------------
+
+A3 <= 0.165: + (46.91/4.26)
+A3 > 0.165
+|   A9 = t
+|   |   A2 <= 21.08: + (15.43)
+|   |   A2 > 21.08
+|   |   |   A15 <= 1000: - (61.18/12.14)
+|   |   |   A15 > 1000: + (7.35/0.53)
+|   A9 = f: - (52.13)
+
+Number of Leaves  : 	5
+
+Size of the tree : 	9
+
+
+Weight: 2.28
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A6 = c
+|   |   A8 <= 0.125: - (4.59)
+|   |   A8 > 0.125: + (23.32/0.08)
+|   A6 = d: + (3.46/0.3)
+|   A6 = cc: + (6.03/0.02)
+|   A6 = i: - (8.35)
+|   A6 = j: + (0.0)
+|   A6 = k
+|   |   A2 <= 35: + (3.15)
+|   |   A2 > 35: - (4.9)
+|   A6 = m: + (6.32/0.02)
+|   A6 = r: + (0.0)
+|   A6 = q
+|   |   A3 <= 3.79: + (6.31/0.29)
+|   |   A3 > 3.79: - (9.21)
+|   A6 = w: + (7.5/0.61)
+|   A6 = x: + (12.64/0.03)
+|   A6 = e: + (3.16/0.01)
+|   A6 = aa: + (8.35/0.61)
+|   A6 = ff: - (1.18/0.29)
+A9 = f
+|   A13 = g
+|   |   A2 <= 16.17: + (5.26/0.67)
+|   |   A2 > 16.17: - (42.59)
+|   A13 = p: + (9.46/0.29)
+|   A13 = s
+|   |   A6 = c: + (4.96/0.38)
+|   |   A6 = d: - (0.3)
+|   |   A6 = cc: + (0.0)
+|   |   A6 = i: - (0.6)
+|   |   A6 = j: + (0.0)
+|   |   A6 = k: - (2.91)
+|   |   A6 = m: - (0.9)
+|   |   A6 = r: + (0.0)
+|   |   A6 = q: + (0.0)
+|   |   A6 = w: + (0.0)
+|   |   A6 = x: + (0.0)
+|   |   A6 = e: + (4.67/0.08)
+|   |   A6 = aa: + (0.0)
+|   |   A6 = ff: - (2.91)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	42
+
+
+Weight: 3.93
+
+J48 pruned tree
+------------------
+
+A11 <= 2
+|   A8 <= 0.04
+|   |   A4 = u
+|   |   |   A15 <= 0: + (10.73/0.3)
+|   |   |   A15 > 0: - (2.8/0.15)
+|   |   A4 = y: - (5.82/1.41)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A8 > 0.04
+|   |   A10 = t
+|   |   |   A9 = t
+|   |   |   |   A14 <= 560: + (6.58)
+|   |   |   |   A14 > 560: - (2.34)
+|   |   |   A9 = f: - (9.72)
+|   |   A10 = f: - (103.76/10.22)
+A11 > 2
+|   A9 = t: + (37.44/7.01)
+|   A9 = f: - (3.81)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	19
+
+
+Weight: 2.24
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A3 <= 1
+|   |   A8 <= 0.165
+|   |   |   A8 <= 0.04: + (2.07/0.17)
+|   |   |   A8 > 0.04: - (2.1)
+|   |   A8 > 0.165: + (24.0/0.08)
+|   A3 > 1
+|   |   A9 = t: + (3.85/1.0)
+|   |   A9 = f: - (11.14)
+A6 = d: - (6.74/0.98)
+A6 = cc: + (2.25/0.52)
+A6 = i: - (15.23/0.22)
+A6 = j: - (0.86/0.01)
+A6 = k: - (16.69/1.13)
+A6 = m: + (10.63/1.96)
+A6 = r: - (0.0)
+A6 = q
+|   A3 <= 1.085: + (2.06/0.08)
+|   A3 > 1.085: - (23.43/0.08)
+A6 = w
+|   A8 <= 1.29: - (9.96/0.28)
+|   A8 > 1.29: + (9.62/0.25)
+A6 = x: + (19.69/1.0)
+A6 = e: + (2.41/0.2)
+A6 = aa
+|   A2 <= 23.5: + (2.52/0.25)
+|   A2 > 23.5: - (9.67/0.09)
+A6 = ff
+|   A11 <= 10: - (3.87/0.11)
+|   A11 > 10: + (4.22)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	31
+
+
+Weight: 3.63
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A14 <= 132
+|   |   A6 = c: + (0.62/0.04)
+|   |   A6 = d: - (2.31)
+|   |   A6 = cc: + (0.44/0.03)
+|   |   A6 = i: - (6.72)
+|   |   A6 = j: - (0.0)
+|   |   A6 = k: - (6.63)
+|   |   A6 = m: + (0.05/0.0)
+|   |   A6 = r: - (0.0)
+|   |   A6 = q: - (7.07/0.41)
+|   |   A6 = w: + (0.96/0.06)
+|   |   A6 = x: + (5.0/0.32)
+|   |   A6 = e: + (0.49/0.03)
+|   |   A6 = aa: + (1.2/0.08)
+|   |   A6 = ff: + (2.78/0.62)
+|   A14 > 132
+|   |   A14 <= 396
+|   |   |   A2 <= 33.17: + (51.29/0.66)
+|   |   |   A2 > 33.17
+|   |   |   |   A14 <= 210: - (4.42/0.04)
+|   |   |   |   A14 > 210: + (5.7/0.46)
+|   |   A14 > 396: - (8.08/0.87)
+A9 = f
+|   A7 = v: - (68.49/2.48)
+|   A7 = h: - (0.62/0.01)
+|   A7 = bb: - (1.81/0.03)
+|   A7 = j: + (6.5/0.18)
+|   A7 = n: - (0.04/0.0)
+|   A7 = z: - (0.0)
+|   A7 = dd: - (0.0)
+|   A7 = ff: - (1.79/0.03)
+|   A7 = o: - (0.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	34
+
+
+Weight: 3.47
+
+J48 pruned tree
+------------------
+
+A13 = g
+|   A11 <= 3
+|   |   A2 <= 16.17: + (12.42/1.15)
+|   |   A2 > 16.17
+|   |   |   A9 = t
+|   |   |   |   A3 <= 2.54
+|   |   |   |   |   A15 <= 10: - (23.43)
+|   |   |   |   |   A15 > 10
+|   |   |   |   |   |   A1 = b: + (3.12)
+|   |   |   |   |   |   A1 = a: - (7.25/0.42)
+|   |   |   |   A3 > 2.54
+|   |   |   |   |   A11 <= 2: + (12.81/2.62)
+|   |   |   |   |   A11 > 2: - (3.46/0.25)
+|   |   |   A9 = f: - (26.9)
+|   A11 > 3
+|   |   A11 <= 8: + (40.5/1.06)
+|   |   A11 > 8
+|   |   |   A2 <= 30.08: - (7.25/0.02)
+|   |   |   A2 > 30.08: + (2.35/0.04)
+A13 = p: + (23.04/1.12)
+A13 = s
+|   A3 <= 0.29: + (14.59/0.43)
+|   A3 > 0.29: - (5.89)
+
+Number of Leaves  : 	13
+
+Size of the tree : 	24
+
+
+Weight: 3.21
+
+J48 pruned tree
+------------------
+
+A8 <= 1.75
+|   A3 <= 0.46
+|   |   A12 = t: - (6.45/0.11)
+|   |   A12 = f
+|   |   |   A4 = u
+|   |   |   |   A11 <= 8: + (28.34/0.54)
+|   |   |   |   A11 > 8: - (3.04)
+|   |   |   A4 = y
+|   |   |   |   A13 = g: - (8.02)
+|   |   |   |   A13 = p: + (2.95)
+|   |   |   |   A13 = s: - (0.0)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   A3 > 0.46
+|   |   A11 <= 4
+|   |   |   A9 = t
+|   |   |   |   A15 <= 458: - (49.58/4.13)
+|   |   |   |   A15 > 458: + (2.9)
+|   |   |   A9 = f: - (47.22)
+|   |   A11 > 4
+|   |   |   A2 <= 30.67: - (5.0/0.67)
+|   |   |   A2 > 30.67: + (4.63)
+A8 > 1.75
+|   A15 <= 200: - (10.16/4.4)
+|   A15 > 200: + (14.7/0.02)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	26
+
+
+Weight: 2.86
+
+J48 pruned tree
+------------------
+
+A8 <= 1.75
+|   A14 <= 290
+|   |   A9 = t
+|   |   |   A10 = t: + (17.07/1.76)
+|   |   |   A10 = f
+|   |   |   |   A14 <= 210
+|   |   |   |   |   A1 = b: - (19.6/0.22)
+|   |   |   |   |   A1 = a: + (4.85/1.8)
+|   |   |   |   A14 > 210: + (11.5/1.88)
+|   |   A9 = f
+|   |   |   A3 <= 0.04
+|   |   |   |   A10 = t: - (2.92)
+|   |   |   |   A10 = f
+|   |   |   |   |   A2 <= 28.58: + (7.57/0.06)
+|   |   |   |   |   A2 > 28.58: - (2.21)
+|   |   |   A3 > 0.04: - (32.33)
+|   A14 > 290
+|   |   A2 <= 43.08: + (30.59/0.56)
+|   |   A2 > 43.08: - (2.57)
+A8 > 1.75: + (51.78/3.26)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+Weight: 2.9
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A12 = t: + (11.63/0.18)
+|   A12 = f
+|   |   A13 = g: + (12.16/3.23)
+|   |   A13 = p: - (4.57/0.54)
+|   |   A13 = s: - (2.98)
+A6 = d
+|   A10 = t: + (3.26)
+|   A10 = f: - (3.02/0.11)
+A6 = cc: - (4.37/1.61)
+A6 = i: - (28.12/0.49)
+A6 = j: - (0.59/0.01)
+A6 = k
+|   A14 <= 154: - (9.7/0.17)
+|   A14 > 154: + (3.5/0.18)
+A6 = m
+|   A9 = t: + (5.48/0.37)
+|   A9 = f: - (11.45/0.29)
+A6 = r: - (0.0)
+A6 = q
+|   A3 <= 0.875: + (2.1)
+|   A3 > 0.875: - (17.54/0.12)
+A6 = w
+|   A3 <= 7.25: - (7.28/0.26)
+|   A3 > 7.25: + (5.62)
+A6 = x: + (13.72/0.43)
+A6 = e: + (3.4/0.2)
+A6 = aa
+|   A14 <= 108: + (2.22/0.54)
+|   A14 > 108: - (8.2/0.14)
+A6 = ff: - (22.11/0.55)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	32
+
+
+Weight: 3.03
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.094
+ CV-2     0:00:00.100
+ CV-3     0:00:00.096
+ CV-4     0:00:00.097
+ CV-5     0:00:00.092
+ CV-6     0:00:00.092
+ CV-7     0:00:00.095
+ CV-8     0:00:00.094
+ CV-9     0:00:00.095
+ CV-10    0:00:00.105
+ TEST     0:00:00.011
+
+Test Results: (number of instances = 276)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 88.47  11.53   0.88   0.88   0.88
+ TEST: 80.65  19.35   0.80   0.81   0.81
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.4243 * (normalized) A1
+ +       0.8499 * (normalized) A2
+ +       0.1396 * (normalized) A3
+ +      -0.0302 * (normalized) A4=u
+ +       0.0302 * (normalized) A4=y
+ +      -0.0302 * (normalized) A5=g
+ +       0.0302 * (normalized) A5=p
+ +      -0.6052 * (normalized) A6=c
+ +       0      * (normalized) A6=d
+ +      -0.1031 * (normalized) A6=cc
+ +       0.8883 * (normalized) A6=i
+ +       0.661  * (normalized) A6=k
+ +      -0.2505 * (normalized) A6=m
+ +       0.6194 * (normalized) A6=q
+ +      -0.2541 * (normalized) A6=w
+ +      -0.8646 * (normalized) A6=x
+ +      -1      * (normalized) A6=e
+ +       0.4671 * (normalized) A6=aa
+ +       0.4416 * (normalized) A6=ff
+ +      -0.1168 * (normalized) A7=v
+ +      -0.2022 * (normalized) A7=h
+ +       0.7722 * (normalized) A7=bb
+ +      -1      * (normalized) A7=j
+ +       0.1052 * (normalized) A7=n
+ +       0.4416 * (normalized) A7=ff
+ +      -0.2019 * (normalized) A8
+ +       2.2427 * (normalized) A9
+ +       0.8425 * (normalized) A10
+ +      -0.4095 * (normalized) A11
+ +      -0.1569 * (normalized) A12
+ +       0.7913 * (normalized) A13=g
+ +      -1      * (normalized) A13=p
+ +       0.2087 * (normalized) A13=s
+ +       0.8008 * (normalized) A14
+ +      -0.617  * (normalized) A15
+ -       1.6003
+
+Number of kernel evaluations: 8150 (89.571% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.057
+ CV-2     0:00:00.062
+ CV-3     0:00:00.062
+ CV-4     0:00:00.066
+ CV-5     0:00:00.067
+ CV-6     0:00:00.062
+ CV-7     0:00:00.057
+ CV-8     0:00:00.064
+ CV-9     0:00:00.056
+ CV-10    0:00:00.054
+ TEST     0:00:00.006
+
+Test Results: (number of instances = 276)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 87.87  12.13   0.88   0.88   0.88
+ TEST: 86.02  13.98   0.86   0.86   0.86
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.005
+ CV-2     0:00:00.004
+ CV-3     0:00:00.005
+ CV-4     0:00:00.004
+ CV-5     0:00:00.004
+ CV-6     0:00:00.004
+ CV-7     0:00:00.005
+ CV-8     0:00:00.004
+ CV-9     0:00:00.005
+ CV-10    0:00:00.004
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 276)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 85.19  14.81   0.85   0.85   0.85
+ TEST: 81.72  18.28   0.82   0.82   0.81
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (48.0/4.0)
+|   A10 = f
+|   |   A12 = t: - (13.0/5.0)
+|   |   A12 = f: + (18.0/7.0)
+A9 = f: - (150.0/2.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.007
+ CV-2     0:00:00.007
+ CV-3     0:00:00.007
+ CV-4     0:00:00.007
+ CV-5     0:00:00.007
+ CV-6     0:00:00.008
+ CV-7     0:00:00.008
+ CV-8     0:00:00.007
+ CV-9     0:00:00.008
+ CV-10    0:00:00.007
+ TEST     0:00:00.001
+
+Test Results: (number of instances = 345)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 88.65  11.35   0.89   0.89   0.89
+ TEST: 88.79  11.21   0.89   0.89   0.89
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (48.0/4.0)
+|   A10 = f
+|   |   A12 = t: - (13.0/5.0)
+|   |   A12 = f: + (18.0/7.0)
+A9 = f: - (150.0/2.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+Weight: 2.46
+
+J48 pruned tree
+------------------
+
+A13 = g
+|   A9 = t
+|   |   A15 <= 394
+|   |   |   A15 <= 0
+|   |   |   |   A3 <= 2.5
+|   |   |   |   |   A3 <= 1.71: + (2.71/0.54)
+|   |   |   |   |   A3 > 1.71: - (13.26)
+|   |   |   |   A3 > 2.5: + (31.41/1.09)
+|   |   |   A15 > 0: - (60.11/7.6)
+|   |   A15 > 394: + (21.56/0.54)
+|   A9 = f: - (71.63)
+A13 = p: + (13.81/1.09)
+A13 = s: - (14.5/0.54)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	14
+
+
+Weight: 2.95
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (87.95/13.39)
+|   A10 = f
+|   |   A3 <= 11.5
+|   |   |   A2 <= 34.42
+|   |   |   |   A3 <= 9.96: + (19.88/0.86)
+|   |   |   |   A3 > 9.96: - (9.09)
+|   |   |   A2 > 34.42
+|   |   |   |   A8 <= 0.165
+|   |   |   |   |   A6 = c: + (0.0)
+|   |   |   |   |   A6 = d: + (0.0)
+|   |   |   |   |   A6 = cc: + (0.0)
+|   |   |   |   |   A6 = i: + (0.0)
+|   |   |   |   |   A6 = j: + (0.0)
+|   |   |   |   |   A6 = k: + (0.0)
+|   |   |   |   |   A6 = m: + (3.35)
+|   |   |   |   |   A6 = r: + (0.0)
+|   |   |   |   |   A6 = q: + (0.0)
+|   |   |   |   |   A6 = w: + (0.0)
+|   |   |   |   |   A6 = x: + (0.0)
+|   |   |   |   |   A6 = e: + (0.0)
+|   |   |   |   |   A6 = aa: + (0.0)
+|   |   |   |   |   A6 = ff: - (3.35)
+|   |   |   |   A8 > 0.165: - (33.38/0.29)
+|   |   A3 > 11.5: + (12.72)
+A9 = f
+|   A3 <= 0
+|   |   A2 <= 30.08: + (7.55/0.86)
+|   |   A2 > 30.08: - (5.45)
+|   A3 > 0: - (46.28)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	31
+
+
+Weight: 2.63
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A9 = t
+|   |   A12 = t
+|   |   |   A10 = t: + (3.99)
+|   |   |   A10 = f: - (5.05)
+|   |   A12 = f: + (12.52/0.25)
+|   A9 = f: - (9.79/0.49)
+A6 = d
+|   A10 = t: + (5.85)
+|   A10 = f: - (3.04/0.14)
+A6 = cc: - (3.32/0.21)
+A6 = i: - (36.12/0.72)
+A6 = j: - (0.16/0.0)
+A6 = k
+|   A15 <= 154: - (35.02/0.61)
+|   A15 > 154: + (3.68/0.61)
+A6 = m
+|   A2 <= 45.17: - (2.03/0.41)
+|   A2 > 45.17: + (4.77/0.05)
+A6 = r: + (3.19/0.22)
+A6 = q
+|   A15 <= 0: + (3.18/0.73)
+|   A15 > 0: - (28.5/0.31)
+A6 = w
+|   A3 <= 2.71: - (27.18/0.65)
+|   A3 > 2.71
+|   |   A8 <= 1.29: - (3.25)
+|   |   A8 > 1.29: + (11.02)
+A6 = x: + (5.85/0.43)
+A6 = e: + (4.31/0.86)
+A6 = aa: - (6.61/0.72)
+A6 = ff
+|   A9 = t: + (6.75/1.88)
+|   A9 = f: - (3.83/0.17)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	35
+
+
+Weight: 3.23
+
+J48 pruned tree
+------------------
+
+A13 = g
+|   A14 <= 99
+|   |   A9 = t: + (23.99/1.87)
+|   |   A9 = f: - (4.32)
+|   A14 > 99
+|   |   A9 = t
+|   |   |   A15 <= 394
+|   |   |   |   A2 <= 23.33
+|   |   |   |   |   A2 <= 20: - (3.64/0.08)
+|   |   |   |   |   A2 > 20: + (8.24/0.08)
+|   |   |   |   A2 > 23.33: - (91.58/9.19)
+|   |   |   A15 > 394: + (11.34/1.52)
+|   |   A9 = f: - (28.36)
+A13 = p: + (50.0/3.04)
+A13 = s: - (7.54/1.52)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	16
+
+
+Weight: 2.5
+
+J48 pruned tree
+------------------
+
+A2 <= 32.67
+|   A13 = g
+|   |   A9 = t
+|   |   |   A4 = u: + (50.48/1.72)
+|   |   |   A4 = y
+|   |   |   |   A3 <= 1.625: - (14.65/0.04)
+|   |   |   |   A3 > 1.625: + (10.62/1.33)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   |   A9 = f: - (14.05)
+|   A13 = p: + (25.4)
+|   A13 = s: - (2.58)
+A2 > 32.67
+|   A8 <= 10
+|   |   A10 = t
+|   |   |   A15 <= 90: - (15.48/1.39)
+|   |   |   A15 > 90: + (15.54/0.09)
+|   |   A10 = f
+|   |   |   A3 <= 4.165: - (54.35/0.6)
+|   |   |   A3 > 4.165
+|   |   |   |   A12 = t: + (6.85/0.17)
+|   |   |   |   A12 = f: - (8.04)
+|   A8 > 10: + (10.97/0.04)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	24
+
+
+Weight: 3.73
+
+J48 pruned tree
+------------------
+
+A10 = t
+|   A9 = t
+|   |   A4 = u
+|   |   |   A7 = v: + (39.98)
+|   |   |   A7 = h
+|   |   |   |   A15 <= 160: - (7.17)
+|   |   |   |   A15 > 160: + (6.75)
+|   |   |   A7 = bb: + (0.55)
+|   |   |   A7 = j: + (0.0)
+|   |   |   A7 = n: + (0.42)
+|   |   |   A7 = z: + (0.42)
+|   |   |   A7 = dd: + (0.02)
+|   |   |   A7 = ff: + (5.17)
+|   |   |   A7 = o: + (0.0)
+|   |   A4 = y: - (9.37/2.2)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A9 = f: - (3.69)
+A10 = f
+|   A3 <= 0
+|   |   A1 = b
+|   |   |   A2 <= 28.75: + (7.11/0.61)
+|   |   |   A2 > 28.75: - (5.15)
+|   |   A1 = a: + (19.21)
+|   A3 > 0
+|   |   A3 <= 11.75: - (115.31/13.04)
+|   |   A3 > 11.75: + (8.66/0.04)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	28
+
+
+Weight: 2.6
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A6 = c
+|   |   A3 <= 1.835: + (54.13/0.23)
+|   |   A3 > 1.835
+|   |   |   A10 = t: + (3.67)
+|   |   |   A10 = f: - (9.51/2.11)
+|   A6 = d: + (5.99/0.19)
+|   A6 = cc: + (0.47/0.17)
+|   A6 = i: - (12.96/0.3)
+|   A6 = j: + (0.0)
+|   A6 = k: - (11.8/0.24)
+|   A6 = m: + (26.35/0.22)
+|   A6 = r: + (0.23/0.0)
+|   A6 = q
+|   |   A2 <= 35.58: + (2.01)
+|   |   A2 > 35.58: - (2.26/0.3)
+|   A6 = w
+|   |   A15 <= 300: + (35.79/0.23)
+|   |   A15 > 300: - (2.42/0.17)
+|   A6 = x: + (11.04/0.09)
+|   A6 = e: + (0.41/0.0)
+|   A6 = aa
+|   |   A1 = b: - (12.75)
+|   |   A1 = a: + (4.89)
+|   A6 = ff
+|   |   A2 <= 52.5: - (3.49)
+|   |   A2 > 52.5: + (2.97/0.05)
+A9 = f
+|   A8 <= 0
+|   |   A2 <= 25.75: + (7.05/0.07)
+|   |   A2 > 25.75: - (3.22)
+|   A8 > 0: - (15.6)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	33
+
+
+Weight: 4.04
+
+J48 pruned tree
+------------------
+
+A12 = t
+|   A6 = c
+|   |   A10 = t: + (3.74/0.02)
+|   |   A10 = f: - (11.44)
+|   A6 = d: + (1.57/0.02)
+|   A6 = cc: - (4.79)
+|   A6 = i: - (6.01)
+|   A6 = j: - (0.0)
+|   A6 = k: - (6.21)
+|   A6 = m: + (12.02/0.28)
+|   A6 = r: - (0.27/0.12)
+|   A6 = q: + (1.04/0.18)
+|   A6 = w
+|   |   A14 <= 154: + (17.91/0.01)
+|   |   A14 > 154: - (7.74/0.19)
+|   A6 = x: + (4.18/0.15)
+|   A6 = e: + (0.12)
+|   A6 = aa: - (3.66)
+|   A6 = ff: - (0.44/0.08)
+A12 = f
+|   A9 = t
+|   |   A13 = g: + (131.04/7.56)
+|   |   A13 = p: + (0.0)
+|   |   A13 = s: - (5.44/1.41)
+|   A9 = f
+|   |   A13 = g: - (4.76)
+|   |   A13 = p
+|   |   |   A2 <= 29.58: + (3.55)
+|   |   |   A2 > 29.58: - (2.82)
+|   |   A13 = s: - (0.25)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	31
+
+
+Weight: 3.09
+
+J48 pruned tree
+------------------
+
+A8 <= 1.25
+|   A11 <= 3
+|   |   A3 <= 0.75
+|   |   |   A12 = t: - (3.22)
+|   |   |   A12 = f: + (14.39/1.92)
+|   |   A3 > 0.75
+|   |   |   A12 = t
+|   |   |   |   A2 <= 47.83: - (11.0/0.53)
+|   |   |   |   A2 > 47.83: + (6.87/0.0)
+|   |   |   A12 = f: - (88.94/1.19)
+|   A11 > 3: + (8.7/0.57)
+A8 > 1.25
+|   A9 = t
+|   |   A12 = t
+|   |   |   A3 <= 2.54
+|   |   |   |   A10 = t: + (2.31/0.51)
+|   |   |   |   A10 = f: - (9.56)
+|   |   |   A3 > 2.54: + (14.01/0.51)
+|   |   A12 = f
+|   |   |   A14 <= 0
+|   |   |   |   A13 = g: + (4.44)
+|   |   |   |   A13 = p: + (0.0)
+|   |   |   |   A13 = s: - (2.11)
+|   |   |   A14 > 0: + (58.83)
+|   A9 = f: - (4.63)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	26
+
+
+Weight: 3.75
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.114
+ CV-2     0:00:00.114
+ CV-3     0:00:00.113
+ CV-4     0:00:00.113
+ CV-5     0:00:00.108
+ CV-6     0:00:00.110
+ CV-7     0:00:00.113
+ CV-8     0:00:00.112
+ CV-9     0:00:00.116
+ CV-10    0:00:00.115
+ TEST     0:00:00.012
+
+Test Results: (number of instances = 345)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 89.87  10.13   0.90   0.90   0.90
+ TEST: 88.79  11.21   0.89   0.89   0.89
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3945 * (normalized) A1
+ +       0.8409 * (normalized) A2
+ +      -0.4026 * (normalized) A3
+ +      -0.1311 * (normalized) A4=u
+ +       0.1311 * (normalized) A4=y
+ +      -0.1311 * (normalized) A5=g
+ +       0.1311 * (normalized) A5=p
+ +      -0.6296 * (normalized) A6=c
+ +       0      * (normalized) A6=d
+ +       0.3336 * (normalized) A6=cc
+ +       1.0696 * (normalized) A6=i
+ +       0.5772 * (normalized) A6=k
+ +      -0.5116 * (normalized) A6=m
+ +       0      * (normalized) A6=q
+ +      -0.4903 * (normalized) A6=w
+ +      -0.5051 * (normalized) A6=x
+ +      -0.2786 * (normalized) A6=e
+ +       0.4291 * (normalized) A6=aa
+ +       0.0056 * (normalized) A6=ff
+ +       0.1671 * (normalized) A7=v
+ +       0.0362 * (normalized) A7=h
+ +       0.0696 * (normalized) A7=bb
+ +      -0.1323 * (normalized) A7=z
+ +      -0.1463 * (normalized) A7=dd
+ +       0.0056 * (normalized) A7=ff
+ +      -0.2606 * (normalized) A8
+ +       2.6867 * (normalized) A9
+ +       0.7702 * (normalized) A10
+ +      -0.632  * (normalized) A11
+ +      -0.4505 * (normalized) A12
+ +       0.3939 * (normalized) A13=g
+ +      -0.6089 * (normalized) A13=p
+ +       0.2151 * (normalized) A13=s
+ +       0.0997 * (normalized) A14
+ +      -0.4746 * (normalized) A15
+ -       0.933
+
+Number of kernel evaluations: 7492 (92.259% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.076
+ CV-2     0:00:00.064
+ CV-3     0:00:00.068
+ CV-4     0:00:00.059
+ CV-5     0:00:00.058
+ CV-6     0:00:00.061
+ CV-7     0:00:00.057
+ CV-8     0:00:00.061
+ CV-9     0:00:00.060
+ CV-10    0:00:00.059
+ TEST     0:00:00.007
+
+Test Results: (number of instances = 345)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 90.74   9.26   0.91   0.91   0.91
+ TEST: 86.21  13.79   0.87   0.86   0.86
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.006
+ CV-2     0:00:00.005
+ CV-3     0:00:00.005
+ CV-4     0:00:00.008
+ CV-5     0:00:00.007
+ CV-6     0:00:00.007
+ CV-7     0:00:00.006
+ CV-8     0:00:00.006
+ CV-9     0:00:00.006
+ CV-10    0:00:00.006
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 345)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 88.86  11.14   0.89   0.89   0.89
+ TEST: 89.66  10.34   0.89   0.90   0.90
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (43.0/4.0)
+|   A10 = f
+|   |   A4 = u
+|   |   |   A3 <= 2.54: - (11.0/1.0)
+|   |   |   A3 > 2.54
+|   |   |   |   A15 <= 33: + (7.0)
+|   |   |   |   A15 > 33: - (3.0/1.0)
+|   |   A4 = y: - (6.0)
+|   |   A4 = l: - (0.0)
+|   |   A4 = t: - (0.0)
+A9 = f: - (205.0/11.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	13
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.013
+ CV-2     0:00:00.014
+ CV-3     0:00:00.013
+ CV-4     0:00:00.013
+ CV-5     0:00:00.014
+ CV-6     0:00:00.013
+ CV-7     0:00:00.014
+ CV-8     0:00:00.013
+ CV-9     0:00:00.013
+ CV-10    0:00:00.013
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 414)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 92.36   7.64   0.92   0.92   0.92
+ TEST: 87.77  12.23   0.88   0.88   0.87
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (43.0/4.0)
+|   A10 = f
+|   |   A4 = u
+|   |   |   A3 <= 2.54: - (11.0/1.0)
+|   |   |   A3 > 2.54
+|   |   |   |   A15 <= 33: + (7.0)
+|   |   |   |   A15 > 33: - (3.0/1.0)
+|   |   A4 = y: - (6.0)
+|   |   A4 = l: - (0.0)
+|   |   A4 = t: - (0.0)
+A9 = f: - (205.0/11.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	13
+
+
+Weight: 2.72
+
+J48 pruned tree
+------------------
+
+A3 <= 0.375: + (76.43/10.13)
+A3 > 0.375
+|   A4 = u
+|   |   A9 = t
+|   |   |   A6 = c
+|   |   |   |   A8 <= 0.79: - (8.81)
+|   |   |   |   A8 > 0.79: + (15.02/1.07)
+|   |   |   A6 = d: + (0.0)
+|   |   |   A6 = cc: + (1.07/0.01)
+|   |   |   A6 = i: - (1.07)
+|   |   |   A6 = j: + (8.15/0.06)
+|   |   |   A6 = k: + (1.07/0.01)
+|   |   |   A6 = m: + (3.76/1.1)
+|   |   |   A6 = r: + (0.54/0.0)
+|   |   |   A6 = q: - (18.45/1.6)
+|   |   |   A6 = w: + (2.15/0.02)
+|   |   |   A6 = x: + (4.3/0.03)
+|   |   |   A6 = e: + (0.54/0.0)
+|   |   |   A6 = aa: + (2.15/0.55)
+|   |   |   A6 = ff: - (1.61/0.53)
+|   |   A9 = f
+|   |   |   A6 = c: - (13.86)
+|   |   |   A6 = d: - (4.26)
+|   |   |   A6 = cc: - (2.13)
+|   |   |   A6 = i: - (11.19)
+|   |   |   A6 = j: - (1.07)
+|   |   |   A6 = k: - (5.33)
+|   |   |   A6 = m: - (3.2)
+|   |   |   A6 = r: - (0.0)
+|   |   |   A6 = q: - (4.26)
+|   |   |   A6 = w
+|   |   |   |   A10 = t: - (4.8)
+|   |   |   |   A10 = f
+|   |   |   |   |   A15 <= 3: - (2.13)
+|   |   |   |   |   A15 > 3: + (17.78/1.6)
+|   |   |   A6 = x: - (0.0)
+|   |   |   A6 = e: - (2.13)
+|   |   |   A6 = aa: - (5.33)
+|   |   |   A6 = ff: - (8.53)
+|   A4 = y: - (35.8/1.07)
+|   A4 = l: + (8.09)
+|   A4 = t: - (0.0)
+
+Number of Leaves  : 	35
+
+Size of the tree : 	43
+
+
+Weight: 2.68
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A13 = g
+|   |   A3 <= 0.705: - (14.52/1.42)
+|   |   A3 > 0.705
+|   |   |   A14 <= 500
+|   |   |   |   A8 <= 1.665: + (31.57/2.28)
+|   |   |   |   A8 > 1.665
+|   |   |   |   |   A10 = t
+|   |   |   |   |   |   A8 <= 1.75: - (4.89/0.57)
+|   |   |   |   |   |   A8 > 1.75: + (13.17)
+|   |   |   |   |   A10 = f: - (9.19/0.28)
+|   |   |   A14 > 500: - (4.61)
+|   A13 = p: + (0.0)
+|   A13 = s: - (8.9/0.28)
+A9 = f
+|   A13 = g
+|   |   A10 = t: - (29.19)
+|   |   A10 = f
+|   |   |   A6 = c
+|   |   |   |   A3 <= 0.165: + (8.64)
+|   |   |   |   A3 > 0.165: - (13.23)
+|   |   |   A6 = d: - (2.0)
+|   |   |   A6 = cc
+|   |   |   |   A1 = b: - (5.77)
+|   |   |   |   A1 = a: + (4.46/0.14)
+|   |   |   A6 = i: - (6.85)
+|   |   |   A6 = j: - (5.03)
+|   |   |   A6 = k: - (3.71)
+|   |   |   A6 = m: - (4.46)
+|   |   |   A6 = r: - (0.29)
+|   |   |   A6 = q: - (14.25)
+|   |   |   A6 = w
+|   |   |   |   A14 <= 290: + (9.84/1.2)
+|   |   |   |   A14 > 290: - (12.78)
+|   |   |   A6 = x: - (0.0)
+|   |   |   A6 = e: - (1.43)
+|   |   |   A6 = aa: - (6.75)
+|   |   |   A6 = ff: - (4.57)
+|   A13 = p
+|   |   A2 <= 29.58: + (12.96)
+|   |   A2 > 29.58: - (4.45)
+|   A13 = s
+|   |   A14 <= 460
+|   |   |   A7 = v: - (14.64)
+|   |   |   A7 = h: - (0.58)
+|   |   |   A7 = bb: - (4.5)
+|   |   |   A7 = j: + (4.36/0.04)
+|   |   |   A7 = n: - (0.0)
+|   |   |   A7 = z: - (0.0)
+|   |   |   A7 = dd: - (0.0)
+|   |   |   A7 = ff: - (4.5)
+|   |   |   A7 = o: - (0.0)
+|   |   A14 > 460: + (8.93/0.28)
+
+Number of Leaves  : 	38
+
+Size of the tree : 	54
+
+
+Weight: 3.76
+
+J48 pruned tree
+------------------
+
+A11 <= 3
+|   A8 <= 1.25
+|   |   A3 <= 0.165
+|   |   |   A10 = t: + (8.46)
+|   |   |   A10 = f
+|   |   |   |   A3 <= 0.04
+|   |   |   |   |   A8 <= 0.25
+|   |   |   |   |   |   A2 <= 28.67
+|   |   |   |   |   |   |   A1 = b: + (6.63)
+|   |   |   |   |   |   |   A1 = a
+|   |   |   |   |   |   |   |   A13 = g: - (2.13)
+|   |   |   |   |   |   |   |   A13 = p: + (2.21)
+|   |   |   |   |   |   |   |   A13 = s: + (0.0)
+|   |   |   |   |   |   A2 > 28.67: - (4.26)
+|   |   |   |   |   A8 > 0.25: - (4.26)
+|   |   |   |   A3 > 0.04: - (6.4)
+|   |   A3 > 0.165: - (132.93/11.7)
+|   A8 > 1.25
+|   |   A3 <= 9
+|   |   |   A8 <= 2.25
+|   |   |   |   A1 = b: + (11.0/1.89)
+|   |   |   |   A1 = a: - (2.45/0.03)
+|   |   |   A8 > 2.25: - (18.56/0.73)
+|   |   A3 > 9: + (15.65/0.73)
+A11 > 3
+|   A9 = t
+|   |   A2 <= 24.08
+|   |   |   A11 <= 5: + (8.53)
+|   |   |   A11 > 5
+|   |   |   |   A7 = v: - (4.42)
+|   |   |   |   A7 = h: + (2.28)
+|   |   |   |   A7 = bb: - (0.0)
+|   |   |   |   A7 = j: - (0.0)
+|   |   |   |   A7 = n: - (0.0)
+|   |   |   |   A7 = z: - (0.0)
+|   |   |   |   A7 = dd: - (0.0)
+|   |   |   |   A7 = ff: - (0.0)
+|   |   |   |   A7 = o: - (0.0)
+|   |   A2 > 24.08: + (37.7)
+|   A9 = f: - (7.12)
+
+Number of Leaves  : 	25
+
+Size of the tree : 	41
+
+
+Weight: 2.85
+
+J48 pruned tree
+------------------
+
+A4 = u
+|   A9 = t
+|   |   A6 = c
+|   |   |   A10 = t: + (12.24/1.17)
+|   |   |   A10 = f: - (4.0/1.17)
+|   |   A6 = d: + (0.0)
+|   |   A6 = cc: + (0.16/0.0)
+|   |   A6 = i: - (3.49)
+|   |   A6 = j: + (20.83/0.64)
+|   |   A6 = k: + (3.49/0.11)
+|   |   A6 = m
+|   |   |   A2 <= 31: - (2.33/0.08)
+|   |   |   A2 > 31: + (5.02/0.22)
+|   |   A6 = r: + (0.08/0.0)
+|   |   A6 = q
+|   |   |   A3 <= 4.25: + (5.64/0.08)
+|   |   |   A3 > 4.25: - (3.75/1.13)
+|   |   A6 = w: + (4.94/0.15)
+|   |   A6 = x: + (7.85/0.24)
+|   |   A6 = e: + (0.08/0.0)
+|   |   A6 = aa: + (3.99/1.25)
+|   |   A6 = ff
+|   |   |   A2 <= 52.5: - (6.61)
+|   |   |   A2 > 52.5: + (23.71/0.93)
+|   A9 = f
+|   |   A8 <= 0.375
+|   |   |   A14 <= 280: - (18.75/1.68)
+|   |   |   A14 > 280
+|   |   |   |   A14 <= 303: + (42.38/0.84)
+|   |   |   |   A14 > 303: - (4.06/1.28)
+|   |   A8 > 0.375: - (35.87/2.34)
+A4 = y
+|   A10 = t
+|   |   A11 <= 7
+|   |   |   A3 <= 1: - (2.37)
+|   |   |   A3 > 1: + (2.49/0.23)
+|   |   A11 > 7: + (3.31)
+|   A10 = f
+|   |   A3 <= 0.165
+|   |   |   A12 = t: + (2.34)
+|   |   |   A12 = f: - (2.83/0.39)
+|   |   A3 > 0.165: - (31.97)
+A4 = l: + (20.45/0.08)
+A4 = t: + (0.0)
+
+Number of Leaves  : 	30
+
+Size of the tree : 	45
+
+
+Weight: 2.9
+
+J48 pruned tree
+------------------
+
+A2 <= 73.42
+|   A4 = u
+|   |   A6 = c
+|   |   |   A2 <= 30.75: + (42.73/3.22)
+|   |   |   A2 > 30.75: - (16.18/0.12)
+|   |   A6 = d: - (0.97/0.0)
+|   |   A6 = cc: + (11.47/0.67)
+|   |   A6 = i: - (7.32/0.04)
+|   |   A6 = j: + (11.3/0.58)
+|   |   A6 = k
+|   |   |   A8 <= 0.585: + (2.2/0.44)
+|   |   |   A8 > 0.585: - (2.12/0.04)
+|   |   A6 = m
+|   |   |   A12 = t: - (2.8/0.74)
+|   |   |   A12 = f: + (3.47/0.91)
+|   |   A6 = r: + (0.04/0.0)
+|   |   A6 = q
+|   |   |   A9 = t: + (15.67/1.97)
+|   |   |   A9 = f: - (4.36/0.1)
+|   |   A6 = w
+|   |   |   A15 <= 4: - (9.22/0.88)
+|   |   |   A15 > 4: + (25.63/1.99)
+|   |   A6 = x: + (3.92/0.17)
+|   |   A6 = e: + (11.96/0.69)
+|   |   A6 = aa: - (14.6/1.52)
+|   |   A6 = ff
+|   |   |   A2 <= 59.5: - (6.33/0.1)
+|   |   |   A2 > 59.5: + (12.56/0.54)
+|   A4 = y
+|   |   A11 <= 3: - (22.1/1.37)
+|   |   A11 > 3: + (4.15/1.21)
+|   A4 = l: + (11.21/0.5)
+|   A4 = t: + (0.0)
+A2 > 73.42: - (32.7/0.29)
+
+Number of Leaves  : 	25
+
+Size of the tree : 	35
+
+
+Weight: 2.78
+
+J48 pruned tree
+------------------
+
+A2 <= 73.42
+|   A7 = v
+|   |   A8 <= 0.04
+|   |   |   A8 <= 0
+|   |   |   |   A2 <= 30: + (7.18/0.35)
+|   |   |   |   A2 > 30: - (3.71)
+|   |   |   A8 > 0: + (19.56/1.69)
+|   |   A8 > 0.04
+|   |   |   A8 <= 7
+|   |   |   |   A13 = g
+|   |   |   |   |   A6 = c
+|   |   |   |   |   |   A4 = u
+|   |   |   |   |   |   |   A11 <= 4: - (22.47/0.79)
+|   |   |   |   |   |   |   A11 > 4: + (2.9)
+|   |   |   |   |   |   A4 = y: + (6.96/0.44)
+|   |   |   |   |   |   A4 = l: - (0.0)
+|   |   |   |   |   |   A4 = t: - (0.0)
+|   |   |   |   |   A6 = d: - (0.13)
+|   |   |   |   |   A6 = cc
+|   |   |   |   |   |   A1 = b: - (2.13/0.02)
+|   |   |   |   |   |   A1 = a: + (5.67/0.02)
+|   |   |   |   |   A6 = i: - (1.49)
+|   |   |   |   |   A6 = j: - (0.0)
+|   |   |   |   |   A6 = k: - (4.28/1.27)
+|   |   |   |   |   A6 = m: + (7.52/0.74)
+|   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   A6 = q: - (13.57/0.93)
+|   |   |   |   |   A6 = w
+|   |   |   |   |   |   A15 <= 60
+|   |   |   |   |   |   |   A15 <= 4: - (4.51)
+|   |   |   |   |   |   |   A15 > 4: + (12.86/0.35)
+|   |   |   |   |   |   A15 > 60: - (21.64/0.02)
+|   |   |   |   |   A6 = x: + (1.65)
+|   |   |   |   |   A6 = e: - (0.35)
+|   |   |   |   |   A6 = aa: + (7.83/1.47)
+|   |   |   |   |   A6 = ff: - (0.0)
+|   |   |   |   A13 = p: - (0.37)
+|   |   |   |   A13 = s: - (12.68)
+|   |   |   A8 > 7: + (6.96/0.02)
+|   A7 = h
+|   |   A2 <= 24.42
+|   |   |   A4 = u: + (13.02/0.39)
+|   |   |   A4 = y: - (2.12/0.42)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   |   A2 > 24.42: - (20.33/1.83)
+|   A7 = bb
+|   |   A4 = u: - (3.07/0.13)
+|   |   A4 = y: + (5.73/0.21)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A7 = j: + (13.16/1.03)
+|   A7 = n: - (0.42/0.04)
+|   A7 = z: - (0.37/0.02)
+|   A7 = dd: - (0.42/0.04)
+|   A7 = ff
+|   |   A12 = t: + (7.07/1.61)
+|   |   A12 = f: - (19.13/2.0)
+|   A7 = o: + (6.04/0.14)
+A2 > 73.42: - (17.67/0.08)
+
+Number of Leaves  : 	44
+
+Size of the tree : 	61
+
+
+Weight: 2.98
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A4 = u
+|   |   A2 <= 74.83
+|   |   |   A10 = t
+|   |   |   |   A3 <= 7.835
+|   |   |   |   |   A12 = t
+|   |   |   |   |   |   A3 <= 0.585: - (3.12)
+|   |   |   |   |   |   A3 > 0.585: + (13.0)
+|   |   |   |   |   A12 = f: + (43.93)
+|   |   |   |   A3 > 7.835: - (6.88/1.33)
+|   |   |   A10 = f
+|   |   |   |   A3 <= 1.375: - (10.41)
+|   |   |   |   A3 > 1.375
+|   |   |   |   |   A8 <= 2: + (22.62/0.5)
+|   |   |   |   |   A8 > 2: - (7.09/0.94)
+|   |   A2 > 74.83: - (8.86/0.05)
+|   A4 = y
+|   |   A1 = b: - (23.38/0.65)
+|   |   A1 = a: + (3.74/0.49)
+|   A4 = l: + (0.0)
+|   A4 = t: + (0.0)
+A9 = f
+|   A13 = g: - (103.28/14.96)
+|   A13 = p
+|   |   A2 <= 29.58: + (8.53)
+|   |   A2 > 29.58: - (3.2)
+|   A13 = s
+|   |   A6 = c
+|   |   |   A7 = v: - (3.24)
+|   |   |   A7 = h: - (0.0)
+|   |   |   A7 = bb: - (0.0)
+|   |   |   A7 = j: + (3.12/0.0)
+|   |   |   A7 = n: - (0.0)
+|   |   |   A7 = z: - (0.0)
+|   |   |   A7 = dd: - (0.0)
+|   |   |   A7 = ff: - (0.0)
+|   |   |   A7 = o: - (0.0)
+|   |   A6 = d: - (0.19)
+|   |   A6 = cc: + (0.0)
+|   |   A6 = i: - (0.87)
+|   |   A6 = j: + (0.0)
+|   |   A6 = k: - (0.18)
+|   |   A6 = m: + (2.8/0.02)
+|   |   A6 = r: + (0.0)
+|   |   A6 = q: + (0.0)
+|   |   A6 = w: + (0.0)
+|   |   A6 = x: + (0.0)
+|   |   A6 = e: + (3.12/0.0)
+|   |   A6 = aa: + (0.0)
+|   |   A6 = ff: - (3.44)
+
+Number of Leaves  : 	37
+
+Size of the tree : 	51
+
+
+Weight: 2.6
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A3 <= 0.205
+|   |   A3 <= 0: - (2.8/0.88)
+|   |   A3 > 0: + (44.48)
+|   A3 > 0.205
+|   |   A9 = t
+|   |   |   A10 = t: + (17.96/1.67)
+|   |   |   A10 = f: - (6.53/1.67)
+|   |   A9 = f: - (9.65)
+A6 = d: - (0.26/0.0)
+A6 = cc: + (25.0/1.4)
+A6 = i: - (5.19/0.06)
+A6 = j
+|   A14 <= 180: + (2.06/0.44)
+|   A14 > 180: - (3.92/0.04)
+A6 = k
+|   A12 = t: - (3.02)
+|   A12 = f: + (7.73/0.57)
+A6 = m
+|   A10 = t: - (4.49/0.29)
+|   A10 = f
+|   |   A12 = t: + (3.56/0.37)
+|   |   A12 = f
+|   |   |   A8 <= 7.5: - (3.71/0.17)
+|   |   |   A8 > 7.5: + (3.54)
+A6 = r: + (1.68/0.05)
+A6 = q
+|   A14 <= 144: + (10.54/1.86)
+|   A14 > 144: - (5.51/0.06)
+A6 = w
+|   A15 <= 60
+|   |   A14 <= 132: - (3.12/0.3)
+|   |   A14 > 132: + (47.48/0.96)
+|   A15 > 60: - (7.3/0.2)
+A6 = x: + (9.51/0.22)
+A6 = e: - (4.17/1.84)
+A6 = aa
+|   A1 = b: - (10.33/0.08)
+|   A1 = a: + (5.32/1.74)
+A6 = ff
+|   A4 = u
+|   |   A9 = t: + (7.63/0.97)
+|   |   A9 = f: - (6.04/0.15)
+|   A4 = y: - (10.87/0.12)
+|   A4 = l: + (1.62/0.01)
+|   A4 = t: - (0.0)
+
+Number of Leaves  : 	31
+
+Size of the tree : 	47
+
+
+Weight: 2.94
+
+J48 pruned tree
+------------------
+
+A8 <= 0
+|   A2 <= 63.33: - (40.97/4.04)
+|   A2 > 63.33: + (3.72/0.21)
+A8 > 0
+|   A3 <= 0.5
+|   |   A2 <= 33.58
+|   |   |   A4 = u
+|   |   |   |   A12 = t: - (2.71/0.88)
+|   |   |   |   A12 = f: + (20.2/2.76)
+|   |   |   A4 = y: - (2.71)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   |   A2 > 33.58: + (40.57)
+|   A3 > 0.5
+|   |   A3 <= 1.375: - (45.42/1.23)
+|   |   A3 > 1.375
+|   |   |   A4 = u
+|   |   |   |   A1 = b
+|   |   |   |   |   A15 <= 60: + (41.81/7.5)
+|   |   |   |   |   A15 > 60
+|   |   |   |   |   |   A9 = t: + (30.03/5.14)
+|   |   |   |   |   |   A9 = f: - (5.59)
+|   |   |   |   A1 = a
+|   |   |   |   |   A6 = c: + (2.95/0.92)
+|   |   |   |   |   A6 = d: - (0.01)
+|   |   |   |   |   A6 = cc: + (0.85)
+|   |   |   |   |   A6 = i: - (0.04)
+|   |   |   |   |   A6 = j: - (0.0)
+|   |   |   |   |   A6 = k: + (0.27/0.0)
+|   |   |   |   |   A6 = m: - (0.0)
+|   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   A6 = q: - (17.04/0.97)
+|   |   |   |   |   A6 = w: - (2.62)
+|   |   |   |   |   A6 = x: + (1.08)
+|   |   |   |   |   A6 = e: + (1.19)
+|   |   |   |   |   A6 = aa: + (1.9/0.06)
+|   |   |   |   |   A6 = ff: - (0.0)
+|   |   |   A4 = y: - (13.32/1.55)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+
+Number of Leaves  : 	29
+
+Size of the tree : 	41
+
+
+Weight: 2.3
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.171
+ CV-2     0:00:00.168
+ CV-3     0:00:00.168
+ CV-4     0:00:00.164
+ CV-5     0:00:00.170
+ CV-6     0:00:00.172
+ CV-7     0:00:00.175
+ CV-8     0:00:00.168
+ CV-9     0:00:00.167
+ CV-10    0:00:00.170
+ TEST     0:00:00.020
+
+Test Results: (number of instances = 414)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 88.55  11.45   0.88   0.89   0.88
+ TEST: 80.58  19.42   0.80   0.81   0.80
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0474 * (normalized) A1
+ +      -0.0547 * (normalized) A2
+ +      -0.0083 * (normalized) A3
+ +       0.004  * (normalized) A4=u
+ +       0.4348 * (normalized) A4=y
+ +      -0.4388 * (normalized) A4=l
+ +       0.004  * (normalized) A5=g
+ +       0.4348 * (normalized) A5=p
+ +      -0.4388 * (normalized) A5=gg
+ +      -0.1174 * (normalized) A6=c
+ +       0.8746 * (normalized) A6=d
+ +      -0.0872 * (normalized) A6=cc
+ +       1.0338 * (normalized) A6=i
+ +       0.1028 * (normalized) A6=j
+ +       0      * (normalized) A6=k
+ +      -0.122  * (normalized) A6=m
+ +       0.0171 * (normalized) A6=q
+ +      -0.1143 * (normalized) A6=w
+ +      -0.9764 * (normalized) A6=x
+ +      -0.5166 * (normalized) A6=e
+ +      -0.0347 * (normalized) A6=aa
+ +      -0.0599 * (normalized) A6=ff
+ +       0.1193 * (normalized) A7=v
+ +       0.1526 * (normalized) A7=h
+ +       0.1001 * (normalized) A7=bb
+ +      -0.8972 * (normalized) A7=j
+ +       0.1017 * (normalized) A7=n
+ +       0.4834 * (normalized) A7=dd
+ +       0.3789 * (normalized) A7=ff
+ +      -0.4388 * (normalized) A7=o
+ +      -0.0941 * (normalized) A8
+ +       1.9842 * (normalized) A9
+ +       0.7937 * (normalized) A10
+ +      -0.2486 * (normalized) A11
+ +       0.0148 * (normalized) A12
+ +       0.5642 * (normalized) A13=g
+ +      -0.4388 * (normalized) A13=p
+ +      -0.1254 * (normalized) A13=s
+ +       0.0476 * (normalized) A14
+ +      -0.4626 * (normalized) A15
+ -       1.5101
+
+Number of kernel evaluations: 17036 (93.732% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.121
+ CV-2     0:00:00.138
+ CV-3     0:00:00.123
+ CV-4     0:00:00.134
+ CV-5     0:00:00.125
+ CV-6     0:00:00.128
+ CV-7     0:00:00.151
+ CV-8     0:00:00.157
+ CV-9     0:00:00.122
+ CV-10    0:00:00.113
+ TEST     0:00:00.014
+
+Test Results: (number of instances = 414)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 87.82  12.18   0.88   0.88   0.88
+ TEST: 89.21  10.79   0.89   0.89   0.89
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.007
+ CV-2     0:00:00.007
+ CV-3     0:00:00.007
+ CV-4     0:00:00.007
+ CV-5     0:00:00.007
+ CV-6     0:00:00.006
+ CV-7     0:00:00.007
+ CV-8     0:00:00.006
+ CV-9     0:00:00.006
+ CV-10    0:00:00.007
+ TEST     0:00:00.003
+
+Test Results: (number of instances = 414)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 85.71  14.29   0.85   0.86   0.85
+ TEST: 81.29  18.71   0.80   0.81   0.81
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (67.0/5.0)
+|   A10 = f
+|   |   A7 = v
+|   |   |   A15 <= 10
+|   |   |   |   A14 <= 121: + (10.0/1.0)
+|   |   |   |   A14 > 121
+|   |   |   |   |   A8 <= 0.165: + (4.0/1.0)
+|   |   |   |   |   A8 > 0.165: - (6.0)
+|   |   |   A15 > 10: - (2.52)
+|   |   A7 = h: + (10.24/2.24)
+|   |   A7 = bb
+|   |   |   A2 <= 30.17: + (3.0)
+|   |   |   A2 > 30.17: - (2.12)
+|   |   A7 = j: + (0.0)
+|   |   A7 = n: + (0.0)
+|   |   A7 = z: + (1.02/0.02)
+|   |   A7 = dd: + (0.0)
+|   |   A7 = ff: - (4.1)
+|   |   A7 = o: + (0.0)
+A9 = f: - (211.0/10.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	22
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.019
+ CV-2     0:00:00.016
+ CV-3     0:00:00.017
+ CV-4     0:00:00.016
+ CV-5     0:00:00.016
+ CV-6     0:00:00.018
+ CV-7     0:00:00.017
+ CV-8     0:00:00.016
+ CV-9     0:00:00.016
+ CV-10    0:00:00.017
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 483)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 89.19  10.81   0.89   0.89   0.89
+ TEST: 91.36   8.64   0.91   0.91   0.91
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (67.0/5.0)
+|   A10 = f
+|   |   A7 = v
+|   |   |   A15 <= 10
+|   |   |   |   A14 <= 121: + (10.0/1.0)
+|   |   |   |   A14 > 121
+|   |   |   |   |   A8 <= 0.165: + (4.0/1.0)
+|   |   |   |   |   A8 > 0.165: - (6.0)
+|   |   |   A15 > 10: - (2.52)
+|   |   A7 = h: + (10.24/2.24)
+|   |   A7 = bb
+|   |   |   A2 <= 30.17: + (3.0)
+|   |   |   A2 > 30.17: - (2.12)
+|   |   A7 = j: + (0.0)
+|   |   A7 = n: + (0.0)
+|   |   A7 = z: + (1.02/0.02)
+|   |   A7 = dd: + (0.0)
+|   |   A7 = ff: - (4.1)
+|   |   A7 = o: + (0.0)
+A9 = f: - (211.0/10.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	22
+
+
+Weight: 2.77
+
+J48 pruned tree
+------------------
+
+A3 <= 0.375: + (77.73/14.35)
+A3 > 0.375
+|   A15 <= 587
+|   |   A8 <= 1.29: - (119.83/8.5)
+|   |   A8 > 1.29
+|   |   |   A2 <= 23.33: + (24.48/2.27)
+|   |   |   A2 > 23.33
+|   |   |   |   A3 <= 11.5: - (58.09/6.91)
+|   |   |   |   A3 > 11.5: + (5.31/1.06)
+|   A15 > 587
+|   |   A9 = t: + (16.48)
+|   |   A9 = f
+|   |   |   A13 = g: - (10.63)
+|   |   |   A13 = p: + (8.45)
+|   |   |   A13 = s: - (0.0)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	16
+
+
+Weight: 2.17
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A4 = u
+|   |   A14 <= 520
+|   |   |   A13 = g
+|   |   |   |   A2 <= 53.33: + (67.08/2.37)
+|   |   |   |   A2 > 53.33
+|   |   |   |   |   A11 <= 3
+|   |   |   |   |   |   A14 <= 220: - (10.01/0.3)
+|   |   |   |   |   |   A14 > 220: + (2.65)
+|   |   |   |   |   A11 > 3: + (5.77)
+|   |   |   A13 = p: + (0.0)
+|   |   |   A13 = s
+|   |   |   |   A3 <= 2.71: - (5.0)
+|   |   |   |   A3 > 2.71: + (2.88)
+|   |   A14 > 520: - (9.74/0.03)
+|   A4 = y
+|   |   A8 <= 2.75: - (29.55/7.25)
+|   |   A8 > 2.75: + (8.36)
+|   A4 = l: + (0.0)
+|   A4 = t: + (0.0)
+A9 = f
+|   A4 = u
+|   |   A12 = t: - (30.04)
+|   |   A12 = f
+|   |   |   A7 = v
+|   |   |   |   A13 = g
+|   |   |   |   |   A6 = c
+|   |   |   |   |   |   A8 <= 0.04: + (4.71)
+|   |   |   |   |   |   A8 > 0.04: - (8.14)
+|   |   |   |   |   A6 = d: - (3.48)
+|   |   |   |   |   A6 = cc: + (5.3/0.59)
+|   |   |   |   |   A6 = i: - (1.18)
+|   |   |   |   |   A6 = j: - (0.0)
+|   |   |   |   |   A6 = k: - (0.59)
+|   |   |   |   |   A6 = m: - (0.59)
+|   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   A6 = q
+|   |   |   |   |   |   A14 <= 220: - (5.77)
+|   |   |   |   |   |   A14 > 220: + (4.71)
+|   |   |   |   |   A6 = w
+|   |   |   |   |   |   A14 <= 180: + (5.89/1.18)
+|   |   |   |   |   |   A14 > 180: - (3.77)
+|   |   |   |   |   A6 = x: - (0.0)
+|   |   |   |   |   A6 = e: - (0.59)
+|   |   |   |   |   A6 = aa: - (4.66)
+|   |   |   |   |   A6 = ff: - (0.0)
+|   |   |   |   A13 = p
+|   |   |   |   |   A1 = b
+|   |   |   |   |   |   A2 <= 35.75: - (2.91)
+|   |   |   |   |   |   A2 > 35.75: + (2.37)
+|   |   |   |   |   A1 = a: + (2.37)
+|   |   |   |   A13 = s: - (10.95)
+|   |   |   A7 = h: - (3.9/0.27)
+|   |   |   A7 = bb: - (1.0/0.07)
+|   |   |   A7 = j: - (0.33/0.02)
+|   |   |   A7 = n: + (5.28/0.2)
+|   |   |   A7 = z: - (0.33/0.02)
+|   |   |   A7 = dd: - (0.33/0.02)
+|   |   |   A7 = ff: - (10.12/0.71)
+|   |   |   A7 = o: - (0.33/0.02)
+|   A4 = y
+|   |   A1 = b: - (37.29/1.31)
+|   |   A1 = a
+|   |   |   A6 = c: - (0.67/0.07)
+|   |   |   A6 = d: - (0.0)
+|   |   |   A6 = cc: - (0.09/0.01)
+|   |   |   A6 = i: - (0.67/0.07)
+|   |   |   A6 = j: - (3.59/0.37)
+|   |   |   A6 = k: - (0.67/0.07)
+|   |   |   A6 = m: - (0.0)
+|   |   |   A6 = r: - (0.0)
+|   |   |   A6 = q: - (0.33/0.03)
+|   |   |   A6 = w: - (0.0)
+|   |   |   A6 = x: + (5.98/0.66)
+|   |   |   A6 = e: - (0.09/0.01)
+|   |   |   A6 = aa: - (0.33/0.03)
+|   |   |   A6 = ff: - (0.33/0.03)
+|   A4 = l: + (10.24/0.29)
+|   A4 = t: - (0.0)
+
+Number of Leaves  : 	59
+
+Size of the tree : 	80
+
+
+Weight: 3.22
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t
+|   |   A7 = v: + (105.32/4.89)
+|   |   A7 = h
+|   |   |   A2 <= 42.25: + (8.98)
+|   |   |   A2 > 42.25: - (5.36/0.46)
+|   |   A7 = bb: - (2.75/0.31)
+|   |   A7 = j: + (0.0)
+|   |   A7 = n: + (0.15)
+|   |   A7 = z: + (4.02)
+|   |   A7 = dd: + (1.35)
+|   |   A7 = ff: + (0.15)
+|   |   A7 = o: + (0.0)
+|   A10 = f
+|   |   A3 <= 3.79: - (43.65/6.0)
+|   |   A3 > 3.79: + (25.98/5.36)
+A9 = f
+|   A13 = g
+|   |   A7 = v
+|   |   |   A12 = t: - (10.0)
+|   |   |   A12 = f
+|   |   |   |   A8 <= 1.375
+|   |   |   |   |   A3 <= 0.375
+|   |   |   |   |   |   A14 <= 228
+|   |   |   |   |   |   |   A2 <= 16.17: + (2.45)
+|   |   |   |   |   |   |   A2 > 16.17: - (14.8)
+|   |   |   |   |   |   A14 > 228: + (4.89)
+|   |   |   |   |   A3 > 0.375: - (34.16)
+|   |   |   |   A8 > 1.375: + (6.55/1.65)
+|   |   A7 = h: - (12.35)
+|   |   A7 = bb: - (1.7)
+|   |   A7 = j: - (0.46)
+|   |   A7 = n: + (2.61/0.16)
+|   |   A7 = z: - (0.15)
+|   |   A7 = dd: - (0.46)
+|   |   A7 = ff: - (7.28)
+|   |   A7 = o: - (0.15)
+|   A13 = p
+|   |   A1 = b
+|   |   |   A12 = t: + (2.45)
+|   |   |   A12 = f
+|   |   |   |   A2 <= 35.75: - (2.85)
+|   |   |   |   A2 > 35.75: + (2.45)
+|   |   A1 = a: + (2.45)
+|   A13 = s
+|   |   A4 = u: - (9.46)
+|   |   A4 = y: - (3.15)
+|   |   A4 = l: + (2.45)
+|   |   A4 = t: - (0.0)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	50
+
+
+Weight: 2.78
+
+J48 pruned tree
+------------------
+
+A14 <= 224
+|   A11 <= 6
+|   |   A8 <= 0.04
+|   |   |   A8 <= 0
+|   |   |   |   A7 = v: - (0.1/0.01)
+|   |   |   |   A7 = h: - (2.48/0.27)
+|   |   |   |   A7 = bb: + (1.78/0.28)
+|   |   |   |   A7 = j: - (0.3/0.03)
+|   |   |   |   A7 = n: - (0.0)
+|   |   |   |   A7 = z: + (2.58/0.25)
+|   |   |   |   A7 = dd: - (0.2/0.02)
+|   |   |   |   A7 = ff: - (10.19/1.09)
+|   |   |   |   A7 = o: - (0.0)
+|   |   |   A8 > 0
+|   |   |   |   A9 = t: + (12.79)
+|   |   |   |   A9 = f: - (3.47/1.3)
+|   |   A8 > 0.04
+|   |   |   A8 <= 3.75
+|   |   |   |   A15 <= 351: - (154.09/15.06)
+|   |   |   |   A15 > 351
+|   |   |   |   |   A9 = t: + (6.61/1.31)
+|   |   |   |   |   A9 = f: - (2.85)
+|   |   |   A8 > 3.75: + (11.09/1.95)
+|   A11 > 6
+|   |   A3 <= 1.25: - (2.73)
+|   |   A3 > 1.25: + (22.12/0.08)
+A14 > 224
+|   A9 = t
+|   |   A8 <= 2.25: + (62.54/1.46)
+|   |   A8 > 2.25
+|   |   |   A10 = t: + (4.77)
+|   |   |   A10 = f: - (3.6/0.16)
+|   A9 = f
+|   |   A4 = u
+|   |   |   A12 = t: - (3.7)
+|   |   |   A12 = f
+|   |   |   |   A3 <= 0.42: + (3.19/0.21)
+|   |   |   |   A3 > 0.42: - (2.13)
+|   |   A4 = y: - (4.95/0.21)
+|   |   A4 = l: + (2.78/0.06)
+|   |   A4 = t: - (0.0)
+
+Number of Leaves  : 	26
+
+Size of the tree : 	42
+
+
+Weight: 2.51
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A2 <= 44.33
+|   |   A9 = t: + (46.05)
+|   |   A9 = f
+|   |   |   A8 <= 0.04: + (13.56/0.72)
+|   |   |   A8 > 0.04: - (6.08)
+|   A2 > 44.33: - (12.65)
+A6 = d
+|   A3 <= 8.5: + (12.22/0.86)
+|   A3 > 8.5: - (11.32)
+A6 = cc
+|   A9 = t: + (7.11/0.41)
+|   A9 = f
+|   |   A3 <= 0.46: + (2.06/0.03)
+|   |   A3 > 0.46: - (2.49)
+A6 = i: - (7.74/2.42)
+A6 = j: - (0.6/0.03)
+A6 = k
+|   A12 = t: - (21.19)
+|   A12 = f: + (11.26/3.08)
+A6 = m: - (3.48/0.66)
+A6 = r: + (0.05/0.0)
+A6 = q
+|   A3 <= 13
+|   |   A1 = b: + (19.17/0.98)
+|   |   A1 = a
+|   |   |   A12 = t: - (2.56/0.39)
+|   |   |   A12 = f: + (2.92/0.52)
+|   A3 > 13: - (9.01)
+A6 = w
+|   A14 <= 154
+|   |   A8 <= 1.29: - (6.57/1.9)
+|   |   A8 > 1.29: + (27.94)
+|   A14 > 154: - (21.8/1.65)
+A6 = x: + (41.92/3.22)
+A6 = e: + (3.72/0.87)
+A6 = aa
+|   A4 = u: + (8.62/0.94)
+|   A4 = y: - (10.54/0.57)
+|   A4 = l: - (0.0)
+|   A4 = t: - (0.0)
+A6 = ff: - (8.34/1.2)
+
+Number of Leaves  : 	29
+
+Size of the tree : 	43
+
+
+Weight: 2.93
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A2 <= 33.67
+|   |   A15 <= 316
+|   |   |   A2 <= 19.67
+|   |   |   |   A4 = u: + (8.78/0.37)
+|   |   |   |   A4 = y: - (10.03/0.29)
+|   |   |   |   A4 = l: - (0.0)
+|   |   |   |   A4 = t: - (0.0)
+|   |   |   A2 > 19.67: + (63.7/2.26)
+|   |   A15 > 316
+|   |   |   A15 <= 375: - (10.53)
+|   |   |   A15 > 375: + (4.0)
+|   A2 > 33.67
+|   |   A11 <= 3
+|   |   |   A8 <= 0.165: + (12.5/1.25)
+|   |   |   A8 > 0.165
+|   |   |   |   A3 <= 0.25: + (4.59)
+|   |   |   |   A3 > 0.25: - (50.63/2.47)
+|   |   A11 > 3: + (12.85)
+A9 = f
+|   A13 = g
+|   |   A7 = v
+|   |   |   A8 <= 1.375
+|   |   |   |   A2 <= 16.17: + (6.07/1.52)
+|   |   |   |   A2 > 16.17: - (53.63/0.74)
+|   |   |   A8 > 1.375
+|   |   |   |   A14 <= 170: + (10.37/1.29)
+|   |   |   |   A14 > 170: - (4.22)
+|   |   A7 = h: - (16.11)
+|   |   A7 = bb: - (1.73)
+|   |   A7 = j: - (0.07)
+|   |   A7 = n: + (4.94/0.39)
+|   |   A7 = z: - (5.36)
+|   |   A7 = dd: - (1.31)
+|   |   A7 = ff: - (1.9)
+|   |   A7 = o: - (0.02)
+|   A13 = p
+|   |   A12 = t: + (6.92)
+|   |   A12 = f
+|   |   |   A1 = b
+|   |   |   |   A2 <= 35.75: - (7.63)
+|   |   |   |   A2 > 35.75: + (4.54)
+|   |   |   A1 = a: + (4.54)
+|   A13 = s: - (14.02/0.37)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	45
+
+
+Weight: 3.35
+
+J48 pruned tree
+------------------
+
+A8 <= 8.29
+|   A15 <= 722
+|   |   A15 <= 300
+|   |   |   A7 = v
+|   |   |   |   A15 <= 13
+|   |   |   |   |   A3 <= 4
+|   |   |   |   |   |   A8 <= 0.04: + (10.9/3.69)
+|   |   |   |   |   |   A8 > 0.04
+|   |   |   |   |   |   |   A11 <= 3
+|   |   |   |   |   |   |   |   A2 <= 42.83
+|   |   |   |   |   |   |   |   |   A15 <= 7: - (69.84/0.36)
+|   |   |   |   |   |   |   |   |   A15 > 7
+|   |   |   |   |   |   |   |   |   |   A8 <= 1.25: - (5.68)
+|   |   |   |   |   |   |   |   |   |   A8 > 1.25: + (2.35)
+|   |   |   |   |   |   |   |   A2 > 42.83
+|   |   |   |   |   |   |   |   |   A10 = t: - (3.08)
+|   |   |   |   |   |   |   |   |   A10 = f: + (4.38/0.31)
+|   |   |   |   |   |   |   A11 > 3
+|   |   |   |   |   |   |   |   A12 = t: + (2.75)
+|   |   |   |   |   |   |   |   A12 = f: - (2.12/0.15)
+|   |   |   |   |   A3 > 4
+|   |   |   |   |   |   A14 <= 480: + (25.53/4.91)
+|   |   |   |   |   |   A14 > 480: - (6.42)
+|   |   |   |   A15 > 13: + (26.74/5.78)
+|   |   |   A7 = h
+|   |   |   |   A12 = t: - (16.11/0.58)
+|   |   |   |   A12 = f
+|   |   |   |   |   A15 <= 0: + (9.07/1.15)
+|   |   |   |   |   A15 > 0: - (3.48/0.19)
+|   |   |   A7 = bb
+|   |   |   |   A2 <= 26.33: + (6.94/0.2)
+|   |   |   |   A2 > 26.33: - (6.98/0.14)
+|   |   |   A7 = j: - (0.04/0.0)
+|   |   |   A7 = n: + (2.46/0.04)
+|   |   |   A7 = z: - (2.87/0.06)
+|   |   |   A7 = dd: - (0.23/0.0)
+|   |   |   A7 = ff: - (29.15/0.58)
+|   |   |   A7 = o: - (0.01/0.0)
+|   |   A15 > 300: - (29.49/0.34)
+|   A15 > 722
+|   |   A10 = t: + (17.11/0.27)
+|   |   A10 = f
+|   |   |   A13 = g: - (4.16/0.5)
+|   |   |   A13 = p: + (3.58)
+|   |   |   A13 = s: + (0.0)
+A8 > 8.29: + (29.51/0.15)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	47
+
+
+Weight: 2.76
+
+J48 pruned tree
+------------------
+
+A10 = t
+|   A9 = t
+|   |   A4 = u: + (34.35/4.13)
+|   |   A4 = y
+|   |   |   A7 = v: + (7.8/1.63)
+|   |   |   A7 = h: + (0.17)
+|   |   |   A7 = bb: - (2.9)
+|   |   |   A7 = j: + (0.0)
+|   |   |   A7 = n: + (0.0)
+|   |   |   A7 = z: + (0.0)
+|   |   |   A7 = dd: + (0.0)
+|   |   |   A7 = ff: + (0.0)
+|   |   |   A7 = o: + (0.0)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A9 = f
+|   |   A3 <= 0.205: + (3.95/1.05)
+|   |   A3 > 0.205: - (24.9)
+A10 = f
+|   A7 = v
+|   |   A8 <= 2.415: - (163.03/12.61)
+|   |   A8 > 2.415
+|   |   |   A12 = t: - (10.81/0.06)
+|   |   |   A12 = f: + (9.5)
+|   A7 = h
+|   |   A9 = t: + (13.98/3.76)
+|   |   A9 = f: - (15.07/0.29)
+|   A7 = bb: + (5.08/1.52)
+|   A7 = j: - (0.02/0.0)
+|   A7 = n: + (1.48/0.21)
+|   A7 = z
+|   |   A1 = b: - (2.17/0.02)
+|   |   A1 = a: + (2.58/0.0)
+|   A7 = dd: - (0.28/0.0)
+|   A7 = ff
+|   |   A8 <= 7: - (17.78/0.21)
+|   |   A8 > 7: + (2.9)
+|   A7 = o: + (2.25/0.33)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	39
+
+
+Weight: 2.5
+
+J48 pruned tree
+------------------
+
+A4 = u
+|   A14 <= 422
+|   |   A14 <= 221
+|   |   |   A14 <= 154
+|   |   |   |   A9 = t
+|   |   |   |   |   A7 = v: + (25.51/1.9)
+|   |   |   |   |   A7 = h
+|   |   |   |   |   |   A2 <= 53.33: + (4.39)
+|   |   |   |   |   |   A2 > 53.33: - (8.52/0.06)
+|   |   |   |   |   A7 = bb: + (4.1/1.14)
+|   |   |   |   |   A7 = j: + (0.0)
+|   |   |   |   |   A7 = n: + (0.0/0.0)
+|   |   |   |   |   A7 = z: + (2.54/0.05)
+|   |   |   |   |   A7 = dd: + (0.49/0.01)
+|   |   |   |   |   A7 = ff: - (5.14/0.06)
+|   |   |   |   |   A7 = o: + (0.0)
+|   |   |   |   A9 = f
+|   |   |   |   |   A10 = t: - (15.58)
+|   |   |   |   |   A10 = f
+|   |   |   |   |   |   A3 <= 1.5
+|   |   |   |   |   |   |   A6 = c: + (13.16/2.65)
+|   |   |   |   |   |   |   A6 = d: - (3.82/0.67)
+|   |   |   |   |   |   |   A6 = cc: - (0.14/0.02)
+|   |   |   |   |   |   |   A6 = i: - (0.07/0.01)
+|   |   |   |   |   |   |   A6 = j: + (0.0)
+|   |   |   |   |   |   |   A6 = k: + (0.0)
+|   |   |   |   |   |   |   A6 = m: - (0.06/0.01)
+|   |   |   |   |   |   |   A6 = r: + (0.0)
+|   |   |   |   |   |   |   A6 = q: - (0.01/0.0)
+|   |   |   |   |   |   |   A6 = w: + (13.11/2.61)
+|   |   |   |   |   |   |   A6 = x: + (0.0)
+|   |   |   |   |   |   |   A6 = e: - (1.62/0.29)
+|   |   |   |   |   |   |   A6 = aa: + (0.0)
+|   |   |   |   |   |   |   A6 = ff: - (0.06/0.01)
+|   |   |   |   |   |   A3 > 1.5: - (11.74)
+|   |   |   A14 > 154: - (27.11/2.53)
+|   |   A14 > 221: + (57.38/7.82)
+|   A14 > 422: - (31.24/1.63)
+A4 = y
+|   A1 = b
+|   |   A10 = t
+|   |   |   A2 <= 22.75: + (2.59)
+|   |   |   A2 > 22.75: - (13.14/0.83)
+|   |   A10 = f: - (63.75/4.28)
+|   A1 = a
+|   |   A13 = g
+|   |   |   A9 = t: + (3.81/1.21)
+|   |   |   A9 = f: - (6.64/0.68)
+|   |   A13 = p: + (2.36)
+|   |   A13 = s: - (0.0)
+A4 = l: + (2.91/0.16)
+A4 = t: - (0.0)
+
+Number of Leaves  : 	38
+
+Size of the tree : 	53
+
+
+Weight: 2.59
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.209
+ CV-2     0:00:00.209
+ CV-3     0:00:00.199
+ CV-4     0:00:00.199
+ CV-5     0:00:00.206
+ CV-6     0:00:00.209
+ CV-7     0:00:00.199
+ CV-8     0:00:00.204
+ CV-9     0:00:00.195
+ CV-10    0:00:00.201
+ TEST     0:00:00.024
+
+Test Results: (number of instances = 483)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 88.26  11.74   0.88   0.88   0.88
+ TEST: 90.12   9.88   0.90   0.90   0.90
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0022 * (normalized) A1
+ +       0.2305 * (normalized) A2
+ +       0.01   * (normalized) A3
+ +       0.455  * (normalized) A4=u
+ +       0.4539 * (normalized) A4=y
+ +      -0.9089 * (normalized) A4=l
+ +       0.455  * (normalized) A5=g
+ +       0.4539 * (normalized) A5=p
+ +      -0.9089 * (normalized) A5=gg
+ +      -0.1618 * (normalized) A6=c
+ +      -0.0532 * (normalized) A6=d
+ +      -0.1978 * (normalized) A6=cc
+ +       0      * (normalized) A6=i
+ +       0      * (normalized) A6=k
+ +       0      * (normalized) A6=m
+ +      -0.1898 * (normalized) A6=q
+ +      -0.0805 * (normalized) A6=w
+ +      -0.235  * (normalized) A6=x
+ +      -0.1108 * (normalized) A6=e
+ +      -0.0434 * (normalized) A6=aa
+ +       1.0723 * (normalized) A6=ff
+ +      -0.0766 * (normalized) A7=v
+ +      -0.0307 * (normalized) A7=h
+ +      -0.0894 * (normalized) A7=bb
+ +      -0.0969 * (normalized) A7=n
+ +      -0.0581 * (normalized) A7=z
+ +      -0.0526 * (normalized) A7=dd
+ +       0.6453 * (normalized) A7=ff
+ +      -0.2409 * (normalized) A7=o
+ +      -0.4494 * (normalized) A8
+ +       2.073  * (normalized) A9
+ +       0.0891 * (normalized) A10
+ +      -0.1689 * (normalized) A11
+ +      -0.113  * (normalized) A12
+ +       0.0024 * (normalized) A13=g
+ +      -0.0989 * (normalized) A13=p
+ +       0.0965 * (normalized) A13=s
+ +       0.2453 * (normalized) A14
+ +      -0.4345 * (normalized) A15
+ -       1.7131
+
+Number of kernel evaluations: 24623 (94.106% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.176
+ CV-2     0:00:00.184
+ CV-3     0:00:00.160
+ CV-4     0:00:00.148
+ CV-5     0:00:00.183
+ CV-6     0:00:00.166
+ CV-7     0:00:00.201
+ CV-8     0:00:00.169
+ CV-9     0:00:00.159
+ CV-10    0:00:00.180
+ TEST     0:00:00.021
+
+Test Results: (number of instances = 483)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 89.60  10.40   0.90   0.90   0.90
+ TEST: 89.51  10.49   0.89   0.90   0.89
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.009
+ CV-2     0:00:00.009
+ CV-3     0:00:00.011
+ CV-4     0:00:00.009
+ CV-5     0:00:00.009
+ CV-6     0:00:00.008
+ CV-7     0:00:00.008
+ CV-8     0:00:00.008
+ CV-9     0:00:00.008
+ CV-10    0:00:00.010
+ TEST     0:00:00.004
+
+Test Results: (number of instances = 483)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 86.98  13.02   0.87   0.87   0.87
+ TEST: 87.04  12.96   0.87   0.87   0.87
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (99.0/5.0)
+|   A10 = f
+|   |   A15 <= 375
+|   |   |   A14 <= 420
+|   |   |   |   A15 <= 44
+|   |   |   |   |   A8 <= 1.5
+|   |   |   |   |   |   A13 = g: + (21.0/6.0)
+|   |   |   |   |   |   A13 = p: + (0.0)
+|   |   |   |   |   |   A13 = s: - (3.0)
+|   |   |   |   |   A8 > 1.5: + (13.0/1.0)
+|   |   |   |   A15 > 44: - (4.0/1.0)
+|   |   |   A14 > 420: - (4.0)
+|   |   A15 > 375: + (11.0)
+A9 = f
+|   A13 = g: - (186.0/7.0)
+|   A13 = p: + (5.0/1.0)
+|   A13 = s: - (21.0/1.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	19
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.018
+ CV-2     0:00:00.017
+ CV-3     0:00:00.017
+ CV-4     0:00:00.018
+ CV-5     0:00:00.018
+ CV-6     0:00:00.021
+ CV-7     0:00:00.019
+ CV-8     0:00:00.018
+ CV-9     0:00:00.019
+ CV-10    0:00:00.018
+ TEST     0:00:00.002
+
+Test Results: (number of instances = 552)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 89.75  10.25   0.90   0.90   0.90
+ TEST: 90.81   9.19   0.91   0.91   0.91
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A10 = t: + (99.0/5.0)
+|   A10 = f
+|   |   A15 <= 375
+|   |   |   A14 <= 420
+|   |   |   |   A15 <= 44
+|   |   |   |   |   A8 <= 1.5
+|   |   |   |   |   |   A13 = g: + (21.0/6.0)
+|   |   |   |   |   |   A13 = p: + (0.0)
+|   |   |   |   |   |   A13 = s: - (3.0)
+|   |   |   |   |   A8 > 1.5: + (13.0/1.0)
+|   |   |   |   A15 > 44: - (4.0/1.0)
+|   |   |   A14 > 420: - (4.0)
+|   |   A15 > 375: + (11.0)
+A9 = f
+|   A13 = g: - (186.0/7.0)
+|   A13 = p: + (5.0/1.0)
+|   A13 = s: - (21.0/1.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	19
+
+
+Weight: 2.75
+
+J48 pruned tree
+------------------
+
+A3 <= 0.375
+|   A3 <= 0
+|   |   A2 <= 24.17: - (10.47)
+|   |   A2 > 24.17: + (3.19/0.53)
+|   A3 > 0: + (67.6/12.23)
+A3 > 0.375
+|   A3 <= 1.835
+|   |   A15 <= 458: - (99.34/3.19)
+|   |   A15 > 458
+|   |   |   A9 = t: + (7.98)
+|   |   |   A9 = f: - (2.66)
+|   A3 > 1.835
+|   |   A3 <= 25.085
+|   |   |   A9 = t
+|   |   |   |   A3 <= 8.5
+|   |   |   |   |   A4 = u
+|   |   |   |   |   |   A15 <= 1065
+|   |   |   |   |   |   |   A6 = c: + (1.08/0.01)
+|   |   |   |   |   |   |   A6 = d: - (0.0)
+|   |   |   |   |   |   |   A6 = cc: + (1.62/0.02)
+|   |   |   |   |   |   |   A6 = i: - (0.54)
+|   |   |   |   |   |   |   A6 = j: + (0.54/0.01)
+|   |   |   |   |   |   |   A6 = k: - (10.07/1.6)
+|   |   |   |   |   |   |   A6 = m: + (1.62/0.02)
+|   |   |   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   |   |   A6 = q
+|   |   |   |   |   |   |   |   A3 <= 7: + (3.88/0.16)
+|   |   |   |   |   |   |   |   A3 > 7: - (8.34)
+|   |   |   |   |   |   |   A6 = w: - (8.99/0.53)
+|   |   |   |   |   |   |   A6 = x: + (1.62/0.55)
+|   |   |   |   |   |   |   A6 = e: + (0.54/0.01)
+|   |   |   |   |   |   |   A6 = aa: + (2.69/0.57)
+|   |   |   |   |   |   |   A6 = ff: - (0.0)
+|   |   |   |   |   |   A15 > 1065: + (8.51)
+|   |   |   |   |   A4 = y: + (7.45)
+|   |   |   |   |   A4 = l: + (0.0)
+|   |   |   |   |   A4 = t: + (0.0)
+|   |   |   |   A3 > 8.5: + (32.28/1.6)
+|   |   |   A9 = f
+|   |   |   |   A14 <= 160: - (32.66)
+|   |   |   |   A14 > 160
+|   |   |   |   |   A3 <= 5.125: - (15.96)
+|   |   |   |   |   A3 > 5.125
+|   |   |   |   |   |   A3 <= 9.625: + (16.96/0.28)
+|   |   |   |   |   |   A3 > 9.625: - (3.75/0.53)
+|   |   A3 > 25.085: - (16.68)
+
+Number of Leaves  : 	31
+
+Size of the tree : 	47
+
+
+Weight: 2.74
+
+J48 pruned tree
+------------------
+
+A11 <= 4
+|   A4 = u
+|   |   A13 = g
+|   |   |   A7 = v
+|   |   |   |   A3 <= 4.415
+|   |   |   |   |   A3 <= 0.125
+|   |   |   |   |   |   A3 <= 0.04: + (4.72)
+|   |   |   |   |   |   A3 > 0.04
+|   |   |   |   |   |   |   A6 = c: - (4.37)
+|   |   |   |   |   |   |   A6 = d: + (0.0)
+|   |   |   |   |   |   |   A6 = cc: + (0.0)
+|   |   |   |   |   |   |   A6 = i: + (0.0)
+|   |   |   |   |   |   |   A6 = j: + (0.0)
+|   |   |   |   |   |   |   A6 = k: + (0.0)
+|   |   |   |   |   |   |   A6 = m: + (0.0)
+|   |   |   |   |   |   |   A6 = r: + (0.0)
+|   |   |   |   |   |   |   A6 = q: + (4.44)
+|   |   |   |   |   |   |   A6 = w: + (0.0)
+|   |   |   |   |   |   |   A6 = x: + (0.0)
+|   |   |   |   |   |   |   A6 = e: + (0.0)
+|   |   |   |   |   |   |   A6 = aa: + (0.0)
+|   |   |   |   |   |   |   A6 = ff: + (0.0)
+|   |   |   |   |   A3 > 0.125: - (70.56/7.56)
+|   |   |   |   A3 > 4.415
+|   |   |   |   |   A14 <= 145: - (18.84/7.77)
+|   |   |   |   |   A14 > 145: + (19.6/0.85)
+|   |   |   A7 = h
+|   |   |   |   A15 <= 484
+|   |   |   |   |   A15 <= 25
+|   |   |   |   |   |   A10 = t: + (5.5/0.57)
+|   |   |   |   |   |   A10 = f: - (21.3/1.7)
+|   |   |   |   |   A15 > 25: - (11.2)
+|   |   |   |   A15 > 484: + (2.27)
+|   |   |   A7 = bb
+|   |   |   |   A3 <= 1: + (4.94)
+|   |   |   |   A3 > 1: - (7.26/0.28)
+|   |   |   A7 = j: - (0.87/0.28)
+|   |   |   A7 = n: + (4.54/0.1)
+|   |   |   A7 = z: - (0.58/0.28)
+|   |   |   A7 = dd: - (0.58)
+|   |   |   A7 = ff: - (13.36/0.57)
+|   |   |   A7 = o: - (0.29)
+|   |   A13 = p: - (3.66/0.59)
+|   |   A13 = s: - (22.57/0.85)
+|   A4 = y
+|   |   A6 = c
+|   |   |   A2 <= 31.08: - (16.62/0.59)
+|   |   |   A2 > 31.08: + (5.4/0.35)
+|   |   A6 = d: - (9.23/0.02)
+|   |   A6 = cc: - (5.63/0.3)
+|   |   A6 = i: - (1.45/0.0)
+|   |   A6 = j: - (0.58/0.0)
+|   |   A6 = k: - (14.28/0.04)
+|   |   A6 = m: - (5.34/0.01)
+|   |   A6 = r: - (0.0)
+|   |   A6 = q: - (0.29/0.0)
+|   |   A6 = w: + (2.03/0.61)
+|   |   A6 = x: + (5.99/0.69)
+|   |   A6 = e: + (5.34/0.67)
+|   |   A6 = aa: - (5.92/0.58)
+|   |   A6 = ff: - (11.91/0.03)
+|   A4 = l: + (8.96/0.12)
+|   A4 = t: - (0.0)
+A11 > 4
+|   A9 = t
+|   |   A2 <= 23.75
+|   |   |   A15 <= 251: + (5.5)
+|   |   |   A15 > 251: - (10.86/1.98)
+|   |   A2 > 23.75: + (24.72)
+|   A9 = f: - (5.5)
+
+Number of Leaves  : 	53
+
+Size of the tree : 	71
+
+
+Weight: 2.54
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A2 <= 21.33
+|   |   A4 = u: + (62.01/0.15)
+|   |   A4 = y
+|   |   |   A3 <= 9.625: + (2.39)
+|   |   |   A3 > 9.625: - (2.36)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A2 > 21.33
+|   |   A14 <= 520
+|   |   |   A14 <= 208
+|   |   |   |   A8 <= 0.585
+|   |   |   |   |   A1 = b: - (21.94/2.85)
+|   |   |   |   |   A1 = a: + (4.16)
+|   |   |   |   A8 > 0.585
+|   |   |   |   |   A4 = u
+|   |   |   |   |   |   A1 = b
+|   |   |   |   |   |   |   A14 <= 186: + (28.49)
+|   |   |   |   |   |   |   A14 > 186
+|   |   |   |   |   |   |   |   A10 = t: + (2.37)
+|   |   |   |   |   |   |   |   A10 = f: - (2.4)
+|   |   |   |   |   |   A1 = a
+|   |   |   |   |   |   |   A10 = t
+|   |   |   |   |   |   |   |   A3 <= 6.75: + (2.85)
+|   |   |   |   |   |   |   |   A3 > 6.75: - (5.4/0.61)
+|   |   |   |   |   |   |   A10 = f: + (6.56)
+|   |   |   |   |   A4 = y
+|   |   |   |   |   |   A13 = g
+|   |   |   |   |   |   |   A3 <= 1: - (2.55/0.15)
+|   |   |   |   |   |   |   A3 > 1: + (5.36)
+|   |   |   |   |   |   A13 = p: + (0.0)
+|   |   |   |   |   |   A13 = s: - (2.36)
+|   |   |   |   |   A4 = l: + (0.0)
+|   |   |   |   |   A4 = t: + (0.0)
+|   |   |   A14 > 208
+|   |   |   |   A2 <= 24.58
+|   |   |   |   |   A8 <= 3.165: - (2.55)
+|   |   |   |   |   A8 > 3.165: + (2.06)
+|   |   |   |   A2 > 24.58: + (39.51/0.15)
+|   |   A14 > 520: - (7.27/0.01)
+A9 = f
+|   A6 = c
+|   |   A3 <= 0.17
+|   |   |   A15 <= 400
+|   |   |   |   A15 <= 55
+|   |   |   |   |   A8 <= 0.085: + (4.07/0.49)
+|   |   |   |   |   A8 > 0.085: - (2.51)
+|   |   |   |   A15 > 55: + (2.4)
+|   |   |   A15 > 400: - (2.36)
+|   |   A3 > 0.17: - (22.25)
+|   A6 = d: - (4.1/0.14)
+|   A6 = cc
+|   |   A1 = b: - (4.14/0.44)
+|   |   A1 = a: + (33.74/0.2)
+|   A6 = i: - (6.03/0.21)
+|   A6 = j: - (0.64/0.02)
+|   A6 = k: - (15.01/0.53)
+|   A6 = m: - (6.42/0.23)
+|   A6 = r: - (0.0)
+|   A6 = q
+|   |   A15 <= 23: - (8.71/0.49)
+|   |   A15 > 23: + (5.25/0.46)
+|   A6 = w
+|   |   A8 <= 0.085: + (3.34/0.51)
+|   |   A8 > 0.085: - (9.09)
+|   A6 = x
+|   |   A15 <= 0: + (2.89/0.26)
+|   |   A15 > 0: - (3.86)
+|   A6 = e: - (4.71/0.17)
+|   A6 = aa: - (6.58/0.23)
+|   A6 = ff
+|   |   A7 = v: - (0.0)
+|   |   A7 = h: - (0.0)
+|   |   A7 = bb: - (0.0)
+|   |   A7 = j: - (0.0)
+|   |   A7 = n: - (0.0)
+|   |   A7 = z: - (0.0)
+|   |   A7 = dd: - (0.0)
+|   |   A7 = ff: - (13.81/0.49)
+|   |   A7 = o: + (2.49/0.04)
+
+Number of Leaves  : 	53
+
+Size of the tree : 	81
+
+
+Weight: 3.95
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A13 = g
+|   |   A14 <= 99: + (120.05/3.64)
+|   |   A14 > 99
+|   |   |   A10 = t: + (42.86/4.88)
+|   |   |   A10 = f
+|   |   |   |   A12 = t
+|   |   |   |   |   A4 = u
+|   |   |   |   |   |   A8 <= 0.165: + (2.04)
+|   |   |   |   |   |   A8 > 0.165: - (11.16/1.06)
+|   |   |   |   |   A4 = y: + (2.34)
+|   |   |   |   |   A4 = l: - (0.0)
+|   |   |   |   |   A4 = t: - (0.0)
+|   |   |   |   A12 = f: + (18.42/6.16)
+|   A13 = p: + (0.0)
+|   A13 = s
+|   |   A8 <= 2.5: - (5.33)
+|   |   A8 > 2.5: + (2.95)
+A9 = f
+|   A13 = g
+|   |   A3 <= 0.375
+|   |   |   A3 <= 0.335: - (26.67/4.88)
+|   |   |   A3 > 0.335
+|   |   |   |   A6 = c: - (2.4)
+|   |   |   |   A6 = d: + (0.0)
+|   |   |   |   A6 = cc: + (15.42)
+|   |   |   |   A6 = i: + (0.0)
+|   |   |   |   A6 = j: + (0.0)
+|   |   |   |   A6 = k: + (0.0)
+|   |   |   |   A6 = m: + (0.0)
+|   |   |   |   A6 = r: + (0.0)
+|   |   |   |   A6 = q: + (0.0)
+|   |   |   |   A6 = w: + (0.0)
+|   |   |   |   A6 = x: + (0.0)
+|   |   |   |   A6 = e: + (0.0)
+|   |   |   |   A6 = aa: + (0.0)
+|   |   |   |   A6 = ff: + (0.0)
+|   |   A3 > 0.375: - (54.5/2.44)
+|   A13 = p: + (55.59/1.22)
+|   A13 = s: - (7.27/1.22)
+
+Number of Leaves  : 	29
+
+Size of the tree : 	41
+
+
+Weight: 2.59
+
+J48 pruned tree
+------------------
+
+A3 <= 0.375
+|   A2 <= 33.58
+|   |   A2 <= 20.17: + (41.25/6.13)
+|   |   A2 > 20.17
+|   |   |   A9 = t: + (2.75)
+|   |   |   A9 = f: - (16.6/0.53)
+|   A2 > 33.58: + (53.46/2.24)
+A3 > 0.375
+|   A3 <= 1.835
+|   |   A15 <= 458: - (72.32/3.87)
+|   |   A15 > 458: + (4.92/0.21)
+|   A3 > 1.835
+|   |   A3 <= 25.085
+|   |   |   A15 <= 15
+|   |   |   |   A3 <= 4.5
+|   |   |   |   |   A9 = t: + (8.8/2.51)
+|   |   |   |   |   A9 = f: - (6.54)
+|   |   |   |   A3 > 4.5: + (76.46/3.32)
+|   |   |   A15 > 15
+|   |   |   |   A15 <= 1110: - (51.29/7.69)
+|   |   |   |   A15 > 1110: + (15.04/0.29)
+|   |   A3 > 25.085: - (17.56)
+
+Number of Leaves  : 	12
+
+Size of the tree : 	23
+
+
+Weight: 2.54
+
+J48 pruned tree
+------------------
+
+A2 <= 17.92
+|   A3 <= 0.04: + (5.57/0.83)
+|   A3 > 0.04: - (39.73/1.24)
+A2 > 17.92
+|   A15 <= 375
+|   |   A15 <= 327
+|   |   |   A2 <= 69.5
+|   |   |   |   A2 <= 38.67
+|   |   |   |   |   A14 <= 396
+|   |   |   |   |   |   A9 = t
+|   |   |   |   |   |   |   A2 <= 33.67
+|   |   |   |   |   |   |   |   A3 <= 0.665
+|   |   |   |   |   |   |   |   |   A2 <= 24.58: - (4.74)
+|   |   |   |   |   |   |   |   |   A2 > 24.58: + (5.87)
+|   |   |   |   |   |   |   |   A3 > 0.665: + (46.48/0.37)
+|   |   |   |   |   |   |   A2 > 33.67: - (5.47/0.64)
+|   |   |   |   |   |   A9 = f
+|   |   |   |   |   |   |   A10 = t: - (7.58)
+|   |   |   |   |   |   |   A10 = f
+|   |   |   |   |   |   |   |   A2 <= 34.08
+|   |   |   |   |   |   |   |   |   A6 = c: - (11.04/0.7)
+|   |   |   |   |   |   |   |   |   A6 = d: - (0.52/0.03)
+|   |   |   |   |   |   |   |   |   A6 = cc: + (13.01/2.98)
+|   |   |   |   |   |   |   |   |   A6 = i: - (0.09/0.01)
+|   |   |   |   |   |   |   |   |   A6 = j: - (0.08/0.01)
+|   |   |   |   |   |   |   |   |   A6 = k: - (1.64/0.1)
+|   |   |   |   |   |   |   |   |   A6 = m: - (1.18/0.07)
+|   |   |   |   |   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   |   |   |   |   A6 = q
+|   |   |   |   |   |   |   |   |   |   A2 <= 18.75: + (4.74)
+|   |   |   |   |   |   |   |   |   |   A2 > 18.75: - (8.12/0.81)
+|   |   |   |   |   |   |   |   |   A6 = w: - (0.49/0.03)
+|   |   |   |   |   |   |   |   |   A6 = x: + (6.22/1.09)
+|   |   |   |   |   |   |   |   |   A6 = e: - (0.67/0.04)
+|   |   |   |   |   |   |   |   |   A6 = aa: - (0.75/0.05)
+|   |   |   |   |   |   |   |   |   A6 = ff: - (0.75/0.05)
+|   |   |   |   |   |   |   |   A2 > 34.08: + (22.74/0.47)
+|   |   |   |   |   A14 > 396
+|   |   |   |   |   |   A13 = g: - (19.21/0.31)
+|   |   |   |   |   |   A13 = p: + (3.2/0.65)
+|   |   |   |   |   |   A13 = s: - (0.35)
+|   |   |   |   A2 > 38.67
+|   |   |   |   |   A11 <= 4: - (54.74/3.79)
+|   |   |   |   |   A11 > 4: + (4.56)
+|   |   |   A2 > 69.5: + (19.04/0.31)
+|   |   A15 > 327: - (19.71/1.18)
+|   A15 > 375
+|   |   A15 <= 960: + (39.84/0.33)
+|   |   A15 > 960
+|   |   |   A9 = t
+|   |   |   |   A15 <= 990: - (4.74)
+|   |   |   |   A15 > 990: + (10.65)
+|   |   |   A9 = f: - (3.51)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	54
+
+
+Weight: 3.18
+
+J48 pruned tree
+------------------
+
+A13 = g
+|   A9 = t
+|   |   A14 <= 520
+|   |   |   A10 = t: + (100.05/9.87)
+|   |   |   A10 = f
+|   |   |   |   A6 = c
+|   |   |   |   |   A8 <= 0.165: - (2.47)
+|   |   |   |   |   A8 > 0.165: + (3.51/0.2)
+|   |   |   |   A6 = d: + (0.0)
+|   |   |   |   A6 = cc: + (0.15/0.01)
+|   |   |   |   A6 = i
+|   |   |   |   |   A15 <= 33: + (4.19)
+|   |   |   |   |   A15 > 33: - (4.67)
+|   |   |   |   A6 = j: + (1.94/0.07)
+|   |   |   |   A6 = k: + (12.32/2.89)
+|   |   |   |   A6 = m: + (3.7/0.13)
+|   |   |   |   A6 = r: + (0.0)
+|   |   |   |   A6 = q: + (7.45/0.87)
+|   |   |   |   A6 = w: - (2.78/0.17)
+|   |   |   |   A6 = x: + (0.95/0.03)
+|   |   |   |   A6 = e: + (2.39/0.08)
+|   |   |   |   A6 = aa
+|   |   |   |   |   A1 = b: - (2.82)
+|   |   |   |   |   A1 = a
+|   |   |   |   |   |   A7 = v: + (6.35)
+|   |   |   |   |   |   A7 = h: - (2.47)
+|   |   |   |   |   |   A7 = bb: + (0.0)
+|   |   |   |   |   |   A7 = j: + (0.0)
+|   |   |   |   |   |   A7 = n: + (0.0)
+|   |   |   |   |   |   A7 = z: + (0.0)
+|   |   |   |   |   |   A7 = dd: + (0.0)
+|   |   |   |   |   |   A7 = ff: + (0.0)
+|   |   |   |   |   |   A7 = o: + (0.0)
+|   |   |   |   A6 = ff
+|   |   |   |   |   A2 <= 60.58: - (4.93)
+|   |   |   |   |   A2 > 60.58: + (8.18/0.45)
+|   |   A14 > 520: - (9.06/0.01)
+|   A9 = f: - (106.37/17.13)
+A13 = p: + (59.89/2.47)
+A13 = s
+|   A8 <= 2.79: - (6.83)
+|   A8 > 2.79: + (13.53/0.34)
+
+Number of Leaves  : 	32
+
+Size of the tree : 	43
+
+
+Weight: 2.23
+
+J48 pruned tree
+------------------
+
+A2 <= 51.58
+|   A11 <= 9
+|   |   A1 = b
+|   |   |   A7 = v
+|   |   |   |   A6 = c
+|   |   |   |   |   A13 = g
+|   |   |   |   |   |   A9 = t: + (4.89)
+|   |   |   |   |   |   A9 = f
+|   |   |   |   |   |   |   A3 <= 0.04: + (12.76)
+|   |   |   |   |   |   |   A3 > 0.04
+|   |   |   |   |   |   |   |   A14 <= 225: - (4.19)
+|   |   |   |   |   |   |   |   A14 > 225: + (12.79/0.03)
+|   |   |   |   |   A13 = p: - (3.09/0.78)
+|   |   |   |   |   A13 = s: - (0.1)
+|   |   |   |   A6 = d: - (2.7/0.06)
+|   |   |   |   A6 = cc: - (11.45/0.41)
+|   |   |   |   A6 = i: - (3.79/1.12)
+|   |   |   |   A6 = j: - (0.01/0.0)
+|   |   |   |   A6 = k
+|   |   |   |   |   A12 = t: + (2.26/0.28)
+|   |   |   |   |   A12 = f
+|   |   |   |   |   |   A8 <= 0.375: - (15.97/0.42)
+|   |   |   |   |   |   A8 > 0.375: + (2.15)
+|   |   |   |   A6 = m: + (7.75/1.66)
+|   |   |   |   A6 = r: + (0.0)
+|   |   |   |   A6 = q
+|   |   |   |   |   A8 <= 0.665: - (2.48/0.3)
+|   |   |   |   |   A8 > 0.665: + (12.26/0.35)
+|   |   |   |   A6 = w
+|   |   |   |   |   A3 <= 3.79
+|   |   |   |   |   |   A12 = t: - (16.1/0.06)
+|   |   |   |   |   |   A12 = f
+|   |   |   |   |   |   |   A2 <= 21.5: - (2.74)
+|   |   |   |   |   |   |   A2 > 21.5: + (2.67/0.25)
+|   |   |   |   |   A3 > 3.79: + (17.67)
+|   |   |   |   A6 = x: + (2.88/0.18)
+|   |   |   |   A6 = e: - (0.17/0.0)
+|   |   |   |   A6 = aa: - (10.03/3.31)
+|   |   |   |   A6 = ff: + (0.0)
+|   |   |   A7 = h
+|   |   |   |   A9 = t
+|   |   |   |   |   A14 <= 560: + (17.31/1.37)
+|   |   |   |   |   A14 > 560: - (2.64)
+|   |   |   |   A9 = f: - (8.54/0.59)
+|   |   |   A7 = bb
+|   |   |   |   A9 = t: + (4.17/1.2)
+|   |   |   |   A9 = f: - (2.32/0.13)
+|   |   |   A7 = j: + (0.0)
+|   |   |   A7 = n: + (16.05/0.98)
+|   |   |   A7 = z: + (0.0)
+|   |   |   A7 = dd: - (0.19/0.0)
+|   |   |   A7 = ff: - (3.55/0.07)
+|   |   |   A7 = o: + (2.63/0.16)
+|   |   A1 = a
+|   |   |   A12 = t
+|   |   |   |   A9 = t
+|   |   |   |   |   A3 <= 2.085: - (3.17)
+|   |   |   |   |   A3 > 2.085: + (14.61)
+|   |   |   |   A9 = f: - (10.59/1.37)
+|   |   |   A12 = f: + (64.82/5.72)
+|   A11 > 9: - (16.03/1.83)
+A2 > 51.58
+|   A3 <= 9.25
+|   |   A14 <= 216: - (41.12/0.08)
+|   |   A14 > 216: + (2.18/0.19)
+|   A3 > 9.25: + (6.19/0.02)
+
+Number of Leaves  : 	44
+
+Size of the tree : 	67
+
+
+Weight: 2.73
+
+J48 pruned tree
+------------------
+
+A3 <= 0.165: + (91.22/13.56)
+A3 > 0.165
+|   A11 <= 10
+|   |   A8 <= 1.75
+|   |   |   A12 = t
+|   |   |   |   A8 <= 0.125: + (15.64/2.24)
+|   |   |   |   A8 > 0.125
+|   |   |   |   |   A2 <= 21.17: + (5.48/0.06)
+|   |   |   |   |   A2 > 21.17
+|   |   |   |   |   |   A9 = t
+|   |   |   |   |   |   |   A8 <= 1.25: - (11.62/0.73)
+|   |   |   |   |   |   |   A8 > 1.25: + (2.32)
+|   |   |   |   |   |   A9 = f: - (5.61)
+|   |   |   A12 = f: - (125.54/18.43)
+|   |   A8 > 1.75
+|   |   |   A6 = c: - (0.65/0.24)
+|   |   |   A6 = d: - (1.74/0.68)
+|   |   |   A6 = cc
+|   |   |   |   A15 <= 70: + (11.96/0.08)
+|   |   |   |   A15 > 70: - (4.45/0.1)
+|   |   |   A6 = i: + (10.33/0.67)
+|   |   |   A6 = j: + (0.0)
+|   |   |   A6 = k: - (8.37/1.11)
+|   |   |   A6 = m: + (1.61/0.56)
+|   |   |   A6 = r: + (1.05)
+|   |   |   A6 = q: - (6.47/2.0)
+|   |   |   A6 = w: - (7.6/0.81)
+|   |   |   A6 = x: + (8.75/0.68)
+|   |   |   A6 = e: + (0.65/0.04)
+|   |   |   A6 = aa: + (30.36/0.72)
+|   |   |   A6 = ff: - (0.15)
+|   A11 > 10: + (15.43/0.04)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	33
+
+
+Weight: 2.03
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.261
+ CV-2     0:00:00.255
+ CV-3     0:00:00.253
+ CV-4     0:00:00.258
+ CV-5     0:00:00.274
+ CV-6     0:00:00.255
+ CV-7     0:00:00.258
+ CV-8     0:00:00.252
+ CV-9     0:00:00.250
+ CV-10    0:00:00.252
+ TEST     0:00:00.030
+
+Test Results: (number of instances = 552)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 87.71  12.29   0.88   0.88   0.88
+ TEST: 91.35   8.65   0.91   0.91   0.91
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) A1
+ +      -0.0001 * (normalized) A2
+ +       0.0009 * (normalized) A3
+ +       0.2696 * (normalized) A4=u
+ +       0.2697 * (normalized) A4=y
+ +      -0.5393 * (normalized) A4=l
+ +       0.2696 * (normalized) A5=g
+ +       0.2697 * (normalized) A5=p
+ +      -0.5393 * (normalized) A5=gg
+ +      -0.0374 * (normalized) A6=c
+ +      -0.0378 * (normalized) A6=d
+ +      -0.0382 * (normalized) A6=cc
+ +      -0.0377 * (normalized) A6=i
+ +       0.0742 * (normalized) A6=j
+ +      -0.0379 * (normalized) A6=k
+ +      -0.037  * (normalized) A6=m
+ +      -0.0384 * (normalized) A6=q
+ +      -0.038  * (normalized) A6=w
+ +      -0.0397 * (normalized) A6=x
+ +      -0.0383 * (normalized) A6=e
+ +      -0.0381 * (normalized) A6=aa
+ +       0.3443 * (normalized) A6=ff
+ +       0.1867 * (normalized) A7=v
+ +       0.1873 * (normalized) A7=h
+ +       0.1866 * (normalized) A7=bb
+ +       0.0742 * (normalized) A7=j
+ +      -1      * (normalized) A7=n
+ +       0.1865 * (normalized) A7=z
+ +       0.1868 * (normalized) A7=dd
+ +      -0.195  * (normalized) A7=ff
+ +       0.187  * (normalized) A7=o
+ +      -0.0018 * (normalized) A8
+ +       2.0005 * (normalized) A9
+ +      -0.0002 * (normalized) A10
+ +      -0.0007 * (normalized) A11
+ +       0.0002 * (normalized) A12
+ +       0.6665 * (normalized) A13=g
+ +      -1.3335 * (normalized) A13=p
+ +       0.667  * (normalized) A13=s
+ +       0.0027 * (normalized) A14
+ +      -0.0337 * (normalized) A15
+ -       2.3548
+
+Number of kernel evaluations: 32504 (97.105% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.369
+ CV-2     0:00:00.354
+ CV-3     0:00:00.332
+ CV-4     0:00:00.352
+ CV-5     0:00:00.384
+ CV-6     0:00:00.364
+ CV-7     0:00:00.401
+ CV-8     0:00:00.346
+ CV-9     0:00:00.322
+ CV-10    0:00:00.383
+ TEST     0:00:00.040
+
+Test Results: (number of instances = 552)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 91.23   8.77   0.92   0.91   0.91
+ TEST: 90.27   9.73   0.91   0.90   0.90
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.011
+ CV-2     0:00:00.010
+ CV-3     0:00:00.011
+ CV-4     0:00:00.010
+ CV-5     0:00:00.011
+ CV-6     0:00:00.010
+ CV-7     0:00:00.011
+ CV-8     0:00:00.011
+ CV-9     0:00:00.010
+ CV-10    0:00:00.011
+ TEST     0:00:00.005
+
+Test Results: (number of instances = 552)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 85.69  14.31   0.86   0.86   0.86
+ TEST: 87.57  12.43   0.88   0.88   0.87
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A15 <= 228
+|   |   A7 = v
+|   |   |   A11 <= 3
+|   |   |   |   A3 <= 1.5
+|   |   |   |   |   A8 <= 0.165: + (3.0/1.0)
+|   |   |   |   |   A8 > 0.165: - (11.0)
+|   |   |   |   A3 > 1.5
+|   |   |   |   |   A13 = g
+|   |   |   |   |   |   A15 <= 5
+|   |   |   |   |   |   |   A1 = b: - (15.0/5.0)
+|   |   |   |   |   |   |   A1 = a: + (10.0/3.0)
+|   |   |   |   |   |   A15 > 5: + (5.0)
+|   |   |   |   |   A13 = p: + (0.0)
+|   |   |   |   |   A13 = s: + (5.0)
+|   |   |   A11 > 3: + (7.0)
+|   |   A7 = h: + (28.0/9.0)
+|   |   A7 = bb
+|   |   |   A2 <= 28.25: + (4.33/0.33)
+|   |   |   A2 > 28.25: - (8.67/1.0)
+|   |   A7 = j: - (1.0)
+|   |   A7 = n: + (0.0)
+|   |   A7 = z: + (3.0/1.0)
+|   |   A7 = dd: + (1.0)
+|   |   A7 = ff: - (4.0)
+|   |   A7 = o: + (0.0)
+|   A15 > 228: + (87.0/4.0)
+A9 = f: - (220.0/12.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	29
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.023
+ CV-2     0:00:00.023
+ CV-3     0:00:00.025
+ CV-4     0:00:00.024
+ CV-5     0:00:00.027
+ CV-6     0:00:00.024
+ CV-7     0:00:00.024
+ CV-8     0:00:00.023
+ CV-9     0:00:00.024
+ CV-10    0:00:00.023
+ TEST     0:00:00.003
+
+Test Results: (number of instances = 621)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 83.12  16.88   0.83   0.83   0.83
+ TEST: 84.62  15.38   0.85   0.85   0.85
+
+
+  Processing with classifier: AdaBoostM1WekaClassifier{tag=AdaBoost, type=ADA_BOOST_M1, options=[-P 100, -S 1, -I 10, -W "weka.classifiers.trees.J48"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+AdaBoostM1: Base classifiers and their weights:
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A15 <= 228
+|   |   A7 = v
+|   |   |   A11 <= 3
+|   |   |   |   A3 <= 1.5
+|   |   |   |   |   A8 <= 0.165: + (3.0/1.0)
+|   |   |   |   |   A8 > 0.165: - (11.0)
+|   |   |   |   A3 > 1.5
+|   |   |   |   |   A13 = g
+|   |   |   |   |   |   A15 <= 5
+|   |   |   |   |   |   |   A1 = b: - (15.0/5.0)
+|   |   |   |   |   |   |   A1 = a: + (10.0/3.0)
+|   |   |   |   |   |   A15 > 5: + (5.0)
+|   |   |   |   |   A13 = p: + (0.0)
+|   |   |   |   |   A13 = s: + (5.0)
+|   |   |   A11 > 3: + (7.0)
+|   |   A7 = h: + (28.0/9.0)
+|   |   A7 = bb
+|   |   |   A2 <= 28.25: + (4.33/0.33)
+|   |   |   A2 > 28.25: - (8.67/1.0)
+|   |   A7 = j: - (1.0)
+|   |   A7 = n: + (0.0)
+|   |   A7 = z: + (3.0/1.0)
+|   |   A7 = dd: + (1.0)
+|   |   A7 = ff: - (4.0)
+|   |   A7 = o: + (0.0)
+|   A15 > 228: + (87.0/4.0)
+A9 = f: - (220.0/12.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	29
+
+
+Weight: 2.35
+
+J48 pruned tree
+------------------
+
+A3 <= 0.205: + (51.11/9.31)
+A3 > 0.205
+|   A11 <= 3
+|   |   A4 = u
+|   |   |   A9 = t
+|   |   |   |   A14 <= 120
+|   |   |   |   |   A2 <= 48.58: + (31.88/0.76)
+|   |   |   |   |   A2 > 48.58
+|   |   |   |   |   |   A3 <= 8.5: - (12.57/0.55)
+|   |   |   |   |   |   A3 > 8.5: + (4.17)
+|   |   |   |   A14 > 120
+|   |   |   |   |   A6 = c: - (16.4/2.74)
+|   |   |   |   |   A6 = d: - (6.07)
+|   |   |   |   |   A6 = cc: + (0.55)
+|   |   |   |   |   A6 = i: - (7.38/0.55)
+|   |   |   |   |   A6 = j: - (0.0)
+|   |   |   |   |   A6 = k: + (3.29/1.64)
+|   |   |   |   |   A6 = m: - (6.83)
+|   |   |   |   |   A6 = r: - (0.0)
+|   |   |   |   |   A6 = q
+|   |   |   |   |   |   A8 <= 0.165: + (6.83)
+|   |   |   |   |   |   A8 > 0.165: - (14.21/1.64)
+|   |   |   |   |   A6 = w: - (2.74/1.1)
+|   |   |   |   |   A6 = x: + (4.38)
+|   |   |   |   |   A6 = e: - (0.55)
+|   |   |   |   |   A6 = aa: - (7.93/0.55)
+|   |   |   |   |   A6 = ff: - (0.55)
+|   |   |   A9 = f: - (83.23/11.47)
+|   |   A4 = y
+|   |   |   A14 <= 200
+|   |   |   |   A15 <= 750: - (61.52/1.1)
+|   |   |   |   A15 > 750: + (3.29/1.1)
+|   |   |   A14 > 200
+|   |   |   |   A9 = t: + (9.02/0.55)
+|   |   |   |   A9 = f
+|   |   |   |   |   A2 <= 36.75: - (7.81)
+|   |   |   |   |   A2 > 36.75: + (5.88/0.14)
+|   |   A4 = l: + (11.47)
+|   |   A4 = t: - (0.0)
+|   A11 > 3
+|   |   A8 <= 1.75
+|   |   |   A6 = c: + (5.48)
+|   |   |   A6 = d: + (0.55)
+|   |   |   A6 = cc: + (2.74)
+|   |   |   A6 = i: + (1.1/0.55)
+|   |   |   A6 = j: + (0.55)
+|   |   |   A6 = k: + (0.0)
+|   |   |   A6 = m: + (1.1/0.55)
+|   |   |   A6 = r: + (0.0)
+|   |   |   A6 = q: - (6.83)
+|   |   |   A6 = w: + (1.1)
+|   |   |   A6 = x: + (2.74)
+|   |   |   A6 = e: - (5.74)
+|   |   |   A6 = aa: + (0.0)
+|   |   |   A6 = ff: + (1.1/0.55)
+|   |   A8 > 1.75: + (24.36)
+
+Number of Leaves  : 	42
+
+Size of the tree : 	57
+
+
+Weight: 2.4
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A11 <= 3
+|   |   A14 <= 221
+|   |   |   A14 <= 29
+|   |   |   |   A15 <= 1
+|   |   |   |   |   A3 <= 0: - (3.83/0.27)
+|   |   |   |   |   A3 > 0: + (9.84/0.3)
+|   |   |   |   A15 > 1: - (2.67)
+|   |   |   A14 > 29: - (27.21/0.44)
+|   |   A14 > 221
+|   |   |   A10 = t: + (6.86/0.3)
+|   |   |   A10 = f
+|   |   |   |   A15 <= 19
+|   |   |   |   |   A8 <= 2.75: - (6.12/0.44)
+|   |   |   |   |   A8 > 2.75: + (3.58)
+|   |   |   |   A15 > 19: + (10.29/0.6)
+|   A11 > 3: + (5.38)
+A6 = d
+|   A4 = u: - (13.87/0.51)
+|   A4 = y
+|   |   A3 <= 1.04: - (4.11/0.11)
+|   |   A3 > 1.04: + (3.44/0.02)
+|   A4 = l: - (0.0)
+|   A4 = t: - (0.0)
+A6 = cc: + (15.06/1.86)
+A6 = i
+|   A10 = t
+|   |   A3 <= 4: - (7.01/0.3)
+|   |   A3 > 4: + (6.71)
+|   A10 = f: - (12.22/1.29)
+A6 = j: - (4.97/0.67)
+A6 = k
+|   A2 <= 18.75: + (3.43/0.3)
+|   A2 > 18.75: - (31.35/2.32)
+A6 = m: - (18.48/2.07)
+A6 = r: - (0.31/0.0)
+A6 = q
+|   A8 <= 2.415
+|   |   A7 = v
+|   |   |   A2 <= 36.08: - (16.76/1.05)
+|   |   |   A2 > 36.08: + (4.25/0.53)
+|   |   A7 = h: - (6.17/1.63)
+|   |   A7 = bb: - (0.0)
+|   |   A7 = j: - (0.0)
+|   |   A7 = n: + (3.32/0.11)
+|   |   A7 = z: - (0.0)
+|   |   A7 = dd: - (0.0)
+|   |   A7 = ff: - (0.0)
+|   |   A7 = o: - (0.0)
+|   A8 > 2.415: + (13.13/0.3)
+A6 = w
+|   A3 <= 1.375: - (6.19/1.42)
+|   A3 > 1.375
+|   |   A15 <= 4
+|   |   |   A9 = t: + (4.48/0.9)
+|   |   |   A9 = f: - (2.76)
+|   |   A15 > 4: + (80.17/2.2)
+A6 = x: + (9.79/0.83)
+A6 = e
+|   A11 <= 15
+|   |   A10 = t: + (7.31/0.3)
+|   |   A10 = f: - (3.23/1.1)
+|   A11 > 15: - (3.13)
+A6 = aa
+|   A13 = g
+|   |   A9 = t
+|   |   |   A10 = t: + (2.09)
+|   |   |   A10 = f: - (12.6/1.2)
+|   |   A9 = f: - (10.45)
+|   A13 = p: - (0.92/0.45)
+|   A13 = s: + (3.6/0.02)
+A6 = ff
+|   A7 = v: - (0.0)
+|   A7 = h: - (0.0)
+|   A7 = bb: - (0.0)
+|   A7 = j: - (0.0)
+|   A7 = n: - (0.0)
+|   A7 = z: - (0.0)
+|   A7 = dd: - (0.0)
+|   A7 = ff: - (22.68/1.24)
+|   A7 = o: + (3.26/0.08)
+
+Number of Leaves  : 	56
+
+Size of the tree : 	82
+
+
+Weight: 2.79
+
+J48 pruned tree
+------------------
+
+A13 = g
+|   A9 = t
+|   |   A14 <= 62: + (56.09/2.18)
+|   |   A14 > 62
+|   |   |   A15 <= 210
+|   |   |   |   A6 = c
+|   |   |   |   |   A14 <= 220: - (7.28/0.16)
+|   |   |   |   |   A14 > 220: + (10.68/1.66)
+|   |   |   |   A6 = d: - (1.93/0.16)
+|   |   |   |   A6 = cc
+|   |   |   |   |   A2 <= 20.08: - (2.58)
+|   |   |   |   |   A2 > 20.08: + (3.96)
+|   |   |   |   A6 = i
+|   |   |   |   |   A2 <= 32: - (3.56)
+|   |   |   |   |   A2 > 32: + (4.4/0.16)
+|   |   |   |   A6 = j: - (0.16)
+|   |   |   |   A6 = k
+|   |   |   |   |   A15 <= 2: + (10.31/3.48)
+|   |   |   |   |   A15 > 2: - (3.56)
+|   |   |   |   A6 = m: + (2.58)
+|   |   |   |   A6 = r: + (0.0)
+|   |   |   |   A6 = q
+|   |   |   |   |   A14 <= 395: + (9.04/0.32)
+|   |   |   |   |   A14 > 395: - (3.32)
+|   |   |   |   A6 = w: - (8.07/0.32)
+|   |   |   |   A6 = x: + (0.79)
+|   |   |   |   A6 = e: + (4.24/1.66)
+|   |   |   |   A6 = aa
+|   |   |   |   |   A8 <= 0.335: + (7.75)
+|   |   |   |   |   A8 > 0.335: - (4.11)
+|   |   |   |   A6 = ff: - (2.06)
+|   |   |   A15 > 210: + (37.38/4.98)
+|   A9 = f
+|   |   A1 = b
+|   |   |   A6 = c
+|   |   |   |   A3 <= 0.165: + (5.06/1.74)
+|   |   |   |   A3 > 0.165: - (10.24)
+|   |   |   A6 = d: - (6.57/1.66)
+|   |   |   A6 = cc: - (10.33)
+|   |   |   A6 = i: - (2.38)
+|   |   |   A6 = j: - (0.0)
+|   |   |   A6 = k: - (3.8)
+|   |   |   A6 = m: - (5.7)
+|   |   |   A6 = r: - (0.16)
+|   |   |   A6 = q: - (8.65/1.66)
+|   |   |   A6 = w
+|   |   |   |   A15 <= 33
+|   |   |   |   |   A10 = t: - (3.06)
+|   |   |   |   |   A10 = f: + (37.38/0.92)
+|   |   |   |   A15 > 33: - (5.8)
+|   |   |   A6 = x: - (2.58)
+|   |   |   A6 = e: - (3.22)
+|   |   |   A6 = aa: - (3.17)
+|   |   |   A6 = ff: - (1.74)
+|   |   A1 = a: - (29.66)
+A13 = p: + (59.4/3.64)
+A13 = s
+|   A6 = c: - (4.06/1.66)
+|   A6 = d: - (1.75)
+|   A6 = cc: + (1.67/0.01)
+|   A6 = i: + (3.07/0.49)
+|   A6 = j: - (0.0)
+|   A6 = k: - (6.58)
+|   A6 = m
+|   |   A14 <= 152: + (2.93/0.34)
+|   |   A14 > 152: - (2.3)
+|   A6 = r: - (0.0)
+|   A6 = q: + (0.16/0.0)
+|   A6 = w: + (2.07/0.33)
+|   A6 = x: - (0.0)
+|   A6 = e: + (1.83/0.17)
+|   A6 = aa: + (1.91/0.01)
+|   A6 = ff: - (1.91)
+
+Number of Leaves  : 	56
+
+Size of the tree : 	74
+
+
+Weight: 2.63
+
+J48 pruned tree
+------------------
+
+A8 <= 1.165
+|   A2 <= 34.17
+|   |   A8 <= 0.085
+|   |   |   A2 <= 20.75
+|   |   |   |   A3 <= 8.125: - (20.65/0.89)
+|   |   |   |   A3 > 8.125: + (3.85/0.19)
+|   |   |   A2 > 20.75
+|   |   |   |   A13 = g
+|   |   |   |   |   A12 = t: + (13.26/0.63)
+|   |   |   |   |   A12 = f
+|   |   |   |   |   |   A1 = b: - (5.08/0.09)
+|   |   |   |   |   |   A1 = a: + (4.08/1.23)
+|   |   |   |   A13 = p: + (29.0)
+|   |   |   |   A13 = s: - (2.36)
+|   |   A8 > 0.085
+|   |   |   A7 = v
+|   |   |   |   A9 = t
+|   |   |   |   |   A1 = b: - (18.18/3.47)
+|   |   |   |   |   A1 = a: + (4.89/0.09)
+|   |   |   |   A9 = f: - (40.61)
+|   |   |   A7 = h: - (3.96/0.51)
+|   |   |   A7 = bb
+|   |   |   |   A12 = t: - (14.02)
+|   |   |   |   A12 = f: + (2.32)
+|   |   |   A7 = j: - (0.0)
+|   |   |   A7 = n: + (12.52/0.17)
+|   |   |   A7 = z: - (0.0)
+|   |   |   A7 = dd: - (1.47)
+|   |   |   A7 = ff: - (0.26)
+|   |   |   A7 = o: - (0.0)
+|   A2 > 34.17
+|   |   A10 = t
+|   |   |   A15 <= 140: - (15.43/0.98)
+|   |   |   A15 > 140: + (4.66/0.09)
+|   |   A10 = f: - (73.68/3.83)
+A8 > 1.165
+|   A1 = b
+|   |   A4 = u
+|   |   |   A13 = g
+|   |   |   |   A9 = t: + (33.26/2.57)
+|   |   |   |   A9 = f
+|   |   |   |   |   A8 <= 1.5: + (10.11/0.34)
+|   |   |   |   |   A8 > 1.5: - (3.5)
+|   |   |   A13 = p: - (1.18)
+|   |   |   A13 = s: + (16.18/1.35)
+|   |   A4 = y
+|   |   |   A3 <= 1.125: + (14.6/1.27)
+|   |   |   A3 > 1.125
+|   |   |   |   A10 = t: + (7.02/1.87)
+|   |   |   |   A10 = f: - (11.36/0.93)
+|   |   A4 = l: + (0.0)
+|   |   A4 = t: + (0.0)
+|   A1 = a
+|   |   A14 <= 56: + (10.73/0.26)
+|   |   A14 > 56
+|   |   |   A2 <= 22.42: + (2.83/0.24)
+|   |   |   A2 > 22.42: - (31.95/1.02)
+
+Number of Leaves  : 	35
+
+Size of the tree : 	58
+
+
+Weight: 2.88
+
+J48 pruned tree
+------------------
+
+A7 = v
+|   A8 <= 1.5
+|   |   A11 <= 4
+|   |   |   A15 <= 9
+|   |   |   |   A9 = t
+|   |   |   |   |   A14 <= 120: + (19.7)
+|   |   |   |   |   A14 > 120
+|   |   |   |   |   |   A14 <= 212: - (10.22)
+|   |   |   |   |   |   A14 > 212: + (24.54/0.58)
+|   |   |   |   A9 = f
+|   |   |   |   |   A6 = c
+|   |   |   |   |   |   A3 <= 0.04: + (14.22/3.01)
+|   |   |   |   |   |   A3 > 0.04: - (11.22)
+|   |   |   |   |   A6 = d: + (9.95/2.33)
+|   |   |   |   |   A6 = cc: - (2.79/0.31)
+|   |   |   |   |   A6 = i: - (1.02/0.11)
+|   |   |   |   |   A6 = j: + (0.0)
+|   |   |   |   |   A6 = k: - (2.24/0.25)
+|   |   |   |   |   A6 = m: - (2.38/0.26)
+|   |   |   |   |   A6 = r: + (0.0)
+|   |   |   |   |   A6 = q: - (3.32/0.37)
+|   |   |   |   |   A6 = w
+|   |   |   |   |   |   A15 <= 5: - (7.4/2.13)
+|   |   |   |   |   |   A15 > 5: + (11.78/1.46)
+|   |   |   |   |   A6 = x: + (0.0)
+|   |   |   |   |   A6 = e: + (10.73/1.16)
+|   |   |   |   |   A6 = aa: - (0.91/0.1)
+|   |   |   |   |   A6 = ff: + (0.0)
+|   |   |   A15 > 9: - (22.42/2.41)
+|   |   A11 > 4: + (18.05/0.49)
+|   A8 > 1.5
+|   |   A8 <= 4.5: - (53.52/4.55)
+|   |   A8 > 4.5: + (6.68/2.14)
+A7 = h
+|   A15 <= 587
+|   |   A12 = t
+|   |   |   A6 = c: - (15.87/0.49)
+|   |   |   A6 = d: - (0.04)
+|   |   |   A6 = cc: + (2.45)
+|   |   |   A6 = i: - (9.28)
+|   |   |   A6 = j: - (0.0)
+|   |   |   A6 = k: + (2.07/0.6)
+|   |   |   A6 = m: + (0.78/0.04)
+|   |   |   A6 = r: - (0.0)
+|   |   |   A6 = q: + (2.07/0.85)
+|   |   |   A6 = w: + (0.04)
+|   |   |   A6 = x: + (0.04)
+|   |   |   A6 = e: + (0.73)
+|   |   |   A6 = aa: - (0.0)
+|   |   |   A6 = ff: - (0.0)
+|   |   A12 = f
+|   |   |   A9 = t
+|   |   |   |   A8 <= 0.625: - (2.1)
+|   |   |   |   A8 > 0.625: + (15.38/0.94)
+|   |   |   A9 = f: - (8.63/2.72)
+|   A15 > 587: + (13.84)
+A7 = bb
+|   A11 <= 3
+|   |   A2 <= 26.25: + (3.39/0.71)
+|   |   A2 > 26.25: - (32.8/1.27)
+|   A11 > 3: + (3.23/0.49)
+A7 = j
+|   A9 = t: + (13.46/0.41)
+|   A9 = f
+|   |   A2 <= 25.83: + (7.77/0.38)
+|   |   A2 > 25.83: - (2.02)
+A7 = n
+|   A2 <= 18.08: + (6.52)
+|   A2 > 18.08: - (2.38/0.33)
+A7 = z
+|   A3 <= 15: + (2.02/0.48)
+|   A3 > 15: - (6.61/0.09)
+A7 = dd: - (1.7/0.79)
+A7 = ff
+|   A11 <= 4: - (20.74/1.37)
+|   A11 > 4: + (3.42/0.49)
+A7 = o: + (0.52/0.03)
+
+Number of Leaves  : 	55
+
+Size of the tree : 	78
+
+
+Weight: 2.66
+
+J48 pruned tree
+------------------
+
+A9 = t
+|   A15 <= 228
+|   |   A8 <= 4.25
+|   |   |   A14 <= 110: + (36.01/1.4)
+|   |   |   A14 > 110
+|   |   |   |   A11 <= 9
+|   |   |   |   |   A2 <= 46.67
+|   |   |   |   |   |   A11 <= 5
+|   |   |   |   |   |   |   A3 <= 0.335: + (6.98)
+|   |   |   |   |   |   |   A3 > 0.335
+|   |   |   |   |   |   |   |   A8 <= 4: - (53.96/3.8)
+|   |   |   |   |   |   |   |   A8 > 4: + (4.17)
+|   |   |   |   |   |   A11 > 5: + (7.07)
+|   |   |   |   |   A2 > 46.67: + (13.11/0.07)
+|   |   |   |   A11 > 9: - (7.7/0.43)
+|   |   A8 > 4.25: - (26.74/3.18)
+|   A15 > 228
+|   |   A2 <= 56.5
+|   |   |   A3 <= 7.625: + (53.84)
+|   |   |   A3 > 7.625
+|   |   |   |   A14 <= 62: + (4.32)
+|   |   |   |   A14 > 62: - (9.03/2.06)
+|   |   A2 > 56.5: - (8.22/1.25)
+A9 = f
+|   A7 = v
+|   |   A2 <= 36.67: - (113.82/15.81)
+|   |   A2 > 36.67
+|   |   |   A3 <= 1.165: + (12.91/1.33)
+|   |   |   A3 > 1.165: - (2.15)
+|   A7 = h: - (15.79/0.71)
+|   A7 = bb: - (3.43/0.15)
+|   A7 = j
+|   |   A8 <= 1.165: - (3.25/0.3)
+|   |   A8 > 1.165: + (3.49)
+|   A7 = n
+|   |   A2 <= 18.08: + (3.49)
+|   |   A2 > 18.08: - (3.25/0.3)
+|   A7 = z: - (0.53/0.02)
+|   A7 = dd: - (0.68/0.03)
+|   A7 = ff
+|   |   A8 <= 8: - (15.03/0.84)
+|   |   A8 > 8: + (3.61)
+|   A7 = o: + (0.39/0.12)
+
+Number of Leaves  : 	26
+
+Size of the tree : 	44
+
+
+Weight: 2.51
+
+J48 pruned tree
+------------------
+
+A6 = c
+|   A2 <= 16.33: + (29.96/0.0)
+|   A2 > 16.33
+|   |   A1 = b
+|   |   |   A2 <= 22.25: - (13.17)
+|   |   |   A2 > 22.25
+|   |   |   |   A2 <= 28.42: + (17.34/0.82)
+|   |   |   |   A2 > 28.42: - (8.43/2.23)
+|   |   A1 = a
+|   |   |   A13 = g
+|   |   |   |   A3 <= 3.125: - (2.8)
+|   |   |   |   A3 > 3.125: + (6.18/0.05)
+|   |   |   A13 = p: + (5.49)
+|   |   |   A13 = s: - (0.01)
+A6 = d
+|   A10 = t: + (3.42)
+|   A10 = f: - (14.17/4.2)
+A6 = cc
+|   A1 = b
+|   |   A2 <= 21.75: - (4.02)
+|   |   A2 > 21.75: + (6.99/0.8)
+|   A1 = a: + (6.61/0.0)
+A6 = i
+|   A12 = t
+|   |   A7 = v: - (0.24)
+|   |   A7 = h: - (2.68)
+|   |   A7 = bb
+|   |   |   A8 <= 1.625: - (4.39/0.21)
+|   |   |   A8 > 1.625: + (4.72/0.01)
+|   |   A7 = j: - (0.0)
+|   |   A7 = n: - (0.0)
+|   |   A7 = z: - (0.0)
+|   |   A7 = dd: - (0.0)
+|   |   A7 = ff: - (0.0)
+|   |   A7 = o: - (0.0)
+|   A12 = f: + (10.92/2.86)
+A6 = j
+|   A12 = t: - (2.52)
+|   A12 = f: + (6.19/1.06)
+A6 = k
+|   A11 <= 1
+|   |   A13 = g
+|   |   |   A12 = t: + (7.06/0.48)
+|   |   |   A12 = f
+|   |   |   |   A3 <= 3.79: - (2.42)
+|   |   |   |   A3 > 3.79: + (5.63/0.17)
+|   |   A13 = p
+|   |   |   A2 <= 21.75: - (2.32)
+|   |   |   A2 > 21.75: + (4.61/0.16)
+|   |   A13 = s: - (2.83)
+|   A11 > 1: - (8.95/0.42)
+A6 = m: + (13.64/2.98)
+A6 = r: - (0.29/0.04)
+A6 = q
+|   A11 <= 9
+|   |   A9 = t: + (20.34/0.81)
+|   |   A9 = f
+|   |   |   A12 = t: - (2.95)
+|   |   |   A12 = f
+|   |   |   |   A3 <= 0.04
+|   |   |   |   |   A2 <= 21.75: - (2.85)
+|   |   |   |   |   A2 > 21.75: + (5.37/0.19)
+|   |   |   |   A3 > 0.04: + (2.41/0.53)
+|   A11 > 9: - (5.45/0.24)
+A6 = w
+|   A2 <= 20.67
+|   |   A9 = t: + (2.66)
+|   |   A9 = f: - (9.51)
+|   A2 > 20.67
+|   |   A8 <= 3.25
+|   |   |   A14 <= 292: + (65.56/2.7)
+|   |   |   A14 > 292: - (4.66/0.79)
+|   |   A8 > 3.25: - (8.11/1.75)
+A6 = x: + (15.23/1.62)
+A6 = e
+|   A7 = v
+|   |   A3 <= 0.42: + (3.65/0.44)
+|   |   A3 > 0.42: - (2.32)
+|   A7 = h: + (3.3/0.27)
+|   A7 = bb: - (4.07/0.54)
+|   A7 = j: + (0.0)
+|   A7 = n: + (0.0)
+|   A7 = z
+|   |   A12 = t: + (4.04)
+|   |   A12 = f
+|   |   |   A2 <= 47.42: + (2.09/0.61)
+|   |   |   A2 > 47.42: - (2.11)
+|   A7 = dd: + (4.14/0.56)
+|   A7 = ff: + (0.0)
+|   A7 = o: + (0.0)
+A6 = aa
+|   A13 = g
+|   |   A1 = b: - (9.56/0.75)
+|   |   A1 = a
+|   |   |   A3 <= 2.085: - (2.51)
+|   |   |   A3 > 2.085: + (6.04/0.15)
+|   A13 = p: + (5.25/1.88)
+|   A13 = s: + (2.24/0.01)
+A6 = ff
+|   A11 <= 10
+|   |   A13 = g: - (9.3/0.21)
+|   |   A13 = p: + (3.95/1.37)
+|   |   A13 = s: - (0.16)
+|   A11 > 10: + (5.19)
+
+Number of Leaves  : 	68
+
+Size of the tree : 	105
+
+
+Weight: 2.93
+
+J48 pruned tree
+------------------
+
+A8 <= 1.375
+|   A2 <= 26.17
+|   |   A8 <= 0.04
+|   |   |   A2 <= 21.5
+|   |   |   |   A2 <= 17.58: + (15.77/0.02)
+|   |   |   |   A2 > 17.58: - (21.14/1.71)
+|   |   |   A2 > 21.5: + (32.45/0.41)
+|   |   A8 > 0.04
+|   |   |   A9 = t: + (20.65/8.71)
+|   |   |   A9 = f: - (19.59/0.99)
+|   A2 > 26.17
+|   |   A15 <= 690
+|   |   |   A12 = t
+|   |   |   |   A14 <= 221: - (19.02/0.12)
+|   |   |   |   A14 > 221
+|   |   |   |   |   A8 <= 0.085: + (15.09/2.09)
+|   |   |   |   |   A8 > 0.085
+|   |   |   |   |   |   A9 = t: + (5.49/0.17)
+|   |   |   |   |   |   A9 = f: - (4.07)
+|   |   |   A12 = f: - (76.48/2.41)
+|   |   A15 > 690: + (11.15/1.18)
+A8 > 1.375
+|   A13 = g
+|   |   A15 <= 112
+|   |   |   A3 <= 1.085: - (12.82/1.37)
+|   |   |   A3 > 1.085
+|   |   |   |   A8 <= 1.665: + (31.22/0.16)
+|   |   |   |   A8 > 1.665
+|   |   |   |   |   A9 = t
+|   |   |   |   |   |   A6 = c
+|   |   |   |   |   |   |   A2 <= 23.92: + (2.34)
+|   |   |   |   |   |   |   A2 > 23.92: - (2.21)
+|   |   |   |   |   |   A6 = d: - (0.19)
+|   |   |   |   |   |   A6 = cc: - (2.41/1.05)
+|   |   |   |   |   |   A6 = i: - (2.16/0.88)
+|   |   |   |   |   |   A6 = j: + (0.0)
+|   |   |   |   |   |   A6 = k
+|   |   |   |   |   |   |   A15 <= 2: + (3.46)
+|   |   |   |   |   |   |   A15 > 2: - (2.49)
+|   |   |   |   |   |   A6 = m: + (1.71)
+|   |   |   |   |   |   A6 = r: + (0.0)
+|   |   |   |   |   |   A6 = q: - (2.35/1.01)
+|   |   |   |   |   |   A6 = w
+|   |   |   |   |   |   |   A12 = t: - (2.09/0.1)
+|   |   |   |   |   |   |   A12 = f: + (2.72)
+|   |   |   |   |   |   A6 = x: + (0.96)
+|   |   |   |   |   |   A6 = e: + (2.13)
+|   |   |   |   |   |   A6 = aa: - (4.56/0.1)
+|   |   |   |   |   |   A6 = ff: + (0.0)
+|   |   |   |   |   A9 = f: - (7.86)
+|   |   A15 > 112
+|   |   |   A4 = u: + (48.74/1.39)
+|   |   |   A4 = y
+|   |   |   |   A2 <= 32.75: - (7.12/1.18)
+|   |   |   |   A2 > 32.75: + (19.42)
+|   |   |   A4 = l: + (0.0)
+|   |   |   A4 = t: + (0.0)
+|   A13 = p: - (0.09)
+|   A13 = s
+|   |   A8 <= 7.5: - (10.65/2.25)
+|   |   A8 > 7.5: + (2.39)
+
+Number of Leaves  : 	39
+
+Size of the tree : 	62
+
+
+Weight: 2.65
+
+J48 pruned tree
+------------------
+
+A8 <= 1.375
+|   A8 <= 0.04
+|   |   A9 = t: + (21.57/2.52)
+|   |   A9 = f
+|   |   |   A3 <= 0.04
+|   |   |   |   A3 <= 0
+|   |   |   |   |   A2 <= 30.08
+|   |   |   |   |   |   A2 <= 21.75: - (8.75)
+|   |   |   |   |   |   A2 > 21.75: + (15.32)
+|   |   |   |   |   A2 > 30.08: - (10.5)
+|   |   |   |   A3 > 0: + (18.81/0.75)
+|   |   |   A3 > 0.04: - (11.65/0.04)
+|   A8 > 0.04
+|   |   A3 <= 0.21
+|   |   |   A3 <= 0.125: - (2.37)
+|   |   |   A3 > 0.125: + (10.32/0.62)
+|   |   A3 > 0.21
+|   |   |   A14 <= 254: - (110.13/7.32)
+|   |   |   A14 > 254
+|   |   |   |   A14 <= 450: + (26.42/9.21)
+|   |   |   |   A14 > 450: - (18.5)
+A8 > 1.375
+|   A1 = b
+|   |   A9 = t: + (88.35/7.18)
+|   |   A9 = f
+|   |   |   A3 <= 1.54
+|   |   |   |   A8 <= 2.585: + (37.75/4.77)
+|   |   |   |   A8 > 2.585: - (2.87)
+|   |   |   A3 > 1.54: - (9.97)
+|   A1 = a
+|   |   A14 <= 56: + (4.63/0.2)
+|   |   A14 > 56: - (15.08/2.12)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+
+Weight: 2.39
+
+Number of performed Iterations: 10
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.307
+ CV-2     0:00:00.285
+ CV-3     0:00:00.298
+ CV-4     0:00:00.350
+ CV-5     0:00:00.360
+ CV-6     0:00:00.323
+ CV-7     0:00:00.287
+ CV-8     0:00:00.299
+ CV-9     0:00:00.292
+ CV-10    0:00:00.296
+ TEST     0:00:00.033
+
+Test Results: (number of instances = 621)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 83.63  16.37   0.84   0.84   0.84
+ TEST: 84.62  15.38   0.85   0.85   0.85
+
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0000, -L 0.0010, -P 0.0000, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0000"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: +, -
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0034 * (normalized) A1
+ +      -0.0212 * (normalized) A2
+ +      -0.1999 * (normalized) A3
+ +       0.311  * (normalized) A4=u
+ +       0.3382 * (normalized) A4=y
+ +      -0.6492 * (normalized) A4=l
+ +       0.311  * (normalized) A5=g
+ +       0.3382 * (normalized) A5=p
+ +      -0.6492 * (normalized) A5=gg
+ +      -0.0877 * (normalized) A6=c
+ +      -0.0445 * (normalized) A6=d
+ +      -0.1512 * (normalized) A6=cc
+ +      -0.078  * (normalized) A6=i
+ +       0.1487 * (normalized) A6=j
+ +       0.004  * (normalized) A6=k
+ +       0.0767 * (normalized) A6=m
+ +      -0.0769 * (normalized) A6=q
+ +      -0.098  * (normalized) A6=w
+ +      -0.2591 * (normalized) A6=x
+ +      -0.2451 * (normalized) A6=e
+ +      -0.0049 * (normalized) A6=aa
+ +       0.816  * (normalized) A6=ff
+ +       0.0305 * (normalized) A7=v
+ +       0.0312 * (normalized) A7=h
+ +       0.1393 * (normalized) A7=bb
+ +      -0.3236 * (normalized) A7=j
+ +       0      * (normalized) A7=n
+ +       0.1841 * (normalized) A7=z
+ +       0.1154 * (normalized) A7=dd
+ +       0.007  * (normalized) A7=ff
+ +      -0.184  * (normalized) A7=o
+ +      -0.3379 * (normalized) A8
+ +       2.0223 * (normalized) A9
+ +       0.1288 * (normalized) A10
+ +      -0.4522 * (normalized) A11
+ +      -0.0113 * (normalized) A12
+ +       0.0773 * (normalized) A13=g
+ +      -0.1136 * (normalized) A13=p
+ +       0.0363 * (normalized) A13=s
+ +       0.2353 * (normalized) A14
+ +      -0.6461 * (normalized) A15
+ -       1.6096
+
+Number of kernel evaluations: 45182 (96.479% cached)
+
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.288
+ CV-2     0:00:00.242
+ CV-3     0:00:00.296
+ CV-4     0:00:00.260
+ CV-5     0:00:00.274
+ CV-6     0:00:00.259
+ CV-7     0:00:00.284
+ CV-8     0:00:00.284
+ CV-9     0:00:00.279
+ CV-10    0:00:00.275
+ TEST     0:00:00.052
+
+Test Results: (number of instances = 621)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 83.12  16.88   0.85   0.83   0.83
+ TEST: 85.58  14.42   0.87   0.86   0.86
+
+
+  Processing with classifier: IbkWekaClassifier{tag=IBk, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/uci/credit-a.arff...
+
+Processing times:
+ CV-1     0:00:00.012
+ CV-2     0:00:00.012
+ CV-3     0:00:00.013
+ CV-4     0:00:00.012
+ CV-5     0:00:00.013
+ CV-6     0:00:00.012
+ CV-7     0:00:00.013
+ CV-8     0:00:00.013
+ CV-9     0:00:00.012
+ CV-10    0:00:00.013
+ TEST     0:00:00.006
+
+Test Results: (number of instances = 621)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 79.37  20.63   0.79   0.79   0.79
+ TEST: 82.69  17.31   0.83   0.83   0.82
+
+
+
+-- End of Run -- [0:00:28.199]

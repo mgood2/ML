@@ -7,7 +7,7 @@ import java.util.List;
 import static com.meowster.omscs.ml.fetcher.Utils.print;
 
 /**
- * Abstract base class that Encapsulates a list of data files to be used
+ * Abstract base class that encapsulates a list of data files to be used
  * in the experiment. This implementation assumes:
  * <ul>
  * <li>
