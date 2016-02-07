@@ -35,12 +35,6 @@ public class DefaultClassifierGroup extends ClassifierGroup {
                 opt(_H, "a")
         );
 
-        add("AdaBoost", WekaClassifier.Type.ADA_BOOST_M1,
-                opt(_P, 100),
-                opt(_S, 1),
-                opt(_I, 10),
-                opt(_W, classWithOptions(J48.class))
-        );
 
         add("SMO", WekaClassifier.Type.SMO,
                 opt(_C, 1.0),

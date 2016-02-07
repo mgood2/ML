@@ -1,0 +1,2600 @@
+
+-- Starting WEKA Experiment --
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.LearningBgWeight10k...
+ ..adding path: data/bgg-out/bgweights-001000.arff
+ ..adding path: data/bgg-out/bgweights-002000.arff
+ ..adding path: data/bgg-out/bgweights-003000.arff
+ ..adding path: data/bgg-out/bgweights-004000.arff
+ ..adding path: data/bgg-out/bgweights-005000.arff
+ ..adding path: data/bgg-out/bgweights-006000.arff
+ ..adding path: data/bgg-out/bgweights-007000.arff
+ ..adding path: data/bgg-out/bgweights-008000.arff
+ ..adding path: data/bgg-out/bgweights-009000.arff
+ ..adding path: data/bgg-out/bgweights-010000.arff
+
+Processing data file: data/bgg-out/bgweights-001000.arff ...
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.SingleSmo...
+ ..adding classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0017 * (normalized) minp
+ +      -0.0002 * (normalized) maxp
+ +       0.1753 * (normalized) time
+ +      -0.0006 * (normalized) abstract
+ +       1.999  * (normalized) childrens
+ +      -0.0008 * (normalized) customizable
+ +      -0.0004 * (normalized) family
+ +       1.9996 * (normalized) party
+ +      -0.0008 * (normalized) strategy
+ +      -0.0004 * (normalized) thematic
+ +      -0.0012 * (normalized) wargames
+ +       0.0003 * (normalized) no-subdomain
+ -       2.9971
+
+Number of kernel evaluations: 45970 (90.402% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0016 * (normalized) minp
+ +      -0.0036 * (normalized) maxp
+ +       0.1626 * (normalized) time
+ +       0.333  * (normalized) abstract
+ +       0.3327 * (normalized) childrens
+ +      -1.6672 * (normalized) customizable
+ +       0.3333 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.9992 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -1.6657 * (normalized) wargames
+ +       0.3338 * (normalized) no-subdomain
+ +       2.3313
+
+Number of kernel evaluations: 25072 (86.693% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +      -0.0012 * (normalized) maxp
+ +       0.0823 * (normalized) time
+ +       0.4998 * (normalized) abstract
+ +       0.4998 * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       1      * (normalized) family
+ +       1      * (normalized) party
+ +      -1.4998 * (normalized) strategy
+ +       0.4996 * (normalized) thematic
+ +      -1.4988 * (normalized) wargames
+ +       0.4994 * (normalized) no-subdomain
+ -       1.5009
+
+Number of kernel evaluations: 6228 (90.279% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0161 * (normalized) minp
+ +      -0.0338 * (normalized) maxp
+ +       0.485  * (normalized) time
+ +       0.2189 * (normalized) abstract
+ +       0.2154 * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0.216  * (normalized) family
+ +       0.2123 * (normalized) party
+ +       0      * (normalized) strategy
+ +       0.215  * (normalized) thematic
+ +      -1.3013 * (normalized) wargames
+ +       0.2237 * (normalized) no-subdomain
+ -       0.7773
+
+Number of kernel evaluations: 6310 (77.458% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0105 * (normalized) minp
+ +      -0.2971 * (normalized) maxp
+ +       0.4174 * (normalized) time
+ +       0.0082 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.007  * (normalized) customizable
+ +       1.0018 * (normalized) family
+ +       0.0029 * (normalized) party
+ +      -0.9982 * (normalized) strategy
+ +       0.0006 * (normalized) thematic
+ +      -1.9935 * (normalized) wargames
+ +       0.0027 * (normalized) no-subdomain
+ +       0.9902
+
+Number of kernel evaluations: 38816 (93.232% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0012 * (normalized) minp
+ +       0.0011 * (normalized) maxp
+ +       0.766  * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0041 * (normalized) customizable
+ +       0.006  * (normalized) family
+ +       0.0015 * (normalized) party
+ +       0.0015 * (normalized) strategy
+ +       0.0043 * (normalized) thematic
+ +       0.0026 * (normalized) wargames
+ +       0.0081 * (normalized) no-subdomain
+ -       1.0328
+
+Number of kernel evaluations: 14952 (91.162% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +      -0.0406 * (normalized) maxp
+ +       1.169  * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0.0033 * (normalized) family
+ +       0      * (normalized) party
+ +       0.005  * (normalized) strategy
+ +       0.0057 * (normalized) thematic
+ +      -0.0048 * (normalized) wargames
+ +       0.0048 * (normalized) no-subdomain
+ -       1.0245
+
+Number of kernel evaluations: 7146 (65.297% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.003  * (normalized) minp
+ +       0.0037 * (normalized) maxp
+ +       0.4332 * (normalized) time
+ +      -0.004  * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0012 * (normalized) strategy
+ +       0.0038 * (normalized) thematic
+ +       0.0046 * (normalized) wargames
+ +       0.0007 * (normalized) no-subdomain
+ -       1.0083
+
+Number of kernel evaluations: 6589 (96.775% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0039 * (normalized) minp
+ +      -0.0502 * (normalized) maxp
+ +       1.019  * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0082 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.001  * (normalized) wargames
+ +      -0.0091 * (normalized) no-subdomain
+ -       1.0238
+
+Number of kernel evaluations: 1262 (67.608% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0025 * (normalized) minp
+ +      -0.0501 * (normalized) maxp
+ +       0.6425 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0119 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0037 * (normalized) wargames
+ +      -0.0064 * (normalized) no-subdomain
+ -       1.021
+
+Number of kernel evaluations: 171 (74.554% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-001000.arff...
+
+Processing times:
+ CV-1     0:00:01.442
+ CV-2     0:00:01.071
+ CV-3     0:00:00.968
+ CV-4     0:00:00.911
+ CV-5     0:00:00.833
+ CV-6     0:00:00.798
+ CV-7     0:00:00.816
+ CV-8     0:00:00.805
+ CV-9     0:00:00.797
+ CV-10    0:00:00.851
+ TEST     0:00:00.083
+
+Test Results: (number of instances = 1000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.42  44.58   0.61   0.55   0.50
+ TEST: 55.09  44.91   0.60   0.55   0.50
+
+
+Processing data file: data/bgg-out/bgweights-002000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.056  * (normalized) minp
+ +      -0.4096 * (normalized) maxp
+ +       0.6646 * (normalized) time
+ +      -0.0142 * (normalized) abstract
+ +       1.9846 * (normalized) childrens
+ +      -0.0288 * (normalized) customizable
+ +      -0.0077 * (normalized) family
+ +       1.9708 * (normalized) party
+ +      -0.0292 * (normalized) strategy
+ +      -0.0132 * (normalized) thematic
+ +      -0.0171 * (normalized) wargames
+ +      -0.0067 * (normalized) no-subdomain
+ -       2.8543
+
+Number of kernel evaluations: 145850 (91.458% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0026 * (normalized) minp
+ +      -0.0012 * (normalized) maxp
+ +       0.1879 * (normalized) time
+ +       0.8322 * (normalized) abstract
+ +       0.8342 * (normalized) childrens
+ +      -1.168  * (normalized) customizable
+ +       0.8331 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.9988 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -1.1649 * (normalized) wargames
+ +       0.8333 * (normalized) no-subdomain
+ -       0.169
+
+Number of kernel evaluations: 104124 (92.822% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0016 * (normalized) minp
+ +      -0.0178 * (normalized) maxp
+ +       0.0875 * (normalized) time
+ +       0.2849 * (normalized) abstract
+ +       0.2844 * (normalized) childrens
+ +      -1      * (normalized) customizable
+ +       0.2855 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.7124 * (normalized) strategy
+ +       0.2847 * (normalized) thematic
+ +      -1.7127 * (normalized) wargames
+ +       0.2856 * (normalized) no-subdomain
+ +       1.2846
+
+Number of kernel evaluations: 38038 (83.721% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.121  * (normalized) minp
+ +      -0.0017 * (normalized) maxp
+ +       1.3609 * (normalized) time
+ +       0.0065 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0253 * (normalized) wargames
+ +       0.0253 * (normalized) no-subdomain
+ -       1.0083
+
+Number of kernel evaluations: 11793 (72.347% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0049 * (normalized) minp
+ +      -0.0426 * (normalized) maxp
+ +       0.4202 * (normalized) time
+ +       0.9942 * (normalized) abstract
+ +       0.9942 * (normalized) childrens
+ +       0.9933 * (normalized) customizable
+ +       1.9964 * (normalized) family
+ +       0.9951 * (normalized) party
+ +      -1.0009 * (normalized) strategy
+ +       0.9975 * (normalized) thematic
+ +      -0.9934 * (normalized) wargames
+ +       0.9961 * (normalized) no-subdomain
+ -       5.9789
+
+Number of kernel evaluations: 156184 (95.318% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0159 * (normalized) minp
+ +       0.0092 * (normalized) maxp
+ +       2.0291 * (normalized) time
+ +      -0.0142 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.0033 * (normalized) customizable
+ +       0.0272 * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0124 * (normalized) strategy
+ +       0.047  * (normalized) thematic
+ +      -0.004  * (normalized) wargames
+ +       0.017  * (normalized) no-subdomain
+ -       1.0957
+
+Number of kernel evaluations: 58097 (85.371% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0697 * (normalized) minp
+ +       0.0182 * (normalized) maxp
+ +       1.2648 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0152 * (normalized) strategy
+ +       0.007  * (normalized) thematic
+ +      -0.015  * (normalized) wargames
+ +      -0.0072 * (normalized) no-subdomain
+ -       1.0631
+
+Number of kernel evaluations: 13964 (66.08% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0214 * (normalized) minp
+ +       0.0144 * (normalized) maxp
+ +       1.1883 * (normalized) time
+ +      -0.0133 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0007 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0021 * (normalized) strategy
+ +       0.0227 * (normalized) thematic
+ +       0.024  * (normalized) wargames
+ +       0.0154 * (normalized) no-subdomain
+ -       1.0831
+
+Number of kernel evaluations: 16418 (91.622% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0055 * (normalized) minp
+ +       0.0095 * (normalized) maxp
+ +       1.0958 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0218 * (normalized) strategy
+ +       0.0018 * (normalized) thematic
+ +      -0.0008 * (normalized) wargames
+ +      -0.021  * (normalized) no-subdomain
+ -       1.0665
+
+Number of kernel evaluations: 1931 (71.393% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +      -0.0123 * (normalized) maxp
+ +       0.0024 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) wargames
+ -       0.9996
+
+Number of kernel evaluations: 323 (54.184% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:02.412
+ CV-2     0:00:02.561
+ CV-3     0:00:02.528
+ CV-4     0:00:02.532
+ CV-5     0:00:02.328
+ CV-6     0:00:02.540
+ CV-7     0:00:02.549
+ CV-8     0:00:02.248
+ CV-9     0:00:02.366
+ CV-10    0:00:02.351
+ TEST     0:00:00.339
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 53.03  46.97   0.57   0.53   0.47
+ TEST: 58.53  41.47   0.62   0.59   0.54
+
+
+Processing data file: data/bgg-out/bgweights-003000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0222 * (normalized) minp
+ +      -0.0192 * (normalized) maxp
+ +       0.7381 * (normalized) time
+ +      -0.02   * (normalized) abstract
+ +       1.9831 * (normalized) childrens
+ +      -0.0291 * (normalized) customizable
+ +      -0.0018 * (normalized) family
+ +       1.9847 * (normalized) party
+ +      -0.0182 * (normalized) strategy
+ +      -0.0162 * (normalized) thematic
+ +      -0.0168 * (normalized) wargames
+ +       1.9769 * (normalized) no-subdomain
+ -       4.8707
+
+Number of kernel evaluations: 316185 (93.464% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0009 * (normalized) minp
+ +      -0.0211 * (normalized) maxp
+ +       0.4494 * (normalized) time
+ +       0.9075 * (normalized) abstract
+ +       0.9097 * (normalized) childrens
+ +      -1.0929 * (normalized) customizable
+ +       1      * (normalized) family
+ +       1.4553 * (normalized) party
+ +      -1.9983 * (normalized) strategy
+ +      -0.5447 * (normalized) thematic
+ +      -1.0888 * (normalized) wargames
+ +       0.9092 * (normalized) no-subdomain
+ -       0.5507
+
+Number of kernel evaluations: 246130 (88.303% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0171 * (normalized) minp
+ +      -0.0611 * (normalized) maxp
+ +       0.2624 * (normalized) time
+ +       0.1651 * (normalized) abstract
+ +       0.164  * (normalized) childrens
+ +      -1      * (normalized) customizable
+ +       1.9917 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.8335 * (normalized) strategy
+ +       0.1618 * (normalized) thematic
+ +      -1.8258 * (normalized) wargames
+ +       0.1685 * (normalized) no-subdomain
+ +       0.1767
+
+Number of kernel evaluations: 49552 (88.014% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0621 * (normalized) minp
+ +      -0.0236 * (normalized) maxp
+ +       1.3151 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0207 * (normalized) wargames
+ +       0.0207 * (normalized) no-subdomain
+ -       1.0202
+
+Number of kernel evaluations: 29347 (62.658% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0008 * (normalized) minp
+ +      -0.0772 * (normalized) maxp
+ +       0.5045 * (normalized) time
+ +       0.0107 * (normalized) abstract
+ +       0.0119 * (normalized) childrens
+ +       0.0096 * (normalized) customizable
+ +       1.9959 * (normalized) family
+ +       0.0153 * (normalized) party
+ +      -1.9842 * (normalized) strategy
+ +       0.0128 * (normalized) thematic
+ +      -1.9759 * (normalized) wargames
+ +       0.0127 * (normalized) no-subdomain
+ +       0.901
+
+Number of kernel evaluations: 339580 (94.796% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0136 * (normalized) minp
+ +      -0.0126 * (normalized) maxp
+ +       2.0355 * (normalized) time
+ +      -0.0083 * (normalized) abstract
+ +       0.0012 * (normalized) childrens
+ +       0.0048 * (normalized) customizable
+ +       0.031  * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0122 * (normalized) strategy
+ +       0.0537 * (normalized) thematic
+ +       0.0069 * (normalized) wargames
+ +       0.0274 * (normalized) no-subdomain
+ -       1.1383
+
+Number of kernel evaluations: 88029 (72.3% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0074 * (normalized) minp
+ +      -0.0013 * (normalized) maxp
+ +       1.1555 * (normalized) time
+ +       0.0355 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0035 * (normalized) strategy
+ +       0.0048 * (normalized) thematic
+ +      -0.0082 * (normalized) wargames
+ +       0      * (normalized) no-subdomain
+ -       1.0802
+
+Number of kernel evaluations: 46561 (63.78% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0091 * (normalized) minp
+ +      -0.0136 * (normalized) maxp
+ +       0.8466 * (normalized) time
+ +       0.0016 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0089 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0082 * (normalized) strategy
+ +       0.0179 * (normalized) thematic
+ +       0.0272 * (normalized) wargames
+ +       0.0174 * (normalized) no-subdomain
+ -       1.0862
+
+Number of kernel evaluations: 37132 (88.309% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0026 * (normalized) minp
+ +       0.0672 * (normalized) maxp
+ +       0.9181 * (normalized) time
+ +       0.0035 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0151 * (normalized) strategy
+ +       0.0015 * (normalized) thematic
+ +      -0.0084 * (normalized) wargames
+ +      -0.0067 * (normalized) no-subdomain
+ -       1.0708
+
+Number of kernel evaluations: 7243 (74.308% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +      -0.0251 * (normalized) maxp
+ +       0.0008 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) wargames
+ -       0.9991
+
+Number of kernel evaluations: 911 (61.018% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-003000.arff...
+
+Processing times:
+ CV-1     0:00:05.470
+ CV-2     0:00:05.922
+ CV-3     0:00:05.901
+ CV-4     0:00:05.562
+ CV-5     0:00:05.881
+ CV-6     0:00:06.415
+ CV-7     0:00:05.866
+ CV-8     0:00:05.943
+ CV-9     0:00:05.680
+ CV-10    0:00:05.860
+ TEST     0:00:00.755
+
+Test Results: (number of instances = 3000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 52.77  47.23   0.52   0.53   0.51
+ TEST: 52.64  47.36   0.53   0.53   0.50
+
+
+Processing data file: data/bgg-out/bgweights-004000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0006 * (normalized) minp
+ +      -0.004  * (normalized) maxp
+ +       0.4481 * (normalized) time
+ +      -0.0012 * (normalized) abstract
+ +       1.9992 * (normalized) childrens
+ +      -0.0016 * (normalized) customizable
+ +       0.0001 * (normalized) family
+ +       1.999  * (normalized) party
+ +      -0.0014 * (normalized) strategy
+ +      -0.0008 * (normalized) thematic
+ +       0.0001 * (normalized) wargames
+ +       1.9984 * (normalized) no-subdomain
+ -       4.994
+
+Number of kernel evaluations: 721176 (97.241% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0024 * (normalized) minp
+ +      -0.0014 * (normalized) maxp
+ +       0.3131 * (normalized) time
+ +       0.7494 * (normalized) abstract
+ +       0.7501 * (normalized) childrens
+ +      -1.2509 * (normalized) customizable
+ +       1.1252 * (normalized) family
+ +       1.1255 * (normalized) party
+ +      -2.374  * (normalized) strategy
+ +      -0.3754 * (normalized) thematic
+ +      -1.2492 * (normalized) wargames
+ +       0.7499 * (normalized) no-subdomain
+ +       0.4985
+
+Number of kernel evaluations: 452386 (93.38% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0043 * (normalized) minp
+ +       0.0189 * (normalized) maxp
+ +       0.4447 * (normalized) time
+ +       0.0071 * (normalized) abstract
+ +       0.0082 * (normalized) childrens
+ +       0.0082 * (normalized) customizable
+ +       1.9879 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.9911 * (normalized) strategy
+ +       0.0065 * (normalized) thematic
+ +      -1.9814 * (normalized) wargames
+ +       0.0116 * (normalized) no-subdomain
+ -       0.0505
+
+Number of kernel evaluations: 153474 (87.78% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +       0.0027 * (normalized) maxp
+ +       1.9091 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0048 * (normalized) wargames
+ +       0.0048 * (normalized) no-subdomain
+ -       1.0239
+
+Number of kernel evaluations: 32669 (63.089% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0011 * (normalized) minp
+ +      -0.0821 * (normalized) maxp
+ +       0.3196 * (normalized) time
+ +       0.2842 * (normalized) abstract
+ +       0.2844 * (normalized) childrens
+ +       0.0005 * (normalized) customizable
+ +       1.9978 * (normalized) family
+ +       0.2856 * (normalized) party
+ +      -1.713  * (normalized) strategy
+ +       0.2851 * (normalized) thematic
+ +      -1.7113 * (normalized) wargames
+ +       0.285  * (normalized) no-subdomain
+ -       0.7144
+
+Number of kernel evaluations: 602544 (94.977% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0137 * (normalized) minp
+ +       0.0511 * (normalized) maxp
+ +       0.8261 * (normalized) time
+ +      -0.0026 * (normalized) abstract
+ +       0.0039 * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0.0056 * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0018 * (normalized) strategy
+ +       0.0064 * (normalized) thematic
+ +       0.0003 * (normalized) wargames
+ +       0.0049 * (normalized) no-subdomain
+ -       1.0211
+
+Number of kernel evaluations: 139510 (90.238% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0115 * (normalized) minp
+ +       0.0061 * (normalized) maxp
+ +       1.7945 * (normalized) time
+ +       0.0264 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0.0019 * (normalized) thematic
+ +      -0.0011 * (normalized) wargames
+ +      -0.0008 * (normalized) no-subdomain
+ -       1.0656
+
+Number of kernel evaluations: 22078 (62.465% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0094 * (normalized) minp
+ +       0.4238 * (normalized) maxp
+ +       0.4393 * (normalized) time
+ +       0.0028 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0111 * (normalized) customizable
+ +       0.0047 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0059 * (normalized) strategy
+ +       0.0071 * (normalized) thematic
+ +       0.0087 * (normalized) wargames
+ +       0.0089 * (normalized) no-subdomain
+ -       1.0571
+
+Number of kernel evaluations: 84926 (92.593% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0022 * (normalized) minp
+ +       0.0246 * (normalized) maxp
+ +       1.6741 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0056 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0051 * (normalized) wargames
+ +      -0.0107 * (normalized) no-subdomain
+ -       1.0442
+
+Number of kernel evaluations: 15042 (70.604% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0055 * (normalized) minp
+ +      -0.006  * (normalized) maxp
+ +       1.2496 * (normalized) time
+ +       0.0011 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0156 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0087 * (normalized) wargames
+ +      -0.0242 * (normalized) no-subdomain
+ -       1.0371
+
+Number of kernel evaluations: 1552 (74.49% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-004000.arff...
+
+Processing times:
+ CV-1     0:00:17.228
+ CV-2     0:00:17.884
+ CV-3     0:00:17.980
+ CV-4     0:00:16.818
+ CV-5     0:00:16.598
+ CV-6     0:00:16.474
+ CV-7     0:00:15.390
+ CV-8     0:00:16.629
+ CV-9     0:00:16.005
+ CV-10    0:00:15.669
+ TEST     0:00:02.675
+
+Test Results: (number of instances = 4000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 54.29  45.71   0.53   0.54   0.52
+ TEST: 53.14  46.86   0.51   0.53   0.50
+
+
+Processing data file: data/bgg-out/bgweights-005000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0072 * (normalized) minp
+ +       0.0006 * (normalized) maxp
+ +       0.1875 * (normalized) time
+ +      -0.0012 * (normalized) abstract
+ +       1.9984 * (normalized) childrens
+ +      -0.0016 * (normalized) customizable
+ +       0.0002 * (normalized) family
+ +       1.998  * (normalized) party
+ +      -0.0021 * (normalized) strategy
+ +      -0.0011 * (normalized) thematic
+ +      -0.0008 * (normalized) wargames
+ +       1.9974 * (normalized) no-subdomain
+ -       4.9887
+
+Number of kernel evaluations: 1347687 (94.906% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0053 * (normalized) minp
+ +      -0.0181 * (normalized) maxp
+ +       0.1717 * (normalized) time
+ +       0.4976 * (normalized) abstract
+ +       0.4992 * (normalized) childrens
+ +      -1.5014 * (normalized) customizable
+ +       1.9916 * (normalized) family
+ +       1.9922 * (normalized) party
+ +      -1.9985 * (normalized) strategy
+ +      -1.4935 * (normalized) thematic
+ +      -1.5005 * (normalized) wargames
+ +       0.4986 * (normalized) no-subdomain
+ +       0.5129
+
+Number of kernel evaluations: 816348 (87.503% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0151 * (normalized) minp
+ +       0.0861 * (normalized) maxp
+ +       0.6122 * (normalized) time
+ +       0.0165 * (normalized) abstract
+ +       0.0246 * (normalized) childrens
+ +       0.0179 * (normalized) customizable
+ +       1.9876 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.9739 * (normalized) strategy
+ +       0.0135 * (normalized) thematic
+ +      -1.9538 * (normalized) wargames
+ +       0.0359 * (normalized) no-subdomain
+ -       0.1553
+
+Number of kernel evaluations: 240944 (77.099% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0028 * (normalized) minp
+ +       0.0257 * (normalized) maxp
+ +       2.0403 * (normalized) time
+ +       0.0291 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0555 * (normalized) wargames
+ +       0.0264 * (normalized) no-subdomain
+ -       1.0964
+
+Number of kernel evaluations: 48565 (60.043% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0077 * (normalized) minp
+ +      -0.1251 * (normalized) maxp
+ +       0.3667 * (normalized) time
+ +       0.0077 * (normalized) abstract
+ +       0.0084 * (normalized) childrens
+ +       0.0065 * (normalized) customizable
+ +       1.9978 * (normalized) family
+ +       0.0095 * (normalized) party
+ +      -1.9885 * (normalized) strategy
+ +       0.0106 * (normalized) thematic
+ +      -1.9833 * (normalized) wargames
+ +       0.0095 * (normalized) no-subdomain
+ +       0.9296
+
+Number of kernel evaluations: 768743 (94.259% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0018 * (normalized) minp
+ +       0.3713 * (normalized) maxp
+ +       2.7019 * (normalized) time
+ +      -0.0156 * (normalized) abstract
+ +       0.0115 * (normalized) childrens
+ +      -0.0126 * (normalized) customizable
+ +       0.0332 * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0352 * (normalized) strategy
+ +       0.0466 * (normalized) thematic
+ +      -0.0173 * (normalized) wargames
+ +       0.0256 * (normalized) no-subdomain
+ -       1.117
+
+Number of kernel evaluations: 162503 (79.25% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0006 * (normalized) minp
+ +       0.0751 * (normalized) maxp
+ +       2.0706 * (normalized) time
+ +       0.0534 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0028 * (normalized) strategy
+ +       0.0069 * (normalized) thematic
+ +      -0.0127 * (normalized) wargames
+ +       0.0029 * (normalized) no-subdomain
+ -       1.1391
+
+Number of kernel evaluations: 43906 (63.363% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0179 * (normalized) minp
+ +       0.7104 * (normalized) maxp
+ +       0.7428 * (normalized) time
+ +      -0.0002 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0126 * (normalized) customizable
+ +       0.0011 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0055 * (normalized) strategy
+ +       0.0146 * (normalized) thematic
+ +       0.0181 * (normalized) wargames
+ +       0.0162 * (normalized) no-subdomain
+ -       1.0846
+
+Number of kernel evaluations: 76214 (90.265% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.1565 * (normalized) minp
+ +       0.0601 * (normalized) maxp
+ +       1.5526 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0024 * (normalized) strategy
+ +       0.0145 * (normalized) thematic
+ +       0.0147 * (normalized) wargames
+ +      -0.0315 * (normalized) no-subdomain
+ -       1.1483
+
+Number of kernel evaluations: 9298 (62.599% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.002  * (normalized) minp
+ +       0.0014 * (normalized) maxp
+ +       0.0319 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.001  * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0003 * (normalized) wargames
+ +      -0.0014 * (normalized) no-subdomain
+ -       1.0027
+
+Number of kernel evaluations: 2491 (82.154% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-005000.arff...
+
+Processing times:
+ CV-1     0:00:22.933
+ CV-2     0:00:20.921
+ CV-3     0:00:21.255
+ CV-4     0:00:19.627
+ CV-5     0:00:20.364
+ CV-6     0:00:19.661
+ CV-7     0:00:20.543
+ CV-8     0:00:19.856
+ CV-9     0:00:20.676
+ CV-10    0:00:22.440
+ TEST     0:00:02.890
+
+Test Results: (number of instances = 5000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.05  44.95   0.53   0.55   0.52
+ TEST: 53.83  46.17   0.52   0.54   0.51
+
+
+Processing data file: data/bgg-out/bgweights-006000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0001 * (normalized) minp
+ +      -0.003  * (normalized) maxp
+ +       0.1177 * (normalized) time
+ +      -0.0004 * (normalized) abstract
+ +       1.9999 * (normalized) childrens
+ +      -0.0011 * (normalized) customizable
+ +      -0.0002 * (normalized) family
+ +       1.9991 * (normalized) party
+ +      -0.0008 * (normalized) strategy
+ +      -0.0005 * (normalized) thematic
+ +       0.0002 * (normalized) wargames
+ +       1.999  * (normalized) no-subdomain
+ -       4.9959
+
+Number of kernel evaluations: 1276719 (55.714% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +      -0.0025 * (normalized) maxp
+ +       0.175  * (normalized) time
+ +       1.7138 * (normalized) abstract
+ +       1.7143 * (normalized) childrens
+ +      -0.2868 * (normalized) customizable
+ +       1.9982 * (normalized) family
+ +       1.9987 * (normalized) party
+ +      -2.2838 * (normalized) strategy
+ +      -0.2855 * (normalized) thematic
+ +      -0.2856 * (normalized) wargames
+ +       1.7136 * (normalized) no-subdomain
+ -       5.2833
+
+Number of kernel evaluations: 1141577 (67.291% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +       0.0029 * (normalized) maxp
+ +       0.2168 * (normalized) time
+ +       0.5002 * (normalized) abstract
+ +       0.5008 * (normalized) childrens
+ +       0.5    * (normalized) customizable
+ +       2      * (normalized) family
+ +       0.5003 * (normalized) party
+ +      -1.5004 * (normalized) strategy
+ +       0.4998 * (normalized) thematic
+ +      -1.5001 * (normalized) wargames
+ +       0.4995 * (normalized) no-subdomain
+ -       2.5008
+
+Number of kernel evaluations: 268059 (70.478% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0008 * (normalized) minp
+ +      -0.0033 * (normalized) maxp
+ +       1.2805 * (normalized) time
+ +       0.0013 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0024 * (normalized) wargames
+ +       0.001  * (normalized) no-subdomain
+ -       1.0055
+
+Number of kernel evaluations: 53120 (64.116% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0006 * (normalized) minp
+ +       0.0025 * (normalized) maxp
+ +       0.2887 * (normalized) time
+ +       0.6253 * (normalized) abstract
+ +       0.6245 * (normalized) childrens
+ +       0.6248 * (normalized) customizable
+ +       1.9997 * (normalized) family
+ +       0.6248 * (normalized) party
+ +      -1.3746 * (normalized) strategy
+ +       0.6247 * (normalized) thematic
+ +      -1.3747 * (normalized) wargames
+ +       0.6251 * (normalized) no-subdomain
+ -       3.3753
+
+Number of kernel evaluations: 870939 (79.804% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0028 * (normalized) minp
+ +       0.0054 * (normalized) maxp
+ +       0.5396 * (normalized) time
+ +      -0.0002 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.0007 * (normalized) customizable
+ +       0.0004 * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0002 * (normalized) strategy
+ +       0.0004 * (normalized) thematic
+ +      -0.0002 * (normalized) wargames
+ +       0.0002 * (normalized) no-subdomain
+ -       1.0004
+
+Number of kernel evaluations: 282645 (90.045% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0009 * (normalized) minp
+ +       0.011  * (normalized) maxp
+ +       1.2817 * (normalized) time
+ +       0.0038 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0.0004 * (normalized) thematic
+ +      -0.0001 * (normalized) wargames
+ +      -0.0003 * (normalized) no-subdomain
+ -       1.0088
+
+Number of kernel evaluations: 73821 (73.378% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +       0.107  * (normalized) maxp
+ +       0.316  * (normalized) time
+ +      -0.0001 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0023 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0006 * (normalized) strategy
+ +       0.0031 * (normalized) thematic
+ +       0.0004 * (normalized) wargames
+ +       0.0013 * (normalized) no-subdomain
+ -       1.0089
+
+Number of kernel evaluations: 146770 (95.894% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0036 * (normalized) minp
+ +       0.0279 * (normalized) maxp
+ +       1.2341 * (normalized) time
+ +       0.0018 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0006 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0024 * (normalized) strategy
+ +       0.0021 * (normalized) thematic
+ +      -0.0014 * (normalized) wargames
+ +      -0.0015 * (normalized) no-subdomain
+ -       1.0132
+
+Number of kernel evaluations: 20442 (77.258% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.4787 * (normalized) minp
+ +      -0.0397 * (normalized) maxp
+ +       1.025  * (normalized) time
+ +       0.0884 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0364 * (normalized) strategy
+ +       0.0007 * (normalized) thematic
+ +      -0.0095 * (normalized) wargames
+ +      -0.0269 * (normalized) no-subdomain
+ -       1.2474
+
+Number of kernel evaluations: 3746 (67.746% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-006000.arff...
+
+Processing times:
+ CV-1     0:00:11.767
+ CV-2     0:00:10.955
+ CV-3     0:00:11.494
+ CV-4     0:00:11.348
+ CV-5     0:00:10.695
+ CV-6     0:00:11.120
+ CV-7     0:00:10.000
+ CV-8     0:00:10.726
+ CV-9     0:00:10.345
+ CV-10    0:00:10.638
+ TEST     0:00:01.136
+
+Test Results: (number of instances = 6000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 54.47  45.53   0.52   0.54   0.51
+ TEST: 57.16  42.84   0.54   0.57   0.54
+
+
+Processing data file: data/bgg-out/bgweights-007000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0006 * (normalized) minp
+ +       0.0003 * (normalized) maxp
+ +       0.1251 * (normalized) time
+ +      -0.0007 * (normalized) abstract
+ +       1.9995 * (normalized) childrens
+ +      -0.0017 * (normalized) customizable
+ +      -0.0008 * (normalized) family
+ +       1.9986 * (normalized) party
+ +      -0.001  * (normalized) strategy
+ +      -0.0011 * (normalized) thematic
+ +      -0.0012 * (normalized) wargames
+ +       1.9991 * (normalized) no-subdomain
+ -       4.9919
+
+Number of kernel evaluations: 2885501 (59.435% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0001 * (normalized) minp
+ +       0.0006 * (normalized) maxp
+ +       0.2096 * (normalized) time
+ +       1.5379 * (normalized) abstract
+ +       1.538  * (normalized) childrens
+ +      -0.4619 * (normalized) customizable
+ +       1.7689 * (normalized) family
+ +       2      * (normalized) party
+ +      -2.2311 * (normalized) strategy
+ +      -0.4609 * (normalized) thematic
+ +      -0.4611 * (normalized) wargames
+ +       1.5391 * (normalized) no-subdomain
+ -       4.2307
+
+Number of kernel evaluations: 1860742 (61.88% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0008 * (normalized) minp
+ +       0      * (normalized) maxp
+ +       0.2861 * (normalized) time
+ +       0.9999 * (normalized) abstract
+ +       1      * (normalized) childrens
+ +       0.9994 * (normalized) customizable
+ +       2      * (normalized) family
+ +       1      * (normalized) party
+ +      -1.0004 * (normalized) strategy
+ +       0.9998 * (normalized) thematic
+ +      -0.9987 * (normalized) wargames
+ +       1      * (normalized) no-subdomain
+ -       6.0006
+
+Number of kernel evaluations: 747915 (74.246% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0013 * (normalized) minp
+ +       0.0057 * (normalized) maxp
+ +       1.2825 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0.0007 * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0024 * (normalized) wargames
+ +       0.0017 * (normalized) no-subdomain
+ -       1.0059
+
+Number of kernel evaluations: 129465 (64.998% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +      -0.0018 * (normalized) maxp
+ +       0.3514 * (normalized) time
+ +       0.7491 * (normalized) abstract
+ +       0.7496 * (normalized) childrens
+ +       0.7495 * (normalized) customizable
+ +       1.999  * (normalized) family
+ +       0.7496 * (normalized) party
+ +      -1.2494 * (normalized) strategy
+ +       0.7505 * (normalized) thematic
+ +      -1.2492 * (normalized) wargames
+ +       0.7503 * (normalized) no-subdomain
+ -       4.2494
+
+Number of kernel evaluations: 1505728 (78.144% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0008 * (normalized) minp
+ +      -0.0001 * (normalized) maxp
+ +       0.7706 * (normalized) time
+ +      -0.0008 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0.0013 * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0.0009 * (normalized) thematic
+ +      -0.0004 * (normalized) wargames
+ +       0.0002 * (normalized) no-subdomain
+ -       1.0023
+
+Number of kernel evaluations: 397204 (92.507% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0007 * (normalized) minp
+ +       0.0033 * (normalized) maxp
+ +       1.2765 * (normalized) time
+ +       0.0039 * (normalized) abstract
+ +       0.0029 * (normalized) childrens
+ +       0.0064 * (normalized) customizable
+ +       0.0047 * (normalized) family
+ +       0.0014 * (normalized) party
+ +       0.0056 * (normalized) strategy
+ +       0.0059 * (normalized) thematic
+ +       0.0051 * (normalized) wargames
+ +       0.0047 * (normalized) no-subdomain
+ -       1.0405
+
+Number of kernel evaluations: 95528 (71.947% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0002 * (normalized) minp
+ +       0.0015 * (normalized) maxp
+ +       0.4565 * (normalized) time
+ +      -0.0001 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0001 * (normalized) strategy
+ +       0.0006 * (normalized) thematic
+ +       0.0008 * (normalized) wargames
+ +       0      * (normalized) no-subdomain
+ -       1.0024
+
+Number of kernel evaluations: 171332 (95.688% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0065 * (normalized) minp
+ +       0.0057 * (normalized) maxp
+ +       1.24   * (normalized) time
+ +       0.0011 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0012 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0049 * (normalized) strategy
+ +       0.0032 * (normalized) thematic
+ +       0.0063 * (normalized) wargames
+ +       0.0062 * (normalized) no-subdomain
+ -       1.0251
+
+Number of kernel evaluations: 25585 (75.035% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0136 * (normalized) minp
+ +      -0.0186 * (normalized) maxp
+ +       0.7657 * (normalized) time
+ +      -0.0001 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0019 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0017 * (normalized) wargames
+ +      -0.0025 * (normalized) no-subdomain
+ -       1.0084
+
+Number of kernel evaluations: 2858 (94.582% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-007000.arff...
+
+Processing times:
+ CV-1     0:00:15.973
+ CV-2     0:00:16.914
+ CV-3     0:00:17.297
+ CV-4     0:00:17.264
+ CV-5     0:00:17.656
+ CV-6     0:00:18.183
+ CV-7     0:00:17.057
+ CV-8     0:00:16.997
+ CV-9     0:00:17.158
+ CV-10    0:00:16.941
+ TEST     0:00:02.283
+
+Test Results: (number of instances = 7000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.93  44.07   0.52   0.56   0.53
+ TEST: 56.01  43.99   0.54   0.56   0.53
+
+
+Processing data file: data/bgg-out/bgweights-008000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0006 * (normalized) minp
+ +       0.0002 * (normalized) maxp
+ +       0.018  * (normalized) time
+ +       0.0005 * (normalized) abstract
+ +       2.0005 * (normalized) childrens
+ +       0.0009 * (normalized) customizable
+ +       0.0006 * (normalized) family
+ +       2.0004 * (normalized) party
+ +       0.0007 * (normalized) strategy
+ +       0.0003 * (normalized) thematic
+ +       0.0004 * (normalized) wargames
+ +       2.0014 * (normalized) no-subdomain
+ -       5.0044
+
+Number of kernel evaluations: 3231791 (55.069% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0003 * (normalized) minp
+ +      -0.0128 * (normalized) maxp
+ +       0.1767 * (normalized) time
+ +       1.9977 * (normalized) abstract
+ +       1.9985 * (normalized) childrens
+ +      -0.0016 * (normalized) customizable
+ +       1.9998 * (normalized) family
+ +       2      * (normalized) party
+ +      -2.0025 * (normalized) strategy
+ +      -0.0011 * (normalized) thematic
+ +      -0.0018 * (normalized) wargames
+ +       1.998  * (normalized) no-subdomain
+ -       6.9892
+
+Number of kernel evaluations: 1943978 (65.341% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0022 * (normalized) minp
+ +       0.0004 * (normalized) maxp
+ +       0.3218 * (normalized) time
+ +       0.9995 * (normalized) abstract
+ +       1.0003 * (normalized) childrens
+ +       0.9992 * (normalized) customizable
+ +       2      * (normalized) family
+ +       0.9997 * (normalized) party
+ +      -1.0002 * (normalized) strategy
+ +       1.0001 * (normalized) thematic
+ +      -0.9991 * (normalized) wargames
+ +       1.0006 * (normalized) no-subdomain
+ -       6
+
+Number of kernel evaluations: 606304 (71.956% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +       0.0017 * (normalized) maxp
+ +       1.5335 * (normalized) time
+ +       0.0001 * (normalized) abstract
+ +       0.0004 * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.0012 * (normalized) wargames
+ +       0.0044 * (normalized) no-subdomain
+ -       1.0085
+
+Number of kernel evaluations: 168846 (72.196% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0009 * (normalized) minp
+ +      -0.0211 * (normalized) maxp
+ +       0.2634 * (normalized) time
+ +       0.0011 * (normalized) abstract
+ +       0.001  * (normalized) childrens
+ +       0.0006 * (normalized) customizable
+ +       1.9989 * (normalized) family
+ +       0.0009 * (normalized) party
+ +      -1.9989 * (normalized) strategy
+ +       0.0005 * (normalized) thematic
+ +      -1.9987 * (normalized) wargames
+ +       0.0008 * (normalized) no-subdomain
+ +       0.9944
+
+Number of kernel evaluations: 2074573 (68.283% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0012 * (normalized) minp
+ +       0.0344 * (normalized) maxp
+ +       0.3418 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0004 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0006 * (normalized) wargames
+ +       0.0006 * (normalized) no-subdomain
+ -       1.001
+
+Number of kernel evaluations: 419858 (81.737% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0003 * (normalized) minp
+ +       0.0006 * (normalized) maxp
+ +       1.5016 * (normalized) time
+ +       0.0039 * (normalized) abstract
+ +       0.004  * (normalized) childrens
+ +       0.0042 * (normalized) customizable
+ +       0.0068 * (normalized) family
+ +       0.0029 * (normalized) party
+ +       0.0071 * (normalized) strategy
+ +       0.0072 * (normalized) thematic
+ +       0.0063 * (normalized) wargames
+ +       0.0068 * (normalized) no-subdomain
+ -       1.0478
+
+Number of kernel evaluations: 211250 (80.762% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0002 * (normalized) minp
+ +       0.0404 * (normalized) maxp
+ +       0.0371 * (normalized) time
+ +      -0.0004 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.0011 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0006 * (normalized) strategy
+ +      -0.0001 * (normalized) thematic
+ +      -0.0002 * (normalized) wargames
+ +      -0.0013 * (normalized) no-subdomain
+ -       0.9971
+
+Number of kernel evaluations: 139497 (57.516% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0054 * (normalized) minp
+ +       0.0056 * (normalized) maxp
+ +       1.4116 * (normalized) time
+ +       0.0019 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.002  * (normalized) customizable
+ +       0.0014 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0075 * (normalized) strategy
+ +       0.0065 * (normalized) thematic
+ +       0.0079 * (normalized) wargames
+ +       0.0073 * (normalized) no-subdomain
+ -       1.0356
+
+Number of kernel evaluations: 108386 (85.171% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0035 * (normalized) minp
+ +      -0.011  * (normalized) maxp
+ +       1.4403 * (normalized) time
+ +       0      * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0092 * (normalized) strategy
+ +       0.0036 * (normalized) thematic
+ +       0.0074 * (normalized) wargames
+ +       0.0012 * (normalized) no-subdomain
+ -       1.0235
+
+Number of kernel evaluations: 9112 (87.246% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-008000.arff...
+
+Processing times:
+ CV-1     0:00:17.100
+ CV-2     0:00:18.464
+ CV-3     0:00:17.695
+ CV-4     0:00:18.824
+ CV-5     0:00:17.869
+ CV-6     0:00:17.303
+ CV-7     0:00:17.685
+ CV-8     0:00:17.433
+ CV-9     0:00:18.416
+ CV-10    0:00:19.821
+ TEST     0:00:02.278
+
+Test Results: (number of instances = 8000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 56.62  43.38   0.53   0.57   0.53
+ TEST: 56.06  43.94   0.53   0.56   0.53
+
+
+Processing data file: data/bgg-out/bgweights-009000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.001  * (normalized) minp
+ +       0.004  * (normalized) maxp
+ +       0.0899 * (normalized) time
+ +      -0.0002 * (normalized) abstract
+ +       1.9991 * (normalized) childrens
+ +      -0.001  * (normalized) customizable
+ +      -0.0011 * (normalized) family
+ +       1.999  * (normalized) party
+ +      -0.0012 * (normalized) strategy
+ +      -0.0019 * (normalized) thematic
+ +      -0.0011 * (normalized) wargames
+ +       1.9983 * (normalized) no-subdomain
+ -       4.9915
+
+Number of kernel evaluations: 6959144 (56.857% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0002 * (normalized) minp
+ +      -0.0016 * (normalized) maxp
+ +       0.2201 * (normalized) time
+ +       1.4282 * (normalized) abstract
+ +       1.4281 * (normalized) childrens
+ +      -0.5714 * (normalized) customizable
+ +       1.4291 * (normalized) family
+ +       2      * (normalized) party
+ +      -2.0003 * (normalized) strategy
+ +      -0.5716 * (normalized) thematic
+ +      -0.5709 * (normalized) wargames
+ +       1.4285 * (normalized) no-subdomain
+ -       3.5715
+
+Number of kernel evaluations: 2867064 (62.627% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0007 * (normalized) minp
+ +       0.0026 * (normalized) maxp
+ +       0.3329 * (normalized) time
+ +       1.0003 * (normalized) abstract
+ +       1      * (normalized) childrens
+ +       0.9995 * (normalized) customizable
+ +       1.9994 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.0004 * (normalized) strategy
+ +       0.9991 * (normalized) thematic
+ +      -0.999  * (normalized) wargames
+ +       1.0005 * (normalized) no-subdomain
+ -       5.9999
+
+Number of kernel evaluations: 629366 (81.273% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0023 * (normalized) minp
+ +       0.0248 * (normalized) maxp
+ +       1.2989 * (normalized) time
+ +       0.0528 * (normalized) abstract
+ +       0.0525 * (normalized) childrens
+ +       0.047  * (normalized) customizable
+ +       0.3492 * (normalized) family
+ +       0.3487 * (normalized) party
+ +      -0.3021 * (normalized) strategy
+ +       0.048  * (normalized) thematic
+ +       0.0488 * (normalized) wargames
+ +       0.053  * (normalized) no-subdomain
+ -       1.6536
+
+Number of kernel evaluations: 313085 (73.065% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0005 * (normalized) minp
+ +      -0.0005 * (normalized) maxp
+ +       0.3607 * (normalized) time
+ +       1.2498 * (normalized) abstract
+ +       1.2494 * (normalized) childrens
+ +       1.2499 * (normalized) customizable
+ +       1.9991 * (normalized) family
+ +       1.2496 * (normalized) party
+ +      -0.7491 * (normalized) strategy
+ +       1.2498 * (normalized) thematic
+ +      -0.7494 * (normalized) wargames
+ +       1.2498 * (normalized) no-subdomain
+ -       7.7496
+
+Number of kernel evaluations: 3116639 (84.284% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.002  * (normalized) minp
+ +       0.008  * (normalized) maxp
+ +       0.8625 * (normalized) time
+ +       0.0004 * (normalized) abstract
+ +       0.001  * (normalized) childrens
+ +      -0.0005 * (normalized) customizable
+ +       0.0018 * (normalized) family
+ +       0      * (normalized) party
+ +       0      * (normalized) strategy
+ +       0.0019 * (normalized) thematic
+ +       0.0003 * (normalized) wargames
+ +       0.0016 * (normalized) no-subdomain
+ -       1.0071
+
+Number of kernel evaluations: 435153 (92.033% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0019 * (normalized) minp
+ +       0.0131 * (normalized) maxp
+ +       1.2949 * (normalized) time
+ +       0.0043 * (normalized) abstract
+ +       0.0023 * (normalized) childrens
+ +       0.005  * (normalized) customizable
+ +       0.0034 * (normalized) family
+ +       0.0017 * (normalized) party
+ +       0.002  * (normalized) strategy
+ +       0.0053 * (normalized) thematic
+ +       0.0036 * (normalized) wargames
+ +       0.0054 * (normalized) no-subdomain
+ -       1.0343
+
+Number of kernel evaluations: 165636 (72.071% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0005 * (normalized) minp
+ +       0.054  * (normalized) maxp
+ +       0.4425 * (normalized) time
+ +       0.0013 * (normalized) abstract
+ +       0.0004 * (normalized) childrens
+ +       0.0019 * (normalized) customizable
+ +       0.0009 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0013 * (normalized) strategy
+ +       0.0027 * (normalized) thematic
+ +       0.0021 * (normalized) wargames
+ +       0.0019 * (normalized) no-subdomain
+ -       1.0125
+
+Number of kernel evaluations: 319285 (96.429% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0034 * (normalized) minp
+ +       0.0306 * (normalized) maxp
+ +       1.2101 * (normalized) time
+ +       0.0012 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0.0023 * (normalized) customizable
+ +       0.0014 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0065 * (normalized) strategy
+ +       0.0057 * (normalized) thematic
+ +       0.0063 * (normalized) wargames
+ +       0.0065 * (normalized) no-subdomain
+ -       1.0313
+
+Number of kernel evaluations: 134761 (85.726% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0048 * (normalized) minp
+ +       0.0002 * (normalized) maxp
+ +       0.7885 * (normalized) time
+ +      -0.0022 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.003  * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0007 * (normalized) wargames
+ +      -0.0016 * (normalized) no-subdomain
+ -       1.0041
+
+Number of kernel evaluations: 3962 (79.377% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-009000.arff...
+
+Processing times:
+ CV-1     0:00:34.500
+ CV-2     0:00:33.474
+ CV-3     0:00:36.733
+ CV-4     0:00:35.287
+ CV-5     0:00:33.568
+ CV-6     0:00:35.114
+ CV-7     0:00:35.520
+ CV-8     0:00:31.750
+ CV-9     0:00:33.294
+ CV-10    0:00:36.162
+ TEST     0:00:05.304
+
+Test Results: (number of instances = 9000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 56.33  43.67   0.52   0.56   0.53
+ TEST: 57.82  42.18   0.54   0.58   0.54
+
+
+Processing data file: data/bgg-out/bgweights-010000.arff ...
+
+  Processing with classifier: SmoWekaClassifier{tag=SMO, type=SMO, options=[-C 1.0, -L 0.001, -P 1.0E-12, -N 0, -V -1, -W 1, -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: LIGHT, MEDIUM_LIGHT
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0011 * (normalized) minp
+ +       0.0003 * (normalized) maxp
+ +       0.0299 * (normalized) time
+ +       1.8561 * (normalized) abstract
+ +       1.8574 * (normalized) childrens
+ +      -0.1429 * (normalized) customizable
+ +       0.0002 * (normalized) family
+ +       1.8573 * (normalized) party
+ +      -1.9995 * (normalized) strategy
+ +      -0.1431 * (normalized) thematic
+ +      -0.1425 * (normalized) wargames
+ +       1.8578 * (normalized) no-subdomain
+ -       4.144
+
+Number of kernel evaluations: 7563528 (52.771% cached)
+
+Classifier for classes: LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0      * (normalized) minp
+ +      -0.0129 * (normalized) maxp
+ +       0.2024 * (normalized) time
+ +       0.8327 * (normalized) abstract
+ +       0.8336 * (normalized) childrens
+ +      -1.1669 * (normalized) customizable
+ +       1.9994 * (normalized) family
+ +       2      * (normalized) party
+ +      -2      * (normalized) strategy
+ +      -1.166  * (normalized) thematic
+ +      -1.1668 * (normalized) wargames
+ +       0.8334 * (normalized) no-subdomain
+ -       1.1665
+
+Number of kernel evaluations: 2794071 (54.742% cached)
+
+Classifier for classes: LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0011 * (normalized) minp
+ +      -0.0064 * (normalized) maxp
+ +       0.3532 * (normalized) time
+ +       1.0002 * (normalized) abstract
+ +       1.0003 * (normalized) childrens
+ +       0.9996 * (normalized) customizable
+ +       1.9993 * (normalized) family
+ +       1      * (normalized) party
+ +      -1.0002 * (normalized) strategy
+ +       0.999  * (normalized) thematic
+ +      -0.9993 * (normalized) wargames
+ +       1.0004 * (normalized) no-subdomain
+ -       5.9998
+
+Number of kernel evaluations: 1039694 (75.089% cached)
+
+Classifier for classes: LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0023 * (normalized) minp
+ +       0.0032 * (normalized) maxp
+ +       1.5274 * (normalized) time
+ +       0.001  * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0019 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +      -0.001  * (normalized) wargames
+ +       0.0019 * (normalized) no-subdomain
+ -       1.0064
+
+Number of kernel evaluations: 399164 (68.6% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0004 * (normalized) minp
+ +      -0.0251 * (normalized) maxp
+ +       0.3209 * (normalized) time
+ +       1      * (normalized) abstract
+ +       1.0003 * (normalized) childrens
+ +       0.9994 * (normalized) customizable
+ +       1.9996 * (normalized) family
+ +       1      * (normalized) party
+ +      -0.9994 * (normalized) strategy
+ +       0.9999 * (normalized) thematic
+ +      -0.9997 * (normalized) wargames
+ +       0.9996 * (normalized) no-subdomain
+ -       6.0002
+
+Number of kernel evaluations: 2812252 (65.858% cached)
+
+Classifier for classes: MEDIUM_LIGHT, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0009 * (normalized) minp
+ +       0.0006 * (normalized) maxp
+ +       0.6549 * (normalized) time
+ +      -0.0005 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.0005 * (normalized) customizable
+ +       0.0002 * (normalized) family
+ +       0      * (normalized) party
+ +      -0.0004 * (normalized) strategy
+ +       0.0008 * (normalized) thematic
+ +       0      * (normalized) wargames
+ +      -0.0001 * (normalized) no-subdomain
+ -       1.0004
+
+Number of kernel evaluations: 431240 (88.714% cached)
+
+Classifier for classes: MEDIUM_LIGHT, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.0019 * (normalized) minp
+ +       0.0031 * (normalized) maxp
+ +       1.4947 * (normalized) time
+ +       0.0029 * (normalized) abstract
+ +       0.0011 * (normalized) childrens
+ +       0.001  * (normalized) customizable
+ +       0.0024 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0015 * (normalized) strategy
+ +       0.0037 * (normalized) thematic
+ +       0.0029 * (normalized) wargames
+ +       0.001  * (normalized) no-subdomain
+ -       1.0199
+
+Number of kernel evaluations: 221028 (68.997% cached)
+
+Classifier for classes: MEDIUM, MEDIUM_HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0008 * (normalized) minp
+ +       0.0016 * (normalized) maxp
+ +       0.291  * (normalized) time
+ +      -0.0002 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +      -0.0005 * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0005 * (normalized) strategy
+ +       0.0006 * (normalized) thematic
+ +       0.0011 * (normalized) wargames
+ +       0.0009 * (normalized) no-subdomain
+ -       1.0026
+
+Number of kernel evaluations: 214338 (80.608% cached)
+
+Classifier for classes: MEDIUM, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0066 * (normalized) minp
+ +       0.0046 * (normalized) maxp
+ +       1.4047 * (normalized) time
+ +       0.0017 * (normalized) abstract
+ +       0.0007 * (normalized) childrens
+ +       0.0026 * (normalized) customizable
+ +       0.0022 * (normalized) family
+ +       0      * (normalized) party
+ +       0.0057 * (normalized) strategy
+ +       0.0061 * (normalized) thematic
+ +       0.0076 * (normalized) wargames
+ +       0.0078 * (normalized) no-subdomain
+ -       1.036
+
+Number of kernel evaluations: 88520 (82.011% cached)
+
+Classifier for classes: MEDIUM_HEAVY, HEAVY
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+         0.0057 * (normalized) minp
+ +       0.0034 * (normalized) maxp
+ +       1.1686 * (normalized) time
+ +      -0.0019 * (normalized) abstract
+ +       0      * (normalized) childrens
+ +       0      * (normalized) customizable
+ +       0      * (normalized) family
+ +       0      * (normalized) party
+ +       0.0039 * (normalized) strategy
+ +       0      * (normalized) thematic
+ +       0.0023 * (normalized) wargames
+ +      -0.0021 * (normalized) no-subdomain
+ -       1.015
+
+Number of kernel evaluations: 9108 (65.722% cached)
+
+
+
+** Results for data file: data/bgg-out/bgweights-010000.arff...
+
+Processing times:
+ CV-1     0:00:33.953
+ CV-2     0:00:31.259
+ CV-3     0:00:35.145
+ CV-4     0:00:34.214
+ CV-5     0:00:30.253
+ CV-6     0:00:37.441
+ CV-7     0:00:36.011
+ CV-8     0:00:36.428
+ CV-9     0:00:33.825
+ CV-10    0:00:33.578
+ TEST     0:00:03.367
+
+Test Results: (number of instances = 10000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 58.16  41.84   0.56   0.58   0.52
+ TEST: 57.99  42.01   0.55   0.58   0.52
+
+
+
+-- End of Run -- [0:27:17.218]

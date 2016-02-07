@@ -1,9 +1,9 @@
 package com.meowster.omscs.ml.wekarun.config.bgg;
 
 /**
- * Ten Board Game Weight datasets, (500..5000 instances).
+ * Ten Board Game Weight datasets, (500..5,000 instances).
  */
-public class LearningBgWeight500_5000 extends BgWeightGroup {
+public class LearningBgWeight5k extends BgWeightGroup {
 
     @Override
     protected void configure() {

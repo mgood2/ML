@@ -1,0 +1,2190 @@
+
+-- Starting WEKA Experiment --
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.LearningBgWeight10k...
+ ..adding path: data/bgg-out/bgweights-001000.arff
+ ..adding path: data/bgg-out/bgweights-002000.arff
+ ..adding path: data/bgg-out/bgweights-003000.arff
+ ..adding path: data/bgg-out/bgweights-004000.arff
+ ..adding path: data/bgg-out/bgweights-005000.arff
+ ..adding path: data/bgg-out/bgweights-006000.arff
+ ..adding path: data/bgg-out/bgweights-007000.arff
+ ..adding path: data/bgg-out/bgweights-008000.arff
+ ..adding path: data/bgg-out/bgweights-009000.arff
+ ..adding path: data/bgg-out/bgweights-010000.arff
+
+Processing data file: data/bgg-out/bgweights-001000.arff ...
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.SinglePerceptron...
+ ..adding classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.9090017388715093
+    Node 5    2.9022756273204258
+    Node 6    -2.1706542426797855
+    Node 7    -1.420866608234623
+    Node 8    -1.994012714364402
+    Node 9    0.6287387406308549
+    Node 10    3.0944206179027645
+    Node 11    -3.277120821666072
+    Node 12    -0.6468121078062391
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.7451776252717741
+    Node 5    -3.882382503976533
+    Node 6    2.293608110480651
+    Node 7    2.6827624397071443
+    Node 8    -2.341312258012007
+    Node 9    0.5512411647637656
+    Node 10    -0.3434067538175725
+    Node 11    -3.2815114143718818
+    Node 12    -0.7914390326049787
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -3.392336137348484
+    Node 5    -1.4364625045259098
+    Node 6    3.409231154512174
+    Node 7    -0.15330405748537806
+    Node 8    1.669538957306486
+    Node 9    -1.3634537564877893
+    Node 10    -1.906702017044346
+    Node 11    -0.04844056225278642
+    Node 12    -2.5783008479901692
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    2.1565766350892
+    Node 5    -2.6367705200042777
+    Node 6    -4.2308010125805255
+    Node 7    -2.256184828077084
+    Node 8    -1.1664446282916257
+    Node 9    -1.2631878885640593
+    Node 10    -4.196211403386123
+    Node 11    2.484977641563868
+    Node 12    0.48066659915915105
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.9086432048417352
+    Node 5    1.3322184542029125
+    Node 6    -3.2953704383096354
+    Node 7    -1.0248128759798303
+    Node 8    1.7906672976861413
+    Node 9    -1.7991893221258664
+    Node 10    -2.0291617265583
+    Node 11    -2.2970884907110953
+    Node 12    -1.270223273574688
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.880248162943145
+    Attrib minp    1.873820054344925
+    Attrib maxp    -0.32784269908089714
+    Attrib time    3.265517727138211
+    Attrib abstract    1.2541624950177428
+    Attrib childrens    -5.2136373465828285
+    Attrib customizable    0.1430702733344769
+    Attrib family    1.9520357119611158
+    Attrib party    -0.6911933022439157
+    Attrib strategy    -0.511777654533057
+    Attrib thematic    0.19351517899017107
+    Attrib wargames    0.6802970815649733
+    Attrib no-subdomain    2.1563542475751967
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -1.3237140395368618
+    Attrib minp    3.6780586831945947
+    Attrib maxp    12.151702022224326
+    Attrib time    -10.471404215901515
+    Attrib abstract    -2.3261272712774272
+    Attrib childrens    5.8803760981214355
+    Attrib customizable    -2.2451642328829347
+    Attrib family    -2.478228113498722
+    Attrib party    7.025671430309739
+    Attrib strategy    1.377015978331513
+    Attrib thematic    -2.24370911287512
+    Attrib wargames    1.8019827657520298
+    Attrib no-subdomain    2.3601744786162664
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.1401472118676591
+    Attrib minp    -3.1510431229143014
+    Attrib maxp    -0.08551361002350658
+    Attrib time    -0.19071652853934115
+    Attrib abstract    -4.598798465813184
+    Attrib childrens    0.9785069093293709
+    Attrib customizable    -0.12723679661768977
+    Attrib family    -4.709183250915705
+    Attrib party    1.0174061841064084
+    Attrib strategy    -2.7798609448319573
+    Attrib thematic    -0.48937324523055986
+    Attrib wargames    -1.8201438418723093
+    Attrib no-subdomain    -0.4129961008673157
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -1.2694427120915268
+    Attrib minp    -1.5268405417531714
+    Attrib maxp    -6.770621181747614
+    Attrib time    2.101298502039271
+    Attrib abstract    -1.038921863349904
+    Attrib childrens    -0.49892569475224047
+    Attrib customizable    -4.036999292607759
+    Attrib family    3.380722058234378
+    Attrib party    -0.4619989286818441
+    Attrib strategy    -1.899573504076923
+    Attrib thematic    -1.988414154782781
+    Attrib wargames    -5.160262581398928
+    Attrib no-subdomain    -0.1755956276722932
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.06770655917007659
+    Attrib minp    -2.7442636464644323
+    Attrib maxp    2.9256357626289926
+    Attrib time    -1.608050454867911
+    Attrib abstract    0.22031802378203347
+    Attrib childrens    -0.6007974794003696
+    Attrib customizable    0.6444935077906807
+    Attrib family    -3.4137634179334544
+    Attrib party    -0.7337295950305404
+    Attrib strategy    3.875802515488581
+    Attrib thematic    -0.9704579338382082
+    Attrib wargames    2.131668467156502
+    Attrib no-subdomain    1.476917189884474
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    0.9363910596924678
+    Attrib minp    8.660510154867298
+    Attrib maxp    3.2080591353101915
+    Attrib time    -2.003228761142111
+    Attrib abstract    0.3018239232392134
+    Attrib childrens    -1.123595994034158
+    Attrib customizable    3.1885279214301847
+    Attrib family    -1.4128309086462043
+    Attrib party    -4.850972207035166
+    Attrib strategy    6.9385774538588025
+    Attrib thematic    0.7406313451918661
+    Attrib wargames    3.904170453413993
+    Attrib no-subdomain    -5.95650030876313
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -0.7426399019925091
+    Attrib minp    -5.602811925147525
+    Attrib maxp    0.7984523795603157
+    Attrib time    3.5073734813597817
+    Attrib abstract    -1.0475058032067177
+    Attrib childrens    0.1439023683405254
+    Attrib customizable    -1.7881226158677128
+    Attrib family    0.7209314723514548
+    Attrib party    0.5704051414058806
+    Attrib strategy    -3.7282977664739496
+    Attrib thematic    -0.30925928452723833
+    Attrib wargames    0.06341698432141601
+    Attrib no-subdomain    0.18334234142398917
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.2760390383635046
+    Attrib minp    -1.5919412333909815
+    Attrib maxp    0.7812058648514945
+    Attrib time    0.05559005359628612
+    Attrib abstract    -1.5620873647501268
+    Attrib childrens    0.5893786289696629
+    Attrib customizable    -0.2986229828789199
+    Attrib family    -2.3855814951496557
+    Attrib party    0.23344983093934796
+    Attrib strategy    -1.0212490659511957
+    Attrib thematic    0.9971610499700947
+    Attrib wargames    -0.9201796637267609
+    Attrib no-subdomain    -0.12167189538176629
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-001000.arff...
+
+Processing times:
+ CV-1     0:00:09.859
+ CV-2     0:00:09.434
+ CV-3     0:00:10.273
+ TEST     0:00:01.223
+
+Test Results: (number of instances = 1000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.06  44.94   0.54   0.55   0.53
+ TEST: 52.10  47.90   0.58   0.52   0.47
+
+
+Processing data file: data/bgg-out/bgweights-002000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.0476396136189084
+    Node 5    2.6900840537327584
+    Node 6    -2.1428227201203454
+    Node 7    -4.555031913715308
+    Node 8    -2.5102651343293374
+    Node 9    1.4700656529281706
+    Node 10    -2.325001230124648
+    Node 11    -11.259703151219309
+    Node 12    1.6762309018459887
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    0.12250455336631616
+    Node 5    -1.849490373071625
+    Node 6    3.121687488939781
+    Node 7    0.1519942023613239
+    Node 8    -0.21493960528257142
+    Node 9    0.593269848740435
+    Node 10    4.704925751862633
+    Node 11    -3.3354070464337506
+    Node 12    -2.8931786591009416
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.4127848409004855
+    Node 5    -5.374498817257819
+    Node 6    -4.419698537206981
+    Node 7    2.3077103135580774
+    Node 8    2.2188679677924577
+    Node 9    -0.3640845353878593
+    Node 10    -2.3667179306398762
+    Node 11    1.2922665161154712
+    Node 12    -3.805293117819458
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -5.607256715279714
+    Node 5    -1.5131486294434036
+    Node 6    -0.11573385348983513
+    Node 7    2.1066043386919873
+    Node 8    5.194710893611954
+    Node 9    -2.197841333626029
+    Node 10    -0.5491609958465943
+    Node 11    5.7165599969741026
+    Node 12    -2.4465745183901273
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -5.261817570280238
+    Node 5    -0.854076424029243
+    Node 6    -1.56230706701596
+    Node 7    -0.5927509923628101
+    Node 8    -1.0937848783742172
+    Node 9    -0.3982529769403333
+    Node 10    -1.060617102559539
+    Node 11    -0.13039480888732938
+    Node 12    -1.9088209300671055
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    1.3979580571833308
+    Attrib minp    0.28720159696665815
+    Attrib maxp    14.807091634184573
+    Attrib time    8.234057656553034
+    Attrib abstract    1.5749547657274714
+    Attrib childrens    -3.9848128168760777
+    Attrib customizable    13.873681044443183
+    Attrib family    2.0776084171204023
+    Attrib party    -0.90327981841869
+    Attrib strategy    -0.16104717018933598
+    Attrib thematic    3.1908998725510096
+    Attrib wargames    0.4277319658573483
+    Attrib no-subdomain    0.7584913345551532
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.6342506445055327
+    Attrib minp    -10.09498239670431
+    Attrib maxp    -4.807489457181786
+    Attrib time    -0.46702863535947803
+    Attrib abstract    -3.751637603294084
+    Attrib childrens    -2.6160874430612937
+    Attrib customizable    -2.315431587837259
+    Attrib family    -3.627280819014889
+    Attrib party    -6.3851186592733935
+    Attrib strategy    1.7748960137477188
+    Attrib thematic    -2.9698448099379076
+    Attrib wargames    -0.6326528893263039
+    Attrib no-subdomain    0.9594921295385845
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    2.5693480857835165
+    Attrib minp    -9.016743071065509
+    Attrib maxp    1.8988511196926106
+    Attrib time    14.641520690138439
+    Attrib abstract    2.8357483547889606
+    Attrib childrens    3.518963938923074
+    Attrib customizable    -2.3188439342485707
+    Attrib family    -0.34959041818858017
+    Attrib party    5.050332387306925
+    Attrib strategy    -4.389301972885885
+    Attrib thematic    -1.6373759774446963
+    Attrib wargames    -2.465379144526578
+    Attrib no-subdomain    4.87412353308313
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.9811855467039445
+    Attrib minp    7.43304834097324
+    Attrib maxp    -3.8575332864496485
+    Attrib time    4.469877457152983
+    Attrib abstract    -2.9041151756998937
+    Attrib childrens    -2.8647317943192037
+    Attrib customizable    -2.1209058390745907
+    Attrib family    1.8144696402808342
+    Attrib party    2.320950033233923
+    Attrib strategy    0.3019083889515148
+    Attrib thematic    1.0285134057984076
+    Attrib wargames    1.6420161913361104
+    Attrib no-subdomain    -0.4695202572521297
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.5470682179731317
+    Attrib minp    -2.3541352011248726
+    Attrib maxp    -0.565116349622469
+    Attrib time    -1.5846878985519668
+    Attrib abstract    0.29245896901980023
+    Attrib childrens    0.4690724027207541
+    Attrib customizable    -0.5377138978536643
+    Attrib family    -1.1196862983424165
+    Attrib party    1.1707638412296586
+    Attrib strategy    1.6989864337119902
+    Attrib thematic    -3.0499818933043352
+    Attrib wargames    -5.2650550635370035
+    Attrib no-subdomain    -0.47284675410460103
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -0.7658388635652658
+    Attrib minp    -4.782805440341506
+    Attrib maxp    1.3640086501492903
+    Attrib time    0.5925773724649166
+    Attrib abstract    -2.2346116410643204
+    Attrib childrens    0.05300477808396818
+    Attrib customizable    -2.3942797161476483
+    Attrib family    -3.7252046631836584
+    Attrib party    -1.2202713303732904
+    Attrib strategy    -4.04166299605578
+    Attrib thematic    0.9272763755606401
+    Attrib wargames    -1.2899403726977927
+    Attrib no-subdomain    -0.5473535019397017
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    3.2174250121586723
+    Attrib minp    1.8235122989226482
+    Attrib maxp    -1.5466702156332117
+    Attrib time    38.517906519194796
+    Attrib abstract    7.145031915122882
+    Attrib childrens    4.454506729656976
+    Attrib customizable    6.85820339870142
+    Attrib family    6.7618174886806415
+    Attrib party    6.273157145043194
+    Attrib strategy    -0.2457843553981679
+    Attrib thematic    0.42895577751636593
+    Attrib wargames    -1.2180109611781558
+    Attrib no-subdomain    0.7110501310535045
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -1.1373681846325434
+    Attrib minp    -9.064364940542708
+    Attrib maxp    3.1105784058957213
+    Attrib time    -8.10320889732049
+    Attrib abstract    2.3433290314698167
+    Attrib childrens    -4.260572283963471
+    Attrib customizable    1.5904364637416752
+    Attrib family    -5.206471577884623
+    Attrib party    -8.120038468178352
+    Attrib strategy    -0.9294067569380227
+    Attrib thematic    -4.138515919983416
+    Attrib wargames    1.1594483098923325
+    Attrib no-subdomain    -4.302762911151384
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:20.310
+ CV-2     0:00:19.901
+ CV-3     0:00:19.986
+ TEST     0:00:02.202
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 54.53  45.47   0.54   0.55   0.52
+ TEST: 59.88  40.12   0.62   0.60   0.56
+
+
+Processing data file: data/bgg-out/bgweights-003000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.4057343665433047
+    Node 5    -1.2905668347984784
+    Node 6    -1.4239840021023633
+    Node 7    -8.942486566116168
+    Node 8    0.6137624802660943
+    Node 9    -2.670985241337057
+    Node 10    1.148499232259525
+    Node 11    -0.4876558971970476
+    Node 12    1.1515361847341634
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.25832870352343024
+    Node 5    0.46215884375539074
+    Node 6    1.5327770946377874
+    Node 7    -2.608013906642333
+    Node 8    -0.5490080285434097
+    Node 9    0.41057248064265994
+    Node 10    -1.4120890933792143
+    Node 11    1.3267505070314032
+    Node 12    -1.546814547628309
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.2584141526229926
+    Node 5    0.8177791416720558
+    Node 6    -1.284839004577419
+    Node 7    1.5607948633734832
+    Node 8    -6.413721348125771
+    Node 9    1.6936382088239812
+    Node 10    2.913541442930897
+    Node 11    0.06722927218212593
+    Node 12    1.9088662008136283
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -7.753505333994366
+    Node 5    3.9165632756231386
+    Node 6    -1.006648028796415
+    Node 7    6.965159633546543
+    Node 8    -3.475798096248369
+    Node 9    0.5768752643583027
+    Node 10    -1.5666180624762869
+    Node 11    -0.9972198791735236
+    Node 12    -6.600557053736795
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -5.7103806923911575
+    Node 5    -3.956499960530049
+    Node 6    -1.1120573082827157
+    Node 7    6.357708431979313
+    Node 8    -2.318841531488729
+    Node 9    -5.667763080437552
+    Node 10    -0.6674408560434965
+    Node 11    -1.498201712488877
+    Node 12    -2.014722663847045
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -2.458288734105903
+    Attrib minp    9.301842987953561
+    Attrib maxp    -12.383327492227908
+    Attrib time    6.127742608485725
+    Attrib abstract    -4.657642284249112
+    Attrib childrens    3.0515129121088873
+    Attrib customizable    -1.6725526385347367
+    Attrib family    -1.3980110606197447
+    Attrib party    1.5304769193320336
+    Attrib strategy    -3.0014002934145094
+    Attrib thematic    -0.03625926616118352
+    Attrib wargames    2.9258305064993397
+    Attrib no-subdomain    -2.1380745573851985
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    0.5324379131295124
+    Attrib minp    14.243076644650083
+    Attrib maxp    -0.9850190777391752
+    Attrib time    3.8566698114475053
+    Attrib abstract    -5.052462102663541
+    Attrib childrens    -0.004587002304063536
+    Attrib customizable    -0.9251274778099575
+    Attrib family    -12.367619304387985
+    Attrib party    -2.9976138858746837
+    Attrib strategy    -3.7047186477393494
+    Attrib thematic    3.259916094242899
+    Attrib wargames    1.6175732171456545
+    Attrib no-subdomain    1.0511096741152934
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    5.770599486938579
+    Attrib minp    -0.3995585648879228
+    Attrib maxp    -2.766041008739723
+    Attrib time    47.587453193539396
+    Attrib abstract    1.028452447927082
+    Attrib childrens    6.9722894993304
+    Attrib customizable    9.300619822990901
+    Attrib family    8.720477676852344
+    Attrib party    9.184873712376156
+    Attrib strategy    -0.29993355905697205
+    Attrib thematic    0.6520128178949668
+    Attrib wargames    0.07158468679206169
+    Attrib no-subdomain    0.9492859846927589
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    0.24624566909959303
+    Attrib minp    -2.464942800401039
+    Attrib maxp    2.274666679046146
+    Attrib time    -10.337086409360275
+    Attrib abstract    -0.8210989576714014
+    Attrib childrens    -4.218545452348046
+    Attrib customizable    -0.7263312137321658
+    Attrib family    -3.291287139186939
+    Attrib party    -5.6445274335144
+    Attrib strategy    0.5114964061849546
+    Attrib thematic    -1.2485914151787099
+    Attrib wargames    0.9890502815583224
+    Attrib no-subdomain    -1.097427601939288
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -4.355955579167876
+    Attrib minp    -10.39001210211641
+    Attrib maxp    -1.0144920129366382
+    Attrib time    -7.214166877478391
+    Attrib abstract    1.8174267020365409
+    Attrib childrens    -0.9629410269116793
+    Attrib customizable    -5.111874547058025
+    Attrib family    -0.3633937174314245
+    Attrib party    1.3694582749323465
+    Attrib strategy    -5.653536729499968
+    Attrib thematic    -3.2097221232824835
+    Attrib wargames    -5.363118470321996
+    Attrib no-subdomain    0.011532610454794423
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -3.2305666646863074
+    Attrib minp    -7.9291668014282894
+    Attrib maxp    -1.5138106145760186
+    Attrib time    -1.0468869015962352
+    Attrib abstract    2.2137774979457143
+    Attrib childrens    -5.388524764348791
+    Attrib customizable    -1.9835863602056198
+    Attrib family    -1.1476649137458328
+    Attrib party    -9.609873361594957
+    Attrib strategy    0.5767842688916367
+    Attrib thematic    5.512570885227236
+    Attrib wargames    1.2354359741913274
+    Attrib no-subdomain    -1.7152368145023071
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    0.1908747033477242
+    Attrib minp    6.098120405848056
+    Attrib maxp    0.1633312328195393
+    Attrib time    1.0432501729182853
+    Attrib abstract    -1.3955889754290627
+    Attrib childrens    -1.1700342057265676
+    Attrib customizable    -4.3512830460064915
+    Attrib family    -2.668181249773701
+    Attrib party    1.5659505322839502
+    Attrib strategy    3.919841191781556
+    Attrib thematic    -5.92819632437455
+    Attrib wargames    4.083896016782265
+    Attrib no-subdomain    0.7907407576606896
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.0016545705521828667
+    Attrib minp    14.112647417804544
+    Attrib maxp    -0.5836179724116533
+    Attrib time    1.0264618389244253
+    Attrib abstract    -2.137635897621883
+    Attrib childrens    0.2909872572457595
+    Attrib customizable    0.37398951858841717
+    Attrib family    -2.3431922300386683
+    Attrib party    1.3943496009867258
+    Attrib strategy    -1.6639757536174733
+    Attrib thematic    1.5231558928230857
+    Attrib wargames    -2.065643906771768
+    Attrib no-subdomain    2.4615596389234384
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-003000.arff...
+
+Processing times:
+ CV-1     0:00:31.183
+ CV-2     0:00:30.817
+ CV-3     0:00:30.723
+ TEST     0:00:03.568
+
+Test Results: (number of instances = 3000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 53.78  46.22   0.54   0.54   0.53
+ TEST: 53.64  46.36   0.55   0.54   0.52
+
+
+Processing data file: data/bgg-out/bgweights-004000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.1778542103013125
+    Node 5    -0.02766155488435214
+    Node 6    -5.376627019944001
+    Node 7    0.19247141763970055
+    Node 8    -2.1666712608201717
+    Node 9    -6.379616111604542
+    Node 10    -5.670030391066311
+    Node 11    2.0725087262887714
+    Node 12    3.7727510388865184
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.27399473597121615
+    Node 5    0.9058825153466239
+    Node 6    -2.297718775582965
+    Node 7    -0.845322333490114
+    Node 8    -0.15988550925332465
+    Node 9    1.0182776435952514
+    Node 10    5.425739219873972
+    Node 11    -1.4194394218666668
+    Node 12    -3.2844888753164017
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.6663883376900696
+    Node 5    -1.164544395235453
+    Node 6    1.1053231800582861
+    Node 7    -5.906249521345517
+    Node 8    0.09167078460502999
+    Node 9    0.1667938329002437
+    Node 10    -3.0094594606466707
+    Node 11    -1.9380886545391969
+    Node 12    -3.106970652132061
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -3.8897649866966875
+    Node 5    0.18578755270814604
+    Node 6    4.188919484764078
+    Node 7    -3.890848371046374
+    Node 8    -2.4724667058943477
+    Node 9    -1.8667760363210821
+    Node 10    -1.3125816831790469
+    Node 11    1.5773635299315254
+    Node 12    -1.4077227070313159
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -7.746877306090497
+    Node 5    -1.3366138829553482
+    Node 6    6.682474423517442
+    Node 7    -2.4277047157153393
+    Node 8    3.355715239833605
+    Node 9    -4.570767294787484
+    Node 10    -0.9245982726124865
+    Node 11    -0.969472104151799
+    Node 12    -1.02695909162558
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -1.233032574339472
+    Attrib minp    -4.6723307385323265
+    Attrib maxp    -0.893516040550139
+    Attrib time    1.2532516576739587
+    Attrib abstract    -3.1596573934342906
+    Attrib childrens    0.7405615787815502
+    Attrib customizable    0.08111327923279893
+    Attrib family    -3.7987262171441802
+    Attrib party    0.6707818514756393
+    Attrib strategy    -0.9053145802285973
+    Attrib thematic    -7.102183945033241
+    Attrib wargames    4.587141171658135
+    Attrib no-subdomain    0.3553098350508773
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    4.140737761256558
+    Attrib minp    -0.42555883024278857
+    Attrib maxp    -4.972759115343895
+    Attrib time    35.70186268400925
+    Attrib abstract    0.2409703094007133
+    Attrib childrens    4.774952590411823
+    Attrib customizable    5.883991339619837
+    Attrib family    5.140355542234872
+    Attrib party    5.4436828496968905
+    Attrib strategy    -2.7482808707167203
+    Attrib thematic    -1.3219058067261888
+    Attrib wargames    -2.474991970115704
+    Attrib no-subdomain    5.028700086503442
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -1.1113755954050046
+    Attrib minp    -0.6861175635485949
+    Attrib maxp    2.2478267625822426
+    Attrib time    -11.251860074598682
+    Attrib abstract    -2.320703899800378
+    Attrib childrens    -3.3589195248785813
+    Attrib customizable    0.46905268469764044
+    Attrib family    -3.197880464191295
+    Attrib party    -5.784660287171562
+    Attrib strategy    1.9002802860360053
+    Attrib thematic    0.9184938414417501
+    Attrib wargames    0.4603391496938272
+    Attrib no-subdomain    -2.9155634726119373
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -2.5187226119898627
+    Attrib minp    -3.1998185285487306
+    Attrib maxp    -1.3361107566858241
+    Attrib time    6.522893371230661
+    Attrib abstract    -1.2068921904872847
+    Attrib childrens    1.3940756769904141
+    Attrib customizable    -2.456422916493672
+    Attrib family    0.5844775637326945
+    Attrib party    2.2824986030306365
+    Attrib strategy    2.002106775886711
+    Attrib thematic    -2.1510791712119754
+    Attrib wargames    1.0866072908118767
+    Attrib no-subdomain    0.48096487591937653
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.6793026477225728
+    Attrib minp    3.1086036350257884
+    Attrib maxp    1.9678901187826492
+    Attrib time    -4.255623287250268
+    Attrib abstract    0.49987824655732715
+    Attrib childrens    0.27446950453409374
+    Attrib customizable    -2.100008518528797
+    Attrib family    0.1435621528379628
+    Attrib party    1.9773432545616756
+    Attrib strategy    -4.293654300640624
+    Attrib thematic    -2.717488842771157
+    Attrib wargames    -3.311606827799724
+    Attrib no-subdomain    0.36249585530522804
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -0.9717654398766279
+    Attrib minp    -15.715706247275664
+    Attrib maxp    -0.5622840898989706
+    Attrib time    1.3999617620494538
+    Attrib abstract    -6.683275792432744
+    Attrib childrens    0.6682661190084919
+    Attrib customizable    -5.2602278441985595
+    Attrib family    -8.07742876327485
+    Attrib party    -2.2431954667307146
+    Attrib strategy    -3.6975502687851827
+    Attrib thematic    -4.493427145159181
+    Attrib wargames    0.6905098768355147
+    Attrib no-subdomain    -0.15647464810539924
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -1.995009562644736
+    Attrib minp    -13.958864696235691
+    Attrib maxp    0.48748310875719975
+    Attrib time    0.10948687135200495
+    Attrib abstract    2.154602247020514
+    Attrib childrens    -6.9259232415107315
+    Attrib customizable    0.8403899523558132
+    Attrib family    -1.814753919405679
+    Attrib party    -7.5493028758132334
+    Attrib strategy    -1.9497841431790017
+    Attrib thematic    2.7783138317623086
+    Attrib wargames    1.3239136450313849
+    Attrib no-subdomain    -0.9491792423518353
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.8673128892356204
+    Attrib minp    2.1221539264518987
+    Attrib maxp    0.8221038229172519
+    Attrib time    -0.3153639517208085
+    Attrib abstract    -0.2717314619125796
+    Attrib childrens    -4.099826577310533
+    Attrib customizable    -0.3001940051616174
+    Attrib family    -4.801061294620811
+    Attrib party    0.3210785494701687
+    Attrib strategy    0.992945827411592
+    Attrib thematic    -4.4773215668224
+    Attrib wargames    0.5987404051976496
+    Attrib no-subdomain    -1.525749087966204
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-004000.arff...
+
+Processing times:
+ CV-1     0:00:41.409
+ CV-2     0:00:40.358
+ CV-3     0:00:39.794
+ TEST     0:00:04.507
+
+Test Results: (number of instances = 4000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 53.23  46.77   0.53   0.53   0.52
+ TEST: 50.30  49.70   0.51   0.50   0.43
+
+
+Processing data file: data/bgg-out/bgweights-005000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.35176963273972756
+    Node 5    -4.468437152735201
+    Node 6    3.0308334172849287
+    Node 7    1.1592686606706433
+    Node 8    -2.8451339896288537
+    Node 9    0.2751840612765512
+    Node 10    -1.268494082890143
+    Node 11    -0.12311366602649004
+    Node 12    -6.7727957094499445
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.24370128631178622
+    Node 5    -1.7975045298316854
+    Node 6    -0.4707486789552028
+    Node 7    -1.6191205724945106
+    Node 8    0.44602990665168596
+    Node 9    -0.8033652937280941
+    Node 10    2.0109307408269834
+    Node 11    -1.267943163044235
+    Node 12    -2.5896401464967935
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -1.9207047087907794
+    Node 5    2.48212997195147
+    Node 6    -2.929583462812728
+    Node 7    -0.7926283527081895
+    Node 8    1.3581824330913113
+    Node 9    -0.3408057890203637
+    Node 10    -1.6445830492578182
+    Node 11    -4.043270195652693
+    Node 12    -5.3848006080522275
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -9.941150133337862
+    Node 5    9.133402633119008
+    Node 6    -0.5619910666237448
+    Node 7    -0.853876118831457
+    Node 8    1.2448364102284535
+    Node 9    0.32230709199233143
+    Node 10    -3.3428601978863943
+    Node 11    -3.747545034365101
+    Node 12    1.1363225099706111
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -5.23452368629541
+    Node 5    0.7685602234622235
+    Node 6    -0.84161651525967
+    Node 7    -1.0655404898220495
+    Node 8    -2.210969376588056
+    Node 9    -2.398700840770178
+    Node 10    -1.29087905356322
+    Node 11    -1.2272936005892807
+    Node 12    5.208688379897582
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    9.896129311192496
+    Attrib minp    0.3408839099390025
+    Attrib maxp    -6.653198468878886
+    Attrib time    65.96355705703058
+    Attrib abstract    0.9760319848215071
+    Attrib childrens    10.251957938958492
+    Attrib customizable    11.005415916447081
+    Attrib family    12.231225400710505
+    Attrib party    11.01992285823253
+    Attrib strategy    0.5364715550672128
+    Attrib thematic    0.5087641416322405
+    Attrib wargames    0.5698696744231283
+    Attrib no-subdomain    1.4855091707723596
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    0.5729640297348775
+    Attrib minp    9.645888057563953
+    Attrib maxp    2.0539792312590004
+    Attrib time    -0.6097638657163975
+    Attrib abstract    2.211860846430247
+    Attrib childrens    -7.331885083545468
+    Attrib customizable    1.5132512116226753
+    Attrib family    0.3002729266065776
+    Attrib party    -1.7392422075767577
+    Attrib strategy    -1.7161234989771659
+    Attrib thematic    3.1272145802611355
+    Attrib wargames    2.065603676357952
+    Attrib no-subdomain    -1.427940055522026
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -4.340719862425511
+    Attrib minp    -12.637001885046221
+    Attrib maxp    2.878754526272616
+    Attrib time    -5.157925518612782
+    Attrib abstract    3.9590729779895897
+    Attrib childrens    -3.699745485861911
+    Attrib customizable    -4.0392485148978565
+    Attrib family    -5.898887459402109
+    Attrib party    -7.152801812246651
+    Attrib strategy    2.4799403130338837
+    Attrib thematic    -1.8958355253550458
+    Attrib wargames    2.790587996863206
+    Attrib no-subdomain    -1.5961480993043822
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.8990183488142546
+    Attrib minp    -12.632975388671262
+    Attrib maxp    0.8074807197979644
+    Attrib time    -0.4589313520548303
+    Attrib abstract    -2.053828132272897
+    Attrib childrens    0.9733706983256987
+    Attrib customizable    -5.552820695714509
+    Attrib family    -1.4849685841831377
+    Attrib party    2.774326568660435
+    Attrib strategy    -7.094621495550909
+    Attrib thematic    -2.758243675046702
+    Attrib wargames    -1.9659828818071434
+    Attrib no-subdomain    1.8588842556433196
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -3.7144911404782914
+    Attrib minp    -6.061668245617823
+    Attrib maxp    5.746036990462627
+    Attrib time    -17.692448570221387
+    Attrib abstract    -3.6167102214953606
+    Attrib childrens    -2.6079584203736093
+    Attrib customizable    -1.202411021966122
+    Attrib family    -4.955043520798612
+    Attrib party    -6.596352179130896
+    Attrib strategy    0.273563126821523
+    Attrib thematic    1.5459498934990636
+    Attrib wargames    0.128788622596537
+    Attrib no-subdomain    -4.93478993290326
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -1.7922457855600513
+    Attrib minp    -11.172651347181
+    Attrib maxp    0.3778433231412135
+    Attrib time    0.47910208593948933
+    Attrib abstract    -1.6166063108716884
+    Attrib childrens    0.4118994861578035
+    Attrib customizable    -1.3502525480382959
+    Attrib family    -8.41820496442506
+    Attrib party    -4.039849641363865
+    Attrib strategy    3.9372146670578676
+    Attrib thematic    -5.019020881782823
+    Attrib wargames    3.1685812629714127
+    Attrib no-subdomain    1.8306313828005072
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -1.4562414082919246
+    Attrib minp    0.7138295593466862
+    Attrib maxp    1.6956508664675352
+    Attrib time    -10.199648432162057
+    Attrib abstract    -0.8822220946932067
+    Attrib childrens    -5.858993666088886
+    Attrib customizable    0.1086698924531095
+    Attrib family    -0.01407036880025884
+    Attrib party    -1.5668972646216877
+    Attrib strategy    -1.9094828665771444
+    Attrib thematic    -1.0401631130388134
+    Attrib wargames    -0.14558655589624384
+    Attrib no-subdomain    -2.374834743036848
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    1.9242093421040807
+    Attrib minp    0.28746186810354535
+    Attrib maxp    3.386652064700865
+    Attrib time    23.22957929744758
+    Attrib abstract    1.5697727068641527
+    Attrib childrens    0.6401625634732028
+    Attrib customizable    4.139717138320359
+    Attrib family    1.3033198875068377
+    Attrib party    3.542745148820704
+    Attrib strategy    0.8522851271492334
+    Attrib thematic    4.195433170996354
+    Attrib wargames    5.284470130724234
+    Attrib no-subdomain    2.353961196855372
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-005000.arff...
+
+Processing times:
+ CV-1     0:00:50.774
+ CV-2     0:00:49.564
+ CV-3     0:00:49.630
+ TEST     0:00:05.460
+
+Test Results: (number of instances = 5000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 54.62  45.38   0.54   0.55   0.53
+ TEST: 53.47  46.53   0.56   0.53   0.49
+
+
+Processing data file: data/bgg-out/bgweights-006000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.21222095560418636
+    Node 5    -0.9110680685968253
+    Node 6    -2.9137334695169597
+    Node 7    2.4629991583303616
+    Node 8    3.9914332213160546
+    Node 9    -6.056640102400772
+    Node 10    -1.8881706960172024
+    Node 11    1.7036396695070788
+    Node 12    -2.634688720613805
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.10857942396806589
+    Node 5    0.18986290577814688
+    Node 6    5.303625300970006
+    Node 7    2.100030523471029
+    Node 8    1.3001809528318087
+    Node 9    0.10673590363604203
+    Node 10    -1.726556611203497
+    Node 11    -1.7596874584084479
+    Node 12    -0.17281775659952042
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.3333500069978177
+    Node 5    0.23517163016346376
+    Node 6    -3.3472846919492043
+    Node 7    -2.284253914784368
+    Node 8    -1.5890032687187308
+    Node 9    2.01356787967744
+    Node 10    -6.786915645477092
+    Node 11    -0.7148402252057376
+    Node 12    1.9237423424294813
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -4.693596270460943
+    Node 5    0.23933558941426258
+    Node 6    -3.0872033429430497
+    Node 7    0.3656240670630713
+    Node 8    -1.1940854398085499
+    Node 9    -1.6401614418644996
+    Node 10    -2.331899107852006
+    Node 11    -1.564020824567964
+    Node 12    2.688119165161684
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -5.485935256610419
+    Node 5    -1.4864683135057128
+    Node 6    -1.1266416079104424
+    Node 7    -1.171333793585365
+    Node 8    -1.0159788729769317
+    Node 9    -1.181384500304931
+    Node 10    -2.041036119398222
+    Node 11    -0.7833851665580334
+    Node 12    0.7926534832640413
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    0.07694314796768333
+    Attrib minp    8.198448354623782
+    Attrib maxp    -0.8496490710816859
+    Attrib time    0.9983165737102988
+    Attrib abstract    -4.412719731044091
+    Attrib childrens    0.7722329596926155
+    Attrib customizable    -2.1929220047068894
+    Attrib family    -1.9180943999466034
+    Attrib party    4.093622869241544
+    Attrib strategy    -2.0397848474922085
+    Attrib thematic    4.652359335638816
+    Attrib wargames    3.5161299415592313
+    Attrib no-subdomain    0.8799033266636134
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.34319126328098487
+    Attrib minp    6.751579023160058
+    Attrib maxp    -1.9232873610912202
+    Attrib time    1.039263005147865
+    Attrib abstract    -2.1709613995364174
+    Attrib childrens    0.19858462831195658
+    Attrib customizable    -6.7108733157580645
+    Attrib family    -0.9539144063344577
+    Attrib party    0.27589505612842563
+    Attrib strategy    0.08947983371833391
+    Attrib thematic    -2.0948294763310393
+    Attrib wargames    -2.8053126043428547
+    Attrib no-subdomain    0.3637305477057564
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.23241573666518772
+    Attrib minp    -2.162228689630869
+    Attrib maxp    0.6470802841292633
+    Attrib time    -0.371134384550105
+    Attrib abstract    -3.8110360791282902
+    Attrib childrens    1.7390757648276174
+    Attrib customizable    -0.11042434020716636
+    Attrib family    -5.187126186906624
+    Attrib party    -0.6912980773021706
+    Attrib strategy    -2.563735701119645
+    Attrib thematic    -1.4908395412354019
+    Attrib wargames    -0.05716174278740145
+    Attrib no-subdomain    0.61095178228153
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.48798400180565277
+    Attrib minp    5.355472405108843
+    Attrib maxp    -1.6786379468545825
+    Attrib time    -0.10033462454779042
+    Attrib abstract    0.23079872720746356
+    Attrib childrens    -6.781204542987905
+    Attrib customizable    -0.583087367657644
+    Attrib family    -0.7950520269550665
+    Attrib party    -1.8558754945330316
+    Attrib strategy    3.690991403353858
+    Attrib thematic    -5.261479669197317
+    Attrib wargames    3.9539552095016353
+    Attrib no-subdomain    1.1228732049330348
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    2.6095617049903757
+    Attrib minp    6.826197561596609
+    Attrib maxp    0.8224554236438153
+    Attrib time    -2.653200608048412
+    Attrib abstract    -3.639174700638655
+    Attrib childrens    3.5413929900241223
+    Attrib customizable    -0.6593214353269973
+    Attrib family    -3.501192736205887
+    Attrib party    3.3208226483195773
+    Attrib strategy    -4.867921205514028
+    Attrib thematic    -10.529870545112002
+    Attrib wargames    -2.2104034373217876
+    Attrib no-subdomain    3.1926657168254757
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    0.055968194261541704
+    Attrib minp    -2.2519404732837174
+    Attrib maxp    0.5447415041462064
+    Attrib time    -0.04604440813445794
+    Attrib abstract    -0.6349069106090915
+    Attrib childrens    -4.055429738523383
+    Attrib customizable    1.7062624828784152
+    Attrib family    -3.1863518359933947
+    Attrib party    -2.6109777354665504
+    Attrib strategy    3.0062072409142115
+    Attrib thematic    -1.3788612697714693
+    Attrib wargames    0.8885906953647227
+    Attrib no-subdomain    -2.143195745872757
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    0.5588145585416006
+    Attrib minp    14.735336695816029
+    Attrib maxp    2.105297043201986
+    Attrib time    1.300377253728957
+    Attrib abstract    -0.3674325110769058
+    Attrib childrens    -7.497391448669932
+    Attrib customizable    1.6321619609742515
+    Attrib family    2.1258419244356417
+    Attrib party    -2.8108862021977625
+    Attrib strategy    2.210810926163961
+    Attrib thematic    3.9897290359218127
+    Attrib wargames    4.889342525887387
+    Attrib no-subdomain    0.9370715151280555
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.6439479260903962
+    Attrib minp    0.09607186681890574
+    Attrib maxp    7.01936722971208
+    Attrib time    2.1877641803145162
+    Attrib abstract    4.935971856161897
+    Attrib childrens    -2.38772224979752
+    Attrib customizable    -1.7923439666648022
+    Attrib family    5.910953081676546
+    Attrib party    2.3487013451298395
+    Attrib strategy    -2.487036731807365
+    Attrib thematic    3.540401563866147
+    Attrib wargames    -5.182570864913247
+    Attrib no-subdomain    2.9952985389734947
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-006000.arff...
+
+Processing times:
+ CV-1     0:00:59.698
+ CV-2     0:01:00.382
+ CV-3     0:01:00.861
+ TEST     0:00:06.635
+
+Test Results: (number of instances = 6000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 54.07  45.93   0.54   0.54   0.50
+ TEST: 52.82  47.18   0.49   0.53   0.47
+
+
+Processing data file: data/bgg-out/bgweights-007000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.4978935507082438
+    Node 5    1.3245265843501859
+    Node 6    2.23253394925907
+    Node 7    0.024541700267442262
+    Node 8    1.8982255338436522
+    Node 9    -4.135322894261467
+    Node 10    2.0110648803669657
+    Node 11    -5.866417150423987
+    Node 12    -8.781938044309353
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.020073430340853
+    Node 5    0.24137488965621315
+    Node 6    -0.7970167670567928
+    Node 7    1.0241244160792997
+    Node 8    -0.8296085401348385
+    Node 9    2.4731644718348265
+    Node 10    0.1566608020182024
+    Node 11    0.8054641552942131
+    Node 12    -1.6237272747402371
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.338928598719878
+    Node 5    -2.28882695455521
+    Node 6    -1.476443828106661
+    Node 7    -0.49541404847188714
+    Node 8    -3.9555704528724642
+    Node 9    -0.8259686801616306
+    Node 10    -2.2100919721980152
+    Node 11    0.23755350813947196
+    Node 12    1.0680424083920466
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.7551982907363846
+    Node 5    -0.7037520017748273
+    Node 6    -2.7558978987981737
+    Node 7    -2.973870840299572
+    Node 8    -1.771305072834045
+    Node 9    -1.645820084921836
+    Node 10    -3.239202963988805
+    Node 11    0.0012113291302590892
+    Node 12    -1.1157255191521152
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -4.471093955405488
+    Node 5    -1.0079677930653483
+    Node 6    -0.699352262330619
+    Node 7    -1.6455840767466108
+    Node 8    -0.8277211622886529
+    Node 9    -1.060999595491011
+    Node 10    -1.9681179509789761
+    Node 11    -1.4518549613638108
+    Node 12    0.3666001162976694
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    0.0813015776768502
+    Attrib minp    -13.41270426703537
+    Attrib maxp    5.116085275004898
+    Attrib time    -0.6090403989706417
+    Attrib abstract    -4.351319151857557
+    Attrib childrens    -1.1188236355785994
+    Attrib customizable    1.1971906780708697
+    Attrib family    -5.528339259299922
+    Attrib party    -6.340048020126388
+    Attrib strategy    1.0782152065098047
+    Attrib thematic    3.044724930117114
+    Attrib wargames    0.20940773993982828
+    Attrib no-subdomain    0.20388688862894153
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    1.1230003466178382
+    Attrib minp    11.942354523376563
+    Attrib maxp    6.405747184178205
+    Attrib time    0.8138983556288878
+    Attrib abstract    1.8383134959806802
+    Attrib childrens    -7.969227129880448
+    Attrib customizable    2.8255401641664664
+    Attrib family    0.9433944949093976
+    Attrib party    -0.9247544621525273
+    Attrib strategy    1.5325820519477624
+    Attrib thematic    3.0284056736399103
+    Attrib wargames    2.8950311526342056
+    Attrib no-subdomain    -0.39672764958285966
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -1.9737223288015062
+    Attrib minp    -6.29613780123175
+    Attrib maxp    -4.04735680078352
+    Attrib time    0.5685948618430275
+    Attrib abstract    -2.217016688376461
+    Attrib childrens    4.659541434466111
+    Attrib customizable    -7.1149839096455825
+    Attrib family    -5.7934765146350715
+    Attrib party    -0.8743039157088234
+    Attrib strategy    4.27645786229413
+    Attrib thematic    -4.638985189045849
+    Attrib wargames    1.0089592303733137
+    Attrib no-subdomain    1.8240556387420133
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    0.5436866240939818
+    Attrib minp    4.58984385762052
+    Attrib maxp    5.265893569951667
+    Attrib time    2.9178482233121636
+    Attrib abstract    2.4943258730506694
+    Attrib childrens    -7.021119405000574
+    Attrib customizable    3.313940098918045
+    Attrib family    1.0119657817708405
+    Attrib party    -3.573780918039587
+    Attrib strategy    -0.12147044524337684
+    Attrib thematic    3.9667845112321283
+    Attrib wargames    2.98424076451509
+    Attrib no-subdomain    0.7397834197188259
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -2.5501528792811228
+    Attrib minp    -15.462665430380506
+    Attrib maxp    -0.6295352560107235
+    Attrib time    2.609893739662003
+    Attrib abstract    -7.9349853821761505
+    Attrib childrens    0.723531785262549
+    Attrib customizable    -3.6300976917541603
+    Attrib family    -7.6541476986362875
+    Attrib party    0.5977290406270207
+    Attrib strategy    -4.93796637655073
+    Attrib thematic    -1.6465054501313188
+    Attrib wargames    1.7495350843678579
+    Attrib no-subdomain    -1.8044422990631896
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -1.7508478500596298
+    Attrib minp    -4.535951889434162
+    Attrib maxp    1.8280255571629411
+    Attrib time    -0.8975503068662023
+    Attrib abstract    -0.7980294736618737
+    Attrib childrens    -0.9231909987474197
+    Attrib customizable    0.3562892502366105
+    Attrib family    -2.17000755440835
+    Attrib party    -0.46856796504350284
+    Attrib strategy    1.5754347143933443
+    Attrib thematic    -4.338227686847349
+    Attrib wargames    3.2303058774170212
+    Attrib no-subdomain    -6.221518504423689
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -3.5332742917363276
+    Attrib minp    -8.516630460422132
+    Attrib maxp    2.5598604203494535
+    Attrib time    3.2574251198257724
+    Attrib abstract    2.237777742668094
+    Attrib childrens    0.6021240415848967
+    Attrib customizable    -1.838969047139144
+    Attrib family    0.7008989381074268
+    Attrib party    2.4707999808243564
+    Attrib strategy    -4.102532691446652
+    Attrib thematic    -3.4099256473050477
+    Attrib wargames    -2.205704447147504
+    Attrib no-subdomain    1.3744472717493756
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.48833490010906194
+    Attrib minp    4.515222091276091
+    Attrib maxp    0.6369000410069436
+    Attrib time    3.401243836435502
+    Attrib abstract    2.147616849887436
+    Attrib childrens    1.3541612434035504
+    Attrib customizable    1.784650597922702
+    Attrib family    -0.8830340704497823
+    Attrib party    -2.03310261287318
+    Attrib strategy    -2.012063941426563
+    Attrib thematic    -2.242631627462363
+    Attrib wargames    -4.134267988495866
+    Attrib no-subdomain    0.8309356319589352
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-007000.arff...
+
+Processing times:
+ CV-1     0:01:10.550
+ CV-2     0:01:10.867
+ CV-3     0:01:10.657
+ TEST     0:00:07.897
+
+Test Results: (number of instances = 7000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.43  44.57   0.52   0.55   0.51
+ TEST: 56.18  43.82   0.54   0.56   0.53
+
+
+Processing data file: data/bgg-out/bgweights-008000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.8294899490933383
+    Node 5    1.8045888119112505
+    Node 6    2.821730869416701
+    Node 7    -0.31785871809147387
+    Node 8    3.177298113198585
+    Node 9    -0.9072740090646325
+    Node 10    -2.3918454767565978
+    Node 11    -1.7757317274975501
+    Node 12    0.8276365981416656
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.3477323025352888
+    Node 5    -1.0333744483900633
+    Node 6    0.12794768151640512
+    Node 7    0.7136207017803936
+    Node 8    -1.005008218561174
+    Node 9    0.5044846842038678
+    Node 10    1.4670256148200387
+    Node 11    3.1445220877532933
+    Node 12    -1.6490142514814967
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    0.038698921012062654
+    Node 5    -1.955733205200687
+    Node 6    -2.326164593080698
+    Node 7    -4.319856149193186
+    Node 8    -3.1209101937487507
+    Node 9    0.5659712420442016
+    Node 10    0.4489664075926485
+    Node 11    -3.897779626107948
+    Node 12    0.5701548878839757
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.6885007164042016
+    Node 5    -0.7225797406887468
+    Node 6    -3.3322550776129147
+    Node 7    -1.9896247075955418
+    Node 8    -2.8624290963136185
+    Node 9    1.0347497211599268
+    Node 10    -0.11304391942851595
+    Node 11    -3.8054545183850084
+    Node 12    -1.6098576150994826
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -3.8183946459906495
+    Node 5    -1.2630947476759857
+    Node 6    -2.3744020680184454
+    Node 7    1.720315751876136
+    Node 8    -1.2906531456848864
+    Node 9    -1.1695976774910157
+    Node 10    -2.437980422762668
+    Node 11    -0.994808513517576
+    Node 12    2.718169085912119
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    0.32615400198915107
+    Attrib minp    -0.5538385365910902
+    Attrib maxp    3.977035165395494
+    Attrib time    -0.6918500686194461
+    Attrib abstract    2.2615451403590727
+    Attrib childrens    -5.910610332741648
+    Attrib customizable    2.151942512179275
+    Attrib family    1.935314757084775
+    Attrib party    -4.853979908137899
+    Attrib strategy    -0.5084355576715243
+    Attrib thematic    1.0446805635748464
+    Attrib wargames    2.4414488615612697
+    Attrib no-subdomain    0.7012224359335725
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    0.6407177015882594
+    Attrib minp    -1.3682941263107447
+    Attrib maxp    -0.013235793593829518
+    Attrib time    -2.9617463916509834
+    Attrib abstract    -3.9864219451750444
+    Attrib childrens    2.4079773179461808
+    Attrib customizable    -1.0188581940851824
+    Attrib family    -5.594051483495474
+    Attrib party    -1.8318238094682486
+    Attrib strategy    5.5891016940018
+    Attrib thematic    -1.6712804897143974
+    Attrib wargames    2.8856445068170298
+    Attrib no-subdomain    -2.9823572687497104
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.4196529436218137
+    Attrib minp    1.3092915848960698
+    Attrib maxp    1.2022536939814688
+    Attrib time    4.769951392443146
+    Attrib abstract    0.7037916408243814
+    Attrib childrens    -1.8676484345195716
+    Attrib customizable    0.47920212021127645
+    Attrib family    -3.5765276215223603
+    Attrib party    0.1092884476612729
+    Attrib strategy    3.4373124466730016
+    Attrib thematic    2.3457432392008077
+    Attrib wargames    1.5528130709612697
+    Attrib no-subdomain    0.3402887478913606
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    1.3172348188406253
+    Attrib minp    10.96954276024743
+    Attrib maxp    -0.7295468498761508
+    Attrib time    -1.7642665083115514
+    Attrib abstract    3.216048098165746
+    Attrib childrens    -9.471013159954518
+    Attrib customizable    0.2374769964335633
+    Attrib family    -2.44704050250727
+    Attrib party    -0.40322170317821787
+    Attrib strategy    -0.05884031142489629
+    Attrib thematic    -4.180306003850836
+    Attrib wargames    0.7421883016208292
+    Attrib no-subdomain    1.023210056981249
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    0.018726773610427287
+    Attrib minp    6.090600849904586
+    Attrib maxp    -0.07121645098195079
+    Attrib time    0.09503899133906248
+    Attrib abstract    -4.678904961378891
+    Attrib childrens    0.11689315658429045
+    Attrib customizable    -4.76553852913662
+    Attrib family    -2.7031569682301124
+    Attrib party    -1.0595579687832029
+    Attrib strategy    1.3645774468273635
+    Attrib thematic    3.8866563970617354
+    Attrib wargames    2.1024565712613126
+    Attrib no-subdomain    2.3653237345517253
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    1.1696556211621665
+    Attrib minp    1.4996791432371541
+    Attrib maxp    -1.1332395017170218
+    Attrib time    -3.115333947123297
+    Attrib abstract    2.401038355925963
+    Attrib childrens    2.390935027903533
+    Attrib customizable    -4.147977422013392
+    Attrib family    -0.909330956912993
+    Attrib party    -2.5074286641456256
+    Attrib strategy    -4.90099903908868
+    Attrib thematic    -7.202842630261492
+    Attrib wargames    -2.427167949099625
+    Attrib no-subdomain    2.8004813347235533
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -1.94047657743869
+    Attrib minp    -14.243605584983023
+    Attrib maxp    1.9170886723964458
+    Attrib time    1.9369622070082628
+    Attrib abstract    -7.308600723866627
+    Attrib childrens    0.20953019690730765
+    Attrib customizable    -3.856224601465398
+    Attrib family    -7.513616367703435
+    Attrib party    1.186024454158868
+    Attrib strategy    -3.1417596111381156
+    Attrib thematic    -3.0845752474110837
+    Attrib wargames    1.3421517610825313
+    Attrib no-subdomain    -0.8718545854027206
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.31513001383278155
+    Attrib minp    1.9312009682943145
+    Attrib maxp    0.31810273380869974
+    Attrib time    2.932914548173165
+    Attrib abstract    1.9248974287539249
+    Attrib childrens    0.8681559914390181
+    Attrib customizable    1.6734747817946563
+    Attrib family    -2.9218732661521103
+    Attrib party    1.4398345135381432
+    Attrib strategy    -2.4861060502391426
+    Attrib thematic    -4.514452789741944
+    Attrib wargames    -4.601165081098198
+    Attrib no-subdomain    0.7083602177028459
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-008000.arff...
+
+Processing times:
+ CV-1     0:01:21.291
+ CV-2     0:01:21.688
+ CV-3     0:01:20.736
+ TEST     0:00:09.109
+
+Test Results: (number of instances = 8000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 56.10  43.90   0.53   0.56   0.51
+ TEST: 55.54  44.46   0.56   0.56   0.47
+
+
+Processing data file: data/bgg-out/bgweights-009000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.6906511450444317
+    Node 5    -0.13259551442734405
+    Node 6    2.4872531002967824
+    Node 7    -0.3440995703072263
+    Node 8    -0.07373173873953812
+    Node 9    -7.151439569117279
+    Node 10    3.614505944618518
+    Node 11    2.1414788822265134
+    Node 12    -1.241725126972465
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.02373784832781
+    Node 5    -2.1377940283409176
+    Node 6    -0.23284927329932464
+    Node 7    1.497137072626438
+    Node 8    -1.196672202326998
+    Node 9    0.4432544207702662
+    Node 10    -1.9152935383582013
+    Node 11    -0.8809987048812908
+    Node 12    1.5221807543538275
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.3500565307784743
+    Node 5    -0.3558958882541052
+    Node 6    -1.9168532043614748
+    Node 7    -0.5253232413405104
+    Node 8    -3.916255750684436
+    Node 9    0.7842789591483237
+    Node 10    -1.8891629569118178
+    Node 11    -5.815988172406445
+    Node 12    -1.451524951354776
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.7281649549840066
+    Node 5    0.9082183346781745
+    Node 6    -2.8643747307635405
+    Node 7    -3.0601416270964727
+    Node 8    -2.3362504649739764
+    Node 9    -0.5593365829671357
+    Node 10    -2.360649927928667
+    Node 11    -3.213452510505592
+    Node 12    -4.292417469755112
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -4.59741559936539
+    Node 5    5.486274694123981
+    Node 6    -2.1687240939063477
+    Node 7    -1.5241958192877016
+    Node 8    -1.2371411258555383
+    Node 9    -1.7267365576855886
+    Node 10    -2.1588908187678
+    Node 11    1.9010125136238396
+    Node 12    -1.5004625132596674
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    0.4393203199753803
+    Attrib minp    3.7176011719119724
+    Attrib maxp    -1.2245392614466613
+    Attrib time    9.76088671322311
+    Attrib abstract    3.563440179154046
+    Attrib childrens    -0.7326849438479792
+    Attrib customizable    3.038464236101532
+    Attrib family    -1.4744539259598235
+    Attrib party    1.318541527739267
+    Attrib strategy    0.04782295347763593
+    Attrib thematic    -0.5391658374645482
+    Attrib wargames    -3.8399354414756206
+    Attrib no-subdomain    -1.5786545806135581
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.00989455052247399
+    Attrib minp    6.175604610551719
+    Attrib maxp    2.1215848445919665
+    Attrib time    -2.7435979011452116
+    Attrib abstract    -0.048913695001482065
+    Attrib childrens    1.945749066175768
+    Attrib customizable    1.7188091718422687
+    Attrib family    -3.8813000515108014
+    Attrib party    -6.411020809873526
+    Attrib strategy    7.375705160902607
+    Attrib thematic    1.4959193376299937
+    Attrib wargames    3.777774201619976
+    Attrib no-subdomain    -1.3693234362322753
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.8055889901720994
+    Attrib minp    -3.5287200134885484
+    Attrib maxp    -4.80212473382061
+    Attrib time    0.3882611794745504
+    Attrib abstract    -1.155759753200021
+    Attrib childrens    -1.0555876822062493
+    Attrib customizable    -1.9021089645153233
+    Attrib family    -7.975917127000351
+    Attrib party    -2.966852954845259
+    Attrib strategy    3.7923082652935065
+    Attrib thematic    -3.926701737076767
+    Attrib wargames    1.5642589788660541
+    Attrib no-subdomain    2.3952925921044605
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    0.18533421614503304
+    Attrib minp    -3.6242549552187526
+    Attrib maxp    3.5976528901745994
+    Attrib time    -0.8254999805531908
+    Attrib abstract    -0.9019667784632259
+    Attrib childrens    -1.7301255423299735
+    Attrib customizable    1.8364988663841093
+    Attrib family    -3.9000689747006674
+    Attrib party    -4.3233419821696275
+    Attrib strategy    1.3387162093879053
+    Attrib thematic    0.9824104294575354
+    Attrib wargames    2.165289568268157
+    Attrib no-subdomain    -1.9397723289994517
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.19393854323116202
+    Attrib minp    3.0165330303832647
+    Attrib maxp    1.3062384085424472
+    Attrib time    0.9059190150806244
+    Attrib abstract    -1.744107414388688
+    Attrib childrens    1.4388996697271135
+    Attrib customizable    0.4842486007207776
+    Attrib family    1.308830746139985
+    Attrib party    -0.17663217296981662
+    Attrib strategy    -3.332122043870556
+    Attrib thematic    -2.962070528244433
+    Attrib wargames    -1.0216201743655433
+    Attrib no-subdomain    2.074128148499608
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -2.4227024552447194
+    Attrib minp    -17.44073507546563
+    Attrib maxp    -2.002225952555598
+    Attrib time    1.3619655471076364
+    Attrib abstract    -0.17768114731846443
+    Attrib childrens    -9.038078933782662
+    Attrib customizable    1.7601134201523414
+    Attrib family    0.3256239441423636
+    Attrib party    -6.507455039684692
+    Attrib strategy    -2.9949353557817293
+    Attrib thematic    -1.6280896182311502
+    Attrib wargames    -1.8152520306163824
+    Attrib no-subdomain    -3.775989344554523
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -0.49249132820112224
+    Attrib minp    9.093094260863937
+    Attrib maxp    3.855756411929513
+    Attrib time    1.622116268012495
+    Attrib abstract    0.6653757688678772
+    Attrib childrens    -5.941716410940334
+    Attrib customizable    3.1674861260389453
+    Attrib family    3.6101164185384538
+    Attrib party    -6.131993736925189
+    Attrib strategy    -0.16043711862948987
+    Attrib thematic    3.4480129696010247
+    Attrib wargames    -0.5949096871294542
+    Attrib no-subdomain    0.26236663520688935
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    0.9008879393454804
+    Attrib minp    -7.521057417052699
+    Attrib maxp    2.1303044740276627
+    Attrib time    -1.4429482253842523
+    Attrib abstract    -6.1304247884587575
+    Attrib childrens    2.0589832700113937
+    Attrib customizable    -6.718037100468241
+    Attrib family    -5.497947253195578
+    Attrib party    1.4289947108379764
+    Attrib strategy    -3.760112549787762
+    Attrib thematic    -2.0332572827610047
+    Attrib wargames    -1.967559306685343
+    Attrib no-subdomain    1.9538923499473588
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-009000.arff...
+
+Processing times:
+ CV-1     0:01:31.399
+ CV-2     0:01:30.851
+ CV-3     0:01:31.132
+ TEST     0:00:10.022
+
+Test Results: (number of instances = 9000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 56.23  43.77   0.53   0.56   0.51
+ TEST: 57.55  42.45   0.56   0.58   0.49
+
+
+Processing data file: data/bgg-out/bgweights-010000.arff ...
+
+  Processing with classifier: MultiLayerPerceptronWekaClassifier{tag=Perceptron, type=MULTILAYER_PERCEPTRON, options=[-L 0.3, -M 0.2, -N 500, -V 0, -S 0, -E 20, -H a]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3.. DONE
+
+>Test Run >>
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -2.9685248593300777
+    Node 5    -0.9429014994583804
+    Node 6    3.373914012462571
+    Node 7    1.0735744982419086
+    Node 8    1.3561169834200473
+    Node 9    -0.8521120795077369
+    Node 10    0.5287686074031875
+    Node 11    1.5853187110506077
+    Node 12    -0.6903634748390386
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    0.5549933534426373
+    Node 5    -2.1139252749958977
+    Node 6    -1.5020956804611938
+    Node 7    -1.6999763949922313
+    Node 8    -0.3256727452339842
+    Node 9    0.5514969252881519
+    Node 10    -1.1842773467025207
+    Node 11    0.8005313081415879
+    Node 12    1.279493432839561
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.9587700920739002
+    Node 5    -1.4428262137107204
+    Node 6    -1.361959358236323
+    Node 7    1.0432782855710168
+    Node 8    -0.16862037841481842
+    Node 9    0.10185202369510236
+    Node 10    0.9939393843284483
+    Node 11    -6.1655614233236875
+    Node 12    -1.506059722302954
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -3.707347094833118
+    Node 5    0.324209453651609
+    Node 6    -1.3015644780840272
+    Node 7    1.8318811037289349
+    Node 8    -0.733019021713287
+    Node 9    -0.16246118111047414
+    Node 10    0.32273155776756546
+    Node 11    -0.9467570728343083
+    Node 12    -0.9731123219488005
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -5.163332620132998
+    Node 5    7.21761077109088
+    Node 6    -1.4795122355110146
+    Node 7    1.1865147095450992
+    Node 8    -1.6009408440545398
+    Node 9    -1.6775036842180848
+    Node 10    -0.8476671091132362
+    Node 11    -0.8921127816448753
+    Node 12    -1.1891100396517198
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.3147120601298882
+    Attrib minp    0.9123056150439085
+    Attrib maxp    0.4555363345865461
+    Attrib time    10.719191912055575
+    Attrib abstract    0.903093168249506
+    Attrib childrens    -1.1218547252201851
+    Attrib customizable    2.620829279204929
+    Attrib family    0.5084116632123322
+    Attrib party    -0.8197579621370735
+    Attrib strategy    2.5779219889726708
+    Attrib thematic    2.791151817903806
+    Attrib wargames    0.06658575980426805
+    Attrib no-subdomain    1.9615569762011345
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -1.1421318404561909
+    Attrib minp    -10.272995140027989
+    Attrib maxp    1.1981889005065507
+    Attrib time    0.6744881764658497
+    Attrib abstract    -4.3992246909280395
+    Attrib childrens    -2.7695275296683075
+    Attrib customizable    7.619450761741782
+    Attrib family    -6.804532491229903
+    Attrib party    -4.752570855732367
+    Attrib strategy    9.20355404806639
+    Attrib thematic    6.495626123031362
+    Attrib wargames    5.805042115501918
+    Attrib no-subdomain    -8.546149020068146
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -1.2883362966182934
+    Attrib minp    12.109826596065655
+    Attrib maxp    1.2499811772294125
+    Attrib time    4.303324840620189
+    Attrib abstract    3.5665749612460678
+    Attrib childrens    -1.8917331270590192
+    Attrib customizable    5.499602088550804
+    Attrib family    6.507247208930761
+    Attrib party    0.0010259531556104067
+    Attrib strategy    -5.44789907709756
+    Attrib thematic    1.2150589633836724
+    Attrib wargames    -6.733595915498956
+    Attrib no-subdomain    3.826814950261805
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -2.015959964500476
+    Attrib minp    -2.5647341081594974
+    Attrib maxp    3.575734944831997
+    Attrib time    1.7778122675527617
+    Attrib abstract    1.8544152149981272
+    Attrib childrens    -5.126421526859985
+    Attrib customizable    -3.4715798163416784
+    Attrib family    -0.2856522366723138
+    Attrib party    0.8381032659934836
+    Attrib strategy    1.2073175000459926
+    Attrib thematic    2.4436292776957407
+    Attrib wargames    3.733257359854147
+    Attrib no-subdomain    0.6769825356058212
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    0.2113668604884883
+    Attrib minp    -8.758505959802909
+    Attrib maxp    -0.28519825719269265
+    Attrib time    -0.7186271524719845
+    Attrib abstract    -3.9246855581284863
+    Attrib childrens    0.36812250075412617
+    Attrib customizable    -1.87242937442722
+    Attrib family    -1.0614990544766236
+    Attrib party    0.10600711078287517
+    Attrib strategy    -4.638641038037302
+    Attrib thematic    -2.016494124060647
+    Attrib wargames    -1.6447640176758065
+    Attrib no-subdomain    1.2323687603004756
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -3.2274492653707134
+    Attrib minp    -14.329727088146901
+    Attrib maxp    4.0592694904167175
+    Attrib time    3.431793238669432
+    Attrib abstract    4.810643866195564
+    Attrib childrens    -3.352542731684054
+    Attrib customizable    -2.202628467714954
+    Attrib family    -0.2635311360444119
+    Attrib party    -4.8222659543621855
+    Attrib strategy    -0.22833463857713238
+    Attrib thematic    1.2812797005340395
+    Attrib wargames    1.6676971676481365
+    Attrib no-subdomain    -0.04635781082118999
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -1.3019107539469656
+    Attrib minp    -0.36797844354025583
+    Attrib maxp    1.793419082653171
+    Attrib time    1.393312297047637
+    Attrib abstract    1.5754640766744994
+    Attrib childrens    -2.5853929031977234
+    Attrib customizable    2.298172631218392
+    Attrib family    1.1271587782059664
+    Attrib party    -3.5685652189361754
+    Attrib strategy    -1.2441912000919868
+    Attrib thematic    0.6949335625675168
+    Attrib wargames    1.5098225404124836
+    Attrib no-subdomain    -0.6880867418731486
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    1.765298258744621
+    Attrib minp    7.911428541606683
+    Attrib maxp    -1.7662521113695784
+    Attrib time    -1.3523098445792385
+    Attrib abstract    -4.772389033179265
+    Attrib childrens    0.9497095415983141
+    Attrib customizable    1.8367884914250936
+    Attrib family    -9.008702715042823
+    Attrib party    -5.176679274068749
+    Attrib strategy    -1.727615675263414
+    Attrib thematic    -2.665130381908648
+    Attrib wargames    0.33056407981488267
+    Attrib no-subdomain    2.7041022740464977
+Class LIGHT
+    Input
+    Node 0
+Class MEDIUM_LIGHT
+    Input
+    Node 1
+Class MEDIUM
+    Input
+    Node 2
+Class MEDIUM_HEAVY
+    Input
+    Node 3
+Class HEAVY
+    Input
+    Node 4
+
+
+** Results for data file: data/bgg-out/bgweights-010000.arff...
+
+Processing times:
+ CV-1     0:01:46.627
+ CV-2     0:01:44.406
+ CV-3     0:01:44.585
+ TEST     0:00:11.479
+
+Test Results: (number of instances = 10000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 58.60  41.40   0.56   0.59   0.53
+ TEST: 58.26  41.74   0.56   0.58   0.51
+
+
+
+-- End of Run -- [0:29:02.158]

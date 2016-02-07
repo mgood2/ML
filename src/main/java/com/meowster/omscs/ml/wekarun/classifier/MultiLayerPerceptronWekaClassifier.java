@@ -78,4 +78,12 @@ public class MultiLayerPerceptronWekaClassifier extends WekaClassifier {
     public Classifier newClassifier() {
         return setOptions(new MultilayerPerceptron());
     }
+
+    @Override
+    public int adjustRunCount(int numRuns) {
+        // Neural Nets can be slow to run
+        // So let's drop the number of CV runs to just 3.
+        return 3;
+    }
+
 }
