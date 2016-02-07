@@ -8,8 +8,10 @@ import com.meowster.omscs.ml.wekarun.config.SingleIBk;
 import com.meowster.omscs.ml.wekarun.config.SingleJ48;
 import com.meowster.omscs.ml.wekarun.config.SinglePerceptron;
 import com.meowster.omscs.ml.wekarun.config.SingleSmo;
+import com.meowster.omscs.ml.wekarun.config.VaryingIBk;
 import com.meowster.omscs.ml.wekarun.config.bgg.LearningBgWeight10k;
 import com.meowster.omscs.ml.wekarun.config.bgg.MixedBgWeight;
+import com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight2000;
 import com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight500;
 import org.apache.commons.lang.time.StopWatch;
 
@@ -22,15 +24,19 @@ import static com.meowster.omscs.ml.fetcher.Utils.print;
  */
 public class MainWekaRun {
 
+    private static final String RED = "-RED";
+
     static final DataFileGroup DFG_MIXED = new MixedBgWeight();
     static final DataFileGroup DFG_SINGLE = new SingleBgWeight500();
     static final DataFileGroup DFG_LEARN10k = new LearningBgWeight10k();
+    static final DataFileGroup DFG_2K = new SingleBgWeight2000();
 
     static final ClassifierGroup CG_SINGLE_J48 = new SingleJ48();
     static final ClassifierGroup CG_SINGLE_PERCEPTRON = new SinglePerceptron();
     static final ClassifierGroup CG_SINGLE_BOOSTED_J48 = new SingleBoostedJ48();
     static final ClassifierGroup CG_SINGLE_SMO = new SingleSmo();
     static final ClassifierGroup CG_SINGLE_IBK = new SingleIBk();
+    static final ClassifierGroup CG_VARYING_IBK = new VaryingIBk(1, 21, 2);
 
     // the filters to use for splitting train/test data subsets
     private static final List<FilterType> FILTERS = ImmutableList.of(
@@ -43,13 +49,16 @@ public class MainWekaRun {
     // =================================================
 
     // the source data files (.arff) containing instance data
-    private static final DataFileGroup DATASETS = DFG_LEARN10k;
+    private static final DataFileGroup DATASETS = DFG_2K;
 
     // the group of classifiers to run against the data sets
-    private static final ClassifierGroup CLASSIFIERS = CG_SINGLE_IBK;
+    private static final ClassifierGroup CLASSIFIERS = CG_VARYING_IBK;
 
     // the name of the CSV file
-    private static final String CSV_FILE_NAME = "learningIBk";
+    private static final String CSV_FILE_NAME = "varying_kNN";
+
+    // use reduced attributes datasets (9 attribs vs. 13 attribs)
+    private static final boolean USE_REDUCED = true;
 
     // =================================================
 
@@ -63,9 +72,15 @@ public class MainWekaRun {
         StopWatch sw = new StopWatch();
         sw.start();
 
-        new BggDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
-                .csvFileName(CSV_FILE_NAME)
-                .run();
+        if (USE_REDUCED) {
+            new BggReducedDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
+                    .csvFileName(CSV_FILE_NAME + RED)
+                    .run();
+        } else {
+            new BggDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
+                    .csvFileName(CSV_FILE_NAME)
+                    .run();
+        }
 
         sw.stop();
         print("%n%n-- End of Run -- [%s]", sw);

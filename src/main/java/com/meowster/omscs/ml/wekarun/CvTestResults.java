@@ -36,6 +36,7 @@ public class CvTestResults {
     }
 
     private final int numInstances;
+    private final int numAttributes;
     private final WekaClassifier wekaClassifier;
     private final FilterType filter;
 
@@ -48,12 +49,14 @@ public class CvTestResults {
      * Creates a cross validation and test result holder.
      *
      * @param numInstances   the total number of instances for this test
+     * @param numAttributes  the number of attributes for this test
      * @param wekaClassifier the classifier used in this test
      * @param filter         the filter used in this test
      */
-    public CvTestResults(int numInstances, WekaClassifier wekaClassifier,
-                         FilterType filter) {
+    public CvTestResults(int numInstances, int numAttributes,
+                         WekaClassifier wekaClassifier, FilterType filter) {
         this.numInstances = numInstances;
+        this.numAttributes = numAttributes;
         this.wekaClassifier = wekaClassifier;
         this.filter = filter;
     }
@@ -159,6 +162,16 @@ public class CvTestResults {
     }
 
     /**
+     * Returns the number of attributes in the data set used to generate
+     * these results.
+     *
+     * @return number of attributes
+     */
+    public int numAttibutes() {
+        return numAttributes;
+    }
+
+    /**
      * Returns the cross validation results data.
      *
      * @return cross validation results
@@ -180,7 +193,7 @@ public class CvTestResults {
      */
     public static List<String> columnHeaders(Results type) {
         List<String> headers = new ArrayList<>(COLS.length);
-        for (String c: COLS) {
+        for (String c : COLS) {
             headers.add(String.format("%s-%s", type.name(), c));
         }
         return headers;

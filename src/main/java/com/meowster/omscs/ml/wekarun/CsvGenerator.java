@@ -13,7 +13,7 @@ import java.util.List;
 public class CsvGenerator {
 
     private static final String FIRST_CSV_COLS =
-            "Dataset,Filter,Classifier,Instances";
+            "Dataset,Filter,Classifier,nInst,nAttr";
     private static final String EOL = String.format("%n");
     private static final String QUOTE = "\"";
     private static final String COMMA = ",";
@@ -124,7 +124,8 @@ public class CsvGenerator {
                     .append(COMMA)
                     .append(filterTag).append(COMMA)
                     .append(classifierTag).append(COMMA)
-                    .append(results.numInstances());
+                    .append(results.numInstances()).append(COMMA)
+                    .append(results.numAttibutes());
 
             appendResults(sb, results.results(Results.CV));
             appendResults(sb, results.results(Results.TEST));

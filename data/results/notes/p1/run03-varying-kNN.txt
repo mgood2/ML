@@ -1,0 +1,400 @@
+
+-- Starting WEKA Experiment --
+[Experiment class: com.meowster.omscs.ml.wekarun.BggDataExperiment]
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight2000...
+ ..adding path: data/bgg-out/bgweights-002000.arff
+
+Processing data file: data/bgg-out/bgweights-002000.arff ...
+
+Instances Info: #instances=2000, #attributes=13
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.VaryingIBk...
+ ..adding classifier: IbkWekaClassifier{tag=1-NN, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=3-NN, type=IBK, options=[-K 3, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=5-NN, type=IBK, options=[-K 5, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=7-NN, type=IBK, options=[-K 7, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=9-NN, type=IBK, options=[-K 9, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=11-NN, type=IBK, options=[-K 11, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=13-NN, type=IBK, options=[-K 13, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=15-NN, type=IBK, options=[-K 15, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=17-NN, type=IBK, options=[-K 17, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=19-NN, type=IBK, options=[-K 19, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+ ..adding classifier: IbkWekaClassifier{tag=21-NN, type=IBK, options=[-K 21, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+  Processing with classifier: IbkWekaClassifier{tag=1-NN, type=IBK, options=[-K 1, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.248
+ CV-2     0:00:00.107
+ CV-3     0:00:00.109
+ CV-4     0:00:00.111
+ CV-5     0:00:00.107
+ CV-6     0:00:00.090
+ CV-7     0:00:00.085
+ CV-8     0:00:00.092
+ CV-9     0:00:00.094
+ CV-10    0:00:00.089
+ TEST     0:00:00.052
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 55.49  44.51   0.55   0.55   0.55
+ TEST: 55.99  44.01   0.56   0.56   0.56
+
+
+  Processing with classifier: IbkWekaClassifier{tag=3-NN, type=IBK, options=[-K 3, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 3 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.093
+ CV-2     0:00:00.094
+ CV-3     0:00:00.101
+ CV-4     0:00:00.091
+ CV-5     0:00:00.088
+ CV-6     0:00:00.091
+ CV-7     0:00:00.089
+ CV-8     0:00:00.087
+ CV-9     0:00:00.090
+ CV-10    0:00:00.088
+ TEST     0:00:00.050
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.54  42.46   0.57   0.58   0.57
+ TEST: 57.63  42.37   0.58   0.58   0.58
+
+
+  Processing with classifier: IbkWekaClassifier{tag=5-NN, type=IBK, options=[-K 5, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 5 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.110
+ CV-2     0:00:00.107
+ CV-3     0:00:00.103
+ CV-4     0:00:00.100
+ CV-5     0:00:00.100
+ CV-6     0:00:00.100
+ CV-7     0:00:00.095
+ CV-8     0:00:00.097
+ CV-9     0:00:00.103
+ CV-10    0:00:00.102
+ TEST     0:00:00.062
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 58.25  41.75   0.58   0.58   0.57
+ TEST: 59.88  40.12   0.60   0.60   0.60
+
+
+  Processing with classifier: IbkWekaClassifier{tag=7-NN, type=IBK, options=[-K 7, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 7 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.110
+ CV-2     0:00:00.106
+ CV-3     0:00:00.107
+ CV-4     0:00:00.105
+ CV-5     0:00:00.100
+ CV-6     0:00:00.104
+ CV-7     0:00:00.101
+ CV-8     0:00:00.101
+ CV-9     0:00:00.108
+ CV-10    0:00:00.114
+ TEST     0:00:00.066
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.42  42.58   0.57   0.57   0.57
+ TEST: 62.13  37.87   0.62   0.62   0.62
+
+
+  Processing with classifier: IbkWekaClassifier{tag=9-NN, type=IBK, options=[-K 9, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 9 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.107
+ CV-2     0:00:00.113
+ CV-3     0:00:00.111
+ CV-4     0:00:00.114
+ CV-5     0:00:00.106
+ CV-6     0:00:00.107
+ CV-7     0:00:00.106
+ CV-8     0:00:00.106
+ CV-9     0:00:00.109
+ CV-10    0:00:00.126
+ TEST     0:00:00.062
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.79  42.21   0.57   0.58   0.57
+ TEST: 63.47  36.53   0.62   0.63   0.63
+
+
+  Processing with classifier: IbkWekaClassifier{tag=11-NN, type=IBK, options=[-K 11, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 11 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.132
+ CV-2     0:00:00.121
+ CV-3     0:00:00.113
+ CV-4     0:00:00.115
+ CV-5     0:00:00.115
+ CV-6     0:00:00.117
+ CV-7     0:00:00.117
+ CV-8     0:00:00.118
+ CV-9     0:00:00.124
+ CV-10    0:00:00.124
+ TEST     0:00:00.065
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.47  42.53   0.57   0.57   0.56
+ TEST: 64.07  35.93   0.63   0.64   0.63
+
+
+  Processing with classifier: IbkWekaClassifier{tag=13-NN, type=IBK, options=[-K 13, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 13 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.114
+ CV-2     0:00:00.120
+ CV-3     0:00:00.119
+ CV-4     0:00:00.123
+ CV-5     0:00:00.113
+ CV-6     0:00:00.114
+ CV-7     0:00:00.116
+ CV-8     0:00:00.115
+ CV-9     0:00:00.122
+ CV-10    0:00:00.127
+ TEST     0:00:00.072
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.89  42.11   0.58   0.58   0.57
+ TEST: 63.02  36.98   0.61   0.63   0.62
+
+
+  Processing with classifier: IbkWekaClassifier{tag=15-NN, type=IBK, options=[-K 15, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 15 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.119
+ CV-2     0:00:00.129
+ CV-3     0:00:00.118
+ CV-4     0:00:00.125
+ CV-5     0:00:00.118
+ CV-6     0:00:00.119
+ CV-7     0:00:00.122
+ CV-8     0:00:00.133
+ CV-9     0:00:00.135
+ CV-10    0:00:00.137
+ TEST     0:00:00.066
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.66  42.34   0.57   0.58   0.56
+ TEST: 63.62  36.38   0.61   0.64   0.62
+
+
+  Processing with classifier: IbkWekaClassifier{tag=17-NN, type=IBK, options=[-K 17, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 17 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.122
+ CV-2     0:00:00.133
+ CV-3     0:00:00.124
+ CV-4     0:00:00.125
+ CV-5     0:00:00.121
+ CV-6     0:00:00.125
+ CV-7     0:00:00.123
+ CV-8     0:00:00.133
+ CV-9     0:00:00.137
+ CV-10    0:00:00.140
+ TEST     0:00:00.068
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.49  42.51   0.57   0.57   0.56
+ TEST: 63.62  36.38   0.61   0.64   0.62
+
+
+  Processing with classifier: IbkWekaClassifier{tag=19-NN, type=IBK, options=[-K 19, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 19 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.129
+ CV-2     0:00:00.135
+ CV-3     0:00:00.129
+ CV-4     0:00:00.132
+ CV-5     0:00:00.126
+ CV-6     0:00:00.132
+ CV-7     0:00:00.133
+ CV-8     0:00:00.146
+ CV-9     0:00:00.143
+ CV-10    0:00:00.134
+ TEST     0:00:00.070
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.61  42.39   0.56   0.58   0.56
+ TEST: 63.62  36.38   0.61   0.64   0.62
+
+
+  Processing with classifier: IbkWekaClassifier{tag=21-NN, type=IBK, options=[-K 21, -W 0, -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+IB1 instance-based classifier
+using 21 nearest neighbour(s) for classification
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.134
+ CV-2     0:00:00.141
+ CV-3     0:00:00.130
+ CV-4     0:00:00.131
+ CV-5     0:00:00.131
+ CV-6     0:00:00.129
+ CV-7     0:00:00.131
+ CV-8     0:00:00.140
+ CV-9     0:00:00.139
+ CV-10    0:00:00.137
+ TEST     0:00:00.074
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 57.34  42.66   0.55   0.57   0.56
+ TEST: 62.72  37.28   0.61   0.63   0.62
+
+
+
+-- End of Run -- [0:00:13.750]

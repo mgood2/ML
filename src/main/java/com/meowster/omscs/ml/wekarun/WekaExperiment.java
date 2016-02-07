@@ -165,6 +165,8 @@ public class WekaExperiment {
      * Runs the experiment.
      */
     public void run() {
+        print("[Experiment class: %s]", getClass().getName());
+
         // outer iteration over file sets
         Iterator<DataFileInfo> dfIter = datasets.iterator();
         while (dfIter.hasNext()) {
@@ -189,12 +191,18 @@ public class WekaExperiment {
         print("%nProcessing data file: %s ...", info.path());
 
         Instances instances = loadInstances(info.path());
+        print("%nInstances Info: %s", getInfo(instances));
 
         // middle iteration over classifiers
         Iterator<WekaClassifier> cIter = classifiers.iterator();
         while (cIter.hasNext()) {
             processClassifier(info, instances, cIter.next(), filters);
         }
+    }
+
+    private String getInfo(Instances instances) {
+        return "#instances=" + instances.numInstances() +
+                ", #attributes=" + instances.numAttributes();
     }
 
     private void processClassifier(DataFileInfo info,
@@ -254,7 +262,7 @@ public class WekaExperiment {
                                                     FilterType filter) {
         // Results to be returned
         CvTestResults results = new CvTestResults(dataSet.numInstances(),
-                wekaClassifier, filter);
+                dataSet.numAttributes(), wekaClassifier, filter);
 
         // intermediate results - averaged later
         CvMetrics metrics = new CvMetrics();
