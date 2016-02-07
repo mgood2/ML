@@ -10,9 +10,9 @@ Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.MixedBgWeigh
 Processing data file: data/bgg-out/bgweights-000500.arff ...
 
 Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.SingleJ48...
- ..adding classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
-  Processing with classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
     Processing with filter: unsupervised_resample
 
@@ -68,15 +68,15 @@ Size of the tree : 	37
 ** Results for data file: data/bgg-out/bgweights-000500.arff...
 
 Processing times:
- CV-1     0:00:00.158
- CV-2     0:00:00.063
- CV-3     0:00:00.053
- CV-4     0:00:00.043
- CV-5     0:00:00.032
- CV-6     0:00:00.032
- CV-7     0:00:00.036
- CV-8     0:00:00.032
- CV-9     0:00:00.033
+ CV-1     0:00:00.153
+ CV-2     0:00:00.058
+ CV-3     0:00:00.051
+ CV-4     0:00:00.044
+ CV-5     0:00:00.035
+ CV-6     0:00:00.033
+ CV-7     0:00:00.034
+ CV-8     0:00:00.029
+ CV-9     0:00:00.035
  CV-10    0:00:00.040
  TEST     0:00:00.005
 
@@ -157,16 +157,16 @@ Size of the tree : 	53
 ** Results for data file: data/bgg-out/bgweights-000500.arff...
 
 Processing times:
- CV-1     0:00:00.039
+ CV-1     0:00:00.038
  CV-2     0:00:00.035
  CV-3     0:00:00.041
- CV-4     0:00:00.036
- CV-5     0:00:00.032
- CV-6     0:00:00.030
- CV-7     0:00:00.034
- CV-8     0:00:00.029
+ CV-4     0:00:00.038
+ CV-5     0:00:00.038
+ CV-6     0:00:00.039
+ CV-7     0:00:00.038
+ CV-8     0:00:00.036
  CV-9     0:00:00.024
- CV-10    0:00:00.027
+ CV-10    0:00:00.031
  TEST     0:00:00.003
 
 Test Results: (number of instances = 500)
@@ -178,7 +178,7 @@ Test Results: (number of instances = 500)
 
 Processing data file: data/bgg-out/bgweights-002500.arff ...
 
-  Processing with classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
     Processing with filter: unsupervised_resample
 
@@ -300,17 +300,17 @@ Size of the tree : 	103
 ** Results for data file: data/bgg-out/bgweights-002500.arff...
 
 Processing times:
- CV-1     0:00:00.177
- CV-2     0:00:00.184
- CV-3     0:00:00.155
- CV-4     0:00:00.155
- CV-5     0:00:00.148
- CV-6     0:00:00.141
- CV-7     0:00:00.156
- CV-8     0:00:00.154
- CV-9     0:00:00.169
- CV-10    0:00:00.142
- TEST     0:00:00.017
+ CV-1     0:00:00.175
+ CV-2     0:00:00.167
+ CV-3     0:00:00.177
+ CV-4     0:00:00.179
+ CV-5     0:00:00.141
+ CV-6     0:00:00.153
+ CV-7     0:00:00.155
+ CV-8     0:00:00.141
+ CV-9     0:00:00.148
+ CV-10    0:00:00.137
+ TEST     0:00:00.015
 
 Test Results: (number of instances = 2500)
 
@@ -423,16 +423,16 @@ Size of the tree : 	87
 ** Results for data file: data/bgg-out/bgweights-002500.arff...
 
 Processing times:
- CV-1     0:00:00.148
- CV-2     0:00:00.144
- CV-3     0:00:00.142
- CV-4     0:00:00.147
- CV-5     0:00:00.146
- CV-6     0:00:00.139
- CV-7     0:00:00.148
- CV-8     0:00:00.157
+ CV-1     0:00:00.145
+ CV-2     0:00:00.139
+ CV-3     0:00:00.144
+ CV-4     0:00:00.144
+ CV-5     0:00:00.139
+ CV-6     0:00:00.141
+ CV-7     0:00:00.146
+ CV-8     0:00:00.146
  CV-9     0:00:00.145
- CV-10    0:00:00.141
+ CV-10    0:00:00.152
  TEST     0:00:00.016
 
 Test Results: (number of instances = 2500)
@@ -444,7 +444,7 @@ Test Results: (number of instances = 2500)
 
 Processing data file: data/bgg-out/bgweights-010000.arff ...
 
-  Processing with classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
     Processing with filter: unsupervised_resample
 
@@ -658,17 +658,17 @@ Size of the tree : 	195
 ** Results for data file: data/bgg-out/bgweights-010000.arff...
 
 Processing times:
- CV-1     0:00:00.899
- CV-2     0:00:00.876
- CV-3     0:00:00.854
- CV-4     0:00:00.844
- CV-5     0:00:00.843
- CV-6     0:00:00.863
- CV-7     0:00:00.859
- CV-8     0:00:00.845
- CV-9     0:00:00.872
- CV-10    0:00:00.936
- TEST     0:00:00.097
+ CV-1     0:00:00.878
+ CV-2     0:00:00.860
+ CV-3     0:00:00.812
+ CV-4     0:00:00.836
+ CV-5     0:00:00.821
+ CV-6     0:00:00.832
+ CV-7     0:00:00.855
+ CV-8     0:00:00.875
+ CV-9     0:00:01.005
+ CV-10    0:00:01.027
+ TEST     0:00:00.095
 
 Test Results: (number of instances = 10000)
 
@@ -867,17 +867,17 @@ Size of the tree : 	173
 ** Results for data file: data/bgg-out/bgweights-010000.arff...
 
 Processing times:
- CV-1     0:00:00.860
- CV-2     0:00:00.847
- CV-3     0:00:00.939
- CV-4     0:00:00.924
- CV-5     0:00:00.833
- CV-6     0:00:00.848
- CV-7     0:00:00.818
- CV-8     0:00:00.821
- CV-9     0:00:00.829
- CV-10    0:00:00.846
- TEST     0:00:00.087
+ CV-1     0:00:00.887
+ CV-2     0:00:00.875
+ CV-3     0:00:00.860
+ CV-4     0:00:00.878
+ CV-5     0:00:00.855
+ CV-6     0:00:00.857
+ CV-7     0:00:00.871
+ CV-8     0:00:00.916
+ CV-9     0:00:00.944
+ CV-10    0:00:00.903
+ TEST     0:00:00.091
 
 Test Results: (number of instances = 10000)
 
@@ -888,7 +888,7 @@ Test Results: (number of instances = 10000)
 
 Processing data file: data/bgg-out/bgweights-017500.arff ...
 
-  Processing with classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
     Processing with filter: unsupervised_resample
 
@@ -1174,17 +1174,17 @@ Size of the tree : 	267
 ** Results for data file: data/bgg-out/bgweights-017500.arff...
 
 Processing times:
- CV-1     0:00:01.750
- CV-2     0:00:01.795
- CV-3     0:00:01.788
- CV-4     0:00:02.059
- CV-5     0:00:02.096
- CV-6     0:00:01.966
- CV-7     0:00:02.033
- CV-8     0:00:02.079
- CV-9     0:00:02.069
- CV-10    0:00:01.945
- TEST     0:00:00.188
+ CV-1     0:00:01.834
+ CV-2     0:00:01.733
+ CV-3     0:00:01.825
+ CV-4     0:00:02.106
+ CV-5     0:00:01.924
+ CV-6     0:00:01.857
+ CV-7     0:00:01.907
+ CV-8     0:00:01.827
+ CV-9     0:00:01.689
+ CV-10    0:00:01.985
+ TEST     0:00:00.179
 
 Test Results: (number of instances = 17500)
 
@@ -1433,17 +1433,17 @@ Size of the tree : 	223
 ** Results for data file: data/bgg-out/bgweights-017500.arff...
 
 Processing times:
- CV-1     0:00:02.019
- CV-2     0:00:02.022
- CV-3     0:00:02.024
- CV-4     0:00:02.066
- CV-5     0:00:02.015
- CV-6     0:00:02.232
- CV-7     0:00:02.015
- CV-8     0:00:02.019
- CV-9     0:00:02.022
- CV-10    0:00:01.958
- TEST     0:00:00.205
+ CV-1     0:00:01.867
+ CV-2     0:00:01.780
+ CV-3     0:00:01.792
+ CV-4     0:00:01.697
+ CV-5     0:00:01.750
+ CV-6     0:00:01.707
+ CV-7     0:00:01.702
+ CV-8     0:00:01.682
+ CV-9     0:00:01.693
+ CV-10    0:00:01.828
+ TEST     0:00:00.168
 
 Test Results: (number of instances = 17500)
 
@@ -1454,7 +1454,7 @@ Test Results: (number of instances = 17500)
 
 Processing data file: data/bgg-out/bgweights-025000.arff ...
 
-  Processing with classifier: J48WekaClassifier{type=J48, options=[-C 0.25, -M 2]}
+  Processing with classifier: J48WekaClassifier{tag=J48, type=J48, options=[-C 0.25, -M 2]}
 
     Processing with filter: unsupervised_resample
 
@@ -1692,17 +1692,17 @@ Size of the tree : 	219
 ** Results for data file: data/bgg-out/bgweights-025000.arff...
 
 Processing times:
- CV-1     0:00:02.862
- CV-2     0:00:02.874
- CV-3     0:00:02.821
- CV-4     0:00:02.777
- CV-5     0:00:02.803
- CV-6     0:00:02.977
- CV-7     0:00:02.689
- CV-8     0:00:02.766
- CV-9     0:00:02.878
- CV-10    0:00:02.862
- TEST     0:00:00.331
+ CV-1     0:00:02.560
+ CV-2     0:00:02.426
+ CV-3     0:00:02.514
+ CV-4     0:00:02.452
+ CV-5     0:00:02.428
+ CV-6     0:00:02.401
+ CV-7     0:00:02.497
+ CV-8     0:00:02.395
+ CV-9     0:00:02.507
+ CV-10    0:00:02.486
+ TEST     0:00:00.240
 
 Test Results: (number of instances = 25000)
 
@@ -1935,17 +1935,17 @@ Size of the tree : 	207
 ** Results for data file: data/bgg-out/bgweights-025000.arff...
 
 Processing times:
- CV-1     0:00:03.037
- CV-2     0:00:03.040
- CV-3     0:00:03.099
- CV-4     0:00:03.056
- CV-5     0:00:03.103
- CV-6     0:00:03.005
- CV-7     0:00:02.905
- CV-8     0:00:03.052
- CV-9     0:00:02.973
- CV-10    0:00:02.971
- TEST     0:00:00.300
+ CV-1     0:00:02.494
+ CV-2     0:00:02.570
+ CV-3     0:00:02.628
+ CV-4     0:00:02.518
+ CV-5     0:00:02.719
+ CV-6     0:00:02.612
+ CV-7     0:00:02.502
+ CV-8     0:00:02.509
+ CV-9     0:00:02.540
+ CV-10    0:00:02.540
+ TEST     0:00:00.264
 
 Test Results: (number of instances = 25000)
 
@@ -1955,4 +1955,4 @@ Test Results: (number of instances = 25000)
 
 
 
--- End of Run -- [0:02:01.333]
+-- End of Run -- [0:01:49.532]
