@@ -2,7 +2,9 @@ package com.meowster.omscs.ml.wekarun;
 
 import com.google.common.collect.ImmutableList;
 import com.meowster.omscs.ml.wekarun.config.ClassifierGroup;
+import com.meowster.omscs.ml.wekarun.config.CreditApprovalGroup;
 import com.meowster.omscs.ml.wekarun.config.DataFileGroup;
+import com.meowster.omscs.ml.wekarun.config.DefaultClassifierGroup;
 import com.meowster.omscs.ml.wekarun.config.SingleBoostedJ48;
 import com.meowster.omscs.ml.wekarun.config.SingleIBk;
 import com.meowster.omscs.ml.wekarun.config.SingleJ48;
@@ -32,6 +34,7 @@ public class MainWekaRun {
     static final DataFileGroup DFG_LEARN10k = new LearningBgWeight10k();
     static final DataFileGroup DFG_2K = new SingleBgWeight2000();
 
+    static final ClassifierGroup CG_DEFAULT = new DefaultClassifierGroup();
     static final ClassifierGroup CG_SINGLE_J48 = new SingleJ48();
     static final ClassifierGroup CG_SINGLE_PERCEPTRON = new SinglePerceptron();
     static final ClassifierGroup CG_SINGLE_BOOSTED_J48 = new SingleBoostedJ48();
@@ -47,21 +50,30 @@ public class MainWekaRun {
             FilterType.SUPERVISED_RESAMPLE
     );
 
+    // -----
+    // Parameters for alternate dataset:: Credit Approval
+    static final DataFileGroup DFG_CREDIT = new CreditApprovalGroup();
+
+
     // =================================================
     // === Parameters for configuring the Experiment ===
     // =================================================
 
     // the source data files (.arff) containing instance data
-    private static final DataFileGroup DATASETS = DFG_2K;
+    private static final DataFileGroup DATASETS = DFG_CREDIT;
 
     // the group of classifiers to run against the data sets
-    private static final ClassifierGroup CLASSIFIERS = CG_VARYING_J48;
+    private static final ClassifierGroup CLASSIFIERS = CG_DEFAULT;
 
     // the name of the CSV file
-    private static final String CSV_FILE_NAME = "varying_pruned_tree";
+    private static final String CSV_FILE_NAME = "comparisonDefaults";
 
-    // use reduced attributes datasets (9 attribs vs. 13 attribs)
+    // if running BGG data tests...
+    //   ..use reduced attributes datasets (9 attribs vs. 13 attribs)
     private static final boolean USE_REDUCED = true;
+
+    // run credit rating dataset tests (instead of BGG data tests)
+    private static final boolean RUN_CREDIT_RATING_TESTS = true;
 
     // =================================================
 
@@ -75,14 +87,21 @@ public class MainWekaRun {
         StopWatch sw = new StopWatch();
         sw.start();
 
-        if (USE_REDUCED) {
+        if (RUN_CREDIT_RATING_TESTS) {
+            new UciCreditExperiment(DATASETS, CLASSIFIERS, FILTERS)
+                    .csvFileName(CSV_FILE_NAME)
+                    .run();
+
+        } else if (USE_REDUCED) {
             new BggReducedDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
                     .csvFileName(CSV_FILE_NAME + RED)
                     .run();
+
         } else {
             new BggDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
                     .csvFileName(CSV_FILE_NAME)
                     .run();
+
         }
 
         sw.stop();
