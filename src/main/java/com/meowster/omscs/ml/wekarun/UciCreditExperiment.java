@@ -73,7 +73,7 @@ public class UciCreditExperiment extends WekaExperiment {
 
     @Override
     protected FilterGroup iterateAcrossFilters() {
-        return new VaryingRemovePercentFilterGroup(90, 10, 10);
+        return new VaryingRemovePercentFilterGroup(90, 0, 10);
     }
 }
 
