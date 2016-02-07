@@ -116,8 +116,7 @@ text output from the run).
 ## WekaExperiment
 
 An _experiment_ is **designed** by implementing a subclass of `WekaExperiment`.
-For example, see 
-[BggReducedDataExperiment](src/main/java/com/meowster/omscs/ml/wekarun/BggReducedDataExperiment.java)
+For example, see [BggReducedDataExperiment](src/main/java/com/meowster/omscs/ml/wekarun/BggReducedDataExperiment.java).
 
 The concrete class defines which directory any CSV results should be written
 into, as well as providing any required pre-processing of instance data
@@ -136,4 +135,28 @@ by implementing subclasses of
 [FilterGroup](src/main/java/com/meowster/omscs/ml/wekarun/config/FilterGroup.java)
 respectively.
 
+See the following examples:
 
+* [LearningBgWeight10k](src/main/java/com/meowster/omscs/ml/wekarun/config/bgg/LearningBgWeight10k.java) - BGG data files containing 1,000 to 10,000 instances
+* [VaryingIBk](src/main/java/com/meowster/omscs/ml/wekarun/config/VaryingIBk.java) - IBk (k-NN) classifier with varying values of _k_
+* [VaryingRemovePercentFilterGroup](src/main/java/com/meowster/omscs/ml/wekarun/config/VaryingRemovePercentFilterGroup.java) - RemovePercent filter with varying values to remove
+
+Each of these groups are iterated over in the experiment _run()_ method.
+
+## MainWekaRun
+
+To actually run an experiment, the [MainWekaRun](src/main/java/com/meowster/omscs/ml/wekarun/MainWekaRun.java) 
+_main()_ method should be modified to instantiate the appropriate groups,
+ instantiate a `WekaExperiment` subclass parameterized with those groups, 
+ and finally invoke the _run()_ method on the experiment.
+  
+
+# Final Notes
+
+The complete set of raw JSON data files have not been included in this repo.
+
+* They may be added, at some future date
+* A few sample files have been included in the `data/samples` directory
+
+
+Finally... _Have fun training classifiers..._
