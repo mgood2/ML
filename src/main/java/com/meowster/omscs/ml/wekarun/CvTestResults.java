@@ -4,6 +4,7 @@ import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier;
 import org.apache.commons.lang.time.StopWatch;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,9 +47,9 @@ public class CvTestResults {
     /**
      * Creates a cross validation and test result holder.
      *
-     * @param numInstances the total number of instances for this test
+     * @param numInstances   the total number of instances for this test
      * @param wekaClassifier the classifier used in this test
-     * @param filter the filter used in this test
+     * @param filter         the filter used in this test
      */
     public CvTestResults(int numInstances, WekaClassifier wekaClassifier,
                          FilterType filter) {
@@ -60,7 +61,7 @@ public class CvTestResults {
     /**
      * Starts the stopwatch, setting the label with the given tag and iteration.
      *
-     * @param tag type of run
+     * @param tag       type of run
      * @param iteration iteration
      */
     public void startTiming(Results tag, int iteration) {
@@ -131,21 +132,57 @@ public class CvTestResults {
         }
 
         StringBuilder sb = new StringBuilder();
-        for (double d: doubles) {
+        for (double d : doubles) {
             sb.append(String.format(FMT_DOUBLE, d));
         }
         final int len = sb.length();
-        sb.delete(len-2, len);
+        sb.delete(len - 2, len);
         return sb.toString();
     }
 
 
     private void formatStopwatchData(StringBuilder sb) {
         sb.append("Processing times:").append(EOL);
-        for (String s: stopwatchInfo) {
+        for (String s : stopwatchInfo) {
             sb.append(" ").append(s).append(EOL);
         }
     }
 
-    // TODO: provide data in form suitable for writing to CSV
+    /**
+     * Returns the number of instances in the data set used to generate
+     * these results.
+     *
+     * @return number of instances
+     */
+    public int numInstances() {
+        return numInstances;
+    }
+
+    /**
+     * Returns the cross validation results data.
+     *
+     * @return cross validation results
+     */
+    public List<Double> results(Results type) {
+        return Collections.unmodifiableList(data.get(type));
+    }
+
+    private static final String[] COLS = {
+            "%corr", "%inco", "wPrecn", "wRecall", "wFMeas"
+    };
+
+    /**
+     * Generates a list of column headers for the given results type; useful
+     * for using in creating CSV header record.
+     *
+     * @param type the results type
+     * @return list of headers
+     */
+    public static List<String> columnHeaders(Results type) {
+        List<String> headers = new ArrayList<>(COLS.length);
+        for (String c: COLS) {
+            headers.add(String.format("%s-%s", type.name(), c));
+        }
+        return headers;
+    }
 }

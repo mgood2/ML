@@ -13,7 +13,7 @@ public enum FilterType {
     /**
      * Unsupervised resampling filter.
      */
-    UNSUPERVISED_RESAMPLE {
+    UNSUPERVISED_RESAMPLE("UR") {
         @Override
         public Filter getFilter(int seed, double percent, boolean isTest) {
             Filter f = new weka.filters.unsupervised.instance.Resample();
@@ -25,7 +25,7 @@ public enum FilterType {
     /**
      * Supervised resampling filter.
      */
-    SUPERVISED_RESAMPLE {
+    SUPERVISED_RESAMPLE("SR") {
         @Override
         public Filter getFilter(int seed, double percent, boolean isTest) {
             Filter f = new weka.filters.supervised.instance.Resample();
@@ -34,6 +34,12 @@ public enum FilterType {
         }
     };
 
+    private final String tag;
+
+
+    FilterType(String tag) {
+        this.tag = tag;
+    }
 
     private static void applyOptions(Filter f, String options) {
         try {
@@ -87,5 +93,14 @@ public enum FilterType {
     @Override
     public String toString() {
         return StringUtils.lowerCase(name());
+    }
+
+    /**
+     * Returns a short tag for this filter.
+     *
+     * @return the tag
+     */
+    public String tag() {
+        return tag;
     }
 }

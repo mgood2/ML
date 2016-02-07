@@ -14,18 +14,18 @@ public class DefaultClassifierGroup extends ClassifierGroup {
 
     @Override
     protected void configure() {
-        add(WekaClassifier.Type.ZERO_R);
+        add("ZeroR", WekaClassifier.Type.ZERO_R);
 
-        add(WekaClassifier.Type.ONE_R,
+        add("OneR", WekaClassifier.Type.ONE_R,
                 opt(_B, 6))
         ;
 
-        add(WekaClassifier.Type.J48,
+        add("J48", WekaClassifier.Type.J48,
                 opt(_C, 0.25),
                 opt(_M, 2)
         );
 
-        add(WekaClassifier.Type.MULTILAYER_PERCEPTRON,
+        add("Perceptron", WekaClassifier.Type.MULTILAYER_PERCEPTRON,
                 opt(_L, 0.3),
                 opt(_M, 0.2),
                 opt(_N, 500),
@@ -35,14 +35,14 @@ public class DefaultClassifierGroup extends ClassifierGroup {
                 opt(_H, "a")
         );
 
-        add(WekaClassifier.Type.ADA_BOOST_M1,
+        add("AdaBoost", WekaClassifier.Type.ADA_BOOST_M1,
                 opt(_P, 100),
                 opt(_S, 1),
                 opt(_I, 10),
                 opt(_W, classWithOptions(J48.class))
         );
 
-        add(WekaClassifier.Type.SMO,
+        add("SMO", WekaClassifier.Type.SMO,
                 opt(_C, 1.0),
                 opt(_L, 0.001),
                 opt(_P, 1.0E-12),
@@ -55,7 +55,7 @@ public class DefaultClassifierGroup extends ClassifierGroup {
                 )
         );
 
-        add(WekaClassifier.Type.IBK,
+        add("IBk", WekaClassifier.Type.IBK,
                 opt(_K, 1),
                 opt(_W, 0),
                 opt(_A, classWithOptions(LinearNNSearch.class,
@@ -70,23 +70,23 @@ public class DefaultClassifierGroup extends ClassifierGroup {
 
     @Override
     protected void configure() {
-        add(WekaClassifier.Type.ZERO_R);
+        add("ZeroR", WekaClassifier.Type.ZERO_R);
 
-        add(WekaClassifier.Type.ONE_R);
+        add("OneR", WekaClassifier.Type.ONE_R);
 
-        add(WekaClassifier.Type.J48);
+        add("J48", WekaClassifier.Type.J48);
 
-        add(WekaClassifier.Type.MULTILAYER_PERCEPTRON);
+        add("Perceptron", WekaClassifier.Type.MULTILAYER_PERCEPTRON);
 
-        add(WekaClassifier.Type.ADA_BOOST_M1,
+        add("AdaBoost", WekaClassifier.Type.ADA_BOOST_M1,
                 opt(_W, classWithOptions(J48.class))
         );
 
-        add(WekaClassifier.Type.SMO,
+        add("SMO", WekaClassifier.Type.SMO,
                 opt(_K, classWithOptions(PolyKernel.class))
         );
 
-        add(WekaClassifier.Type.IBK,
+        add("IBk", WekaClassifier.Type.IBK,
                 opt(_A, classWithOptions(LinearNNSearch.class,
                         opt(_A, EUCLIDEAN_DISTANCE))
                 )

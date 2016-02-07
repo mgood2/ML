@@ -16,8 +16,8 @@ import weka.classifiers.rules.ZeroR;
  */
 public class ZeroRWekaClassifier extends WekaClassifier {
 
-    ZeroRWekaClassifier(Option... options) {
-        super(Type.ZERO_R, options);
+    ZeroRWekaClassifier(String tag, Option... options) {
+        super(tag, Type.ZERO_R, options);
     }
 
     @Override

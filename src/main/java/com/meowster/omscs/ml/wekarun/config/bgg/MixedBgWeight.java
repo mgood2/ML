@@ -12,7 +12,7 @@ public class MixedBgWeight extends BgWeightGroup {
                 "000500",
                 "002500",
                 "010000",
-                "017000",
+                "017500",
                 "025000"
         );
     }

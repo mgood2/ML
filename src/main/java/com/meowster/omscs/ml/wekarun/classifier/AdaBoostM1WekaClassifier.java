@@ -34,8 +34,8 @@ import weka.classifiers.meta.AdaBoostM1;
  */
 public class AdaBoostM1WekaClassifier extends WekaClassifier {
 
-    AdaBoostM1WekaClassifier(Option... options) {
-        super(Type.ADA_BOOST_M1, options);
+    AdaBoostM1WekaClassifier(String tag, Option... options) {
+        super(tag, Type.ADA_BOOST_M1, options);
     }
 
     @Override

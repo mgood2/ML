@@ -88,8 +88,8 @@ import weka.classifiers.functions.SMO;
  */
 public class SmoWekaClassifier extends WekaClassifier {
 
-    SmoWekaClassifier(Option... options) {
-        super(Type.SMO, options);
+    SmoWekaClassifier(String tag, Option... options) {
+        super(tag, Type.SMO, options);
     }
 
     @Override

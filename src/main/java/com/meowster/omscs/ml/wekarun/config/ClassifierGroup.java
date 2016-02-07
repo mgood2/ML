@@ -55,18 +55,22 @@ public abstract class ClassifierGroup {
 
     /**
      * Adds the specified classifier (with the given options) to our list.
+     * The tag is to identify this particular classifier instance in the
+     * CSV output file.
+     * <p/>
      * Calling this method is only valid before the first invocation of
      * {@link #iterator()}.
      *
+     * @param tag     identifying tag
      * @param type    classifier type
      * @param options classifier options
      * @throws IllegalStateException if the group is no longer mutable
      */
-    protected void add(Type type, Option... options) {
+    protected void add(String tag, Type type, Option... options) {
         if (configured) {
             throw new IllegalStateException("No longer mutable!");
         }
-        WekaClassifier wc = createClassifier(type, options);
+        WekaClassifier wc = createClassifier(tag, type, options);
         print(" ..adding classifier: %s", wc);
         classifiers.add(wc);
     }

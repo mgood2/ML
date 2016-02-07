@@ -55,8 +55,8 @@ import weka.classifiers.trees.J48;
  */
 public class J48WekaClassifier extends WekaClassifier {
 
-    J48WekaClassifier(Option... options) {
-        super(Type.J48, options);
+    J48WekaClassifier(String tag, Option... options) {
+        super(tag, Type.J48, options);
     }
 
     @Override

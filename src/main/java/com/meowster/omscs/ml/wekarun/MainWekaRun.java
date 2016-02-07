@@ -7,6 +7,7 @@ import com.meowster.omscs.ml.wekarun.config.SingleJ48;
 import com.meowster.omscs.ml.wekarun.config.bgg.LearningBgWeight500_5000;
 import com.meowster.omscs.ml.wekarun.config.bgg.MixedBgWeight;
 import com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight500;
+import org.apache.commons.lang.time.StopWatch;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class MainWekaRun {
     // =================================================
 
     // the source data files (.arff) containing instance data
-    private static final DataFileGroup DATASETS = DFG_MIXED;
+    private static final DataFileGroup DATASETS = DFG_SINGLE;
 
     // the group of classifiers to run against the data sets
     private static final ClassifierGroup CLASSIFIERS = CG_SINGLE_J48;
@@ -39,6 +40,9 @@ public class MainWekaRun {
             FilterType.SUPERVISED_RESAMPLE
     );
 
+    // the name of the CSV file
+    private static final String CSV_FILE_NAME = "myTest";
+
     // =================================================
 
     /**
@@ -48,9 +52,14 @@ public class MainWekaRun {
      */
     public static void main(String[] args) {
         print("%n%n-- Starting WEKA Experiment --");
+        StopWatch sw = new StopWatch();
+        sw.start();
 
-        new BggDataExperiment(DATASETS, CLASSIFIERS, FILTERS).run();
+        new BggDataExperiment(DATASETS, CLASSIFIERS, FILTERS)
+                .csvFileName(CSV_FILE_NAME)
+                .run();
 
-        print("%n%n-- End of Run --");
+        sw.stop();
+        print("%n%n-- End of Run -- [%s]", sw);
     }
 }

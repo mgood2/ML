@@ -9,7 +9,7 @@ public class SingleJ48 extends ClassifierGroup {
 
     @Override
     protected void configure() {
-        add(WekaClassifier.Type.J48,
+        add("J48", WekaClassifier.Type.J48,
                 opt(_C, 0.25),
                 opt(_M, 2)
         );

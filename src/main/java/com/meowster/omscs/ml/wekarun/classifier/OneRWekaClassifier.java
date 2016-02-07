@@ -19,8 +19,8 @@ import weka.classifiers.rules.OneR;
  */
 public class OneRWekaClassifier extends WekaClassifier {
 
-    OneRWekaClassifier(Option[] options) {
-        super(Type.ONE_R, options);
+    OneRWekaClassifier(String tag, Option[] options) {
+        super(tag, Type.ONE_R, options);
     }
 
     @Override

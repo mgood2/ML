@@ -1,5 +1,6 @@
 package com.meowster.omscs.ml.wekarun;
 
+import com.google.common.io.Files;
 import com.meowster.omscs.ml.wekarun.CvTestResults.Results;
 import com.meowster.omscs.ml.wekarun.classifier.WekaClassifier;
 import com.meowster.omscs.ml.wekarun.classifier.ZeroRWekaClassifier;
@@ -11,6 +12,8 @@ import weka.classifiers.Evaluation;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -53,6 +56,8 @@ public class WekaExperiment {
     private final DataFileGroup datasets;
     private final ClassifierGroup classifiers;
     private final List<FilterType> filters;
+
+    private final CsvGenerator csv = new CsvGenerator();
 
     private double percentSplit = DEFAULT_PERCENT_SPLIT;
     private int randomSeed = DEFAULT_RANDOM_SEED;
@@ -131,6 +136,30 @@ public class WekaExperiment {
         return this;
     }
 
+    /**
+     * Sets the name of the output CSV file. Note that the directory is
+     * defined by overriding {@link #resultsDirectory()}, if necessary.
+     *
+     * @param name name of CSV file (without .csv suffix)
+     * @return self, for chaining
+     */
+    public WekaExperiment csvFileName(String name) {
+        csv.setFilename(name);
+        return this;
+    }
+
+    /**
+     * Returns the path of the directory to which CSV files should be written.
+     * This default implmentation returns {@code "."}.
+     * <p>
+     * Subclasses can override this method to define an alternate path.
+     *
+     * @return path of results directory
+     */
+    protected String resultsDirectory() {
+        return ".";
+    }
+
 
     /**
      * Runs the experiment.
@@ -140,6 +169,18 @@ public class WekaExperiment {
         Iterator<DataFileInfo> dfIter = datasets.iterator();
         while (dfIter.hasNext()) {
             processDataFile(dfIter.next(), classifiers, filters);
+        }
+        persistResults(csv);
+    }
+
+    private void persistResults(CsvGenerator csv) {
+        File dir = new File(resultsDirectory());
+        File out = new File(dir, csv.filename());
+
+        try {
+            Files.write(csv.csvData().getBytes(), out);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -179,7 +220,7 @@ public class WekaExperiment {
                 trainCrossValidateAndTest(instances, classifier, filter);
 
         outputResults(info, results);
-        persistResults(info, results, classifier, filter);
+        csv.addRow(info, results, classifier, filter);
     }
 
     private Instances loadInstances(String path) {
@@ -274,13 +315,6 @@ public class WekaExperiment {
         }
 
         return results;
-    }
-
-    private void persistResults(DataFileInfo info,
-                                CvTestResults results,
-                                WekaClassifier classifier,
-                                FilterType filter) {
-        // TODO persist results to disk
     }
 
     private List<Double> extractPerformanceMetrics(Evaluation eval) {

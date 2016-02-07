@@ -44,8 +44,8 @@ import weka.classifiers.lazy.IBk;
  */
 public class IbkWekaClassifier extends WekaClassifier {
 
-    IbkWekaClassifier(Option... options) {
-        super(Type.IBK, options);
+    IbkWekaClassifier(String tag, Option... options) {
+        super(tag, Type.IBK, options);
     }
 
     @Override

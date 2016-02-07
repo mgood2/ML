@@ -12,7 +12,9 @@ public abstract class WekaClassifier {
     private static final String SPACE = " ";
     private static final String EMPTY = "";
 
-    /** Base type of classifier. */
+    /**
+     * Base type of classifier.
+     */
     public enum Type {
         ZERO_R,
         ONE_R,
@@ -24,17 +26,22 @@ public abstract class WekaClassifier {
     }
 
 
+    protected final String tag;
     protected final Type type;
     protected final Option[] options;
     protected Classifier lastInstance;
 
     /**
      * Constructs a weka classifier wrapper of the given type and options.
+     * The supplied tag is used to identify this particular instance of
+     * classifier in the CSV file output.
      *
-     * @param type classifier type
+     * @param tag     identifying tag
+     * @param type    classifier type
      * @param options classifier options
      */
-    WekaClassifier(Type type, Option... options) {
+    WekaClassifier(String tag, Type type, Option... options) {
+        this.tag = tag;
         this.type = type;
         this.options = options;
     }
@@ -87,11 +94,11 @@ public abstract class WekaClassifier {
         }
 
         StringBuilder sb = new StringBuilder();
-        for (Option o: options) {
+        for (Option o : options) {
             sb.append(o).append(SPACE);
         }
         final int len = sb.length();
-        sb.delete(len-1, len);
+        sb.delete(len - 1, len);
         return sb.toString();
     }
 
@@ -109,9 +116,19 @@ public abstract class WekaClassifier {
     @Override
     public String toString() {
         return MoreObjects.toStringHelper(this)
+                .add("tag", tag)
                 .add("type", type)
                 .add("options", options)
                 .toString();
+    }
+
+    /**
+     * Returns the tag associated with this instance.
+     *
+     * @return the classifier tag
+     */
+    public String tag() {
+        return tag;
     }
 
     /**
@@ -122,33 +139,35 @@ public abstract class WekaClassifier {
      */
     public String wekaToString() {
         return lastInstance == null ? "(no instance generated)"
-                                    : lastInstance.toString();
+                : lastInstance.toString();
     }
 
     /**
      * Creates a classifier instance of the given type with the specified options.
+     * The tag is used for identifying this classifier instance in the CSV file.
      *
-     * @param type classifier type
+     * @param tag     identifying tag
+     * @param type    classifier type
      * @param options options for the classifier
      * @return classifier instance
      */
-    public static WekaClassifier createClassifier(Type type, Option... options) {
-
+    public static WekaClassifier createClassifier(String tag, Type type,
+                                                  Option... options) {
         switch (type) {
             case ZERO_R:
-                return new ZeroRWekaClassifier(options);
+                return new ZeroRWekaClassifier(tag, options);
             case ONE_R:
-                return new OneRWekaClassifier(options);
+                return new OneRWekaClassifier(tag, options);
             case J48:
-                return new J48WekaClassifier(options);
+                return new J48WekaClassifier(tag, options);
             case IBK:
-                return new IbkWekaClassifier(options);
+                return new IbkWekaClassifier(tag, options);
             case SMO:
-                return new SmoWekaClassifier(options);
+                return new SmoWekaClassifier(tag, options);
             case MULTILAYER_PERCEPTRON:
-                return new MultiLayerPerceptronWekaClassifier(options);
+                return new MultiLayerPerceptronWekaClassifier(tag, options);
             case ADA_BOOST_M1:
-                return new AdaBoostM1WekaClassifier(options);
+                return new AdaBoostM1WekaClassifier(tag, options);
             default:
                 return null;
         }
@@ -165,7 +184,7 @@ public abstract class WekaClassifier {
         /**
          * Creates an option instance.
          *
-         * @param key option key
+         * @param key   option key
          * @param value option value
          */
         public Option(String key, String value) {

@@ -70,8 +70,8 @@ import weka.classifiers.functions.MultilayerPerceptron;
  */
 public class MultiLayerPerceptronWekaClassifier extends WekaClassifier {
 
-    MultiLayerPerceptronWekaClassifier(Option... options) {
-        super(Type.MULTILAYER_PERCEPTRON, options);
+    MultiLayerPerceptronWekaClassifier(String tag, Option... options) {
+        super(tag, Type.MULTILAYER_PERCEPTRON, options);
     }
 
     @Override

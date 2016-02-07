@@ -36,4 +36,9 @@ public class BggDataExperiment extends WekaExperiment {
 
         return instances;
     }
+
+    @Override
+    protected String resultsDirectory() {
+        return "data/results/generated";
+    }
 }
