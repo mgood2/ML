@@ -19,6 +19,7 @@ public abstract class ClassifierGroup {
 
     private static final String QUOTE = "\"";
     private static final String SPACE = " ";
+    private static final String FMT_PRECISION = "%.4f";
 
     // option keys
     protected static final String _A = "-A";
@@ -91,14 +92,49 @@ public abstract class ClassifierGroup {
     }
 
     /**
-     * Creates an option with a numeric value.
+     * Creates an option with an integer value.
      *
      * @param key   option key
      * @param value option value
      * @return the option
      */
-    protected Option opt(String key, Number value) {
+    protected Option opt(String key, int value) {
         return new Option(key, String.valueOf(value));
+    }
+
+    /**
+     * Creates an option with a long value.
+     *
+     * @param key   option key
+     * @param value option value
+     * @return the option
+     */
+    protected Option opt(String key, long value) {
+        return new Option(key, String.valueOf(value));
+    }
+
+    /**
+     * Creates an option with a float value.
+     *
+     * @param key   option key
+     * @param value option value
+     * @return the option
+     */
+    protected Option opt(String key, float value) {
+        String v = String.format(FMT_PRECISION, value);
+        return new Option(key, v);
+    }
+
+    /**
+     * Creates an option with a double value.
+     *
+     * @param key   option key
+     * @param value option value
+     * @return the option
+     */
+    protected Option opt(String key, double value) {
+        String v = String.format(FMT_PRECISION, value);
+        return new Option(key, v);
     }
 
     /**

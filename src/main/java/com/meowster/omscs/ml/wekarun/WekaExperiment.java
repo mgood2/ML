@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -165,6 +166,7 @@ public class WekaExperiment {
      * Runs the experiment.
      */
     public void run() {
+        print("[Start time: %s]", new Date());
         print("[Experiment class: %s]", getClass().getName());
 
         // outer iteration over file sets

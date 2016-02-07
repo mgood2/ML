@@ -1,0 +1,1066 @@
+
+-- Starting WEKA Experiment --
+[Start time: Sat Feb 06 23:57:23 PST 2016]
+[Experiment class: com.meowster.omscs.ml.wekarun.BggReducedDataExperiment]
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight2000...
+ ..adding path: data/bgg-out/bgweights-002000.arff
+
+Processing data file: data/bgg-out/bgweights-002000.arff ...
+
+Instances Info: #instances=2000, #attributes=9
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.VaryingJ48TreePrConf...
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.10, type=J48, options=[-C 0.1000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.15, type=J48, options=[-C 0.1500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.20, type=J48, options=[-C 0.2000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.25, type=J48, options=[-C 0.2500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.30, type=J48, options=[-C 0.3000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.35, type=J48, options=[-C 0.3500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.40, type=J48, options=[-C 0.4000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.45, type=J48, options=[-C 0.4500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.50, type=J48, options=[-C 0.5000, -M 2]}
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.10, type=J48, options=[-C 0.1000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   maxp <= 8
+|   |   |   time <= 70: MEDIUM_LIGHT (55.0/13.0)
+|   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   maxp > 8: MEDIUM_LIGHT (7.0/1.0)
+|   strategy = N
+|   |   abstract = Y: MEDIUM_LIGHT (131.0/55.0)
+|   |   abstract = N
+|   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   wargames = N
+|   |   |   |   time <= 30: LIGHT (335.0/116.0)
+|   |   |   |   time > 30
+|   |   |   |   |   maxp <= 9: MEDIUM_LIGHT (422.0/167.0)
+|   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y: MEDIUM (102.0/34.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   abstract = Y: LIGHT (2.0/1.0)
+|   |   |   |   |   abstract = N: MEDIUM_LIGHT (90.0/41.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240: MEDIUM_HEAVY (41.0/20.0)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	27
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.311
+ CV-2     0:00:00.117
+ CV-3     0:00:00.141
+ CV-4     0:00:00.143
+ CV-5     0:00:00.136
+ CV-6     0:00:00.098
+ CV-7     0:00:00.085
+ CV-8     0:00:00.096
+ CV-9     0:00:00.113
+ CV-10    0:00:00.080
+ TEST     0:00:00.009
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.52  40.48   0.59   0.60   0.59
+ TEST: 64.22  35.78   0.64   0.64   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.15, type=J48, options=[-C 0.1500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   maxp <= 8
+|   |   |   time <= 70: MEDIUM_LIGHT (55.0/13.0)
+|   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   maxp > 8: MEDIUM_LIGHT (7.0/1.0)
+|   strategy = N
+|   |   childrens = Y: LIGHT (59.0/11.0)
+|   |   childrens = N
+|   |   |   abstract = Y: MEDIUM_LIGHT (130.0/55.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30: LIGHT (292.0/111.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9: MEDIUM_LIGHT (407.0/157.0)
+|   |   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y: MEDIUM (102.0/34.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   abstract = Y: LIGHT (2.0/1.0)
+|   |   |   |   |   abstract = N: MEDIUM_LIGHT (90.0/41.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   wargames = Y
+|   |   |   time <= 480: MEDIUM (21.0/9.0)
+|   |   |   time > 480: MEDIUM_HEAVY (5.0/2.0)
+|   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+
+Number of Leaves  : 	17
+
+Size of the tree : 	33
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.089
+ CV-2     0:00:00.094
+ CV-3     0:00:00.089
+ CV-4     0:00:00.084
+ CV-5     0:00:00.095
+ CV-6     0:00:00.110
+ CV-7     0:00:00.118
+ CV-8     0:00:00.117
+ CV-9     0:00:00.095
+ CV-10    0:00:00.088
+ TEST     0:00:00.009
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.12  40.88   0.59   0.59   0.58
+ TEST: 65.42  34.58   0.65   0.65   0.65
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.20, type=J48, options=[-C 0.2000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y: LIGHT (59.0/11.0)
+|   |   childrens = N
+|   |   |   abstract = Y: MEDIUM_LIGHT (130.0/55.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1: LIGHT (111.0/30.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (20.0/6.0)
+|   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   time > 45: MEDIUM_LIGHT (66.0/29.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (273.0/96.0)
+|   |   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y: MEDIUM (102.0/34.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   abstract = Y: LIGHT (2.0/1.0)
+|   |   |   |   |   abstract = N: MEDIUM_LIGHT (90.0/41.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480: MEDIUM (21.0/9.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	31
+
+Size of the tree : 	61
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.091
+ CV-2     0:00:00.094
+ CV-3     0:00:00.087
+ CV-4     0:00:00.092
+ CV-5     0:00:00.092
+ CV-6     0:00:00.090
+ CV-7     0:00:00.090
+ CV-8     0:00:00.091
+ CV-9     0:00:00.099
+ CV-10    0:00:00.088
+ TEST     0:00:00.010
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 58.96  41.04   0.59   0.59   0.58
+ TEST: 66.62  33.38   0.66   0.67   0.66
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.25, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y: MEDIUM_LIGHT (130.0/55.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1: LIGHT (111.0/30.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (20.0/6.0)
+|   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   time > 45: MEDIUM_LIGHT (66.0/29.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (273.0/96.0)
+|   |   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   abstract = Y: LIGHT (2.0/1.0)
+|   |   |   |   |   abstract = N: MEDIUM_LIGHT (90.0/41.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480: MEDIUM (21.0/9.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	37
+
+Size of the tree : 	73
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.098
+ CV-2     0:00:00.093
+ CV-3     0:00:00.098
+ CV-4     0:00:00.091
+ CV-5     0:00:00.091
+ CV-6     0:00:00.091
+ CV-7     0:00:00.095
+ CV-8     0:00:00.097
+ CV-9     0:00:00.101
+ CV-10    0:00:00.097
+ TEST     0:00:00.010
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.13  40.87   0.59   0.59   0.58
+ TEST: 64.97  35.03   0.65   0.65   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.30, type=J48, options=[-C 0.3000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y: MEDIUM_LIGHT (130.0/55.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (108.0/28.0)
+|   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (3.0/1.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (20.0/6.0)
+|   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   time > 45: MEDIUM_LIGHT (66.0/29.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (273.0/96.0)
+|   |   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (28.0/13.0)
+|   |   |   |   |   |   |   time > 150: MEDIUM (10.0/4.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (3.0)
+|   |   |   |   |   maxp > 5: MEDIUM_LIGHT (51.0/21.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   time <= 300
+|   |   |   |   |   |   maxp <= 6: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 300
+|   |   |   |   |   |   maxp <= 3: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   |   |   |   maxp > 3: MEDIUM (7.0/2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	43
+
+Size of the tree : 	85
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.096
+ CV-2     0:00:00.100
+ CV-3     0:00:00.092
+ CV-4     0:00:00.099
+ CV-5     0:00:00.095
+ CV-6     0:00:00.095
+ CV-7     0:00:00.101
+ CV-8     0:00:00.102
+ CV-9     0:00:00.095
+ CV-10    0:00:00.082
+ TEST     0:00:00.011
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.40  40.60   0.59   0.59   0.59
+ TEST: 64.52  35.48   0.65   0.65   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.35, type=J48, options=[-C 0.3500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y
+|   |   |   |   minp <= 2: MEDIUM_LIGHT (126.0/52.0)
+|   |   |   |   minp > 2: MEDIUM (4.0/2.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (108.0/28.0)
+|   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (3.0/1.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (20.0/6.0)
+|   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   time > 45: MEDIUM_LIGHT (66.0/29.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (273.0/96.0)
+|   |   |   |   |   |   maxp > 9: LIGHT (23.0/8.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (28.0/13.0)
+|   |   |   |   |   |   |   time > 150: MEDIUM (10.0/4.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (3.0)
+|   |   |   |   |   maxp > 5: MEDIUM_LIGHT (51.0/21.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   time <= 300
+|   |   |   |   |   |   maxp <= 6: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 300
+|   |   |   |   |   |   maxp <= 3: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   |   |   |   maxp > 3: MEDIUM (7.0/2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	44
+
+Size of the tree : 	87
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.094
+ CV-2     0:00:00.088
+ CV-3     0:00:00.093
+ CV-4     0:00:00.098
+ CV-5     0:00:00.096
+ CV-6     0:00:00.108
+ CV-7     0:00:00.102
+ CV-8     0:00:00.107
+ CV-9     0:00:00.100
+ CV-10    0:00:00.102
+ TEST     0:00:00.011
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.35  40.65   0.59   0.59   0.59
+ TEST: 64.37  35.63   0.64   0.64   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.40, type=J48, options=[-C 0.4000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70: MEDIUM (30.0/12.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y
+|   |   |   |   time <= 40
+|   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   time > 40
+|   |   |   |   |   maxp <= 3: MEDIUM (15.0/9.0)
+|   |   |   |   |   maxp > 3: MEDIUM_LIGHT (23.0/9.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   party = Y: LIGHT (6.0)
+|   |   |   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/28.0)
+|   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (20.0/6.0)
+|   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   time > 45: MEDIUM_LIGHT (66.0/29.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (273.0/96.0)
+|   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   party = Y: LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   maxp <= 10: LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 10: MEDIUM_LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   maxp <= 20: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 20: LIGHT (2.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (28.0/13.0)
+|   |   |   |   |   |   |   time > 150: MEDIUM (10.0/4.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (3.0)
+|   |   |   |   |   maxp > 5: MEDIUM_LIGHT (51.0/21.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   time <= 300
+|   |   |   |   |   |   maxp <= 6: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 300
+|   |   |   |   |   |   maxp <= 3: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   |   |   |   maxp > 3: MEDIUM (7.0/2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	51
+
+Size of the tree : 	101
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.095
+ CV-2     0:00:00.100
+ CV-3     0:00:00.095
+ CV-4     0:00:00.107
+ CV-5     0:00:00.086
+ CV-6     0:00:00.083
+ CV-7     0:00:00.091
+ CV-8     0:00:00.085
+ CV-9     0:00:00.089
+ CV-10    0:00:00.086
+ TEST     0:00:00.010
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.39  40.61   0.59   0.59   0.59
+ TEST: 64.82  35.18   0.65   0.65   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.45, type=J48, options=[-C 0.4500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70
+|   |   |   |   |   |   maxp <= 5: MEDIUM (18.0/6.0)
+|   |   |   |   |   |   maxp > 5
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   minp > 2: MEDIUM (6.0/3.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y
+|   |   |   |   time <= 40
+|   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   time > 40
+|   |   |   |   |   maxp <= 3: MEDIUM (15.0/9.0)
+|   |   |   |   |   maxp > 3: MEDIUM_LIGHT (23.0/9.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   party = Y: LIGHT (6.0)
+|   |   |   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/28.0)
+|   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (19.0/6.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (44.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (206.0/75.0)
+|   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (89.0/27.0)
+|   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   party = Y: LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   maxp <= 10: LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 10: MEDIUM_LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   maxp <= 20: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 20: LIGHT (2.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (28.0/13.0)
+|   |   |   |   |   |   |   time > 150: MEDIUM (10.0/4.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (3.0)
+|   |   |   |   |   maxp > 5: MEDIUM_LIGHT (51.0/21.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   time <= 300
+|   |   |   |   |   |   maxp <= 6: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 300
+|   |   |   |   |   |   maxp <= 3: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   |   |   |   maxp > 3: MEDIUM (7.0/2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	57
+
+Size of the tree : 	113
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.095
+ CV-2     0:00:00.102
+ CV-3     0:00:00.089
+ CV-4     0:00:00.088
+ CV-5     0:00:00.091
+ CV-6     0:00:00.091
+ CV-7     0:00:00.098
+ CV-8     0:00:00.091
+ CV-9     0:00:00.094
+ CV-10    0:00:00.104
+ TEST     0:00:00.012
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.41  40.59   0.59   0.59   0.59
+ TEST: 65.12  34.88   0.65   0.65   0.65
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.50, type=J48, options=[-C 0.5000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   abstract = Y: MEDIUM (2.0/1.0)
+|   |   |   abstract = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   time <= 70: MEDIUM_LIGHT (29.0/10.0)
+|   |   |   |   |   time > 70
+|   |   |   |   |   |   maxp <= 5: MEDIUM (18.0/6.0)
+|   |   |   |   |   |   maxp > 5
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   minp > 2: MEDIUM (6.0/3.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   childrens = Y
+|   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   minp > 2
+|   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   childrens = N
+|   |   |   abstract = Y
+|   |   |   |   time <= 40
+|   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   time > 40
+|   |   |   |   |   maxp <= 3: MEDIUM (15.0/9.0)
+|   |   |   |   |   maxp > 3: MEDIUM_LIGHT (23.0/9.0)
+|   |   |   abstract = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/18.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   time <= 30
+|   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   party = Y: LIGHT (6.0)
+|   |   |   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/28.0)
+|   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (11.0/4.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (53.0/21.0)
+|   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (26.0/10.0)
+|   |   |   |   |   |   |   maxp > 5: LIGHT (80.0/29.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (19.0/6.0)
+|   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (36.0/14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (44.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (130.0/51.0)
+|   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3: MEDIUM_LIGHT (68.0/20.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 6: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (89.0/27.0)
+|   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   party = Y: LIGHT (9.0/1.0)
+|   |   |   |   |   |   |   party = N
+|   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   maxp <= 10: LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 10: MEDIUM_LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   maxp <= 20: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   maxp > 20: LIGHT (2.0)
+time > 90
+|   time <= 240
+|   |   wargames = Y
+|   |   |   time <= 150
+|   |   |   |   maxp <= 2: MEDIUM (26.0/13.0)
+|   |   |   |   maxp > 2
+|   |   |   |   |   minp <= 1: MEDIUM (2.0)
+|   |   |   |   |   minp > 1
+|   |   |   |   |   |   maxp <= 6: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM (2.0)
+|   |   |   time > 150: MEDIUM (56.0/10.0)
+|   |   wargames = N
+|   |   |   strategy = Y: MEDIUM (39.0/14.0)
+|   |   |   strategy = N
+|   |   |   |   minp <= 4
+|   |   |   |   |   maxp <= 5
+|   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (28.0/13.0)
+|   |   |   |   |   |   |   time > 150: MEDIUM (10.0/4.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (3.0)
+|   |   |   |   |   maxp > 5: MEDIUM_LIGHT (51.0/21.0)
+|   |   |   |   minp > 4: LIGHT (2.0/1.0)
+|   time > 240
+|   |   time <= 1440
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   time <= 300
+|   |   |   |   |   |   maxp <= 6: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 300
+|   |   |   |   |   |   maxp <= 3: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   |   |   |   maxp > 3: MEDIUM (7.0/2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (15.0/5.0)
+|   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	60
+
+Size of the tree : 	119
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.105
+ CV-2     0:00:00.101
+ CV-3     0:00:00.094
+ CV-4     0:00:00.113
+ CV-5     0:00:00.107
+ CV-6     0:00:00.098
+ CV-7     0:00:00.096
+ CV-8     0:00:00.086
+ CV-9     0:00:00.089
+ CV-10    0:00:00.093
+ TEST     0:00:00.010
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.47  40.53   0.59   0.59   0.59
+ TEST: 65.42  34.58   0.65   0.65   0.65
+
+
+
+-- End of Run -- [0:00:09.268]

@@ -1,0 +1,1244 @@
+
+-- Starting WEKA Experiment --
+[Start time: Sat Feb 06 23:56:09 PST 2016]
+[Experiment class: com.meowster.omscs.ml.wekarun.BggDataExperiment]
+
+Configuring DataFileGroup: com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight2000...
+ ..adding path: data/bgg-out/bgweights-002000.arff
+
+Processing data file: data/bgg-out/bgweights-002000.arff ...
+
+Instances Info: #instances=2000, #attributes=13
+
+Configuring ClassifierGroup: com.meowster.omscs.ml.wekarun.config.VaryingJ48TreePrConf...
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.10, type=J48, options=[-C 0.1000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.15, type=J48, options=[-C 0.1500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.20, type=J48, options=[-C 0.2000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.25, type=J48, options=[-C 0.2500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.30, type=J48, options=[-C 0.3000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.35, type=J48, options=[-C 0.3500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.40, type=J48, options=[-C 0.4000, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.45, type=J48, options=[-C 0.4500, -M 2]}
+ ..adding classifier: J48WekaClassifier{tag=J48-pc-0.50, type=J48, options=[-C 0.5000, -M 2]}
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.10, type=J48, options=[-C 0.1000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2: MEDIUM (39.0/13.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y: MEDIUM_LIGHT (31.0/11.0)
+|   |   customizable = N
+|   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   wargames = N
+|   |   |   |   abstract = Y: MEDIUM_LIGHT (129.0/54.0)
+|   |   |   |   abstract = N
+|   |   |   |   |   time <= 30: LIGHT (327.0/108.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9: MEDIUM_LIGHT (402.0/159.0)
+|   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 4
+|   |   |   |   time <= 210: MEDIUM_LIGHT (56.0/28.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   |   minp > 4: LIGHT (2.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y: MEDIUM (14.0/5.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	55
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.409
+ CV-2     0:00:00.150
+ CV-3     0:00:00.190
+ CV-4     0:00:00.123
+ CV-5     0:00:00.121
+ CV-6     0:00:00.115
+ CV-7     0:00:00.114
+ CV-8     0:00:00.118
+ CV-9     0:00:00.110
+ CV-10    0:00:00.106
+ TEST     0:00:00.011
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 61.29  38.71   0.61   0.61   0.60
+ TEST: 63.92  36.08   0.63   0.64   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.15, type=J48, options=[-C 0.1500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2: MEDIUM (39.0/13.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y: MEDIUM_LIGHT (31.0/11.0)
+|   |   customizable = N
+|   |   |   childrens = Y: LIGHT (59.0/11.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y: MEDIUM_LIGHT (128.0/54.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30: LIGHT (284.0/103.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9: MEDIUM_LIGHT (387.0/149.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 4
+|   |   |   |   time <= 210: MEDIUM_LIGHT (56.0/28.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   |   minp > 4: LIGHT (2.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y: MEDIUM (14.0/5.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   wargames = Y
+|   |   |   |   time <= 480
+|   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   time > 480: MEDIUM_HEAVY (5.0/2.0)
+|   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+
+Number of Leaves  : 	29
+
+Size of the tree : 	57
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.146
+ CV-2     0:00:00.126
+ CV-3     0:00:00.121
+ CV-4     0:00:00.108
+ CV-5     0:00:00.110
+ CV-6     0:00:00.119
+ CV-7     0:00:00.117
+ CV-8     0:00:00.112
+ CV-9     0:00:00.113
+ CV-10    0:00:00.112
+ TEST     0:00:00.012
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 61.30  38.70   0.61   0.61   0.61
+ TEST: 64.37  35.63   0.64   0.64   0.64
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.20, type=J48, options=[-C 0.2000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2: MEDIUM (39.0/13.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y: MEDIUM_LIGHT (31.0/11.0)
+|   |   customizable = N
+|   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   wargames = N
+|   |   |   |   abstract = Y: MEDIUM_LIGHT (129.0/54.0)
+|   |   |   |   abstract = N
+|   |   |   |   |   time <= 30: LIGHT (327.0/108.0)
+|   |   |   |   |   time > 30
+|   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (78.0/21.0)
+|   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (15.0/3.0)
+|   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 1: LIGHT (79.0/35.0)
+|   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (211.0/77.0)
+|   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 4
+|   |   |   |   time <= 210: MEDIUM_LIGHT (56.0/28.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   |   minp > 4: LIGHT (2.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y: MEDIUM (14.0/5.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	67
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.121
+ CV-2     0:00:00.122
+ CV-3     0:00:00.117
+ CV-4     0:00:00.116
+ CV-5     0:00:00.108
+ CV-6     0:00:00.114
+ CV-7     0:00:00.123
+ CV-8     0:00:00.111
+ CV-9     0:00:00.113
+ CV-10    0:00:00.112
+ TEST     0:00:00.013
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 61.44  38.56   0.61   0.61   0.61
+ TEST: 62.87  37.13   0.63   0.63   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.25, type=J48, options=[-C 0.2500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2: MEDIUM (39.0/13.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y: MEDIUM_LIGHT (31.0/11.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y: MEDIUM_LIGHT (128.0/54.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1: LIGHT (108.0/27.0)
+|   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (73.0/28.0)
+|   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (19.0/8.0)
+|   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (49.0/16.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 4
+|   |   |   |   time <= 210: MEDIUM_LIGHT (56.0/28.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   |   minp > 4: LIGHT (2.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	49
+
+Size of the tree : 	97
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.118
+ CV-2     0:00:00.119
+ CV-3     0:00:00.118
+ CV-4     0:00:00.111
+ CV-5     0:00:00.108
+ CV-6     0:00:00.120
+ CV-7     0:00:00.112
+ CV-8     0:00:00.126
+ CV-9     0:00:00.114
+ CV-10    0:00:00.112
+ TEST     0:00:00.012
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 61.07  38.93   0.60   0.61   0.60
+ TEST: 63.62  36.38   0.64   0.64   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.30, type=J48, options=[-C 0.3000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2: MEDIUM (39.0/13.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y: MEDIUM_LIGHT (31.0/11.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y: MEDIUM_LIGHT (128.0/54.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (105.0/25.0)
+|   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (3.0/1.0)
+|   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (73.0/28.0)
+|   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (19.0/8.0)
+|   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (49.0/16.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   time <= 210
+|   |   |   |   minp <= 2: MEDIUM_LIGHT (47.0/22.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   maxp <= 7: MEDIUM (7.0/2.0)
+|   |   |   |   |   maxp > 7: LIGHT (4.0/2.0)
+|   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	51
+
+Size of the tree : 	101
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.118
+ CV-2     0:00:00.118
+ CV-3     0:00:00.110
+ CV-4     0:00:00.112
+ CV-5     0:00:00.122
+ CV-6     0:00:00.135
+ CV-7     0:00:00.132
+ CV-8     0:00:00.140
+ CV-9     0:00:00.138
+ CV-10    0:00:00.130
+ TEST     0:00:00.013
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 60.78  39.22   0.60   0.61   0.60
+ TEST: 63.47  36.53   0.64   0.63   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.35, type=J48, options=[-C 0.3500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2
+|   |   |   |   |   |   thematic = Y: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   |   |   |   thematic = N: MEDIUM (34.0/10.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y
+|   |   |   time <= 45
+|   |   |   |   maxp <= 7: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   time > 45: MEDIUM_LIGHT (13.0/3.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y
+|   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (124.0/51.0)
+|   |   |   |   |   |   minp > 2: MEDIUM (4.0/2.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 7: LIGHT (65.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 7: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (17.0/6.0)
+|   |   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (47.0/16.0)
+|   |   |   |   |   |   |   |   maxp > 9: LIGHT (11.0/2.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 1: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   minp > 1
+|   |   |   |   time <= 210
+|   |   |   |   |   minp <= 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (37.0/17.0)
+|   |   |   |   |   |   maxp > 7: MEDIUM (5.0/2.0)
+|   |   |   |   |   minp > 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 7: LIGHT (4.0/2.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	59
+
+Size of the tree : 	117
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.131
+ CV-2     0:00:00.130
+ CV-3     0:00:00.129
+ CV-4     0:00:00.132
+ CV-5     0:00:00.122
+ CV-6     0:00:00.128
+ CV-7     0:00:00.120
+ CV-8     0:00:00.126
+ CV-9     0:00:00.128
+ CV-10    0:00:00.126
+ TEST     0:00:00.014
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 60.43  39.57   0.60   0.60   0.60
+ TEST: 63.17  36.83   0.63   0.63   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.40, type=J48, options=[-C 0.4000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2
+|   |   |   |   |   |   thematic = Y: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   |   |   |   thematic = N: MEDIUM (34.0/10.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y
+|   |   |   time <= 45
+|   |   |   |   maxp <= 7: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   time > 45: MEDIUM_LIGHT (13.0/3.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y
+|   |   |   |   |   |   time <= 40
+|   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   |   |   time > 40
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM (13.0/7.0)
+|   |   |   |   |   |   |   |   maxp > 3: MEDIUM_LIGHT (20.0/9.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 7: LIGHT (65.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 7: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (17.0/6.0)
+|   |   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (47.0/16.0)
+|   |   |   |   |   |   |   |   maxp > 9: LIGHT (11.0/2.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 1: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   minp > 1
+|   |   |   |   time <= 210
+|   |   |   |   |   minp <= 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (37.0/17.0)
+|   |   |   |   |   |   maxp > 7: MEDIUM (5.0/2.0)
+|   |   |   |   |   minp > 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 7: LIGHT (4.0/2.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	62
+
+Size of the tree : 	123
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.139
+ CV-2     0:00:00.123
+ CV-3     0:00:00.131
+ CV-4     0:00:00.135
+ CV-5     0:00:00.124
+ CV-6     0:00:00.135
+ CV-7     0:00:00.131
+ CV-8     0:00:00.132
+ CV-9     0:00:00.125
+ CV-10    0:00:00.124
+ TEST     0:00:00.014
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 60.37  39.63   0.60   0.60   0.60
+ TEST: 63.47  36.53   0.64   0.63   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.45, type=J48, options=[-C 0.4500, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2
+|   |   |   |   |   |   thematic = Y: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   |   |   |   thematic = N: MEDIUM (34.0/10.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y
+|   |   |   time <= 45
+|   |   |   |   maxp <= 7: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   time > 45: MEDIUM_LIGHT (13.0/3.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y
+|   |   |   |   |   |   time <= 40
+|   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   |   |   time > 40
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM (13.0/7.0)
+|   |   |   |   |   |   |   |   maxp > 3: MEDIUM_LIGHT (20.0/9.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 7: LIGHT (65.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 7: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (17.0/6.0)
+|   |   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (47.0/16.0)
+|   |   |   |   |   |   |   |   maxp > 9: LIGHT (11.0/2.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 1: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   minp > 1
+|   |   |   |   time <= 210
+|   |   |   |   |   minp <= 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (37.0/17.0)
+|   |   |   |   |   |   maxp > 7: MEDIUM (5.0/2.0)
+|   |   |   |   |   minp > 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 7: LIGHT (4.0/2.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N: MEDIUM (119.0/37.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	62
+
+Size of the tree : 	123
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.126
+ CV-2     0:00:00.124
+ CV-3     0:00:00.124
+ CV-4     0:00:00.119
+ CV-5     0:00:00.131
+ CV-6     0:00:00.130
+ CV-7     0:00:00.115
+ CV-8     0:00:00.128
+ CV-9     0:00:00.129
+ CV-10    0:00:00.121
+ TEST     0:00:00.013
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.98  40.02   0.59   0.60   0.59
+ TEST: 63.47  36.53   0.64   0.63   0.63
+
+
+  Processing with classifier: J48WekaClassifier{tag=J48-pc-0.50, type=J48, options=[-C 0.5000, -M 2]}
+
+    Processing with filter: supervised_resample
+
+>CV Run: ..1..2..3..4..5..6..7..8..9..10.. DONE
+
+>Test Run >>
+
+J48 pruned tree
+------------------
+
+time <= 90
+|   strategy = Y
+|   |   time <= 45: MEDIUM_LIGHT (26.0/2.0)
+|   |   time > 45
+|   |   |   family = Y: MEDIUM_LIGHT (19.0/3.0)
+|   |   |   family = N
+|   |   |   |   maxp <= 8
+|   |   |   |   |   maxp <= 2: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   maxp > 2
+|   |   |   |   |   |   thematic = Y: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   |   |   |   thematic = N: MEDIUM (34.0/10.0)
+|   |   |   |   maxp > 8: MEDIUM_LIGHT (5.0)
+|   strategy = N
+|   |   customizable = Y
+|   |   |   time <= 45
+|   |   |   |   maxp <= 7: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   time > 45: MEDIUM_LIGHT (13.0/3.0)
+|   |   customizable = N
+|   |   |   childrens = Y
+|   |   |   |   minp <= 2: LIGHT (55.0/9.0)
+|   |   |   |   minp > 2
+|   |   |   |   |   time <= 15: LIGHT (2.0)
+|   |   |   |   |   time > 15: MEDIUM_LIGHT (2.0)
+|   |   |   childrens = N
+|   |   |   |   wargames = Y: MEDIUM_LIGHT (53.0/19.0)
+|   |   |   |   wargames = N
+|   |   |   |   |   abstract = Y
+|   |   |   |   |   |   time <= 40
+|   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (90.0/33.0)
+|   |   |   |   |   |   |   minp > 2: LIGHT (2.0/1.0)
+|   |   |   |   |   |   time > 40
+|   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   maxp <= 3: MEDIUM (13.0/7.0)
+|   |   |   |   |   |   |   |   maxp > 3: MEDIUM_LIGHT (20.0/9.0)
+|   |   |   |   |   abstract = N
+|   |   |   |   |   |   time <= 30
+|   |   |   |   |   |   |   minp <= 0: LIGHT (6.0/2.0)
+|   |   |   |   |   |   |   minp > 0
+|   |   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   |   time <= 25
+|   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   minp <= 3: LIGHT (103.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 3: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   time > 25
+|   |   |   |   |   |   |   |   |   |   no-subdomain = Y
+|   |   |   |   |   |   |   |   |   |   |   minp <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 7: LIGHT (65.0/25.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 7: MEDIUM_LIGHT (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM_LIGHT (20.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   maxp > 5: LIGHT (17.0/6.0)
+|   |   |   |   |   |   |   |   |   |   no-subdomain = N
+|   |   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (4.0)
+|   |   |   |   |   |   |   |   |   |   |   maxp > 3: LIGHT (47.0/16.0)
+|   |   |   |   |   |   |   |   maxp > 9: LIGHT (11.0/2.0)
+|   |   |   |   |   |   time > 30
+|   |   |   |   |   |   |   maxp <= 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (77.0/21.0)
+|   |   |   |   |   |   |   |   family = N
+|   |   |   |   |   |   |   |   |   maxp <= 4
+|   |   |   |   |   |   |   |   |   |   maxp <= 3: MEDIUM_LIGHT (14.0/3.0)
+|   |   |   |   |   |   |   |   |   |   maxp > 3
+|   |   |   |   |   |   |   |   |   |   |   time <= 60
+|   |   |   |   |   |   |   |   |   |   |   |   minp <= 1: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   time <= 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: LIGHT (30.0/9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   time > 45
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp <= 2: MEDIUM_LIGHT (34.0/18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   minp > 2: LIGHT (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   time > 60: MEDIUM_LIGHT (16.0/6.0)
+|   |   |   |   |   |   |   |   |   maxp > 4: MEDIUM_LIGHT (207.0/74.0)
+|   |   |   |   |   |   |   maxp > 9
+|   |   |   |   |   |   |   |   family = Y: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   |   family = N: LIGHT (20.0/5.0)
+time > 90
+|   time <= 240
+|   |   no-subdomain = Y
+|   |   |   minp <= 1: MEDIUM_LIGHT (5.0/2.0)
+|   |   |   minp > 1
+|   |   |   |   time <= 210
+|   |   |   |   |   minp <= 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (37.0/17.0)
+|   |   |   |   |   |   maxp > 7: MEDIUM (5.0/2.0)
+|   |   |   |   |   minp > 2
+|   |   |   |   |   |   maxp <= 7: MEDIUM (7.0/2.0)
+|   |   |   |   |   |   maxp > 7: LIGHT (4.0/2.0)
+|   |   |   |   time > 210: MEDIUM (3.0/1.0)
+|   |   no-subdomain = N
+|   |   |   family = Y: MEDIUM_LIGHT (7.0/1.0)
+|   |   |   family = N
+|   |   |   |   thematic = Y
+|   |   |   |   |   strategy = Y
+|   |   |   |   |   |   time <= 150
+|   |   |   |   |   |   |   maxp <= 7: MEDIUM_LIGHT (2.0)
+|   |   |   |   |   |   |   maxp > 7: MEDIUM (2.0)
+|   |   |   |   |   |   time > 150: MEDIUM (10.0/3.0)
+|   |   |   |   |   strategy = N
+|   |   |   |   |   |   maxp <= 4: MEDIUM (12.0/5.0)
+|   |   |   |   |   |   maxp > 4
+|   |   |   |   |   |   |   minp <= 1: MEDIUM (3.0/1.0)
+|   |   |   |   |   |   |   minp > 1
+|   |   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   |   time <= 150: MEDIUM_LIGHT (3.0)
+|   |   |   |   |   |   |   |   |   time > 150: MEDIUM (3.0)
+|   |   |   |   |   |   |   |   wargames = N: MEDIUM_LIGHT (13.0)
+|   |   |   |   thematic = N
+|   |   |   |   |   maxp <= 6
+|   |   |   |   |   |   time <= 150: MEDIUM (54.0/22.0)
+|   |   |   |   |   |   time > 150
+|   |   |   |   |   |   |   wargames = Y
+|   |   |   |   |   |   |   |   minp <= 1
+|   |   |   |   |   |   |   |   |   time <= 210: MEDIUM_LIGHT (3.0/1.0)
+|   |   |   |   |   |   |   |   |   time > 210: MEDIUM (5.0)
+|   |   |   |   |   |   |   |   minp > 1: MEDIUM (39.0/7.0)
+|   |   |   |   |   |   |   wargames = N
+|   |   |   |   |   |   |   |   minp <= 2: MEDIUM (5.0/2.0)
+|   |   |   |   |   |   |   |   minp > 2
+|   |   |   |   |   |   |   |   |   maxp <= 5: MEDIUM (2.0)
+|   |   |   |   |   |   |   |   |   maxp > 5: MEDIUM_HEAVY (3.0/1.0)
+|   |   |   |   |   maxp > 6: MEDIUM (8.0)
+|   time > 240
+|   |   no-subdomain = Y: LIGHT (2.0)
+|   |   no-subdomain = N
+|   |   |   time <= 1440
+|   |   |   |   wargames = Y
+|   |   |   |   |   time <= 480
+|   |   |   |   |   |   maxp <= 6: MEDIUM (19.0/7.0)
+|   |   |   |   |   |   maxp > 6: MEDIUM_HEAVY (2.0)
+|   |   |   |   |   time > 480: MEDIUM_HEAVY (2.0)
+|   |   |   |   wargames = N: MEDIUM_HEAVY (13.0/3.0)
+|   |   |   time > 1440: HEAVY (3.0/1.0)
+
+Number of Leaves  : 	69
+
+Size of the tree : 	137
+
+
+** Results for data file: data/bgg-out/bgweights-002000.arff...
+
+Processing times:
+ CV-1     0:00:00.119
+ CV-2     0:00:00.130
+ CV-3     0:00:00.120
+ CV-4     0:00:00.123
+ CV-5     0:00:00.119
+ CV-6     0:00:00.121
+ CV-7     0:00:00.119
+ CV-8     0:00:00.132
+ CV-9     0:00:00.136
+ CV-10    0:00:00.124
+ TEST     0:00:00.013
+
+Test Results: (number of instances = 2000)
+
+       %Corr  %Inco  Preci  Recal  FMeas
+   CV: 59.62  40.38   0.59   0.60   0.59
+ TEST: 63.32  36.68   0.63   0.63   0.63
+
+
+
+-- End of Run -- [0:00:11.715]

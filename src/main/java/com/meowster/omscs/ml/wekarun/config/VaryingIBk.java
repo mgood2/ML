@@ -13,8 +13,7 @@ public class VaryingIBk extends ClassifierGroup {
     private final int step;
 
     /**
-     * Creates a varying k-NN classifier group for the given step
-     * (between increments) and the maximum number of neighbors.
+     * Creates a varying k-NN classifier group for the given parameters.
      * <p/>
      * For example, one might write:
      * <pre>

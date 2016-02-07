@@ -9,6 +9,7 @@ import com.meowster.omscs.ml.wekarun.config.SingleJ48;
 import com.meowster.omscs.ml.wekarun.config.SinglePerceptron;
 import com.meowster.omscs.ml.wekarun.config.SingleSmo;
 import com.meowster.omscs.ml.wekarun.config.VaryingIBk;
+import com.meowster.omscs.ml.wekarun.config.VaryingJ48TreePrConf;
 import com.meowster.omscs.ml.wekarun.config.bgg.LearningBgWeight10k;
 import com.meowster.omscs.ml.wekarun.config.bgg.MixedBgWeight;
 import com.meowster.omscs.ml.wekarun.config.bgg.SingleBgWeight2000;
@@ -37,6 +38,8 @@ public class MainWekaRun {
     static final ClassifierGroup CG_SINGLE_SMO = new SingleSmo();
     static final ClassifierGroup CG_SINGLE_IBK = new SingleIBk();
     static final ClassifierGroup CG_VARYING_IBK = new VaryingIBk(1, 21, 2);
+    static final ClassifierGroup CG_VARYING_J48 =
+            new VaryingJ48TreePrConf(0.1, 0.5, 0.05);
 
     // the filters to use for splitting train/test data subsets
     private static final List<FilterType> FILTERS = ImmutableList.of(
@@ -52,10 +55,10 @@ public class MainWekaRun {
     private static final DataFileGroup DATASETS = DFG_2K;
 
     // the group of classifiers to run against the data sets
-    private static final ClassifierGroup CLASSIFIERS = CG_VARYING_IBK;
+    private static final ClassifierGroup CLASSIFIERS = CG_VARYING_J48;
 
     // the name of the CSV file
-    private static final String CSV_FILE_NAME = "varying_kNN";
+    private static final String CSV_FILE_NAME = "varying_pruned_tree";
 
     // use reduced attributes datasets (9 attribs vs. 13 attribs)
     private static final boolean USE_REDUCED = true;
