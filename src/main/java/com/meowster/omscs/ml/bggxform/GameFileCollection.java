@@ -73,5 +73,10 @@ public class GameFileCollection {
         public File next() {
             return loadedFiles.remove(0);
         }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }

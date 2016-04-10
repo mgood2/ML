@@ -124,6 +124,11 @@ public abstract class DataFileGroup {
             index++;
             return new DataFileInfo(id, path);
         }
+
+        @Override
+        public void remove() {
+
+        }
     }
 
 

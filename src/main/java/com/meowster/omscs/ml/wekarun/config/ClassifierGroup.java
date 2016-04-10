@@ -212,5 +212,10 @@ public abstract class ClassifierGroup {
         public WekaClassifier next() {
             return classifiers.get(index++);
         }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }

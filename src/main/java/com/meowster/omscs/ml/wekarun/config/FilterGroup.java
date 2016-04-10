@@ -72,5 +72,10 @@ public abstract class FilterGroup {
         public Filter next() {
             return filters.get(index++);
         }
+
+        @Override
+        public void remove() {
+
+        }
     };
 }
