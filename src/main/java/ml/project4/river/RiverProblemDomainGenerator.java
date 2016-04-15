@@ -7,9 +7,13 @@ import burlap.oomdp.core.TerminalFunction;
 import burlap.oomdp.core.states.State;
 import burlap.oomdp.singleagent.GroundedAction;
 import burlap.oomdp.singleagent.RewardFunction;
+import ml.project4.PrintUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static ml.project4.PrintUtils.EOL;
 
 /**
  * Generates Burlap Domains for the "River Problem".
@@ -134,6 +138,35 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
     }
 
     /**
+     * Returns the number of states in the problem.
+     *
+     * @return the number of states
+     */
+    public int numStates() {
+        return NUM_STATES;
+    }
+
+    /**
+     * Prints the problem sequence, using the given array of state values to
+     * navigate the state transitions.
+     *
+     * @param v computed state values
+     */
+    public void printSequence(double[] v) {
+        PrintUtils.print(new StateSequence(v));
+    }
+
+    /**
+     * Returns true if the given state ID is for a terminal state.
+     *
+     * @param id state
+     * @return true if this state is terminal
+     */
+    private static boolean isTerminalId(int id) {
+        return FAIL_STATE_IDS.contains(id) || id == SUCCESS_STATE_ID;
+    }
+
+    /**
      * Implements the reward function.
      */
     private final class RiverRewardFunction implements RewardFunction {
@@ -159,8 +192,60 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
     private final class RiverTerminalFunction implements TerminalFunction {
         @Override
         public boolean isTerminal(State state) {
-            final int id = GraphDefinedDomain.getNodeId(state);
-            return FAIL_STATE_IDS.contains(id) || id == SUCCESS_STATE_ID;
+            return isTerminalId(GraphDefinedDomain.getNodeId(state));
+        }
+    }
+
+    /**
+     * Uses the state value array to compute the planned sequence.
+     */
+    private class StateSequence {
+        private final List<Integer> seq = new ArrayList<>();
+        private final double[] values;
+
+        public StateSequence(double[] v) {
+            values = v;
+            int current = START_STATE_ID;
+            seq.add(current);
+
+            // second clause is a failsafe against infinite loops
+            //  the solution should be a single path without backtracking, so
+            //  there must be fewer states that total number of states
+            while (!isTerminalId(current) && seq.size() < NUM_STATES) {
+                int choices[] = TRANSITIONS[current];
+                int chosen = indexOfStateWithMaxValue(choices);
+                seq.add(chosen);
+                current = chosen;
+            }
+        }
+
+        private int indexOfStateWithMaxValue(int[] choices) {
+            if (choices.length < 1) {
+                return -1; // should never happen
+            }
+
+            int maxStateIndex = choices[0];
+            double maxStateValue = values[maxStateIndex];
+
+            for (int j = 1; j < choices.length; j++) {
+                int otherStateIndex = choices[j];
+                if (values[otherStateIndex] > maxStateValue) {
+                    maxStateValue = values[otherStateIndex];
+                    maxStateIndex = otherStateIndex;
+                }
+            }
+            return maxStateIndex;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder("Sequence:" + EOL);
+            sb.append(seq).append(EOL);
+            for (int i : seq) {
+                sb.append(STATES[i]).append(EOL);
+            }
+
+            return sb.toString();
         }
     }
 }

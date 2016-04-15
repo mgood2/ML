@@ -18,6 +18,7 @@ public class RiverMDP {
 
     private static final double ITERATION_EPSILON = 0.00001;
     private static final int MAX_ITERATIONS = 1000;
+    private static final double GAMMA = 0.99;
 
     private static final int S0 = 0;
 
@@ -46,10 +47,20 @@ public class RiverMDP {
         return vi;
     }
 
+    /**
+     * Solves the problem.
+     */
     public void solve() {
-        double gamma = 0.5;
+        ValueIteration vi = createValueIteration(GAMMA);
+        print(vi); // not useful
+        final int numStates = riverDg.numStates();
+        double[] v = new double[numStates];
 
-        ValueIteration vi = createValueIteration(gamma);
-        print(vi);
+        for (int i = 0; i < numStates; i++) {
+            State s = GraphDefinedDomain.getState(domain, i);
+            v[i] = vi.value(s);
+//            print("State %02d: value=%10.6f", i, v[i]);
+        }
+        riverDg.printSequence(v);
     }
 }
