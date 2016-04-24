@@ -24,7 +24,7 @@ import ml.project4.grid.BasicGridWorld;
 
 import java.util.List;
 
-import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.OutputUtils.print;
 import static ml.project4.grid.util.AnalysisAggregator.addConvergencePolicyIteration;
 import static ml.project4.grid.util.AnalysisAggregator.addConvergenceQLearning;
 import static ml.project4.grid.util.AnalysisAggregator.addConvergenceValueIteration;

@@ -9,7 +9,7 @@ import burlap.oomdp.singleagent.RewardFunction;
 import burlap.oomdp.statehashing.HashableStateFactory;
 import burlap.oomdp.statehashing.SimpleHashableStateFactory;
 
-import static ml.project4.PrintUtils.print;
+import static ml.project4.OutputUtils.print;
 
 /**
  * Encapsulates the MDP for the River problem.

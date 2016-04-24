@@ -1,4 +1,4 @@
-package ml.project4.grid;
+package ml.project4;
 
 /**
  * Output utilities.

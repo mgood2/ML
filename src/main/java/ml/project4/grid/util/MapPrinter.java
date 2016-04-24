@@ -8,8 +8,8 @@ import burlap.oomdp.core.values.Value;
 
 import java.util.List;
 
-import static ml.project4.grid.OutputUtils.EOL;
-import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.OutputUtils.EOL;
+import static ml.project4.OutputUtils.print;
 
 /**
  * Utility class for printing grid world maps.

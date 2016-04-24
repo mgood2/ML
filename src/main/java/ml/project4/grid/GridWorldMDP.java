@@ -16,7 +16,7 @@ import static ml.project4.grid.BasicGridWorld.GOAL_X;
 import static ml.project4.grid.BasicGridWorld.GOAL_Y;
 import static ml.project4.grid.BasicGridWorld.TRAP_X;
 import static ml.project4.grid.BasicGridWorld.TRAP_Y;
-import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.OutputUtils.print;
 import static ml.project4.grid.util.AnalysisAggregator.printAggregateAnalysis;
 
 /**

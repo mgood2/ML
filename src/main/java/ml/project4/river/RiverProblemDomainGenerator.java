@@ -7,13 +7,13 @@ import burlap.oomdp.core.TerminalFunction;
 import burlap.oomdp.core.states.State;
 import burlap.oomdp.singleagent.GroundedAction;
 import burlap.oomdp.singleagent.RewardFunction;
-import ml.project4.PrintUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static ml.project4.PrintUtils.EOL;
+import static ml.project4.OutputUtils.print;
+import static ml.project4.OutputUtils.EOL;
 
 /**
  * Generates Burlap Domains for the "River Problem".
@@ -153,7 +153,7 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
      * @param v computed state values
      */
     public void printSequence(double[] v) {
-        PrintUtils.print(new StateSequence(v));
+        print(new StateSequence(v));
     }
 
     /**

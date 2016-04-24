@@ -3,7 +3,7 @@ package ml.project4.grid.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.OutputUtils.print;
 
 /**
  * Aggregates results from analysis runner.

@@ -20,7 +20,7 @@ import ml.project4.grid.util.Movement;
 import ml.project4.grid.util.TrapPainter;
 import ml.project4.grid.util.WallPainter;
 
-import static ml.project4.grid.OutputUtils.EOL;
+import static ml.project4.OutputUtils.EOL;
 
 /**
  * Domain generator for our little grid world.
