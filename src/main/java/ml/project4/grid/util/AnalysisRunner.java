@@ -5,8 +5,6 @@ import burlap.behavior.singleagent.EpisodeAnalysis;
 import burlap.behavior.singleagent.MDPSolver;
 import burlap.behavior.singleagent.auxiliary.StateReachability;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.ValueFunctionVisualizerGUI;
-import burlap.behavior.singleagent.learning.tdmethods.QLearning;
-import burlap.behavior.singleagent.planning.stochastic.policyiteration.PolicyIteration;
 import burlap.behavior.singleagent.planning.stochastic.valueiteration.ValueIteration;
 import burlap.behavior.valuefunction.ValueFunction;
 import burlap.debugtools.DPrint;
@@ -19,11 +17,17 @@ import burlap.oomdp.singleagent.SADomain;
 import burlap.oomdp.singleagent.environment.SimulatedEnvironment;
 import burlap.oomdp.statehashing.HashableStateFactory;
 import burlap.oomdp.statehashing.SimpleHashableStateFactory;
+import ml.project4.augment.AugmentedPolicyIteration;
+import ml.project4.augment.AugmentedQLearning;
+import ml.project4.augment.AugmentedValueIteration;
 import ml.project4.grid.BasicGridWorld;
 
 import java.util.List;
 
 import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.grid.util.AnalysisAggregator.addConvergencePolicyIteration;
+import static ml.project4.grid.util.AnalysisAggregator.addConvergenceQLearning;
+import static ml.project4.grid.util.AnalysisAggregator.addConvergenceValueIteration;
 import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishPolicyIteration;
 import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishQLearning;
 import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishValueIteration;
@@ -60,6 +64,7 @@ public class AnalysisRunner {
     private static final int ALL_STATES_MAX_ITERATIONS = 100;
     private static final double Q_INIT = 0.99;
     private static final double Q_LEARNING_RATE = 0.99;
+    private static final int NUM_EPISODES_FOR_PLANNING = 1;
 
 
     private final SimpleHashableStateFactory hashingFactory =
@@ -104,13 +109,13 @@ public class AnalysisRunner {
                                   State initialState, RewardFunction rf,
                                   TerminalFunction tf, boolean showPolicyMap) {
         print("//Value Iteration Analysis//");
-        ValueIteration vi = null;
+        AugmentedValueIteration vi = null;
         Policy p = null;
         EpisodeAnalysis ea = null;
         for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
             final long startTime = System.nanoTime();
-            vi = new ValueIteration(domain, rf, tf, GAMMA, hashingFactory,
-                    MAX_DELTA, nIter);
+            vi = new AugmentedValueIteration(domain, rf, tf, GAMMA,
+                    hashingFactory, MAX_DELTA, nIter);
 
             // stop the insanity... and switch off debugging messages
             switchOffDebugOutput(vi);
@@ -118,6 +123,7 @@ public class AnalysisRunner {
             // run planning from our initial state
             p = vi.planFromState(initialState);
             addMillisecondsToFinishValueIteration(durationInMs(startTime));
+            addConvergenceValueIteration(vi.getIterations());
 
             // evaluate the policy with one roll out visualize the trajectory
             ea = p.evaluateBehavior(initialState, rf, tf);
@@ -153,12 +159,12 @@ public class AnalysisRunner {
                                    State initialState, RewardFunction rf,
                                    TerminalFunction tf, boolean showPolicyMap) {
         print("//Policy Iteration Analysis//");
-        PolicyIteration pi = null;
+        AugmentedPolicyIteration pi = null;
         Policy p = null;
         EpisodeAnalysis ea = null;
         for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
             final long startTime = System.nanoTime();
-            pi = new PolicyIteration(domain, rf, tf, GAMMA, hashingFactory,
+            pi = new AugmentedPolicyIteration(domain, rf, tf, GAMMA, hashingFactory,
                     MAX_DELTA, MAX_EVAL_ITERATIONS, nIter);
 
             // stop the insanity... and switch off debugging messages
@@ -167,6 +173,7 @@ public class AnalysisRunner {
             // run planning from our initial state
             p = pi.planFromState(initialState);
             addMillisecondsToFinishPolicyIteration(durationInMs(startTime));
+            addConvergencePolicyIteration(pi.getIterations());
 
             // evaluate the policy with one roll out visualize the trajectory
             ea = p.evaluateBehavior(initialState, rf, tf);
@@ -218,13 +225,16 @@ public class AnalysisRunner {
                              boolean showPolicyMap) {
         print("//Q Learning Analysis//");
 
-        QLearning agent = null;
+        AugmentedQLearning agent = null;
         Policy p = null;
         EpisodeAnalysis ea = null;
         for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
             final long startTime = System.nanoTime();
 
-            agent = new QLearning(domain, GAMMA, hashingFactory, Q_INIT, Q_LEARNING_RATE);
+            agent = new AugmentedQLearning(domain, GAMMA, hashingFactory,
+                    Q_INIT, Q_LEARNING_RATE);
+            agent.setMaxQChangeForPlanningTerminaiton(MAX_DELTA);
+            agent.setMaximumEpisodesForPlanning(nIter);
 
             // stop the insanity... and switch off debugging messages
             switchOffDebugOutput(agent);
@@ -233,10 +243,13 @@ public class AnalysisRunner {
                 ea = agent.runLearningEpisode(env);
                 env.resetEnvironment();
             }
-            agent.initializeForPlanning(rf, tf, 1);
+            agent.initializeForPlanning(rf, tf, nIter);
             p = agent.planFromState(initialState);
-            addQLearningReward(calcRewardInEpisode(ea));
+
             addMillisecondsToFinishQLearning(durationInMs(startTime));
+            addConvergenceQLearning(agent.getIterations());
+
+            addQLearningReward(calcRewardInEpisode(ea));
             addStepsToFinishQLearning(ea.numTimeSteps());
         }
         printQLearningResults();

@@ -5,7 +5,6 @@ package ml.project4.grid;
  */
 public class GridWorldProblem {
 
-
     /**
      * Main entry point.
      *
