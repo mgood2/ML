@@ -22,7 +22,7 @@ import ml.project4.grid.BasicGridWorld;
 import java.util.List;
 
 /**
- * Designates ...
+ * Runs the analyses on the grid world.
  */
 public class AnalysisRunner {
 
@@ -72,6 +72,7 @@ public class AnalysisRunner {
 
 //		Visualizer v = gen.getVisualizer();
 //		new EpisodeSequenceVisualizer(v, domain, Arrays.asList(ea));
+
         AnalysisAggregator.printValueIterationResults();
         MapPrinter.printPolicyMap(vi.getAllStates(), p, gen.getMap());
         System.out.println("\n\n");

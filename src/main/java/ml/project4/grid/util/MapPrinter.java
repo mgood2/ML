@@ -8,19 +8,19 @@ import burlap.oomdp.core.values.Value;
 
 import java.util.List;
 
+import static ml.project4.grid.OutputUtils.EOL;
+
 /**
  * Utility class for printing grid world maps.
  */
 public class MapPrinter {
 
-    private static final String EOL = String.format("%n");
-    private static final String HEADER = "This is your grid world:";
     private static final String OPEN_B = "[";
     private static final String CLOSE_B = "]";
     private static final String COMMA = ",";
 
     public static String mapAsString(int[][] map) {
-        StringBuilder sb = new StringBuilder(HEADER).append(EOL);
+        StringBuilder sb = new StringBuilder();
         final int nCols = map[0].length;
         for (int[] mapRow : map) {
             sb.append(OPEN_B);

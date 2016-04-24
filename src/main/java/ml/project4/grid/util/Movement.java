@@ -32,10 +32,6 @@ public class Movement extends SimpleAction implements FullActionModel {
     private static final int N_DIRS = 4;
 
     private static final double CERTAINTY = 1.0;
-    private static final double PROB_SUCCESS = 0.8;
-    private static final double PROB_OTHER =
-            (CERTAINTY - PROB_SUCCESS) / (double) (N_DIRS - 1);
-
 
     private final double[] directionProbs = new double[N_DIRS];
 
@@ -44,14 +40,27 @@ public class Movement extends SimpleAction implements FullActionModel {
     private final int height;
 
 
-    public Movement(String actionName, Domain domain, int direction, int[][] map) {
+    /**
+     * Create a movement action which moves in the intended direction with
+     * the specified probability of success.
+     *
+     * @param actionName  name of action
+     * @param domain      our domain instance to attach it to
+     * @param direction   encoded direction
+     * @param map         reference to our map
+     * @param successProb probability of movement in the intended direction
+     */
+    public Movement(String actionName, Domain domain, int direction, int[][] map,
+                    double successProb) {
         super(actionName, domain);
+
+        final double otherProb = (CERTAINTY - successProb) / (double) (N_DIRS - 1);
 
         for (int i = 0; i < N_DIRS; i++) {
             if (i == direction) {
-                directionProbs[i] = PROB_SUCCESS;
+                directionProbs[i] = successProb;
             } else {
-                directionProbs[i] = PROB_OTHER;
+                directionProbs[i] = otherProb;
             }
         }
 
