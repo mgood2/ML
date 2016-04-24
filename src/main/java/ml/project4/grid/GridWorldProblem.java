@@ -30,5 +30,7 @@ public class GridWorldProblem {
 
         print(mdp);
 
+        mdp.visualize();
+
     }
 }

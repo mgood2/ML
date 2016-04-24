@@ -7,14 +7,23 @@ import burlap.oomdp.singleagent.RewardFunction;
 import ml.project4.grid.BasicGridWorld;
 
 /**
- * Designates ...
+ * Grid world reward function; big positive for the goal, big negative for
+ * the trap, small negative everywhere else.
  */
 public class BasicRewardFunction implements RewardFunction {
 
+    private static final int GOAL_REWARD = 100;
+    private static final int TRAP_REWARD = -100;
+    private static final int DEFAULT_REWARD = -1;
+
     int goalX;
     int goalY;
+    int trapX;
+    int trapY;
 
-    public BasicRewardFunction(int goalX, int goalY) {
+    public BasicRewardFunction(int trapX, int trapY, int goalX, int goalY) {
+        this.trapX = trapX;
+        this.trapY = trapY;
         this.goalX = goalX;
         this.goalY = goalY;
     }
@@ -23,16 +32,17 @@ public class BasicRewardFunction implements RewardFunction {
     public double reward(State s, GroundedAction a, State sprime) {
 
         // get location of agent in next state
-        ObjectInstance agent = sprime.getFirstObjectOfClass(BasicGridWorld.CLASSAGENT);
+        ObjectInstance agent = sprime.getFirstObjectOfClass(BasicGridWorld.CLASS_AGENT);
         int ax = agent.getIntValForAttribute(BasicGridWorld.ATTX);
         int ay = agent.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        // are they at goal location?
-        if (ax == this.goalX && ay == this.goalY) {
-            return 100.;
+        // should they get a non-default reward?
+        if (ax == goalX && ay == goalY) {
+            return GOAL_REWARD;
+        } else if (ax == trapX && ay == trapY) {
+            return TRAP_REWARD;
         }
-
-        return -1;
+        return DEFAULT_REWARD;
     }
 
 }

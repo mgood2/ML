@@ -14,8 +14,9 @@ import ml.project4.grid.util.BasicTerminalFunction;
 import ml.project4.grid.util.MapPrinter;
 
 /**
- * Designates ...
+ * Copy of old launcher.
  */
+@Deprecated
 public class Launcher {
     //These are some boolean variables that affect what will actually get executed
     private static boolean visualizeInitialGridWorld = true; //Loads a GUI with the agent, walls, and goal
@@ -56,7 +57,7 @@ public class Launcher {
 
         State initialState = BasicGridWorld.getInitialState(domain);
 
-        RewardFunction rf = new BasicRewardFunction(maxX,maxY); //Goal is at the top right grid
+        RewardFunction rf = new BasicRewardFunction(-1, -1, maxX,maxY); //Goal is at the top right grid
         TerminalFunction tf = new BasicTerminalFunction(maxX,maxY); //Goal is at the top right grid
 
         SimulatedEnvironment env = new SimulatedEnvironment(domain, rf, tf,
@@ -89,10 +90,10 @@ public class Launcher {
         Visualizer v = gen.getVisualizer();
         VisualExplorer exp = new VisualExplorer(domain, env, v);
 
-        exp.addKeyAction("w", BasicGridWorld.ACTIONNORTH);
-        exp.addKeyAction("s", BasicGridWorld.ACTIONSOUTH);
-        exp.addKeyAction("d", BasicGridWorld.ACTIONEAST);
-        exp.addKeyAction("a", BasicGridWorld.ACTIONWEST);
+        exp.addKeyAction("w", BasicGridWorld.ACTION_NORTH);
+        exp.addKeyAction("s", BasicGridWorld.ACTION_SOUTH);
+        exp.addKeyAction("d", BasicGridWorld.ACTION_EAST);
+        exp.addKeyAction("a", BasicGridWorld.ACTION_WEST);
 
         exp.initGUI();
 

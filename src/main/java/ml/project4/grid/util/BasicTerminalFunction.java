@@ -6,7 +6,8 @@ import burlap.oomdp.core.states.State;
 import ml.project4.grid.BasicGridWorld;
 
 /**
- * Designates ...
+ * Predicate that indicates that the state where the agent is at the goal
+ * terminates the problem.
  */
 public class BasicTerminalFunction implements TerminalFunction {
 
@@ -22,11 +23,11 @@ public class BasicTerminalFunction implements TerminalFunction {
     public boolean isTerminal(State s) {
 
         // get location of agent in next state
-        ObjectInstance agent = s.getFirstObjectOfClass(BasicGridWorld.CLASSAGENT);
+        ObjectInstance agent = s.getFirstObjectOfClass(BasicGridWorld.CLASS_AGENT);
         int ax = agent.getIntValForAttribute(BasicGridWorld.ATTX);
         int ay = agent.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        // are they at goal location?
+        // are they at the goal?
         if (ax == this.goalX && ay == this.goalY) {
             return true;
         }

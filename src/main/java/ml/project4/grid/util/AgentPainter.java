@@ -1,55 +1,33 @@
 package ml.project4.grid.util;
 
-import burlap.oomdp.core.objects.ObjectInstance;
-import burlap.oomdp.core.states.State;
-import burlap.oomdp.visualizer.ObjectPainter;
-import ml.project4.grid.BasicGridWorld;
-
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 /**
- * Designates ...
+ * Paints Agents.
  */
+public class AgentPainter extends ObjPainter {
 
-public class AgentPainter implements ObjectPainter {
+    private static final Color AGENT_COLOR = Color.GRAY;
+    private static final float SCALE_FACTOR = 0.9f;
 
-    protected int[][] map;
-
-    public AgentPainter(int[][] map){
-        this.map = map;
+    public AgentPainter(int[][] map) {
+        super(map);
     }
+
     @Override
-    public void paintObject(Graphics2D g2, State s, ObjectInstance ob,
-                            float cWidth, float cHeight) {
+    protected Color getColor() {
+        return AGENT_COLOR;
+    }
 
-        //agent will be filled in gray
-        g2.setColor(Color.GRAY);
+    @Override
+    protected Shape getShape(float rx, float ry, float cellW, float cellH) {
+        float aWidth = cellW * SCALE_FACTOR;
+        float aHeight = cellH * SCALE_FACTOR;
+        float padW = (cellW - aWidth) / 2.0f;
+        float padH = (cellH - aHeight) / 2.0f;
 
-        //set up floats for the width and height of our domain
-        float fWidth = this.map.length;
-        float fHeight = this.map[0].length;
-
-        //determine the width of a single cell on our canvas
-        //such that the whole map can be painted
-        float width = cWidth / fWidth;
-        float height = cHeight / fHeight;
-
-        int ax = ob.getIntValForAttribute(BasicGridWorld.ATTX);
-        int ay = ob.getIntValForAttribute(BasicGridWorld.ATTY);
-
-        //left coordinate of cell on our canvas
-        float rx = ax*width;
-
-        //top coordinate of cell on our canvas
-        //coordinate system adjustment because the java canvas
-        //origin is in the top left instead of the bottom right
-        float ry = cHeight - height - ay*height;
-
-        //paint the rectangle
-        g2.fill(new Ellipse2D.Float(rx, ry, width, height));
-
-
+        return new Ellipse2D.Float(rx + padW, ry + padH, aWidth, aHeight);
     }
 }
 

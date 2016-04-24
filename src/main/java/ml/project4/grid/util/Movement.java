@@ -12,88 +12,113 @@ import ml.project4.grid.BasicGridWorld;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ml.project4.grid.BasicGridWorld.CLASS_AGENT;
+
 /**
- * Designates ...
+ * Movement action.
  */
 public class Movement extends SimpleAction implements FullActionModel {
 
-    //0: north; 1: south; 2:east; 3: west
-    protected double [] directionProbs = new double[4];
-    protected int[][] map;
+    private static final int WALL = 1;
 
-    public Movement(String actionName, Domain domain, int direction, int[][] map){
+    private static final int IDX_X = 0;
+    private static final int IDX_Y = 1;
+
+    public static final int NORTH = 0;
+    public static final int SOUTH = 1;
+    public static final int EAST = 2;
+    public static final int WEST = 3;
+
+    private static final int N_DIRS = 4;
+
+    private static final double CERTAINTY = 1.0;
+    private static final double PROB_SUCCESS = 0.8;
+    private static final double PROB_OTHER =
+            (CERTAINTY - PROB_SUCCESS) / (double) (N_DIRS - 1);
+
+
+    private final double[] directionProbs = new double[N_DIRS];
+
+    protected final int[][] map;
+    private final int width;
+    private final int height;
+
+
+    public Movement(String actionName, Domain domain, int direction, int[][] map) {
         super(actionName, domain);
-        for(int i = 0; i < 4; i++){
-            if(i == direction){
-                directionProbs[i] = 0.8;
-            }
-            else{
-                directionProbs[i] = 0.2/3.;
+
+        for (int i = 0; i < N_DIRS; i++) {
+            if (i == direction) {
+                directionProbs[i] = PROB_SUCCESS;
+            } else {
+                directionProbs[i] = PROB_OTHER;
             }
         }
+
         this.map = map;
+        width = this.map.length;
+        height = this.map[0].length;
     }
 
     @Override
     protected State performActionHelper(State s, GroundedAction groundedAction) {
-        //get agent and current position
-        ObjectInstance agent = s.getFirstObjectOfClass(BasicGridWorld.CLASSAGENT);
+        // get agent and current position
+        ObjectInstance agent = s.getFirstObjectOfClass(CLASS_AGENT);
         int curX = agent.getIntValForAttribute(BasicGridWorld.ATTX);
         int curY = agent.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        //sample directon with random roll
+        // sample direction with random roll
         double r = Math.random();
-        double sumProb = 0.;
-        int dir = 0;
-        for(int i = 0; i < this.directionProbs.length; i++){
+        double sumProb = 0.0;
+        int dir = NORTH;
+        for (int i = 0; i < N_DIRS; i++) {
             sumProb += this.directionProbs[i];
-            if(r < sumProb){
+            if (r < sumProb) {
                 dir = i;
                 break; //found direction
             }
         }
 
-        //get resulting position
-        int [] newPos = this.moveResult(curX, curY, dir);
+        // get resulting position
+        int[] newPos = moveResult(curX, curY, dir);
 
-        //set the new position
-        agent.setValue(BasicGridWorld.ATTX, newPos[0]);
-        agent.setValue(BasicGridWorld.ATTY, newPos[1]);
+        // set the new position
+        agent.setValue(BasicGridWorld.ATTX, newPos[IDX_X]);
+        agent.setValue(BasicGridWorld.ATTY, newPos[IDX_Y]);
 
         //return the state we just modified
         return s;
     }
 
     @Override
-    public List<TransitionProbability> getTransitions(State s, GroundedAction groundedAction) {
-        //get agent and current position
-        ObjectInstance agent = s.getFirstObjectOfClass(BasicGridWorld.CLASSAGENT);
+    public List<TransitionProbability> getTransitions(State s, GroundedAction ga) {
+        // get agent and current position
+        ObjectInstance agent = s.getFirstObjectOfClass(CLASS_AGENT);
         int curX = agent.getIntValForAttribute(BasicGridWorld.ATTX);
         int curY = agent.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        List<TransitionProbability> tps = new ArrayList<TransitionProbability>(4);
+        List<TransitionProbability> tps = new ArrayList<>(N_DIRS);
         TransitionProbability noChangeTransition = null;
-        for(int i = 0; i < this.directionProbs.length; i++){
-            int [] newPos = this.moveResult(curX, curY, i);
-            if(newPos[0] != curX || newPos[1] != curY){
-                //new possible outcome
+        for (int i = 0; i < this.directionProbs.length; i++) {
+            int[] newPos = this.moveResult(curX, curY, i);
+            if (newPos[0] != curX || newPos[1] != curY) {
+                // new possible outcome
                 State ns = s.copy();
-                ObjectInstance nagent = ns.getFirstObjectOfClass(BasicGridWorld.CLASSAGENT);
-                nagent.setValue(BasicGridWorld.ATTX, newPos[0]);
-                nagent.setValue(BasicGridWorld.ATTY, newPos[1]);
+                ObjectInstance nagent = ns.getFirstObjectOfClass(CLASS_AGENT);
+                nagent.setValue(BasicGridWorld.ATTX, newPos[IDX_X]);
+                nagent.setValue(BasicGridWorld.ATTY, newPos[IDX_Y]);
 
-                //create transition probability object and add to our list of outcomes
+                // create transition probability object and add to our list
+                // of outcomes
                 tps.add(new TransitionProbability(ns, this.directionProbs[i]));
-            }
-            else{
-                //this direction didn't lead anywhere new
-                //if there are existing possible directions
-                //that wouldn't lead anywhere, aggregate with them
-                if(noChangeTransition != null){
+            } else {
+                // this direction didn't lead anywhere new
+                // if there are existing possible directions
+                // that wouldn't lead anywhere, aggregate with them
+                if (noChangeTransition != null) {
                     noChangeTransition.p += this.directionProbs[i];
-                }
-                else{
-                    //otherwise create this new state and transition
+                } else {
+                    // otherwise create this new state and transition
                     noChangeTransition = new TransitionProbability(s.copy(),
                             this.directionProbs[i]);
                     tps.add(noChangeTransition);
@@ -101,46 +126,44 @@ public class Movement extends SimpleAction implements FullActionModel {
             }
         }
 
-
         return tps;
     }
 
-    protected int [] moveResult(int curX, int curY, int direction){
-
-        //first get change in x and y from direction using 0: north; 1: south; 2:east; 3: west
+    private int[] moveResult(int curX, int curY, int direction) {
+        // first get change in x and y from direction
         int xdelta = 0;
         int ydelta = 0;
-        if(direction == 0){
-            ydelta = 1;
-        }
-        else if(direction == 1){
-            ydelta = -1;
-        }
-        else if(direction == 2){
-            xdelta = 1;
-        }
-        else{
-            xdelta = -1;
+
+        switch (direction) {
+            case NORTH:
+                ydelta = 1;
+                break;
+
+            case SOUTH:
+                ydelta = -1;
+                break;
+
+            case EAST:
+                xdelta = 1;
+                break;
+
+            case WEST:
+                xdelta = -1;
+                break;
         }
 
         int nx = curX + xdelta;
         int ny = curY + ydelta;
 
-        int width = this.map.length;
-        int height = this.map[0].length;
-
-        //make sure new position is valid (not a wall or off bounds)
-        if(nx < 0 || nx >= width || ny < 0 || ny >= height ||
-                this.map[nx][ny] == 1){
+        // make sure new position is valid (not a wall or out-of-bounds)
+        if (nx < 0 || nx >= width || ny < 0 || ny >= height ||
+                this.map[nx][ny] == WALL) {
             nx = curX;
             ny = curY;
         }
 
-
-        return new int[]{nx,ny};
-
+        return new int[]{nx, ny};
     }
-
 
 }
 

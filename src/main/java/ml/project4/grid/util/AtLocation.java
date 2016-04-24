@@ -7,27 +7,30 @@ import burlap.oomdp.core.states.State;
 import ml.project4.grid.BasicGridWorld;
 
 /**
- * Designates ...
+ * Propositional function that returns true if the agent is at the goal.
  */
 
 public class AtLocation extends PropositionalFunction {
 
     public AtLocation(Domain domain) {
-        super(BasicGridWorld.PFAT, domain, new String[] { BasicGridWorld.CLASSAGENT, BasicGridWorld.CLASSLOCATION });
+        super(BasicGridWorld.PFAT, domain, new String[] {
+                BasicGridWorld.CLASS_AGENT,
+                BasicGridWorld.CLASS_GOAL
+        });
     }
 
     @Override
     public boolean isTrue(State s, String... params) {
         ObjectInstance agent = s.getObject(params[0]);
-        ObjectInstance location = s.getObject(params[1]);
+        ObjectInstance goal = s.getObject(params[1]);
 
         int ax = agent.getIntValForAttribute(BasicGridWorld.ATTX);
         int ay = agent.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        int lx = location.getIntValForAttribute(BasicGridWorld.ATTX);
-        int ly = location.getIntValForAttribute(BasicGridWorld.ATTY);
+        int gx = goal.getIntValForAttribute(BasicGridWorld.ATTX);
+        int gy = goal.getIntValForAttribute(BasicGridWorld.ATTY);
 
-        return ax == lx && ay == ly;
+        return ax == gx && ay == gy;
     }
 
 }
