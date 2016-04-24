@@ -1,4 +1,4 @@
-package ml.project4;
+package practice;
 
 import burlap.domain.singleagent.gridworld.GridWorldDomain;
 import burlap.domain.singleagent.gridworld.GridWorldVisualizer;
