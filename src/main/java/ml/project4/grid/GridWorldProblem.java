@@ -5,7 +5,10 @@ package ml.project4.grid;
  */
 public class GridWorldProblem {
 
-    private static final double ACTION_PROB_SUCCESS = 0.8;
+    /*
+        Experiments were run with P = 0.99, 0.75, 0.50
+     */
+    private static final double ACTION_PROB_SUCCESS = 0.50;
 
     /**
      * Main entry point.
