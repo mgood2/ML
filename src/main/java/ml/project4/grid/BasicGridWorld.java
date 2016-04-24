@@ -178,7 +178,7 @@ public class BasicGridWorld implements DomainGenerator {
      *
      * @return visualizer
      */
-    Visualizer getVisualizer() {
+    public Visualizer getVisualizer() {
         return new Visualizer(this.getStateRenderLayer());
     }
 

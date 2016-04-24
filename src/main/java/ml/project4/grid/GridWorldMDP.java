@@ -7,6 +7,7 @@ import burlap.oomdp.singleagent.RewardFunction;
 import burlap.oomdp.singleagent.environment.SimulatedEnvironment;
 import burlap.oomdp.singleagent.explorer.VisualExplorer;
 import burlap.oomdp.visualizer.Visualizer;
+import ml.project4.grid.util.AnalysisRunner;
 import ml.project4.grid.util.BasicRewardFunction;
 import ml.project4.grid.util.BasicTerminalFunction;
 import ml.project4.grid.util.MapPrinter;
@@ -16,11 +17,16 @@ import static ml.project4.grid.BasicGridWorld.GOAL_Y;
 import static ml.project4.grid.BasicGridWorld.TRAP_X;
 import static ml.project4.grid.BasicGridWorld.TRAP_Y;
 import static ml.project4.grid.OutputUtils.print;
+import static ml.project4.grid.util.AnalysisAggregator.printAggregateAnalysis;
 
 /**
  * Encapsulates the MDP for the grid world problem.
  */
 class GridWorldMDP {
+
+    // parameterization of experiment runs.
+    private static final int MAX_ITERATIONS = 100;
+    private static final int MAX_INTERVALS = 100;
 
     // key bindings
     private static final String KEY_W = "w";
@@ -45,6 +51,9 @@ class GridWorldMDP {
 
     private BasicGridWorld gen;
     private Domain domain;
+    private State initialState;
+    private RewardFunction rf;
+    private TerminalFunction tf;
     private SimulatedEnvironment env;
 
 
@@ -54,12 +63,9 @@ class GridWorldMDP {
     GridWorldMDP() {
         gen = new BasicGridWorld(map);
         domain = gen.generateDomain();
-
-        State initialState = BasicGridWorld.getInitialState(domain);
-        RewardFunction rf =
-                new BasicRewardFunction(TRAP_X, TRAP_Y, GOAL_X, GOAL_Y);
-        TerminalFunction tf = new BasicTerminalFunction(GOAL_X, GOAL_Y);
-
+        initialState = BasicGridWorld.getInitialState(domain);
+        rf = new BasicRewardFunction(TRAP_X, TRAP_Y, GOAL_X, GOAL_Y);
+        tf = new BasicTerminalFunction(GOAL_X, GOAL_Y);
         env = new SimulatedEnvironment(domain, rf, tf, initialState);
     }
 
@@ -97,11 +103,15 @@ class GridWorldMDP {
         gen.setProbSuccess(successProb);
         domain = gen.generateDomain();
         print("Running experiments on %s", gen);
+        print("Max iterations: %d, max intervals: %d",
+                MAX_ITERATIONS, MAX_INTERVALS);
 
-        print("STILL NEED TO CODE THIS...");
-        // TODO: VI
-        // TODO: PI
-        // TODO: Q-Learn
+        AnalysisRunner runner = new AnalysisRunner(MAX_ITERATIONS, MAX_INTERVALS);
 
+        runner.runValueIteration(gen, domain, initialState, rf, tf, true);
+        runner.runPolicyIteration(gen, domain, initialState, rf, tf, true);
+        runner.runQLearning(gen, domain, initialState, rf, tf, env, true);
+
+        printAggregateAnalysis();
     }
 }

@@ -9,6 +9,7 @@ import burlap.oomdp.core.values.Value;
 import java.util.List;
 
 import static ml.project4.grid.OutputUtils.EOL;
+import static ml.project4.grid.OutputUtils.print;
 
 /**
  * Utility class for printing grid world maps.
@@ -34,35 +35,20 @@ public class MapPrinter {
         return sb.toString();
     }
 
-    public static void printMap(int[][] map){
-        int numCols = map[0].length;
-        int numRows = map.length;
-        System.out.println("This is your grid world:");
-        for (int row = 0; row<numRows; row++){
-            System.out.print("[");
-            for (int col = 0; col<numCols; col++){
-                System.out.print(String.valueOf(map[row][col]));
-                if(col != numCols-1){
-                    System.out.print(",");
-                }
-            }
-            System.out.print("]");
-
-            System.out.println();
-        }
-        System.out.println("\n\n");
-
+    public static void printMap(int[][] map) {
+        print(mapAsString(map));
+        print("\n\n");
     }
 
     public static void printPolicyMap(List<State> states, Policy p, int[][] matrix) {
 
-        System.out.println();
-        System.out.println("This is your optimal policy:");
+        print("");
+        print("This is your optimal policy:");
         String[][] policy = new String[matrix.length][matrix[0].length];
-        System.out.println("num of rows in policy is " + policy.length);
+//        print("num of rows in policy is " + policy.length);
 
 
-        for(State state : states){
+        for (State state : states) {
             ObjectInstance agent = state.getObject("agent0");
             List<Value> values = agent.getValues();
             Value xValue = values.get(0);
@@ -71,12 +57,12 @@ public class MapPrinter {
             int y = yValue.getDiscVal();
 
             String action;
-            if(p instanceof GreedyQPolicy){
+            if (p instanceof GreedyQPolicy) {
                 action = p.getAction(state).toString();
-            }else{
+            } else {
                 action = p.getAction(state).toString();
             }
-            switch(action){
+            switch (action) {
                 case "east":
                     action = ">";
                     break;
@@ -96,36 +82,41 @@ public class MapPrinter {
 
         }
 
-        String[][] printPolicy = matrixToMap(policy);
+        String[][] policySymbols = matrixToMap(policy);
 
-        int numCols = printPolicy[0].length;
-        int numRows = printPolicy.length;
-        for (int row = 0; row<numRows; row++){
-            System.out.print("[");
-            for (int col = 0; col<numCols; col++){
-                String action = String.valueOf(printPolicy[row][col]);
-                if(action.equals("null")) action ="*";
-                System.out.print(action);
-                if(col != numCols-1){
-                    System.out.print(",");
+        int numCols = policySymbols[0].length;
+
+        StringBuffer sb = new StringBuffer();
+        for (String[] policyRow : policySymbols) {
+            sb.append(OPEN_B);
+            for (int col = 0; col < numCols; col++) {
+                String action = String.valueOf(policyRow[col]);
+                if (action.equals("null")) {
+                    action = "*";
                 }
+                sb.append(action).append(COMMA);
             }
-            System.out.print("]");
-
-            System.out.println();
+            final int len = sb.length();
+            sb.replace(len - 1, len, CLOSE_B);
+            sb.append(EOL);
         }
-//		for(State state : vi.getAllStates()){
-//			System.out.println(state.toString()+":"+p.getAction(state).toString());
-//		}
+
+        print(sb);
+
+//        for (State state : states) {
+//            print(state + ":" + p.getAction(state));
+//        }
+
     }
+
     public static String[][] mapToMatrix(String[][] map) {
         // its rotated and inverted
         int numMapRows = map.length;
         int numMapCols = map[0].length;
         String[][] matrix = new String[numMapCols][numMapRows];
-        for (int matrixRow = 0; matrixRow<numMapCols; matrixRow++){
-            for (int matrixCol = 0; matrixCol<numMapRows; matrixCol++){
-                matrix[matrixRow][matrixCol] = map[numMapRows-1-matrixCol][matrixRow];
+        for (int matrixRow = 0; matrixRow < numMapCols; matrixRow++) {
+            for (int matrixCol = 0; matrixCol < numMapRows; matrixCol++) {
+                matrix[matrixRow][matrixCol] = map[numMapRows - 1 - matrixCol][matrixRow];
             }
         }
         return matrix;
@@ -133,12 +124,12 @@ public class MapPrinter {
 
     public static String[][] matrixToMap(String[][] matrix) {
         // its rotated and inverted
-        int numMatrixRows = matrix.length;
-        int numMatrixCols = matrix[0].length;
-        String[][] map = new String[numMatrixCols][numMatrixRows];
-        for (int mapRow = 0; mapRow<numMatrixCols; mapRow++){
-            for (int mapCol = 0; mapCol<numMatrixRows; mapCol++){
-                map[mapRow][mapCol] = matrix[mapCol][numMatrixCols-1-mapRow];
+        final int numMatrixRows = matrix.length;
+        final int numMatrixCols = matrix[0].length;
+        final String[][] map = new String[numMatrixCols][numMatrixRows];
+        for (int mapRow = 0; mapRow < numMatrixCols; mapRow++) {
+            for (int mapCol = 0; mapCol < numMatrixRows; mapCol++) {
+                map[mapRow][mapCol] = matrix[mapCol][numMatrixCols - 1 - mapRow];
             }
         }
         return map;
@@ -146,12 +137,12 @@ public class MapPrinter {
 
     public static int[][] matrixToMap(int[][] matrix) {
         // its rotated and inverted
-        int numMatrixRows = matrix.length;
-        int numMatrixCols = matrix[0].length;
-        int[][] map = new int[numMatrixCols][numMatrixRows];
-        for (int mapRow = 0; mapRow<numMatrixCols; mapRow++){
-            for (int mapCol = 0; mapCol<numMatrixRows; mapCol++){
-                map[mapRow][mapCol] = matrix[mapCol][numMatrixCols-1-mapRow];
+        final int numMatrixRows = matrix.length;
+        final int numMatrixCols = matrix[0].length;
+        final int[][] map = new int[numMatrixCols][numMatrixRows];
+        for (int mapRow = 0; mapRow < numMatrixCols; mapRow++) {
+            for (int mapCol = 0; mapCol < numMatrixRows; mapCol++) {
+                map[mapRow][mapCol] = matrix[mapCol][numMatrixCols - 1 - mapRow];
             }
         }
         return map;
@@ -159,12 +150,12 @@ public class MapPrinter {
 
     public static int[][] mapToMatrix(int[][] map) {
         // its rotated and inverted
-        int numMapRows = map.length;
-        int numMapCols = map[0].length;
-        int[][] matrix = new int[numMapCols][numMapRows];
-        for (int matrixRow = 0; matrixRow<numMapCols; matrixRow++){
-            for (int matrixCol = 0; matrixCol<numMapRows; matrixCol++){
-                matrix[matrixRow][matrixCol] = map[numMapRows-1-matrixCol][matrixRow];
+        final int numMapRows = map.length;
+        final int numMapCols = map[0].length;
+        final int[][] matrix = new int[numMapCols][numMapRows];
+        for (int matrixRow = 0; matrixRow < numMapCols; matrixRow++) {
+            for (int matrixCol = 0; matrixCol < numMapRows; matrixCol++) {
+                matrix[matrixRow][matrixCol] = map[numMapRows - 1 - matrixCol][matrixRow];
             }
         }
         return matrix;
