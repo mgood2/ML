@@ -1,4 +1,4 @@
-package ml.project4;
+package practice;
 
 import burlap.behavior.singleagent.auxiliary.performance.LearningAlgorithmExperimenter;
 import burlap.behavior.singleagent.auxiliary.performance.PerformanceMetric;
