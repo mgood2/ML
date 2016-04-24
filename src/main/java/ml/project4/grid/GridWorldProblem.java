@@ -5,17 +5,16 @@ package ml.project4.grid;
  */
 public class GridWorldProblem {
 
+    private static final double ACTION_PROB_SUCCESS = 0.8;
+
     /**
      * Main entry point.
      *
      * @param args (ignored)
      */
     public static void main(String[] args) {
-
         GridWorldMDP mdp = new GridWorldMDP();
         mdp.visualize();
-
-        // action success probability
-        mdp.runExperiments(0.8);
+        mdp.runExperiments(ACTION_PROB_SUCCESS);
     }
 }
