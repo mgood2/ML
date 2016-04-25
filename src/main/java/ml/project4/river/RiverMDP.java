@@ -1,14 +1,11 @@
 package ml.project4.river;
 
-import burlap.behavior.singleagent.planning.stochastic.valueiteration.ValueIteration;
 import burlap.domain.singleagent.graphdefined.GraphDefinedDomain;
 import burlap.oomdp.core.Domain;
 import burlap.oomdp.core.TerminalFunction;
 import burlap.oomdp.core.states.State;
 import burlap.oomdp.singleagent.RewardFunction;
-import burlap.oomdp.statehashing.HashableStateFactory;
-import burlap.oomdp.statehashing.SimpleHashableStateFactory;
-import ml.project4.grid.util.AnalysisRunner;
+import burlap.oomdp.singleagent.environment.SimulatedEnvironment;
 
 import static ml.project4.OutputUtils.print;
 
@@ -28,9 +25,11 @@ public class RiverMDP {
     private State initialState;
     private RewardFunction rf;
     private TerminalFunction tf;
-    private HashableStateFactory hashFactory = new SimpleHashableStateFactory();
+    private SimulatedEnvironment env;
 
-
+    /**
+     * Constructs the River MDP problem.
+     */
     public RiverMDP() {
         gen = new RiverProblemDomainGenerator();
         domain = gen.generateDomain();
@@ -39,13 +38,8 @@ public class RiverMDP {
         initialState = GraphDefinedDomain.getState(domain, S0);
         rf = gen.generateRewardFunction();
         tf = gen.generateTerminalFunction();
-    }
+        env = new SimulatedEnvironment(domain, rf, tf, initialState);
 
-    private ValueIteration createValueIteration(double gamma) {
-        ValueIteration vi = new ValueIteration(domain, rf, tf, gamma,
-                hashFactory, ITERATION_EPSILON, MAX_ITERATIONS);
-        vi.planFromState(initialState);
-        return vi;
     }
 
     /**
@@ -62,8 +56,7 @@ public class RiverMDP {
                 new RiverAnalysisRunner(MAX_ITERATIONS, ITERATION_EPSILON);
 
         runner.runValueIteration(gen, domain, initialState, rf, tf);
-
-        // TODO: Policy Iteration
-        // TODO: Q-Learning
+        runner.runPolicyIteration(gen, domain, initialState, rf, tf);
+        runner.runQLearning(gen, domain, initialState, rf, tf, env);
     }
 }

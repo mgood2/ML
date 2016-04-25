@@ -33,30 +33,30 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
      * farmer (*), fox (F), chicken (C), and sack of grain (G).
      */
     private static final String[] STATES = {
-            "[*FCG| | ]",   // ( 0) start state
-            "[CG|*F| ]",    // ( 1) farmer takes fox: FAIL - chicken eats grain
-            "[FG|*C| ]",    // ( 2) farmer takes chicken
-            "[FC|*G| ]",    // ( 3) farmer takes grain: FAIL - fox eats chicken
-            "[FG| |*C]",    // ( 4) chicken on right bank
-            "[FG|*|C]",     // ( 5) farmer heads back
-            "[*FG| |C]",    // ( 6)
-            "[G|*F|C]",     // ( 7) farmer takes fox
-            "[F|*G|C]",     // ( 8) farmer takes grain
-            "[G| |*FC]",    // ( 9) fox and chicken with farmer
-            "[F| |*CG]",    // (10) chicken and grain with farmer
-            "[G|*|FC]",     // (11) farmer heads back: FAIL - fox eats chicken
-            "[G|*C|F]",     // (12) farmer heads back WITH CHICKEN
-            "[F|*C|G]",     // (13) farmer heads back WITH CHICKEN
-            "[F|*|CG]",     // (14) farmer heads back: FAIL - chicken eats grain
-            "[*CG| |F]",    // (15) farmer with chicken and grain
-            "[*FC| |G]",    // (16) farmer with fox and chicken
-            "[C|*G|F]",     // (17) farmer heads off with grain, leaving chicken
-            "[C|*F|G]",     // (18) farmer heads off with fox, leaving chicken
-            "[C| |*FG]",    // (19) farmer leaves fox with grain
-            "[C|*|FG]",     // (20) farmer heads back
-            "[*C| |FG]",    // (21) farmer picks up chicken once again
-            "[ |*C|FG]",    // (22) nearly there
-            "[ | |*FCG]",   // (23) Success!
+            "[*FCG|  |    ]",   // ( 0) start state
+            "[ CG |*F|    ]",    // ( 1) farmer takes fox: FAIL - chicken eats grain
+            "[ FG |*C|    ]",    // ( 2) farmer takes chicken
+            "[ FC |*G|    ]",    // ( 3) farmer takes grain: FAIL - fox eats chicken
+            "[ FG |  | *C ]",    // ( 4) chicken on right bank
+            "[ FG |* | C  ]",     // ( 5) farmer heads back
+            "[*FG |  | C  ]",    // ( 6)
+            "[ G  |*F| C  ]",     // ( 7) farmer takes fox
+            "[ F  |*G| C  ]",     // ( 8) farmer takes grain
+            "[ G  |  |*FC ]",    // ( 9) fox and chicken with farmer
+            "[ F  |  |*CG ]",    // (10) chicken and grain with farmer
+            "[ G  |* | FC ]",     // (11) farmer heads back: FAIL - fox eats chicken
+            "[ G  |*C| F  ]",     // (12) farmer heads back WITH CHICKEN
+            "[ F  |*C| G  ]",     // (13) farmer heads back WITH CHICKEN
+            "[ F  |* | CG ]",     // (14) farmer heads back: FAIL - chicken eats grain
+            "[*CG |  | F  ]",    // (15) farmer with chicken and grain
+            "[*FC |  | G  ]",    // (16) farmer with fox and chicken
+            "[ C  |*G| F  ]",     // (17) farmer heads off with grain, leaving chicken
+            "[ C  |*F| G  ]",     // (18) farmer heads off with fox, leaving chicken
+            "[ C  |  |*FG ]",    // (19) farmer leaves fox with grain
+            "[ C  |* | FG ]",     // (20) farmer heads back
+            "[ *C |  | FG ]",    // (21) farmer picks up chicken once again
+            "[    |*C| FG ]",    // (22) nearly there
+            "[    |  |*FCG]",   // (23) Success!
     };
 
     private static final int NUM_STATES = STATES.length;
@@ -169,6 +169,16 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
      */
     public static boolean isTerminalId(int id) {
         return FAIL_STATE_IDS.contains(id) || id == SUCCESS_STATE_ID;
+    }
+
+    /**
+     * Returns a string representation of the given state.
+     *
+     * @param stateId state identifier
+     * @return string rep
+     */
+    public String stateAsString(int stateId) {
+        return String.format("%2d: %s", stateId, STATES[stateId]);
     }
 
     /**

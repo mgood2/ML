@@ -1,0 +1,86 @@
+Running experiments on RiverProblemDG{#states = 24}
+Max QL iterations: 1000, iteration epsilon: 0.00010
+
+
+
+//Value Iteration Analysis//
+
+Duration 29 ms
+Converged in 6 iterations
+Summed Reward is 87.00
+Number of steps is 15
+
+[0 -> 2 -> 4 -> 5 -> 6 -> 8 -> 10 -> 13 -> 16 -> 18 -> 19 -> 20 -> 21 -> 22 -> 23]
+
+ 0: [*FCG|  |    ]
+ 2: [ FG |*C|    ]
+ 4: [ FG |  | *C ]
+ 5: [ FG |* | C  ]
+ 6: [*FG |  | C  ]
+ 8: [ F  |*G| C  ]
+10: [ F  |  |*CG ]
+13: [ F  |*C| G  ]
+16: [*FC |  | G  ]
+18: [ C  |*F| G  ]
+19: [ C  |  |*FG ]
+20: [ C  |* | FG ]
+21: [ *C |  | FG ]
+22: [    |*C| FG ]
+23: [    |  |*FCG]
+
+
+
+//Policy Iteration Analysis//
+
+Duration 48 ms
+Converged in 8 iterations
+Summed Reward is 87.00
+Number of steps is 15
+
+[0 -> 2 -> 4 -> 5 -> 6 -> 7 -> 9 -> 12 -> 15 -> 17 -> 19 -> 20 -> 21 -> 22 -> 23]
+
+ 0: [*FCG|  |    ]
+ 2: [ FG |*C|    ]
+ 4: [ FG |  | *C ]
+ 5: [ FG |* | C  ]
+ 6: [*FG |  | C  ]
+ 7: [ G  |*F| C  ]
+ 9: [ G  |  |*FC ]
+12: [ G  |*C| F  ]
+15: [*CG |  | F  ]
+17: [ C  |*G| F  ]
+19: [ C  |  |*FG ]
+20: [ C  |* | FG ]
+21: [ *C |  | FG ]
+22: [    |*C| FG ]
+23: [    |  |*FCG]
+
+
+
+//Q Learning Analysis//
+
+Duration 328 ms
+Converged in 1 iterations
+Summed Reward is 87.00
+Number of steps is 15
+
+[0 -> 2 -> 4 -> 5 -> 6 -> 7 -> 9 -> 12 -> 15 -> 17 -> 19 -> 20 -> 21 -> 22 -> 23]
+
+ 0: [*FCG|  |    ]
+ 2: [ FG |*C|    ]
+ 4: [ FG |  | *C ]
+ 5: [ FG |* | C  ]
+ 6: [*FG |  | C  ]
+ 7: [ G  |*F| C  ]
+ 9: [ G  |  |*FC ]
+12: [ G  |*C| F  ]
+15: [*CG |  | F  ]
+17: [ C  |*G| F  ]
+19: [ C  |  |*FG ]
+20: [ C  |* | FG ]
+21: [ *C |  | FG ]
+22: [    |*C| FG ]
+23: [    |  |*FCG]
+
+
+DONE

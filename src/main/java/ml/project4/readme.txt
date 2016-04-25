@@ -59,10 +59,21 @@ grid/
 river/
   - contains River Problem MDP code
   |
+  +-- RiverAnalysisRunner               <-- Runs VI, PI, and Q-Learning
   +-- RiverMDP                          <-- River Problem MDP encapsulation
+  +-- RiverPrinter                      <-- Prints the results of a run
   +-- RiverProblem                      <-- Main launch point
   +-- RiverProblemDomainGenerator       <-- Encoded river problem domain
 
+
+results/
+  - contains run results output for posterity
+  |
+  +-- GW-run-50.txt                     <-- GridWorld run : prob = 50%
+  +-- GW-run-75.txt                     <-- GridWorld run : prob = 75%
+  +-- GW-run-99.txt                     <-- GridWorld run : prob = 99%
+  +-- River-run-100.txt                 <-- River run : 100 QL iterations
+  +-- River-run-1000.txt                <-- River run : 1000 QL iterations
 
 
 ===================

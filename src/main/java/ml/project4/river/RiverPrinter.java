@@ -9,12 +9,15 @@ import burlap.oomdp.singleagent.common.SimpleGroundedAction;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ml.project4.OutputUtils.EOL;
 import static ml.project4.OutputUtils.print;
 
 /**
  * Utility class for printing river results.
  */
 public class RiverPrinter {
+
+    private static final int FAILSAFE = 25;
 
     /**
      * Returns the node path in the given domain, for the specified policy.
@@ -31,6 +34,7 @@ public class RiverPrinter {
         path.add(stateId);
 
         boolean done = false;
+        int count = 0;
         while (!done) {
             AbstractGroundedAction action = p.getAction(currentState);
 
@@ -40,7 +44,8 @@ public class RiverPrinter {
 
             path.add(stateId);
 
-            if (RiverProblemDomainGenerator.isTerminalId(stateId)) {
+            if (RiverProblemDomainGenerator.isTerminalId(stateId) ||
+                    ++count >= FAILSAFE) {
                 done = true;
             }
         }
@@ -48,20 +53,38 @@ public class RiverPrinter {
     }
 
     /**
-     * Prints the path over the state nodes for the given policy.
+     * Prints the path .
      *
-     * @param initialState initial state
-     * @param p            policy
+     * @param ids list of state identifiers
      */
-    public static void printRiverPath(State initialState, Policy p) {
-        List<Integer> ids = nodePath(initialState, p);
-
+    public static void printRiverPath(List<Integer> ids) {
         StringBuilder sb = new StringBuilder("[").append(ids.remove(0));
         for (int id : ids) {
             sb.append(" -> ").append(id);
         }
         sb.append("]");
+        print(sb);
+    }
 
+    /**
+     * Prints the verbose list of states for the given policy.
+     *
+     * @param gen generator
+     * @param initialState initial state
+     * @param p policy
+     */
+    public static void printRiverSolution(RiverProblemDomainGenerator gen,
+                                          State initialState, Policy p) {
+        List<Integer> ids = nodePath(initialState, p);
+
+        print("");
+        // make a copy, because the first item gets deleted
+        printRiverPath(new ArrayList<>(ids));
+
+        StringBuilder sb = new StringBuilder(EOL);
+        for (int id: ids) {
+            sb.append(gen.stateAsString(id)).append(EOL);
+        }
         print(sb);
     }
 }
