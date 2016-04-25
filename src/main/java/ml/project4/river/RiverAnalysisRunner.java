@@ -1,4 +1,4 @@
-package ml.project4.grid.util;
+package ml.project4.river;
 
 import burlap.behavior.policy.Policy;
 import burlap.behavior.singleagent.EpisodeAnalysis;
@@ -25,28 +25,11 @@ import ml.project4.grid.BasicGridWorld;
 import java.util.List;
 
 import static ml.project4.OutputUtils.print;
-import static ml.project4.grid.util.AnalysisAggregator.addConvergencePolicyIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addConvergenceQLearning;
-import static ml.project4.grid.util.AnalysisAggregator.addConvergenceValueIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishPolicyIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishQLearning;
-import static ml.project4.grid.util.AnalysisAggregator.addMillisecondsToFinishValueIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addNumberOfIterations;
-import static ml.project4.grid.util.AnalysisAggregator.addPolicyIterationReward;
-import static ml.project4.grid.util.AnalysisAggregator.addQLearningReward;
-import static ml.project4.grid.util.AnalysisAggregator.addStepsToFinishPolicyIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addStepsToFinishQLearning;
-import static ml.project4.grid.util.AnalysisAggregator.addStepsToFinishValueIteration;
-import static ml.project4.grid.util.AnalysisAggregator.addValueIterationReward;
-import static ml.project4.grid.util.AnalysisAggregator.printPolicyIterationResults;
-import static ml.project4.grid.util.AnalysisAggregator.printQLearningResults;
-import static ml.project4.grid.util.AnalysisAggregator.printValueIterationResults;
-import static ml.project4.grid.util.MapPrinter.printPolicyMap;
 
 /**
  * Runs the analyses on the grid world.
  */
-public class AnalysisRunner {
+public class RiverAnalysisRunner {
 
     private static final double GAMMA = 0.99;
 
@@ -64,21 +47,22 @@ public class AnalysisRunner {
             new SimpleHashableStateFactory();
 
     private final int maxIterations;
-    private final int increment;
+    private final double epsilon;
 
     /**
-     * Creates a new analysis runner.
+     * Creates a new river analysis runner.
      *
-     * @param maxIterations maximum number of iterations to run
-     * @param numIntervals  number of intervals
+     * @param maxIterations    maximum number of iterations to run
+     * @param iterationEpsilon policy change must be smaller than this to
+     *                         terminate the search
      */
-    public AnalysisRunner(int maxIterations, int numIntervals) {
+    public RiverAnalysisRunner(int maxIterations, double iterationEpsilon) {
         this.maxIterations = maxIterations;
-        increment = maxIterations / numIntervals;
+        this.epsilon = iterationEpsilon;
 
-        for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
-            addNumberOfIterations(nIter);
-        }
+//        for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
+//            addNumberOfIterations(nIter);
+//        }
     }
 
     private void switchOffDebugOutput(MDPSolver solver) {
@@ -89,51 +73,37 @@ public class AnalysisRunner {
     /**
      * Runs value iteration experiment.
      *
-     * @param gen           domain generator
-     * @param domain        domain
-     * @param initialState  initial state
-     * @param rf            reward function
-     * @param tf            terminal function
-     * @param showPolicyMap set true to visualize the policy map
+     * @param gen          domain generator
+     * @param domain       domain
+     * @param initialState initial state
+     * @param rf           reward function
+     * @param tf           terminal function
      */
-    public void runValueIteration(BasicGridWorld gen, Domain domain,
+    public void runValueIteration(RiverProblemDomainGenerator gen, Domain domain,
                                   State initialState, RewardFunction rf,
-                                  TerminalFunction tf, boolean showPolicyMap) {
+                                  TerminalFunction tf) {
         print("//Value Iteration Analysis//");
-        AugmentedValueIteration vi = null;
-        Policy p = null;
-        EpisodeAnalysis ea = null;
-        for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
-            final long startTime = System.nanoTime();
-            vi = new AugmentedValueIteration(domain, rf, tf, GAMMA,
-                    hashingFactory, MAX_DELTA, nIter);
 
-            // stop the insanity... and switch off debugging messages
-            switchOffDebugOutput(vi);
 
-            // run planning from our initial state
-            p = vi.planFromState(initialState);
-            addMillisecondsToFinishValueIteration(durationInMs(startTime));
-            addConvergenceValueIteration(vi.getIterations());
+        final long startTime = System.nanoTime();
 
-            // evaluate the policy with one roll out visualize the trajectory
-            ea = p.evaluateBehavior(initialState, rf, tf);
-            addValueIterationReward(calcRewardInEpisode(ea));
-            addStepsToFinishValueIteration(ea.numTimeSteps());
-        }
+        AugmentedValueIteration vi = new AugmentedValueIteration(domain, rf, tf,
+                GAMMA, hashingFactory, epsilon, maxIterations);
 
-        // visualize the episodes...
-//        Visualizer v = gen.getVisualizer();
-//        new EpisodeSequenceVisualizer(v, domain, Arrays.asList(ea));
+        Policy p = vi.planFromState(initialState);
+        final long durationMs = durationInMs(startTime);
+        final int convergeIn = vi.getIterations();
 
-        printValueIterationResults();
+        EpisodeAnalysis ea = p.evaluateBehavior(initialState, rf, tf);
+        final double reward = calcRewardInEpisode(ea);
+        final int numSteps = ea.numTimeSteps();
 
-        //
-        printPolicyMap(vi.getAllStates(), p, gen.getMap());
+        print("Duration %d ms", durationMs);
+        print("Converged in %d iterations", convergeIn);
+        print("Summed Reward is %.2f", reward);
+        print("Number of steps is %d", numSteps);
 
-        if (showPolicyMap) {
-            simpleValueFunctionVis(vi, p, initialState, domain, hashingFactory);
-        }
+        RiverPrinter.printRiverPath(initialState, p);
     }
 
     /**
@@ -153,6 +123,7 @@ public class AnalysisRunner {
         AugmentedPolicyIteration pi = null;
         Policy p = null;
         EpisodeAnalysis ea = null;
+/*
         for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
             final long startTime = System.nanoTime();
             pi = new AugmentedPolicyIteration(domain, rf, tf, GAMMA, hashingFactory,
@@ -180,11 +151,12 @@ public class AnalysisRunner {
         printPolicyIterationResults();
 
         printPolicyMap(getAllStates(domain, rf, tf, initialState), p, gen.getMap());
+*/
 
         //visualize the value function and policy.
-        if (showPolicyMap) {
-            simpleValueFunctionVis(pi, p, initialState, domain, hashingFactory);
-        }
+//        if (showPolicyMap) {
+//            simpleValueFunctionVis(pi, p, initialState, domain, hashingFactory);
+//        }
     }
 
     private void simpleValueFunctionVis(ValueFunction valueFunction, Policy p,
@@ -219,6 +191,7 @@ public class AnalysisRunner {
         AugmentedQLearning agent = null;
         Policy p = null;
         EpisodeAnalysis ea = null;
+/*
         for (int nIter = increment; nIter <= maxIterations; nIter += increment) {
             final long startTime = System.nanoTime();
 
@@ -245,11 +218,12 @@ public class AnalysisRunner {
         }
         printQLearningResults();
         printPolicyMap(getAllStates(domain, rf, tf, initialState), p, gen.getMap());
+*/
 
         //visualize the value function and policy.
-        if (showPolicyMap) {
-            simpleValueFunctionVis(agent, p, initialState, domain, hashingFactory);
-        }
+//        if (showPolicyMap) {
+//            simpleValueFunctionVis(agent, p, initialState, domain, hashingFactory);
+//        }
     }
 
 

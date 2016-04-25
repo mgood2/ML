@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static ml.project4.OutputUtils.print;
 import static ml.project4.OutputUtils.EOL;
+import static ml.project4.OutputUtils.print;
 
 /**
  * Generates Burlap Domains for the "River Problem".
@@ -96,13 +96,18 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
 
     private static final int START_STATE_ID = 0;
     private static final int SUCCESS_STATE_ID = 23;
-    private static final List<Integer> FAIL_STATE_IDS = Arrays.asList(1, 3, 11, 14);
+    private static final List<Integer> FAIL_STATE_IDS =
+            Arrays.asList(1, 3, 11, 14);
 
     private static final int R_ZERO = 0;
     private static final int R_FAIL = -100;
     private static final int R_DEFAULT = -1;
     private static final int R_SUCCESS = 100;
 
+    @Override
+    public String toString() {
+        return "RiverProblemDG{#states = " + NUM_STATES + "}";
+    }
 
     @Override
     public Domain generateDomain() {
@@ -162,7 +167,7 @@ public class RiverProblemDomainGenerator implements DomainGenerator {
      * @param id state
      * @return true if this state is terminal
      */
-    private static boolean isTerminalId(int id) {
+    public static boolean isTerminalId(int id) {
         return FAIL_STATE_IDS.contains(id) || id == SUCCESS_STATE_ID;
     }
 

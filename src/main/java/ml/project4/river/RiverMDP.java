@@ -8,6 +8,7 @@ import burlap.oomdp.core.states.State;
 import burlap.oomdp.singleagent.RewardFunction;
 import burlap.oomdp.statehashing.HashableStateFactory;
 import burlap.oomdp.statehashing.SimpleHashableStateFactory;
+import ml.project4.grid.util.AnalysisRunner;
 
 import static ml.project4.OutputUtils.print;
 
@@ -16,13 +17,13 @@ import static ml.project4.OutputUtils.print;
  */
 public class RiverMDP {
 
-    private static final double ITERATION_EPSILON = 0.00001;
+    private static final double ITERATION_EPSILON = 0.0001;
     private static final int MAX_ITERATIONS = 1000;
     private static final double GAMMA = 0.99;
 
     private static final int S0 = 0;
 
-    private RiverProblemDomainGenerator riverDg;
+    private RiverProblemDomainGenerator gen;
     private Domain domain;
     private State initialState;
     private RewardFunction rf;
@@ -31,13 +32,13 @@ public class RiverMDP {
 
 
     public RiverMDP() {
-        riverDg = new RiverProblemDomainGenerator();
-        domain = riverDg.generateDomain();
+        gen = new RiverProblemDomainGenerator();
+        domain = gen.generateDomain();
         // no intrinsic notion of initial state in the domain object
         // we have to inject this notion from outside the domain
         initialState = GraphDefinedDomain.getState(domain, S0);
-        rf = riverDg.generateRewardFunction();
-        tf = riverDg.generateTerminalFunction();
+        rf = gen.generateRewardFunction();
+        tf = gen.generateTerminalFunction();
     }
 
     private ValueIteration createValueIteration(double gamma) {
@@ -48,19 +49,21 @@ public class RiverMDP {
     }
 
     /**
-     * Solves the problem.
+     * Runs the value iteration, policy iteration, and Q-learning algorithms
+     * on the river problem state graph.
      */
-    public void solve() {
-        ValueIteration vi = createValueIteration(GAMMA);
-        print(vi); // not useful
-        final int numStates = riverDg.numStates();
-        double[] v = new double[numStates];
+    void runExperiments() {
 
-        for (int i = 0; i < numStates; i++) {
-            State s = GraphDefinedDomain.getState(domain, i);
-            v[i] = vi.value(s);
-//            print("State %02d: value=%10.6f", i, v[i]);
-        }
-        riverDg.printSequence(v);
+        print("Running experiments on %s", gen);
+        print("Max iterations: %d, iteration epsilon: %.5f",
+                MAX_ITERATIONS, ITERATION_EPSILON);
+
+        RiverAnalysisRunner runner =
+                new RiverAnalysisRunner(MAX_ITERATIONS, ITERATION_EPSILON);
+
+        runner.runValueIteration(gen, domain, initialState, rf, tf);
+
+        // TODO: Policy Iteration
+        // TODO: Q-Learning
     }
 }

@@ -6,18 +6,12 @@ package ml.project4.river;
 public class RiverProblem {
 
     /**
-     * Runs the problem.
-     */
-    private RiverProblem() {
-        new RiverMDP().solve();
-    }
-
-    /**
      * Main entry point.
      *
      * @param args (ignored)
      */
     public static void main(String[] args) {
-        new RiverProblem();
+        RiverMDP mdp = new RiverMDP();
+        mdp.runExperiments();
     }
 }
